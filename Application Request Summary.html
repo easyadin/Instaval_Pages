@@ -253,174 +253,7 @@
                 box-shadow: 6px 6px 29px #aaaaaa7a;
                 transition: 1s;
             }
-            /* counters css*/
-             /*Dashboard element design*/
-             .countersParent{
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  justify-content: space-around;
-                  flex-wrap: wrap;
-                  width: 100%;
-                }
-                .counterGroupElements{
-                    position: relative;
-                    margin-top: 50px;
-                    box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important;
-                }
-                .counterBG h1:nth-child(2) {
-                    font-size: 18px!important;
-                }
-                .countersParent .counterGroupElements .counterBG {
-                    background-color: #FFFFFF;
-                    width: 300px;
-                    height: 150px;
-                    border-radius: 6px;
-                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
-                }
-               .countersParent .counterIcon{
-                    width: 74px;
-                    height:71px;
-                    border-radius: 6px;
-                    text-align: center;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    top: -30px;
-                    left: 25px;
-                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
-                }
-                .counterIcon img {
-                    width: 41px;
-                    height: 41px;
-                }
-                .countersParent .counterGroupElements .counterBG h1:nth-child(1){
-                    font-size: 70px;
-                    float: right;
-                    left: 280px;
-                    color: rgba(36, 38, 41, 0.952);
-                    margin-right: 25px;
-                    transition: 1s;
-                }
-                .countersParent .counterGroupElements .counterBG h1:nth-child(2){
-                    font-size: 20px;
-                    position: relative;
-                    margin-left: 30px;
-                    color: #F5365C;
-                    padding-top: 100px;
-                    letter-spacing: 0.1rem;
-                    font-family: 'IBM Plex Sans', sans-serif;
-                    font-weight: 400;
-                }
 
-            /* Table*/ 
-            .table-container {
-                    background-color: #fff;
-                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
-                    border-radius: 6px!important;
-                    margin: 20px 40px;
-                    color: rgba(36, 38, 41, 0.952)!important;
-                    height: 100%;
-                    overflow: auto;
-            }
-            .table-title {
-                padding: 20px 10px;
-                border-bottom-color:  tomato;
-            }
-            .table-container h1{
-                font-size: 20px;
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-weight: 900;
-            }  
-            .table-container thead{
-                background-color: #0374AF;
-                font-size: 15px;
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-weight: 600;
-                text-align: center;
-                width: 100%;
-            }
-            th {
-                white-space: nowrap;
-                padding: 10px 10px!important;
-                text-align: center;
-                color: #fff;
-            } 
-            td {
-                white-space: nowrap;
-                padding: 10px 10px!important;
-                text-align: center;
-            }
-            td a:nth-child(1) {
-                background-color: #2CABE3;
-                color: #fff;
-                padding: 10px;
-                padding-top: 12px;
-                cursor: pointer;
-            }
-            td a:nth-child(2) {
-                background-color: #2CD07E;
-                color: #fff;
-                padding: 10px;
-                padding-top: 12px;
-                cursor: pointer;
-            }
-            td a:nth-child(3) {
-                background-color: #707CD2;
-                color: #fff;
-                padding: 10px;
-                padding-top: 12px;
-                cursor: pointer;
-            }
-                                /* charts css**/
-                                .DemoGraphics{
-                                    font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 50px;
-                                    font-weight: 900;
-                                    text-align: center;
-                                }
-                                .Financials{
-                                    font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 50px;
-                                    font-weight: 900;
-                                    text-align: center;
-                                }
-                                .chartParent {
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: center;
-                                    text-align: center;
-                                    color: #4F4F4F;
-                                    margin-top: 30px;
-                                    width: 100%;
-                                    justify-content: space-evenly;
-                                }
-                                .chartContainer {
-                                    display: flex;
-                                    flex-direction: row;
-                                    flex-wrap: wrap;
-                                    padding-left: 40px;
-                                    padding-right: 40px;
-                                }
-                                .chartParent h2{
-                                    font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 20px;
-                                    font-weight: 500;
-                                }
-
-                                /*Chart bg*/
-                                .chartBG {
-                                    background-color: #FFFFFF;
-                                    height: auto;
-                                    border-radius: 6px;
-                                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important;
-                                    margin: 20px 10px;
-                                }
-                                .chart-card-size {
-                                    height: auto;
-                                }
-            
             /** form style***/
         .form-container {
             margin: 40px 237px;
@@ -491,6 +324,19 @@
             background-color: rgba(1, 116, 174, 0.424);
          }
 
+
+         .white-color {
+             color: #fff;
+         }
+         .bg-color {
+            background-color: #0173AE;
+         }
+         .transition {
+            transition: 0.7;
+         }
+         .filter-img {
+            filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
+         }
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
                 .mobile-nav-dashboard {
@@ -603,7 +449,6 @@
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
-
                     </div>
                   
              </div>
@@ -616,9 +461,9 @@
     <div class="form-container">
         <div class="title-header"><h1>Application request</h1></div>
         <div class="form-header" id="form-selection-container">
-            <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamentals-img1" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)!important;" src="../Template/Icons v3/Fundamentals (2).svg"><h1 style="color: #fff!important;">Fundamentals</h1></div></a>
-            <a id="fianancials-btn" href="#"><div class="title" id="finanancial--div"><img id="financial-img2" src="../Template/Icons v3/Financials (2).svg"><h1 clas>Financials</h1></div></a>
-            <a id="transaction-btn" href="#"><div class="title" id="transaction-div"><img id="transaction-img" src="../Template/Icons v3/Transaction.svg"><h1>Transactions</h1></div></a>
+            <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamental-img" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);" src="../Template/Icons v3/Fundamentals (2).svg"><h1 class="fundamental-text" style="color: #fff!important;">Fundamentals</h1></div></a>
+            <a id="financial-btn" href="#"><div class="title" id="financial-div"><img id="financial-img" src="../Template/Icons v3/Financials (2).svg"><h1 class="financial-text">Financials</h1></div></a>
+            <a id="transaction-btn" href="#"><div class="title" id="transaction-div"><img id="transaction-img" src="../Template/Icons v3/Transaction.svg"><h1 class="transaction-text">Transactions</h1></div></a>
         </div>
     </div>   
 
@@ -879,12 +724,68 @@
 
                 //form onclick reveal and hide
                 var fundamental = document.getElementById('fundamental-btn');
-                var fianancials = document.getElementById('fianancials-btn');
+                var financial = document.getElementById('financial-btn');
                 var transaction = document.getElementById('transaction-btn');
                 //find selected form
-                fundamental.click(
-                    console.log("cliked")
-               )
+                fundamental.onclick = function (){
+                   //change indicator properties
+                    fundamental.style.backgroundColor = "#0173AE";
+                    fundamental.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#fff";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transation-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                }
+
+                financial.onclick = function (){
+                    //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                
+                }
+
+                transaction.onclick = function (){
+                    //change indicator properties
+                    transaction.style.backgroundColor = "#0173AE";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                }
+
 
 
 
