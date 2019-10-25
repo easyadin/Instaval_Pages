@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investor Dashboard</title>
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+</head>
+
+        <Style>
+            @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-color: rgba(224, 239, 248, 0.158);
+            }
+            .nav-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                height: 60px;
+            }
+            .nav-container {
+                border-bottom: 1px solid rgba(214, 210, 210, 0.239);
+                border-top:none;
+            }
+            .navbar {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 60px;
+                background-color: rgb(255, 255, 255);
+            }
+            
+            .left-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 20px;
+            }
+            .left-nav {
+                border-right-style:solid;
+                border-right-color: rgb(214, 210, 210);
+                border-right-width: 1px;
+            }
+            .left-nav a {
+                margin-right: 100px;
+            }
+            .middle-nav {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                font-weight: 100;
+                justify-content: center;
+                align-items: center;
+                color: #5b5f70;
+                margin-left: 3%;
+            }
+            .middle-nav a {
+                margin-left: 50px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                color: rgb(91, 95, 112);
+                text-decoration: none;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                transition: 1s;
+            }
+            .middle-nav a h1{
+               font-family: 'IBM Plex Sans', sans-serif;
+               font-weight: 400 !important;
+            }
+            .middle-nav a:hover {
+                background-color: rgba(187, 187, 187, 0.459);
+                font-weight: 900;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .middle-nav h1:nth-child(1) {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 700;
+            }
+            .right-nav {
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
+                height: 60px;
+            }
+            .right-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10px;
+                color: rgb(91, 95, 112);
+                padding-left:12px;
+                padding-right:12px;
+            }
+            .right-nav:hover {
+                background-color:rgba(187, 187, 187, 0.459);
+                cursor: pointer;
+                transition: 0.6s;
+            }
+            .right-nav h1 {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+            .right-nav i {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+            }
+            .dropDownMenu {
+                position: absolute;
+                right: 0;
+                margin-right: 55px;
+                margin-top: 65px;
+            }
+            .dropDownMenu1 {
+                position: absolute;
+                left: 0;
+                margin-left: 299px;
+                margin-top: 65px;
+            }
+            .dropDownMenu2 {
+                position: absolute;
+                left: 0;
+                margin-left: 440px;
+                margin-top: 65px;
+            }
+            .dropDownMenu3 {
+                position: absolute;
+                left: 0;
+                margin-left: 565px;
+                margin-top: 65px;
+            }
+            .dropDownMenu4 {
+                position: absolute;
+                left: 0;
+                margin-left: 365px;
+                margin-top: 65px;
+                margin-left: 695px;
+            }
+            .dropDownMenu5 {
+                position: absolute;
+                left: 0;
+                margin-left: 820px;
+                margin-top: 65px;
+            }
+            .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgba(214, 210, 210, 0.239);
+                border-color: rgb(104, 88, 88);
+                z-index: 10000;
+            }
+            .dropDownMenu1,.dropDownMenu2 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgba(214, 210, 210, 0.239);
+                border-color: rgb(104, 88, 88);
+                z-index: 10000;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                background-color: rgba(214, 210, 210, 81.239);
+                border-color: rgb(104, 88, 88);
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 5px;
+                font-size: 10px;
+                transition: 0.3s;
+            }
+            .instaval-logo a:hover{
+                background-color: transparent!important;
+            }
+            .dropdown-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .format-text{
+                font-size: 16px!important;
+                color: rgb(91, 95, 112)!important;
+            }
+            .format-icon{
+                margin-left: 20px!important;
+            }
+            i img {
+                height: 20px;
+                width: auto;
+            }
+            i {
+            }
+            .f-h1{
+                margin-left: 20px!important;
+            }
+            .showDropDownMenu {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgb(255, 255, 255);
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+            .showDropDownMenu1 {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgb(255, 255, 255);
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+            /* counters css*/
+             /*Dashboard element design*/
+             .countersParent{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+                  width: 100%;
+                }
+                .counterGroupElements{
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 18px!important;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 300px;
+                    height: 150px;
+                    border-radius: 6px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                    
+                }
+               .countersParent .counterIcon{
+                    width: 74px;
+                    height:71px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -30px;
+                    left: 25px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                }
+                .counterIcon img {
+                    width: 41px;
+                    height: 41px;
+                   
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1){
+                    font-size: 70px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2){
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 30px;
+                    color: #F5365C;
+                    padding-top: 100px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 400;
+                }
+
+            /* Table*/ 
+            .table-container {
+                    background-color: #fff;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                    border-radius: 6px!important;
+                    margin: 20px 40px;
+                    color: rgba(36, 38, 41, 0.952)!important;
+                    height: 100%;
+                    overflow: auto;
+            }
+            .table-title {
+                padding: 20px 10px;
+                border-bottom-color:  tomato;
+            }
+            .table-container h1{
+                font-size: 20px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 900;
+            }  
+            .table-container thead{
+                background-color: #0374AF;
+                font-size: 15px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+            }
+            th {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+                color: #fff;
+            } 
+            td {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+            }
+            td a:nth-child(1) {
+                background-color: #2CABE3;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+            td a:nth-child(2) {
+                background-color: #2CD07E;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+            td a:nth-child(3) {
+                background-color: #707CD2;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+                                /* charts css**/
+                                .DemoGraphics{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .Financials{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .chartParent {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    text-align: center;
+                                    color: #4F4F4F;
+                                    margin-top: 30px;
+                                    width: 100%;
+                                    justify-content: space-evenly;
+                                }
+                                .chartContainer {
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    padding-left: 40px;
+                                    padding-right: 40px;
+                                }
+                                .chartParent h2{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                }
+
+                                /*Chart bg*/
+                                .chartBG {
+                                    background-color: #FFFFFF;
+                                    height: auto;
+                                    border-radius: 6px;
+                                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important;
+                                    margin: 20px 10px;
+                                }
+                                .chart-card-size {
+                                    height: auto;
+                                }
+            
+            /*Responsive navigation*/
+            @media only screen and (max-width: 1024px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 .middle-nav {
+                    margin-right: 0;
+                    margin-left: -24px;
+                 }
+                 canvas {
+                     width: 452px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 1440px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 433px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width:1920px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 587px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 2560px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 680px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 991px){
+                .middle-nav {
+                    display: none;
+                }
+                .left-nav a {
+                    margin-right: 20px;
+                }
+                .mobile-nav-dashboard {
+                    display: contents;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 8px;
+                    color: rgb(91, 95, 112);
+                    display: flex;
+                    align-items: center;
+                 }
+                 .mobile-nav-dashboard h1{
+                    font-weight: 500;
+                    letter-spacing: 0.05rem;
+                    margin-left: 20px;
+                  }
+                  .mobile-nav-dashboard a{
+                    text-decoration: none; color: rgb(91, 95, 112);
+                  }
+                  canvas {
+                     width: 324px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 425px){
+                .mobile-nav-dashboard a{
+                    display: none;
+                }
+             }
+        </Style>
+<body class="body-main">
+    <!-- navigation -->
+    <div class="nav-container anim">
+            <div class="navbar anim">
+                    <!-- instaval logo-->
+                    <div class="instaval-logo left-nav anim">
+                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 20px;"></a>
+                    </div>
+                    <div class="mobile-nav-dashboard anim">
+                         <a href="#"><h1>Dashboard</h1></a>
+                         <a href="#"><h1>Analytics</h1></a>
+                         <a href="#"><h1>Platform</h1></a>
+                         <a href="#"><h1>Startups</h1></a>
+                         <a href="#"><h1>Investors</h1></a>
+                    </div>
+                    <div class="middle-nav anim">
+                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1></a>
+                            <a href="#" class="analytics-btn"><h1>Analytics</h1></a>
+                            <a href="#"class="platform-btn"><h1 >Platform</h1></a>
+                            <a href="#" class="startups-btn"><h1>Startups</h1></a>
+                            <a href="#" class="investors-btn"><h1>Investors</h1></a>
+                    </div>
+                    <div class="right-nav anim">
+                        <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
+                        <h1 class="dropper">DIFC</h1>
+                        <i class="ri-arrow-down-s-line dropper"></i>
+                    </div>
+                    <!-- Dropdown menu company logo / name -->
+                    <div class="dropDownMenu">
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu1">
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/Icons v3/Total Dealflow.svg"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/asset/svg/benchmarking.svg"></i><h1 class="format-text f-h1">Benchmarking</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu2">
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img src="../Template/asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visuals</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/download.svg"></i><h1 class="format-text f-h1">Download Data</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu3">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
+
+                    </div>
+                    <div class="dropDownMenu4">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
+
+                    </div>
+                    <div class="dropDownMenu5">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                    </div>
+             </div>
+    </div>
+
+<div class="main-body-content-area">
+ <!-- custom dashboard counter-->
+ <div class="countersParent">
+        <div class="counterGroupElements">
+            <div class="counterIcon" style="background-color:#F5365C!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
+            </div>
+            <div class="counterBG">
+                <h1>20</h1>
+                <h1  style="color:rgb(218, 81, 109)!important;">TOTAL DEALFLOW</h1>
+            </div>
+        </div>
+        <div class="counterGroupElements">
+                <div class="counterIcon" style="background-color:#FB6340!important;"><img src="../Template/Icons v3/Projects_white_bg.png">
+                </div>
+                <div class="counterBG">
+                    <h1>20</h1>
+                    <h1  style="color:#FB6340!important;">NEW PROJECTS</h1>
+                </div>
+            </div>
+            <div class="counterGroupElements">
+                    <div class="counterIcon"  style="background-color:#11CDEF!important;"><img src="../Template/Icons v3/Request_white_bg.png">
+                    </div>
+                    <div class="counterBG">
+                        <h1>15</h1>
+                        <h1 style="color:#11CDEF!important;" >PENDING REQUEST </h1>
+                        <!-- <h1>PENDING REQUEST</h1> -->
+                    </div>
+                </div>
+
+            
+                <div class="counterGroupElements">
+                        <div class="counterIcon" style="background-color:#2AC940!important;"><img src="../Template/Icons v3/Approve_white.png">
+                        </div>
+                        <div class="counterBG">
+                            <h1>5</h1>
+                            <h1 style="color:#2AC940!important;">ACCEPTED</h1>
+                        </div>
+                    </div>
+                    
+            <div class="counterGroupElements">
+                    <div class="counterIcon" style="background-color:#E31209!important;"><img src="../Template/Icons v3/Reject-2_white.png">
+                    </div>
+                    <div class="counterBG">
+                        <h1>8</h1>
+                        <h1 style="color:#E31209!important;">REJECTED</h1>
+                    </div>
+                </div>
+ </div>
+        <!-- custom dashboard counter end here-->
+
+        <!-- Table -->
+     <div class="table-container">
+            <div class="table-title">
+                <h1>DealFlow Data Analysis</h1>
+            </div>
+           <div class="table-content">
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                                <tr>
+                                        <th>Company</th>
+                                        <th>Country</th>
+                                        <th>Enabler</th>
+                                        <th>Revenue Stage</th>
+                                        <th>Industry</th>
+                                        <th>Business Model</th>
+                                        <th>Lifecycle Stage</th>
+                                        <th>Headcount</th>
+                                        <th>Company Age (in years)</th>
+                                        <th>Revenue 2019E (in '000)</th>
+                                        <th>Ebit Margin %</th>
+                                        <th>Valuation (in '000)</th>
+                                        <th>Target Funding (in '000)</th>
+                                        <th>Funding Round</th>
+                                        <th>Equity</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                </tr> 
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>Instaval</td>
+                                        <td>United Arab Emirates</td>
+                                        <td>Enabler 1</td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td>
+                                            <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td>Instaval</td>
+                                        <td>United Arab Emirates</td>
+                                        <td>Enabler 1</td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Selected</td>
+                                        <td>
+                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                            </td>
+                                </tr>
+                                <tr>
+                                        <td>Instaval</td>
+                                        <td>United Arab Emirates</td>
+                                        <td>Enabler 1</td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Selected</td>
+                                        <td>
+                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                            </td>
+                                </tr>
+
+                                <tr>
+                                        <td>Instaval</td>
+                                        <td>United Arab Emirates</td>
+                                        <td>Enabler 1</td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Pipeline</td>
+                                        <td>
+                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                            </td>
+                                </tr>
+                        </tbody>
+                        <tfoot>
+                          
+                        </tfoot>
+                </table>
+           </div>
+     </div>
+        <!--table ends here-->
+
+
+        <!-- Benchmarking and Analysis-->
+        <div class="table-container">
+                <div class="table-title">
+                    <h1>Benchmarking & Analysis</h1>
+                </div>
+               <div class="table-content">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                    <tr>
+                                            <tr>
+                                                    <th>Benchmarking & Analytics</th>
+                                                    <th>Average</th>
+                                                    <th >Median</th>
+                                                    <th>Highest</th>
+                                                    <th>Lowest</th>
+                                                    <th>Top</th>
+                                                    <th >Last</th>
+                                                </tr> 
+                                    </tr> 
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>Company Age (in yesrs)</td>
+                                            <td>3</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>2</td>
+                                            <td>Startup 1</td>
+                                            <td> Startup 10</td>
+                                          </tr>
+                                          <tr>
+                                            <td> Revenue 2019E (in '000)</td>
+                                            <td>$<span>434</span></td>
+                                            <td>$<span>654</span></td>
+                                            <td>$<span>122</span></td>
+                                            <td>$<span>44</span></td>
+                                            <td>Dummy Data</td>
+                                            <td>Dummy Data</td>
+                                          </tr>
+                                          <tr>
+                                            <td> Valuation (in '000)</td>
+                                            <td>$<span>434</span></td>
+                                            <td>$<span>654</span></td>
+                                            <td>$<span>122</span></td>
+                                            <td>$<span>44</span></td>
+                                            <td>Dummy Data</td>
+                                            <td>Dummy Data</td>
+                                          </tr>
+                                          <tr>
+                                                <td> Target Funding (in '000)</td>
+                                                <td>$<span>434</span></td>
+                                                <td>$<span>654</span></td>
+                                                <td>$<span>122</span></td>
+                                                <td>$<span>44</span></td>
+                                                <td>Dummy Data</td>
+                                                <td>Dummy Data</td>
+                                              </tr>
+                                              <tr>
+                                                    <td> Equity</td>
+                                                    <td>$<span>434</span></td>
+                                                    <td>$<span>654</span></td>
+                                                    <td>$<span>122</span></td>
+                                                    <td>$<span>44</span></td>
+                                                    <td>Dummy Data</td>
+                                                    <td>Dummy Data</td>
+                                                  </tr>
+                                                  <tr>
+                                                        <td>  Ebit Margin %</td>
+                                                        <td>$<span>434</span></td>
+                                                        <td>$<span>654</span></td>
+                                                        <td>$<span>122</span></td>
+                                                        <td>$<span>44</span></td>
+                                                        <td>Dummy Data</td>
+                                                        <td>Dummy Data</td>
+                                                      </tr>
+                            </tbody>
+                            <tfoot>
+                              
+                            </tfoot>
+                    </table>
+               </div>
+         </div>
+
+        <!-- Benchmarking and Analysis  ends here-->
+
+
+ <!-- Chart canvas-->
+ <h1 class="DemoGraphics">Demographics</h1>
+ <div class="chartParent">
+         <div class="chartContainer">
+             <div class="chartBG">
+                 <h2>Revenue</h2>
+                     <canvas id="RevenueStageChart"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Industry</h2>
+                     <canvas id="Industry"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Business Model</h2>
+                     <canvas id="BusinessModel"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Life Cycle</h2>
+                     <canvas id="LifeCycle"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Company Age</h2>
+                     <canvas id="CompanyAge"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Country</h2>
+                     <canvas id="Country"></canvas>
+             </div>
+             <div class="chartBG">
+                     <h2>Funding Round</h2>
+                     <canvas id="Fundinground"></canvas>
+             </div>
+             <div class="chartBG">
+                 <h2>Headcount</h2>
+                     <canvas id="Headcount"></canvas>
+             </div>
+         </div>
+ </div>
+
+ <!-- Financials Chart -->
+ <h2 class="Financials">Financials</h2>
+
+ <div class="chartParent">
+         <div class=  "chartContainer chart-container-constrain">
+             <div class="chartBG chart-card-size">
+                 <h2>Revenue in '000 $</h2>
+                     <canvas id="revenueBar"></canvas>
+             </div>
+             <div class="chartBG chart-card-size">
+                 <h2>Valuation in '000 $</h2>
+                     <canvas id="valuationBar"></canvas>
+             </div>
+             <div class="chartBG chart-card-size">
+                 <h2>Funding in '000 $</h2>
+                     <canvas id="fundingBar"></canvas>
+             </div>
+             <div class="chartBG chart-card-size">
+                 <h2>Equity</h2>
+                     <canvas id="equityBar"></canvas>
+             </div>
+             <div class="chartBG chart-card-size">
+                 <h2>Ebit Margin %</h2>
+                     <canvas id="ebitBar"></canvas>
+             </div>
+         </div>
+ </div>
+
+
+</div>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // onclick /hover show dropDown menu 
+            $(document).ready(function(){
+                
+                var dropDownisShow = false;
+                var dropDownisShow1 = false;
+                var dropDownisShow2 = false;
+                var dropDownisShow3 = false;
+                var dropDownisShow4 = false;
+                var dropDownisShow5 = false;
+                $(".right-nav").click(function(){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !false;//turn true
+
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                      
+                });
+                $(".dashboard-btn").click(function(){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".analytics-btn").click(function(){
+                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                        dropDownisShow2 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".platform-btn").click(function(){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".startups-btn").click(function(){
+                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                        dropDownisShow4 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                        
+                });
+                $(".investors-btn").click(function(){
+                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                        dropDownisShow5 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !dropDownisShow3;//turn false
+                        }
+                });
+                //hide on mouseleave and  outside clicks
+                $('.dropDownMenu').mouseleave(function(){
+                    $(".dropDownMenu").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu1').mouseleave(function(){
+                    $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu2').mouseleave(function(){
+                    $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu3').mouseleave(function(){
+                    $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu4').mouseleave(function(){
+                    $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu5').mouseleave(function(){
+                    $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+              //click outside to toggle opened dropdown menu
+                $('.main-body-content-area').click(function(){
+                    if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                    }
+                    if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !dropDownisShow1;//turn false
+                    }
+                    if(dropDownisShow2 === true){
+                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                        dropDownisShow2 = !dropDownisShow2;//turn false
+                    }
+                    if(dropDownisShow3 === true){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !dropDownisShow3;//turn false
+                    }
+                    if(dropDownisShow3 === true){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !dropDownisShow3;//turn false
+                    }
+                    if(dropDownisShow4 === true){
+                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                        dropDownisShow4 = !dropDownisShow4;//turn false
+                    }
+                    if(dropDownisShow5 === true){
+                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                        dropDownisShow5 = !dropDownisShow5;//turn false
+                    }
+                });
+
+            //change the indicator of table data base 
+            //on innerHTML content status
+            var dataStatus = document.getElementsByTagName('td');
+            for(let i=0; i<dataStatus.length;i++){
+                    if(dataStatus[i].innerText.toLowerCase() === "rejected"){
+                        dataStatus[i].style.color ="white";
+                        dataStatus[i].style.backgroundColor="#E31209";
+                    }
+                    if(dataStatus[i].innerText.toLowerCase() === "selected"){
+                        dataStatus[i].style.color ="white";
+                        dataStatus[i].style.backgroundColor="#2AC940";
+                    }
+                    if(dataStatus[i].innerText.toLowerCase() === "pipeline"){
+                        dataStatus[i].style.color ="white";
+                        dataStatus[i].style.backgroundColor="#FA9917";
+                    }
+            }
+
+
+
+               //Revenue chart
+               var RevenueStageChart = document.getElementById('RevenueStageChart').getContext('2d');
+                    var chart = new Chart(RevenueStageChart, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Pre Revenue', 'Pos Revenue'],
+                                    datasets: [{
+                                        data: [12, 19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.5)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+
+                     //Industry chart
+                    var Industry = document.getElementById('Industry').getContext('2d');
+                    var chart = new Chart(Industry, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['FinTech'],
+                                    datasets: [{
+                                        data: [19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+                     //BusinessModel chart
+                     var BusinessModel = document.getElementById('BusinessModel').getContext('2d');
+                     var chart = new Chart(BusinessModel, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Marketplace', 'B2C','Subcription','Fremium','B2B','B2B2C'],
+                                    datasets: [{
+                                        data: [12, 19,34,23,2,4], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+
+// Note : if the data pass points passed to the data :[] array the color intensity
+// or opacity increases accordingly
+ //LifeCycle chart
+ var LifeCycle = document.getElementById('LifeCycle').getContext('2d');
+                     var chart = new Chart(LifeCycle, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Traction','Launch','Growth','MVP','Idea'],
+                                    datasets: [{
+                                        data: [902,239,90,53,42], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+                   
+                   
+                   
+                   // remove dropdown arrow-right for larger screens
+                    $(document).ready(function(){  
+                       if(window.screen.width > 991){
+                            $("i.fa-chevron-right").removeClass("fa-chevron-right");
+                            $("i.fas").addClass("fa-chevron-down");
+                       }
+                    });
+
+
+
+
+                    //CompanyAge chart
+                    var CompanyAge = document.getElementById('CompanyAge').getContext('2d');
+                     var chart = new Chart(CompanyAge, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['1', '3','5','6'],
+                                    datasets: [{
+                                        data: [12, 19,1,3], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.5)',
+                                            'rgba(54, 162, 235,.3)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+                    //Country chart
+                    var Country = document.getElementById('Country').getContext('2d');
+                     var chart = new Chart(Country, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['United Arab Emirate', 'Morocco','Nigeria','Singapore','Ghana'],
+                                    datasets: [{
+                                        data: [12, 19,18,11,10], //TODO : pass data to array
+                                        backgroundColor: [
+                                        'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+  //Fundinground chart
+  var Fundinground = document.getElementById('Fundinground').getContext('2d');
+                     var chart = new Chart(Fundinground, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Seed', 'Series A', 'Pre-seed'],
+                                    datasets: [{
+                                        data: [12, 19,11], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+
+
+  //Headcount chart
+  var Headcount = document.getElementById('Headcount').getContext('2d');
+                     var chart = new Chart(Headcount, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['1-10', '11-50'],
+                                    datasets: [{
+                                        data: [12, 19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+
+                    
+
+                        //Financials Chart
+//Headcount chart
+var revenueBar= document.getElementById('revenueBar').getContext('2d');
+                     var chart = new Chart(revenueBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+//valuationBar chart
+var valuationBar= document.getElementById('valuationBar').getContext('2d');
+                     var chart = new Chart(valuationBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+
+//fundingBar chart
+var fundingBar= document.getElementById('fundingBar').getContext('2d');
+                     var chart = new Chart(fundingBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+//equityBar chart
+var equityBar= document.getElementById('equityBar').getContext('2d');
+                     var chart = new Chart(equityBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+
+
+
+                    //ebitBar chart
+var ebitBar= document.getElementById('ebitBar').getContext('2d');
+                     var chart = new Chart(ebitBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+ });
+
+
+            
+          
+    </script>
+</body>
+</html>

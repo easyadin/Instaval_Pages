@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investor Dashboard</title>
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+</head>
+
+        <Style>
+            @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-color: rgba(224, 239, 248, 0.158);
+            }
+            .nav-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                height: 60px;
+            }
+            .nav-container {
+                border-bottom: 1px solid rgba(214, 210, 210, 0.239);
+                border-top:none;
+            }
+            .navbar {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 60px;
+                background-color: rgb(255, 255, 255);
+            }
+            
+            .left-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 20px;
+            }
+            .left-nav {
+                border-right-style:solid;
+                border-right-color: rgb(214, 210, 210);
+                border-right-width: 1px;
+            }
+            .left-nav a {
+                margin-right: 100px;
+            }
+            .middle-nav {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                font-weight: 100;
+                justify-content: center;
+                align-items: center;
+                color: #5b5f70;
+                margin-left: 3%;
+            }
+            .middle-nav a {
+                margin-left: 50px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                color: rgb(91, 95, 112);
+                text-decoration: none;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                transition: 1s;
+            }
+            .middle-nav a h1{
+               font-family: 'IBM Plex Sans', sans-serif;
+               font-weight: 400 !important;
+            }
+            .middle-nav a:hover {
+                background-color: rgba(187, 187, 187, 0.459);
+                font-weight: 900;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .middle-nav h1:nth-child(1) {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 700;
+            }
+            .right-nav {
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
+                height: 60px;
+            }
+            .right-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10px;
+                color: rgb(91, 95, 112);
+                padding-left:12px;
+                padding-right:12px;
+            }
+            .right-nav:hover {
+                background-color:rgba(187, 187, 187, 0.459);
+                cursor: pointer;
+                transition: 0.6s;
+            }
+            .right-nav h1 {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+            .right-nav i {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+            }
+            .dropDownMenu {
+                position: absolute;
+                right: 0;
+                margin-right: 55px;
+                margin-top: 65px;
+            }
+            .dropDownMenu1 {
+                position: absolute;
+                left: 0;
+                margin-left: 299px;
+                margin-top: 65px;
+            }
+            .dropDownMenu2 {
+                position: absolute;
+                left: 0;
+                margin-left: 440px;
+                margin-top: 65px;
+            }
+            .dropDownMenu3 {
+                position: absolute;
+                left: 0;
+                margin-left: 565px;
+                margin-top: 65px;
+            }
+            .dropDownMenu4 {
+                position: absolute;
+                left: 0;
+                margin-left: 365px;
+                margin-top: 65px;
+                margin-left: 695px;
+            }
+            .dropDownMenu5 {
+                position: absolute;
+                left: 0;
+                margin-left: 820px;
+                margin-top: 65px;
+            }
+            .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgba(214, 210, 210, 0.239);
+                border-color: rgb(104, 88, 88);
+                z-index: 10000;
+            }
+            .dropDownMenu1,.dropDownMenu2 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgba(214, 210, 210, 0.239);
+                border-color: rgb(104, 88, 88);
+                z-index: 10000;
+            }
+            a{
+                text-decoration: none;
+            }
+            .nav-container a:hover{
+                background-color: rgba(214, 210, 210, 81.239);
+                border-color: rgb(104, 88, 88);
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 5px;
+                font-size: 10px;
+                transition: 0.3s;
+            }
+            .instaval-logo a:hover{
+                background-color: transparent!important;
+            }
+            .dropdown-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .format-text{
+                font-size: 16px!important;
+                color: rgb(91, 95, 112)!important;
+            }
+            .format-icon{
+                margin-left: 20px!important;
+            }
+            i img {
+                height: 20px;
+                width: auto;
+            }
+            .convert-to-black {
+                filter:grayscale(100%);
+            }
+            i {
+            }
+            .f-h1{
+                margin-left: 20px!important;
+            }
+            .showDropDownMenu {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgb(255, 255, 255);
+                border-color: rgb(104, 88, 88);
+                box-shadow: 6px 6px 29px #aaaaaa7a;
+                transition: 1s;
+            }
+            .showDropDownMenu1 {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: rgb(255, 255, 255);
+                border-color: rgb(104, 88, 88);
+                box-shadow: 6px 6px 29px #aaaaaa7a;
+                transition: 1s;
+            }
+            /* counters css*/
+             /*Dashboard element design*/
+             .countersParent{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+                  width: 100%;
+                }
+                .counterGroupElements{
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 18px!important;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 300px;
+                    height: 150px;
+                    border-radius: 6px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                }
+               .countersParent .counterIcon{
+                    width: 74px;
+                    height:71px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -30px;
+                    left: 25px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                }
+                .counterIcon img {
+                    width: 41px;
+                    height: 41px;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1){
+                    font-size: 70px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2){
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 30px;
+                    color: #F5365C;
+                    padding-top: 100px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 400;
+                }
+
+            /* Table*/ 
+            .table-container {
+                    background-color: #fff;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                    border-radius: 6px!important;
+                    margin: 20px 40px;
+                    color: rgba(36, 38, 41, 0.952)!important;
+                    height: 100%;
+                    overflow: auto;
+            }
+            .table-title {
+                padding: 20px 10px;
+                border-bottom-color:  tomato;
+            }
+            .table-container h1{
+                font-size: 20px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 900;
+            }  
+            .table-container thead{
+                background-color: #0374AF;
+                font-size: 15px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+            }
+            th {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+                color: #fff;
+            } 
+            td {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+            }
+            td a:nth-child(1) {
+                background-color: #2CABE3;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+            td a:nth-child(2) {
+                background-color: #2CD07E;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+            td a:nth-child(3) {
+                background-color: #707CD2;
+                color: #fff;
+                padding: 10px;
+                padding-top: 12px;
+                cursor: pointer;
+            }
+                                /* charts css**/
+                                .DemoGraphics{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .Financials{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .chartParent {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    text-align: center;
+                                    color: #4F4F4F;
+                                    margin-top: 30px;
+                                    width: 100%;
+                                    justify-content: space-evenly;
+                                }
+                                .chartContainer {
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    padding-left: 40px;
+                                    padding-right: 40px;
+                                }
+                                .chartParent h2{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                }
+
+                                /*Chart bg*/
+                                .chartBG {
+                                    background-color: #FFFFFF;
+                                    height: auto;
+                                    border-radius: 6px;
+                                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important;
+                                    margin: 20px 10px;
+                                }
+                                .chart-card-size {
+                                    height: auto;
+                                }
+            
+            /** form style***/
+        .form-container {
+            margin: 40px 237px;
+            transition: .7;
+        }
+        .title-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            background-color: #0173AE;
+            text-align: center;
+            border: solid;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: .7;
+        }
+        .title-header h1 {
+            padding: 20px 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 25px;
+            letter-spacing: 1px;
+            transition: .7;
+        }
+         .form-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            display: flex;
+            padding-left: 2px;
+            margin-top: 10px;
+            transition: .7;
+         }
+         .form-header a {
+            border: 2px solid #0173AE;
+            padding: 10px 123.5px;
+            transition: .7;
+         }
+         .form-header a:nth-child(1){
+            border-right-width: 0px;
+            transition: .7;
+         }
+         .form-header a:nth-child(2){
+            border-right-width: 0px;
+         }
+         .form-header a div {
+            display: flex;
+            align-items: center;
+            transition: .7;
+         }
+         .form-header a div img {
+             height: 30px;
+             filter: invert(22%) sepia(98%) saturate(2017%) hue-rotate(182deg) brightness(100%) contrast(99%);
+             transition: .7;   
+         }
+         .form-header a h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 300;
+            padding-left: 30px;
+            color:#0173AE;
+            transition: .7;
+         }
+         .form-header a:nth-child(1){ /*fundamentals*/
+            background-color: #0173AE;
+            transition: .7;
+         }
+
+         /**onclick form section titles**/
+         .form-header a:hover {
+            background-color: rgba(1, 116, 174, 0.424);
+         }
+
+            /*Responsive navigation*/
+            @media only screen and (max-width: 1024px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 .middle-nav {
+                    margin-right: 0;
+                    margin-left: -24px;
+                 }
+                 canvas {
+                     width: 452px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 1440px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 433px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width:1920px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 587px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 2560px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 680px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 991px){
+                .middle-nav {
+                    display: none;
+                }
+                .left-nav a {
+                    margin-right: 20px;
+                }
+                .mobile-nav-dashboard {
+                    display: contents;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 8px;
+                    color: rgb(91, 95, 112);
+                    display: flex;
+                    align-items: center;
+                 }
+                 .mobile-nav-dashboard h1{
+                    font-weight: 500;
+                    letter-spacing: 0.05rem;
+                    margin-left: 20px;
+                  }
+                  .mobile-nav-dashboard a{
+                    text-decoration: none; color: rgb(91, 95, 112);
+                  }
+                  canvas {
+                     width: 324px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 425px){
+                .mobile-nav-dashboard a{
+                    display: none;
+                }
+             }
+        </Style>
+<body class="body-main">
+    <!-- navigation -->
+    <div class="nav-container anim">
+            <div class="navbar anim">
+                    <!-- instaval logo-->
+                    <div class="instaval-logo left-nav anim">
+                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 20px;"></a>
+                    </div>
+                    <div class="mobile-nav-dashboard anim">
+                         <a href="#"><h1>Dashboard</h1></a>
+                         <a href="#"><h1>Analytics</h1></a>
+                         <a href="#"><h1>Platform</h1></a>
+                    </div>
+                    <div class="middle-nav anim">
+                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1></a>
+                            <a href="#" class="analytics-btn"><h1>Analytics</h1></a>
+                            <a href="#"class="platform-btn"><h1 >Platform</h1></a>
+                    </div>
+                    <div class="right-nav anim">
+                        <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
+                        <h1 class="dropper">DIFC</h1>
+                        <i class="ri-arrow-down-s-line dropper"></i>
+                    </div>
+                    <!-- Dropdown menu company logo / name -->
+                    <div class="dropDownMenu">
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu2">
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img class="convert-to-black" src="../Template/asset/png/TotalDealflow.png"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visual Analytics</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu3">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
+
+                    </div>
+                  
+             </div>
+    </div>
+
+
+    <!-- form --> 
+    <div class="required-indicator"></div>
+    <!--main form area-->
+    <div class="form-container">
+        <div class="title-header"><h1>Application request</h1></div>
+        <div class="form-header" id="form-selection-container">
+            <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamentals-img1" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)!important;" src="../Template/Icons v3/Fundamentals (2).svg"><h1 style="color: #fff!important;">Fundamentals</h1></div></a>
+            <a id="fianancials-btn" href="#"><div class="title" id="finanancial--div"><img id="financial-img2" src="../Template/Icons v3/Financials (2).svg"><h1 clas>Financials</h1></div></a>
+            <a id="transaction-btn" href="#"><div class="title" id="transaction-div"><img id="transaction-img" src="../Template/Icons v3/Transaction.svg"><h1>Transactions</h1></div></a>
+        </div>
+    </div>   
+
+</div>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // onclick /hover show dropDown menu 
+            $(document).ready(function(){
+                
+                var dropDownisShow = false;
+                var dropDownisShow1 = false;
+                var dropDownisShow2 = false;
+                var dropDownisShow3 = false;
+                var dropDownisShow4 = false;
+                var dropDownisShow5 = false;
+                $(".right-nav").click(function(){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !false;//turn true
+
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                      
+                });
+                $(".dashboard-btn").click(function(){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".analytics-btn").click(function(){
+                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                        dropDownisShow2 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".platform-btn").click(function(){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                });
+                $(".startups-btn").click(function(){
+                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                        dropDownisShow4 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !true;//turn false
+                        }
+                        if(dropDownisShow5 === true){
+                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                            dropDownisShow5 = !true;//turn false
+                        }
+                        
+                });
+                $(".investors-btn").click(function(){
+                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                        dropDownisShow5 = !false;//turn true
+
+                        if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                        }
+                        if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !true;//turn false
+                        }
+                        if(dropDownisShow2 === true){
+                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                            dropDownisShow2 = !true;//turn false
+                        }
+                        if(dropDownisShow4 === true){
+                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                            dropDownisShow4 = !true;//turn false
+                        }
+                        if(dropDownisShow3 === true){
+                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                            dropDownisShow3 = !dropDownisShow3;//turn false
+                        }
+                });
+                //hide on mouseleave and  outside clicks
+                $('.dropDownMenu').mouseleave(function(){
+                    $(".dropDownMenu").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu1').mouseleave(function(){
+                    $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu2').mouseleave(function(){
+                    $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu3').mouseleave(function(){
+                    $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu4').mouseleave(function(){
+                    $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+                $('.dropDownMenu5').mouseleave(function(){
+                    $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                    dropDownisShow = false
+                    dropDownisShow1 = false
+                    dropDownisShow2 = false
+                    dropDownisShow3 = false
+                    dropDownisShow4 = false
+                    dropDownisShow5 = false
+                });
+              //click outside to toggle opened dropdown menu
+                $('.main-body-content-area').click(function(){
+                    if(dropDownisShow === true){
+                        $(".dropDownMenu").toggleClass("showDropDownMenu");
+                        dropDownisShow = !true;//turn false
+                    }
+                    if(dropDownisShow1 === true){
+                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
+                        dropDownisShow1 = !dropDownisShow1;//turn false
+                    }
+                    if(dropDownisShow2 === true){
+                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
+                        dropDownisShow2 = !dropDownisShow2;//turn false
+                    }
+                    if(dropDownisShow3 === true){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !dropDownisShow3;//turn false
+                    }
+                    if(dropDownisShow3 === true){
+                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
+                        dropDownisShow3 = !dropDownisShow3;//turn false
+                    }
+                    if(dropDownisShow4 === true){
+                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
+                        dropDownisShow4 = !dropDownisShow4;//turn false
+                    }
+                    if(dropDownisShow5 === true){
+                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
+                        dropDownisShow5 = !dropDownisShow5;//turn false
+                    }
+                });
+
+                //form onclick reveal and hide
+                var fundamental = document.getElementById('fundamental-btn');
+                var fianancials = document.getElementById('fianancials-btn');
+                var transaction = document.getElementById('transaction-btn');
+                //find selected form
+                fundamental.click(
+                    console.log("cliked")
+               )
+
+
+
+ });
+
+
+            
+          
+    </script>
+</body>
+</html>

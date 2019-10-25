@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+
+    <title>Pre-Signup Page</title>
+    <Style>
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+           .container {
+               margin-top: 10px;
+           }
+            #logo {
+                height: 41px;
+            }
+            #burgerMenu {
+                background: #4c9bee;
+                background-color: rgb(76, 155, 238);
+                padding: 9px 9px;
+                cursor: pointer;
+            }
+            .icon-bar {
+                background: #fff;
+                width: 25px;
+                height: 2px;
+                display: block;
+                cursor: pointer;
+            }
+            .icon-bar:nth-child(2) {
+                background: #fff;
+                width: 25px;
+                height: 2px;
+                display: block;
+                margin-top:7px;
+                cursor: pointer;
+            }
+            .icon-bar:nth-child(3) {
+                background: #fff;
+                width: 25px;
+                height: 2px;
+                display: block;
+                margin-top:7px;
+                cursor: pointer;
+            }
+            #login{
+                width: 80px;
+                border: 1px #4c9bee solid;
+                color:#4c9bee;
+                font-size: 13px;
+                margin-left: 15px;
+            }
+            #login:hover{
+               color: white;
+               background-color:#4c9bee;
+            }
+            #trialLink{
+                background: #4c9bee;
+                border: 1px #4c9bee solid;
+                color: #fff;
+                width: 170px;
+                margin-left: 15px;
+                font-size: 13px;
+            }
+            #trialLink:hover{
+                border: 1px #4c9bee solid;
+                background: white;
+                color: #4c9bee;
+                font-family: sans-serif;
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+            #navLinks {
+                margin-left: 5rem !important;
+            }
+            #navLinks li a{
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 700;
+                letter-spacing: 0.08rem;
+                color: #707070;
+                font-size: 16px;
+            } 
+            #navLinks li a:hover{
+               background-color: #4c9bee;
+               color: white;
+               border: 0px #4c9bee solid;
+            } 
+
+            /*Responsiveness*/
+            @media only screen and (max-width: 425px){
+                #createAccount {
+                    width: 385px!important;
+              }
+            }
+            @media only screen and (max-width: 768px){}
+            @media only screen and (max-width: 1024px){}
+            @media only screen and (min-width: 1440px){
+                .mb-lg-0, .my-lg-0 {
+                    margin-left: 0px!important;
+                }
+                #navLinks {
+                    margin-left: 8rem !important;
+                }
+                ul li {
+                    margin: 0px 12px;
+                }
+                #navLinks li a {
+                    font-size: 20px;
+                }
+            }
+
+            @media only screen and (min-width:1920px){
+                .mb-lg-0, .my-lg-0 {
+                    margin-left: 10px!important;
+                }
+                #navLinks {
+                    margin-left: 6rem !important;
+                }
+                ul li {
+                    margin: 0px 10px;
+                }
+                #navLinks li a {
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (min-width: 2560px){
+                .mb-lg-0, .my-lg-0 {
+                    margin-left: 100px!important;
+                }
+            }
+          
+          section h4,p{
+            font-family: 'IBM Plex Sans', sans-serif;
+            padding-top: 10px;
+          }  
+          section p{
+            text-align: center;
+           font-weight: 300;
+           letter-spacing: 1px;
+          }
+          section p:nth-child(2){
+           font-weight: 300;
+           letter-spacing: 1px;
+           margin-top: -10px;
+           width:500px;
+           margin-left: 25px;
+          } 
+          section p:nth-child(3){
+          
+          } 
+          #createAccount {
+            background: #4c9bee;
+                    border: 1px #4c9bee solid;
+                    color: #fff;
+                    width: 555px;
+                    font-size: 13px;
+                    padding: 10px 0;
+          }
+          #createAccount:hover {
+            border: 1px #4c9bee solid;
+                background: white;
+                color: #4c9bee;
+                font-family: sans-serif;
+                font-family: 'IBM Plex Sans', sans-serif;
+          }
+    </Style>
+</head>
+<body>
+    
+    <!-- navigation-->
+    <div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+                <img src="/Template/asset/logo_90kb.png" alt="" id="logo">
+              </a>
+          <button id="burgerMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="icon-bar" ></span>
+                <span class="icon-bar" ></span>
+                <span class="icon-bar" ></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav" id="navLinks">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Benefits</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" id="formStyle">
+                    <button class="btn" type="submit" id="login">LOGIN</button>
+                    <button class="btn" type="submit" id="trialLink">GET FREE VALUATION</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <section class="registrationForm" style="margin-top: 10px;">
+        <div class="card" style="background-color: #0072AE;">
+                <article class="card-body mx-auto" style="max-width:100%; height: 90.5vh;">
+                    <h4 class="card-title mt-3 text-center" style="margin-top: 30px; color: white;">Register and create your business account.</h4>
+                    <p class="text-center" style="color: white;">You're one click away to start managing your early stage ecosystem.</p>
+                    <form>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="ri-user-line"></i>
+                            </i> </span>
+                        </div>
+                        <input name="" class="form-control" placeholder="First Name" type="text">
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="ri-user-line"></i>
+                                </i> </span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Last Name" type="text">
+                        </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="ri-phone-line"></i>
+                            </span>
+                        </div>
+                        <input name="" class="form-control" placeholder="Mobile" type="text">
+                    </div> <!-- form-group// -->     
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ri-mail-line"></i>
+                            </span>
+                        </div>
+                        <input name="" class="form-control" placeholder="Email address" type="email">
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="ri-lock-2-line"></i></span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Password" type="email">
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ri-building-2-line"></i>
+                                </span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Business Name" type="email">
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="ri-global-line"></i></span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Website" type="email">
+                    </div> <!-- form-group// -->
+    
+                    <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="ri-upload-cloud-line"></i>
+                                </span>
+                            </div>
+                            <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                  </div>                
+                                </div> <!-- form-group// -->
+                <div class="form-group">
+                        <button class="btn" type="submit" id="createAccount">CREATE ACCOUNT</button>
+                    </div> <!-- form-group// -->     
+                </form>
+                </article>
+                </div> <!-- card.// -->
+                
+      </section>
+    </div>
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

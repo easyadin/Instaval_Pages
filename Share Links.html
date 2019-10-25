@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Share Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <Style>
+        /* Navigation bar*/
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            box-sizing: border-box;
+        }
+        .fullcontainer {
+            width: 100%;
+            height: 70vh;
+           
+        }
+        .container {
+            width: 100%;
+        }
+        .navbar {
+            background-color: #f3f6f9 ;
+            height: 80px;
+            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+        }
+        .navbar .logo{
+            margin-left: 10%;
+        }
+        .logo {
+            float: left;
+            margin-right: 50px;
+            width: 50px;
+        }
+        .logo a{
+            display: block;
+            padding: 25px 0;
+        }
+        .logo a img{
+            width: 155px;
+            height: 25px;
+            margin-top: 5px;
+        }
+        ul.left {
+            float: left;
+            margin-left: 20%;
+        }
+        ul.right {
+            float: right;
+        }
+        ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+        ul li {
+            display: inline-block;
+        }
+        ul li a {
+            display: block;
+            color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: .5s all ease;
+            font-weight: 500;
+        }
+        ul li a:hover {
+            color: rgb(0, 0, 0);
+        }
+        ul li a i {
+            font-size: small;
+            padding-left: 3px;
+        }
+        .message a i{
+            font-size: small;
+            padding-left: 5px;
+        }
+        .dropdownmenu {
+            letter-spacing: 1.5px;
+        }
+        .dropdownmenu ul{
+            width: 300px;
+            background: #fff;
+            position: absolute;
+            top: 4rem;
+            left: 28rem;
+            padding: 0;
+            border-radius: 5px;
+        }
+        .dropdownmenu ul::before {
+            content: '';
+            position: absolute;
+            top: -1.1rem;
+            left: 14rem;
+            border: 10px solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        .dropdownmenu ul li {
+            display: block;
+            padding: 14px;
+            transition: .2s all ease;
+            border-radius: 5px;
+            border-top:3px solid rgba(10, 100, 211, 0.089); /*use gray like color*/
+        }
+        .dropdownmenu>ul>li>a {
+            display: block;
+            color: #000;
+            margin-left: 80px;
+        }
+        /*Dashboard*/
+        .dropable1 li:nth-child(1) {
+            background: #f3f6f9 url(/Template/asset/png/TotalDealflow.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable1 li:nth-child(2) {
+            background: #f3f6f9 url(/Template/asset/png/bar-chart-grouped-fill.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+       
+        /*Analytics*/
+        .dropable2 li:nth-child(1) {
+            background: #f3f6f9 url(/Template/asset/png/analytics.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable2 li:nth-child(2) {
+            background: #f3f6f9 url(/Template/asset/png/cloud-computing.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable2 li:nth-child(3) {
+            background: #f3f6f9 url(/Template/asset/png/team.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        /*Platform*/
+        .dropable3 li:nth-child(1) {
+            background: #f3f6f9 url(/Template/asset/png/market-fluctuation_valuation.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable3 li:nth-child(2) {
+            background: #f3f6f9 url(/Template/asset/png/tools.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable3 li:nth-child(3) {
+            background: #f3f6f9 url(/Template/asset/png/team.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+
+        /*enterprise*/
+        .dropable4 li:nth-child(1) {
+            background: #f3f6f9 url(/Template/asset/png/settings-5-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable4 li:nth-child(2) {
+            background: #f3f6f9 url(/Template/asset/png/user-settings-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable4 li:nth-child(3) {
+            background: #f3f6f9 url(/Template/asset/png/exit_logout.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+       
+        /* Dashboard */
+         .dropdownmenu ul:nth-child(1) {
+            /* left:35rem; */
+            left: 29.9%;
+        }
+        /* analytics*/
+        .dropdownmenu ul:nth-child(2) {
+            left:42.5rem;
+        }
+        /*Platform*/
+        .dropdownmenu ul:nth-child(3) {
+            left:50rem;
+        }
+        /*Enterprise name or logo*/
+        .dropdownmenu ul:nth-child(4) {
+            left:80rem;
+        }   
+        .dropdownmenu ul li:hover {
+            background-color: #fff;
+            transform:scale(1.05);
+            box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+        }
+        .container .message {
+            clear: both;
+            padding-top: 15rem;
+            margin-left: 10%;
+        }
+        .container .message h2 {
+            font-size: 35px;
+            color: rgb(39, 36, 36);
+            font-weight: bold;
+        }
+        .container .message h2:nth-child(2) {
+            font-size: 30px;
+            color: rgb(39, 36, 36);
+            font-weight: 400;
+        }
+        .container .message a {
+            display: inline-block;
+            text-decoration: none;
+            color: #4C9BEE;
+            text-transform: uppercase;
+            border: 1px solid #4C9BEE;
+            border-radius: 5px;
+            transition: 1s;
+            padding: 10px 15px;
+            margin-top: 1.5rem;
+            margin-right: 1rem;
+        }
+        .container .message a:hover {
+            background-color:#4C9BEE;
+            color:#fff;
+            
+        }
+        .modal .modal-content a{
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            color: #4C9BEE;
+            text-transform: uppercase;
+            border: 1px solid #4C9BEE;
+            border-radius: 5px;
+            transition: 1s;
+            padding: 10px 15px;
+            margin-top: 1;
+            margin-right: 1rem;
+        }
+        .modal .modal-content a:hover {
+            background-color:#4C9BEE;
+            color:#fff;
+        }
+        .InviteModal .Invite-Modal-content a{
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            transition: 1s;
+            padding: 10px 13px;
+            margin-top: 15px;
+            margin-right: 1rem;
+        }
+        .InviteModal .Invite-Modal-content a:hover {
+            background-color:#fff;
+            color:#000;
+        }
+        form{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -250px;
+                width: 500px;
+                height: 200px;
+                border: 4px dashed #fff;
+           
+                }
+                form p{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 170px;
+                color: #ffffff;
+                font-family: Arial;
+                }
+                form input{
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                outline: none;
+                opacity: 0;
+                cursor: pointer;
+                }
+                form button{
+                margin: 0;
+                color: #fff;
+                background: #16a085;
+                border: none;
+                width: 508px;
+                height: 35px;
+                margin-top: -20px;
+                margin-left: -4px;
+                border-radius: 4px;
+                border-bottom: 4px solid #117A60;
+                transition: all .2s ease;
+                outline: none;
+                }
+                form button:hover{
+                background: #149174;
+                    color: #0C5645;
+                }
+                form button:active{
+                border:0;
+                }
+
+
+        /*footer*/ 
+        footer {
+                margin-top: 150px;
+                text-align: center;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 0.05em;
+            }
+            footer .social_Links {
+                display: flex;
+                justify-content: center;
+            }
+            footer .social_Links a {
+               text-decoration: underline;
+               margin: 1px;
+               margin-top: 13px;
+               margin-bottom: 20px;
+               color: #333;
+            }
+            footer .social_Links span{
+               text-decoration: underline;
+               margin: 1px;
+               margin-top: 13px;
+               margin-bottom: 20px; 
+            }
+            .openMenu {
+                display: none;
+            }
+            .closeMenu {
+                display: none;
+            }
+             /*post input imput*/
+              input[type=text] {
+                     width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    box-sizing: border-box;
+                    border: none;
+                    border-bottom: 2px solid #4C9BEE;
+                    } 
+                    .modal {
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: scale(1.1);
+                        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+                    }
+                        .modal-content {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: white;
+                            padding: 1rem 1.5rem;
+                            width: 24rem;
+                            border-radius: 0.5rem;
+                        }
+                        .close-button {
+                            float: right;
+                            width: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: center;
+                            cursor: pointer;
+                            border-radius: 0.25rem;
+                            background-color: #4C9BEE;
+                            color: rgb(255, 255, 255);
+                        }
+                        .close-button:hover {
+                            color: rgb(255, 255, 255);
+                        }
+                        .show-modal {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: scale(1.0);
+                            transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+                        }
+                         .InviteModal {
+                            position: fixed;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: scale(1.1);
+                            transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+                        }
+                       
+                        .Invite-Modal-content {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                         
+                            padding: 1rem 1.5rem;
+                            width: 24rem;
+                            border-radius: 0.5rem;
+                        }
+                        .Inviteclose-button {
+                            float: right;
+                            width: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: center;
+                            cursor: pointer;
+                            border-radius: 0.25rem;
+                            background-color: #4C9BEE;
+                            color: rgb(255, 255, 255);
+                        }
+                        .Inviteclose-button:hover {
+                            color: rgb(255, 255, 255);
+                        }
+                        .show-InviteModal {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: scale(1.0);
+                            transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+                        }                            
+            /*Responsiveness*/
+            /*Phones*/
+            @media only screen and (max-width: 425px){
+                /*nav bg*/
+                ul.left {
+                    margin-top: 18px;
+                    background-color: transparent!important;
+                    color: #fff!important;
+                    -webkit-animation: slide 0.3s forwards;
+                    -webkit-animation-delay: .2s;
+                    animation: slide 0.1s forwards;
+                    animation-delay: .2s;
+                }
+                @-webkit-keyframes slide {
+                    100% { 
+                         background-color: #f3f6f9 ;
+                         color: #fff!important;
+                         }
+                     70% { 
+                         background-color: #4C9BEE ;
+                         color: #fff!important;
+                         }
+                }
+                @keyframes slide {
+                    70% {
+                        background-color: #4C9BEE;
+                    }
+                }
+                @keyframes slide {
+                    100% {
+                        background-color: #f3f6f9 ;
+                        color: #fff!important;
+                    }
+                }
+                .dropdownmenu>ul>li>a {
+                    margin-left: 30px!important;
+                    padding-right: 20px;
+                }
+                ul li a {
+                    font-size: 15px!important;
+                }
+                .openMenu img {
+                    margin-top: 7%!important;
+                }
+                .closeMenu img {
+                    margin-top: 7%!important;
+                }
+                .dropdownmenu ul::before {
+                    border: 0px solid !important;
+                }
+                .dropdownmenu ul {
+                    width: 211px!important;
+                }
+                .dropable1 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable1 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable1 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable1 li:nth-child(4) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+
+                .dropable2 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable2 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable3 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable3 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable3 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable4 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable4 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+                .dropable4 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                }
+
+                /*body text*/
+                .container .message {
+                    padding-top: 15rem!important;
+                }
+                .container .message h2:nth-child(1) {
+                    margin-top: -80px!important;
+                    font-size: 20px!important;
+                }
+                .container .message h2:nth-child(2) {
+                    margin-top: 2!important;
+                    font-size: 20px!important;
+                }
+                .container .message a {
+                    padding:10px 10px 10px 10px!important;
+                }
+            }
+            @media only screen and (max-width: 768px){
+                .dropdownmenu ul::before {
+                    border: 0px solid;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 50.9%!important;
+                }
+  /*nav bg*/
+  ul.left {
+                    margin-top: 18px;
+                    background-color: transparent!important;
+                    color: #fff!important;
+                    -webkit-animation: slide 0.3s forwards;
+                    -webkit-animation-delay: .2s;
+                    animation: slide 0.1s forwards;
+                    animation-delay: .2s;
+                }
+                @-webkit-keyframes slide {
+                    100% { 
+                         background-color: #f3f6f9 ;
+                         color: #fff!important;
+                         }
+                     70% { 
+                         background-color: #4C9BEE ;
+                         color: #fff!important;
+                         }
+                }
+
+                @keyframes slide {
+                    70% {
+                        background-color: #4C9BEE;
+                    }
+                }
+                @keyframes slide {
+                    100% {
+                        background-color: #f3f6f9 ;
+                        color: #fff!important;
+                    }
+                }
+
+            }
+            @media only screen and (max-width: 991px){
+                /* Fix menu for mobile*/
+                .openMenu {
+                    display:contents;
+                }
+                .openMenu img{
+                    position: absolute;
+                    right: 0;
+                    margin-right: 10%;
+                    margin-top: 4%;
+                    cursor: pointer;
+                }
+                .closeMenu img{
+                    position: absolute;
+                    right: 0;
+                    margin-right: 10%;
+                    margin-top: 4%;
+                    cursor: pointer;
+                }
+                ul.left {
+                     display: none;
+                     position: absolute;
+                     top: 70px;
+                 }
+                ul li a {
+                    font-size: 10px;
+                }
+                ul.left li{
+                    display: flex;
+                    flex-direction: column;
+                 }
+                  /*Drop down menu*/
+                .dropdownmenu ul {
+                    width:300px;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul::before {
+                    content: '';
+                    position: absolute;
+                    top: 1.1rem;
+                    left: 14rem;
+                }
+                 .container .message {
+                     margin-left:0;
+                 }
+                 .container .message h2:nth-child(1){
+                     width: 90%;
+                     margin-top: 50px;
+                     font-size: 25px;
+                 }
+                 .container .message h2:nth-child(2){
+                     width: 80%;
+                     margin-top: 10px;
+                     font-size: 25px;
+                 }
+                .container .message {
+                    clear: both;
+                    padding-top: 21rem;
+                    margin-left: 10%;
+                }
+               
+               /* footer*/
+                footer {
+                margin-top: 20%;
+                }
+            }
+            /*smaller screens*/
+            /*Ask mr Khakan why this width doest respond*/
+            @media only screen and (max-width: 425px){
+                .openMenu img {
+                    margin-bottom: 8%;
+                }
+            }
+            /*laptop */
+            @media only screen and (max-width: 1024px) {
+                .navbar .logo {
+                    margin-left: 3%;
+                }
+                ul{
+                    padding-top: 25px;
+                }
+                ul.left {
+                
+                    margin-left: 0%; 
+                    padding-left: 8%;
+                }
+                ul li a {
+                    font-size: 16px;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 7.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 12rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 19rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 46.5rem;
+                }
+                
+            }
+          /*larger  screens */
+            @media only screen and (min-width: 1440px){
+                .navbar .logo {
+                        margin-left: 10%;
+                    }
+                ul.left {
+                    float: left;
+                    margin-left: 13%;
+                }
+                ul li {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 22.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 29rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 37rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 71.5rem;
+                }
+            }
+             /*Extremely large screens*/
+            @media only screen and (min-width:1920px){
+                .dropdownmenu ul:nth-child(1) {
+                    left: 22.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 36rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 44.5rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left:78.5rem;
+                }
+            }
+             /*Extremely large screens*/
+             @media only screen and (min-width: 2560px){
+                .dropdownmenu ul:nth-child(1) {
+                    left: 22.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 45rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 54rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 87.5rem;
+                }
+            }
+    </Style>
+</head>
+<body>
+    <div class="fullcontainer">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#"><img src="/Template/asset/Instaval_logo.png"></a>
+                </div>
+                <!-- burger menu-->
+                <div class="openMenu">
+                    <img class="open" src="/Template/asset/png/menu-fill.png">
+                </div>
+                <div class="closeMenu">
+                    <img class="close" src="/Template/asset/png/close-circle-fill.png">
+                </div>
+                <ul class="left">
+                    <!-- Dashboard-->
+                    <li><a href="#" class="dropmenu1">Dashboard<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Analytics-->
+                    <li><a href="#" class="dropmenu2">Analytics<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Platform-->
+                    <li><a href="#" class="dropmenu3">Platform<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Startups-->
+                    <li><a href="#">Startups</a></li>
+                    <!-- Investors-->
+                    <li><a href="#">Investors</a></li>
+                    <!-- Enterprise Name or Logo-->
+                    <li><a href="#" class="dropmenu4">{Enterprise Name or Logo}<i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+               
+                <!-- dropdown menu-->
+                <div class="dropdownmenu">
+                    <!-- Dashboard-->
+                    <ul class="dropable1"style="display:none;">
+                        <li> <a href="#">Dealflow Data</a> </li> 
+                        <li><a href="#">Benchmarking</a></li> 
+                    </ul>
+                    <!-- Analytics Droppable-->
+                    <ul class="dropable2"  style="display: none;">
+                            <li><a href="#">Visuals</a></li> 
+                            <li><a href="#">Download Data</a></li> 
+                    </ul>
+                     <!--  Platform-->
+                     <ul class="dropable3"  style="display: none;">
+                            <li><a href="#">Valuation</a></li> 
+                            <li><a href="#">Tools</a></li> 
+                            <li><a href="#">Services</a></li> 
+                    </ul>
+                     <!--  Enterprise name or logo-->
+                     <ul class="dropable4"  style="display: none;">
+                            <li><a href="#">Settings</a></li> 
+                            <li><a href="#">Administration</a></li> 
+                            <!-- add a button here-->
+                            <li><a href="#">Logout</a></li> 
+                    </ul>
+                </div>
+            </nav>
+            <!-- line-->
+            <div class="baseline"></div>
+            <!-- body message-->
+            <div class="message">
+                <h2> You're one click away to get your pipeline on-board!</h2>
+                <h2> Please choose how you'd want to have them over.</h2>
+                 <a href="#">Copy Link <i class="far fa-clone"></i></a>
+                 <a href="#" class="PostTrigger">Post Link<i class="fas fa-paper-plane"></i> </a>
+                 <a href="#" class="shareTrigger">Invite <i class="fas fa-share-alt"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- modal for post link-->
+    <div class="modal">
+            <div class="modal-content">
+                <div class="close-button">X</div>
+                <label for="postInput">Insert Link</label>
+                 <input type="text" id="postInput" name="postInput">
+                 <a href="#">SEND</a>
+            </div>
+    </div>
+
+
+    <!-- modal for invite | Upload CSV -->
+    <div class="InviteModal">
+        <div class="Invite-Modal-content" >
+            <form action="#" method="#">
+                <input type="file" multiple>
+                <p>Drag your files here or click in this area.</p>
+                <a href="#">UPLOAD</a>
+            </form>
+        </div>
+    </div>
+    <!-- footer-->
+
+    <footer>
+        <p>©2019 Instaval</p>
+        <p>Made with Science & Passion</p>
+
+        <div class="social_Links">
+                <a href="https://www.linkedin.com/company/instaval/"><p>Linkedin </p> </a>
+                <span>|</span>
+                <a href="https://twitter.com/InstaValuation"><p>Twitter </p> </a>
+                <span>|</span>
+                <a href="https://www.facebook.com/instavaluation"><p>Facebook </p> </a>
+        </div>
+
+</footer>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+         $(document).ready(function(){
+
+              // on hover navigation
+              $('.dropmenu1').hover(function(){
+                 $('ul.dropable1').show();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu2').hover(function(){
+                 $('ul.dropable2').show();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu3').hover(function(){
+                 $('ul.dropable3').show();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu4').hover(function(){
+                 $('ul.dropable4').show();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu5').hover(function(){
+                 $('ul.dropable5').show();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable1').hide();
+             });
+             // also check onmouseleave on dropables
+             $('ul.dropable1').mouseleave(function(){
+                 $('ul.dropable1').hide();
+             });
+             $('ul.dropable2').mouseleave(function(){
+                 $('ul.dropable2').hide();
+             });
+             $('ul.dropable3').mouseleave(function(){
+                 $('ul.dropable3').hide();
+             });
+             $('ul.dropable4').mouseleave(function(){
+                 $('ul.dropable4').hide();
+             });
+             $('ul.dropable5').mouseleave(function(){
+                 $('ul.dropable5').hide();
+             });
+
+
+
+              // menu open on mobile
+                
+                if(window.screen.width < 991){
+                    //show close button onclick of open
+                    $('.open').click(function(){
+                        $('.open').hide();
+                        $('.closeMenu').show();
+                        $('.close').show();
+
+                        //display the menu items
+                        $('ul.left').show();
+
+                    });
+                }
+                //show open button onclick of close
+                $('.close').click(function(){
+                    $('.close').hide();
+                    $('.open').show();
+                    $('.openMenu').show();
+                    $('ul.left').hide();
+                    $('ul.dropable4').hide();
+                    $('ul.dropable3').hide();
+                    $('ul.dropable2').hide();
+                    $('ul.dropable1').hide();
+                });
+
+                //upload file
+                $('form input').change(function () {
+                $('form p').text(this.files.length + " file(s) selected");
+                });
+ });
+
+//post modal trigger
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".PostTrigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+// clickaway---- fix later
+    var generalClickAway = document.querySelector('.fullcontainer');
+    generalClickAway.addEventListener('click',windowOnClick);
+//-=------
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+    if (event.target === Invitemodal) {
+        toggleInviteModal();
+    }
+
+}
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+
+        // share modal trigger
+        var Invitemodal = document.querySelector(".InviteModal");
+        var shareModalTrigger = document.querySelector(".shareTrigger");
+        var closeShareButton = document.querySelector(".Inviteclose-button");
+
+        function toggleInviteModal() {
+            Invitemodal.classList.toggle("show-InviteModal");
+        }    
+        shareModalTrigger.addEventListener("click", toggleInviteModal);
+        closeShareButton.addEventListener("click", toggleInviteModal);
+
+    </script>
+</body>
+</html>
