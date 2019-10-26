@@ -256,7 +256,7 @@
 
             /** form style***/
         .form-container {
-            margin: 40px 237px;
+            margin: 40px 230px!important;
             transition: .7;
         }
         .title-header {
@@ -323,8 +323,6 @@
          .form-header a:hover {
             background-color: rgba(1, 116, 174, 0.424);
          }
-
-
          .white-color {
              color: #fff;
          }
@@ -337,6 +335,78 @@
          .filter-img {
             filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
          }
+
+         /** form body content****/
+         .main-form {
+             margin-top: 20px;
+             background-color: rgba(1, 116, 174, .02);
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             padding-top: 20px;
+         }
+         .main-container {
+             display: flex;
+             justify-content:center;
+             justify-content: space-around;
+             align-content: center;
+         }
+         .input-holder {
+             margin-bottom: 30px;
+         }
+         .input-holder h1{
+            margin-bottom: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0173AE;
+         }
+         .input-holder input, textarea{
+             display: block;
+             width: 650px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .input-holder input:focus{
+            font-size: 22px;
+         }
+         .market-structure{
+             display: flex;
+             justify-content: left;
+             justify-items: left;
+             align-content: left;
+             align-items: center;
+         }
+         .market-structure input{
+            width: 460px;
+            padding-left: 10px;
+            margin-bottom: 20px;
+         }
+         .h1-text {
+             font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 34px!important;
+         }
+         .h1-text2 {
+            font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 45px!important;
+         }
+         .h1-text3 {
+             font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 40px!important;
+         }
+        
+
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
                 .mobile-nav-dashboard {
@@ -464,6 +534,80 @@
             <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamental-img" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);" src="../Template/Icons v3/Fundamentals (2).svg"><h1 class="fundamental-text" style="color: #fff!important;">Fundamentals</h1></div></a>
             <a id="financial-btn" href="#"><div class="title" id="financial-div"><img id="financial-img" src="../Template/Icons v3/Financials (2).svg"><h1 class="financial-text">Financials</h1></div></a>
             <a id="transaction-btn" href="#"><div class="title" id="transaction-div"><img id="transaction-img" src="../Template/Icons v3/Transaction.svg"><h1 class="transaction-text">Transactions</h1></div></a>
+        </div>
+
+        <!-- form body content-->
+        <div class="main-form">
+            <form>
+               <div class="main-container">
+                    <div class="horizontal-wrapper">
+                        <div class="input-holder">
+                            <h1>Business Type</h1>
+                            <input type="text" placeholder=" e.g Sole Proprietorship">
+                        </div>
+                        <div class="input-holder">
+                                <h1>Country</h1>
+                                <input type="text" placeholder="United Arab Emirate">
+                        </div>
+                        <div class="input-holder">
+                                <h1> Lifecycle</h1>
+                                <input type="text">
+                        </div>   
+                        <div class="input-holder">
+                            <h1>Start Year</h1>
+                            <input type="text">
+                        </div>
+                        <div class="input-holder">
+                                <h1>Business Model</h1>
+                                <input type="text">
+                        </div>
+                        <div class="input-holder">
+                                <h1>Value Proposition</h1>
+                                <textarea placeholder=""></textarea>
+                        </div>                        
+                    </div>
+
+                    <div class="horizontal-wrapper">
+                            <div class="input-holder">
+                                <h1>Revenue Status</h1>
+                                <input type="text" placeholder=" e.g Sole Proprietorship">
+                            </div>
+                            <div class="input-holder">
+                                <h1>Industry</h1>
+                                <input type="text" placeholder="United Arab Emirate">
+                            </div>
+                            <div class="input-holder">
+                                <h1> Tags</h1>
+                                <input type="text">
+                            </div>   
+                            <div class="input-holder">
+                                <h1>Headcount</h1>
+                                <input type="text">
+                            </div>
+                            <div class="input-holder">
+                                <h1>Competition</h1>
+                                <input type="text">
+                            </div>
+                            <div class="input-holder">
+                                <h1>Market Stucture</h1>
+                                <div>
+                                    <div class="market-structure"><h1 class="h1-text">Market Size in Volume</h1> <input type="text"></div>
+                                    <div class="market-structure"><h1 class="h1-text2">Market Size in Value</h1> <input type="text"></div>
+                                    <div class="market-structure"><h1 class="h1-text3">Competitors website</h1> <input type="text"></div>
+                                </div>
+                            </div>                        
+                        </div>
+               </div>
+
+
+
+
+                <!-- Team -->
+                 <div class="">
+                    <h1>Team</h1>
+                    <input type="text">
+                </div>
+            </form>
         </div>
     </div>   
 
@@ -742,7 +886,7 @@
 
                     transaction.style.backgroundColor = "#fff";
                     transaction.style.transition ="1s";
-                    document.getElementById("transation-img").style.filter = "";
+                    document.getElementById("transaction-img").style.filter = "";
                     document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
                 }
 
