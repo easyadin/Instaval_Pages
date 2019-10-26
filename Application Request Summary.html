@@ -469,7 +469,7 @@
              border: 1.5px solid #0173AE;
              background-color: #fff;
              border-radius: 7px;
-             transition: 1s;
+             transition: 0.3s;
          }
          .button-container button div{
              display: flex;
@@ -484,13 +484,13 @@
             width: auto;
             filter: invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%);
             margin-right: 20px;
-            transition: 1s;
+         }
+         .button-container img :hover{
+            filter: none!important;
          }
 
          .button-container button :hover{
-             background-color: #0173AE;
              cursor: pointer;
-             color: #fff;
          }
 
 
@@ -715,8 +715,8 @@
 
                 <!-- Buttons -->
                <div class="button-container">
-                    <button id="request-btn"  type="button"><div><img src="Icons v3/Request.svg"><span>Request</span></div></button>
-                    <button id="approve-btn"  type="button"><div><img src="Icons v3/Approve.svg" alt=""><span>Approve</span></div></button>
+                    <button id="request-btn"  type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
+                    <button id="approve-btn"  type="button"><div><img id="approve_img" src="Icons v3/Approve.svg"><span id="approve_text">Approve</span></div></button>
                </div>
             </form>
         </div>
@@ -1043,15 +1043,56 @@
 
 
 
-    //application request buttons
-    //fundamental
-    var request_button = document.getElementById('request-btn');
-    var approve_button = document.getElementById("approve-btn");
+                //application request buttons
+                //fundamental
+                //request hover function
+                $("#request-btn").hover(function(){
+                    $("#request_img").css({'filter':`   
+                                            invert(100%) 
+                                            sepia(100%) 
+                                            saturate(16%)
+                                            hue-rotate(226deg) 
+                                            brightness(103%) 
+                                            contrast(106%)`
+                                            });
+                    $("#request_text").css({'color':'#fff'});
+                    $("#request_text").css({'display':'none'});
+                    $("#request-btn").css({'background-color':'#0173AE'});
+                });
+                //request mouseleave
+                $("#request-btn").mouseleave(function(){
+                    $("#request_img").css({'filter':`   
+                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
+                                            });
+                    $("#request_text").css({'color':'#0173AE'});
+                    $("#request_text").css({'display':''});
+                    $("#request-btn").css({'background-color':'#fff'});
+                });
 
-  
-
- });
-
+                //approve hover function
+                $("#approve-btn").hover(function(){
+                    $("#approve_img").css({'filter':`   
+                                            invert(100%) 
+                                            sepia(100%) 
+                                            saturate(16%)
+                                            hue-rotate(226deg) 
+                                            brightness(103%) 
+                                            contrast(106%)`
+                                            });
+                    $("#approve_text").css({'color':'#fff'});
+                    $("#approve_text").css({'display':'none'});
+                    $("#approve-btn").css({'background-color':'#0173AE'});
+                });
+                //mouseleave
+                $("#approve-btn").mouseleave(function(){
+                    $("#approve_img").css({'filter':`   
+                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
+                                            });
+                    $("#approve_text").css({'color':'#0173AE'});
+                    $("#approve_text").css({'display':''});
+                    $("#approve-btn").css({'background-color':'#fff'});
+                });
+});
 
             
           
