@@ -125,12 +125,6 @@
                 margin-right: 55px;
                 margin-top: 65px;
             }
-            .dropDownMenu1 {
-                position: absolute;
-                left: 0;
-                margin-left: 299px;
-                margin-top: 65px;
-            }
             .dropDownMenu2 {
                 position: absolute;
                 left: 0;
@@ -143,20 +137,7 @@
                 margin-left: 565px;
                 margin-top: 65px;
             }
-            .dropDownMenu4 {
-                position: absolute;
-                left: 0;
-                margin-left: 365px;
-                margin-top: 65px;
-                margin-left: 695px;
-            }
-            .dropDownMenu5 {
-                position: absolute;
-                left: 0;
-                margin-left: 820px;
-                margin-top: 65px;
-            }
-            .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
+            .dropDownMenu, .dropDownMenu3 {
                 display: none;
                 flex-direction: column;
                 justify-content: center;
@@ -187,11 +168,11 @@
             a{
                 text-decoration: none;
             }
-            .nav-container a:hover{
+            .nav-container .middle-nav a:hover{
                 background-color: rgba(214, 210, 210, 81.239);
                 border-color: rgb(104, 88, 88);
-                padding-top: 10px;
-                padding-bottom: 10px;
+                /* padding-top: 10px;
+                padding-bottom: 10px; */
                 border-radius: 5px;
                 font-size: 10px;
                 transition: 0.3s;
@@ -203,7 +184,23 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                /* padding-top: 20px;
+                padding-bottom: 20px; */
+                transition: .2s;
+                height: auto!important;
             }
+            .dropDownMenu a div,.dropDownMenu2 a div,.dropDownMenu3 a div {
+                padding-top: 14px;
+                padding-bottom: 14px;
+            }
+            /**drop down effect for menu items**/
+            .dropDownMenu a div:hover, .dropDownMenu2 a div:hover, .dropDownMenu3 a div:hover {
+                transform:scale(1.05)!important;
+                box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+                background-color: #fff;
+            }
+         
+          
             .format-text{
                 font-size: 16px!important;
                 color: rgb(91, 95, 112)!important;
@@ -585,7 +582,7 @@
                     <div class="middle-nav anim">
                             <a href="#" class="dashboard-btn"><h1>Dashboard</h1></a>
                             <a href="#" class="analytics-btn"><h1>Analytics</h1></a>
-                            <a href="#"class="platform-btn"><h1 >Platform</h1></a>
+                            <a href="#"class="platform-btn"><h1>Platform</h1></a>
                     </div>
                     <div class="right-nav anim">
                         <img class="dropper" src="asset/DIFC_logo.png" style="height: 22px;"></a>
@@ -594,9 +591,9 @@
                     </div>
                     <!-- Dropdown menu company logo / name -->
                     <div class="dropDownMenu">
-                                <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
-                                <a href="#"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
-                                <a href="#"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
+                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
+                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
+                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
                     </div>
                     <div class="dropDownMenu2">
                                 <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img class="convert-to-black" src="asset/png/TotalDealflow.png"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
