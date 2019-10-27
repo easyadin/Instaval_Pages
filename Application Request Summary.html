@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Investor Dashboard</title>
+    <title>Application Request Summary</title>
     <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
@@ -440,6 +440,26 @@
              font-weight: 400!important;
              padding-right: 30px!important;
          }
+         .t-h1-text {
+             font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 81px!important;
+         }
+         .t-h1-text2 {
+            font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 68px!important;
+         }
+         .t-h1-text3 {
+             font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 81px!important;
+         }
+         .t-h1-text4 {
+             font-size: 14px!important;
+             font-weight: 400!important;
+             padding-right: 30px!important;
+         }
         
         /** Team ***/
          .Team-section {
@@ -753,7 +773,7 @@
                </div>
             </form>
 
-              <!-- form body content for financials-->
+            <!-- form body content for financials-->
             <form class="financials-form" style="display: none;">
                     <div class="main-container">
                          <div class="horizontal-wrapper">
@@ -916,7 +936,7 @@
                                     </div>
                                  </div>   
                                  <div class="input-holder">
-                                     <h1>Liquity</h1>
+                                     <h1>Liquidity</h1>
                                      <div>
                                         <div class="market-structure"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
                                         <div class="market-structure"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
@@ -930,6 +950,80 @@
                     <div class="button-container">
                          <button id="financial-request-btn"  type="button"><div><img id="fin-request_img" src="Icons v3/Request.svg"><span id="fin-request_text">Request</span></div></button>
                          <button id="financial-approve-btn"  type="button"><div><img id="fin-approve_img" src="Icons v3/Approve.svg"><span id="fin-approve_text">Approve</span></div></button>
+                    </div>
+            </form>
+
+
+
+
+
+            <!-- form body content for transaction-->
+            <form class="transaction-form" style="display: none;">
+                    <div class="main-container">
+                         <div class="horizontal-wrapper">
+                            <div class="input-holder">
+                                <h1>Valuation Purpose</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Equity Control</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Funding Structure</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Invested Capital</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Funding</h1>
+                                <input type="text">
+                            </div> 
+                            <div class="input-holder">
+                                <h1>Use of Funds</h1>
+                                <div>
+                                    <div class="market-structure"><h1 class="t-h1-text">Product</h1> <input type="text"></div>
+                                    <div class="market-structure"><h1 class="t-h1-text2">Marketing</h1> <input type="text"></div>
+                                    <div class="market-structure"><h1 class="t-h1-text3">Staffing</h1> <input type="text"></div>
+                                    <div class="market-structure"><h1 class="t-h1-text4">Working Capital</h1> <input type="text"></div>
+                                </div>
+                            </div>                   
+                         </div>
+                         <div class="horizontal-wrapper">
+                            <div class="input-holder">
+                                <h1>Funding History</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Last Funding Round</h1>
+                                <input type="text">
+                            </div> 
+                            <div class="input-holder">
+                                <h1>Last Funding Year</h1>
+                                <input type="text">
+                            </div> 
+                             <div class="input-holder">
+                                <h1>Last Funding Amount</h1>
+                                <input type="text">
+                            </div> 
+                            
+                                 <div class="input-holder">
+                                     <h1>Cap table</h1>
+                                     <div>
+                                        <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
+                                        <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
+                                        <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
+                                    </div>
+                                 </div>                        
+                         </div>
+                    </div>
+                     <!--transaction Buttons -->
+                    <div class="button-container">
+                         <button id="transaction-request-btn"  type="button"><div><img id="trac-request_img" src="Icons v3/Request.svg"><span id="trac-request_text">Request</span></div></button>
+                         <button id="transaction-approve-btn"  type="button"><div><img id="trac-approve_img" src="Icons v3/Approve.svg"><span id="trac-approve_text">Approve</span></div></button>
+                         <button id="transaction-reject-btn"  type="button"><div><img id="trac-reject_img" src="Icons v3/Reject 2.svg"><span id="trac-reject_text">Reject</span></div></button>
                     </div>
                  </form>
         </div>
@@ -1375,6 +1469,84 @@
                     $("#financial-approve-btn").css({'background-color':'#fff'});
                 });
 
+
+
+                 //Transaction
+                //request hover function
+                $("#transaction-request-btn").hover(function(){
+                    $("#trac-request_img").css({'filter':`   
+                                            invert(100%) 
+                                            sepia(100%) 
+                                            saturate(16%)
+                                            hue-rotate(226deg) 
+                                            brightness(103%) 
+                                            contrast(106%)`
+                                            });
+                    $("#trac-request_text").css({'color':'#fff'});
+                    $("#trac-request_text").css({'display':'none'});
+                    $("#transaction-request-btn").css({'background-color':'#0173AE'});
+                });
+                //request mouseleave
+                $("#transaction-request-btn").mouseleave(function(){
+                    $("#trac-request_img").css({'filter':`   
+                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
+                                            });
+                    $("#trac-request_text").css({'color':'#0173AE'});
+                    $("#trac-request_text").css({'display':''});
+                    $("#transaction-request-btn").css({'background-color':'#fff'});
+                });
+
+
+                //approve hover function
+                $("#transaction-approve-btn").hover(function(){
+                    $("#trac-approve_img").css({'filter':`   
+                                            invert(100%) 
+                                            sepia(100%) 
+                                            saturate(16%)
+                                            hue-rotate(226deg) 
+                                            brightness(103%) 
+                                            contrast(106%)`
+                                            });
+                    $("#trac-approve_text").css({'color':'#fff'});
+                    $("#trac-approve_text").css({'display':'none'});
+                    $("#transaction-approve-btn").css({'background-color':'#0173AE'});
+                });
+                // approve mouseleave
+                $("#transaction-approve-btn").mouseleave(function(){
+                    $("#trac-approve_img").css({'filter':`   
+                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
+                                            });
+                    $("#trac-approve_text").css({'color':'#0173AE'});
+                    $("#trac-approve_text").css({'display':''});
+                    $("#transaction-approve-btn").css({'background-color':'#fff'});
+                   
+                });
+
+
+                //reject hover function
+                $("#transaction-reject-btn").hover(function(){
+                    $("#trac-reject_img").css({'filter':`   
+                                            invert(100%) 
+                                            sepia(100%) 
+                                            saturate(16%)
+                                            hue-rotate(226deg) 
+                                            brightness(103%) 
+                                            contrast(106%)`
+                                            });
+                    $("#trac-reject_text").css({'color':'#fff'});
+                    $("#trac-reject_text").css({'display':'none'});
+                    $("#transaction-reject-btn").css({'background-color':'#0173AE'});
+                });
+
+                // reject mouseleave
+                $("#transaction-reject-btn").mouseleave(function(){
+                    $("#trac-reject_img").css({'filter':`   
+                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
+                                            });
+                    $("#trac-reject_text").css({'color':'#0173AE'});
+                    $("#trac-reject_text").css({'display':''});
+                    $("#transaction-reject-btn").css({'background-color':'#fff'});
+                });
 
 
 });
