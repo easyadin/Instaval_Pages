@@ -15,7 +15,6 @@
 
         <Style>
             @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
-
             *{
                 padding: 0;
                 margin: 0;
@@ -250,7 +249,6 @@
                 box-shadow: 6px 6px 29px #aaaaaa7a;
                 transition: 1s;
             }
-
             /** form style***/
         .form-container {
             margin: 40px 230px!important;
@@ -316,7 +314,6 @@
             background-color: #0173AE;
             transition: .7;
          }
-
          /**onclick form section titles**/
          .form-header a:hover {
             background-color: rgba(1, 116, 174, 0.424);
@@ -333,7 +330,6 @@
          .filter-img {
             filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
          }
-
          /** form body content****/
          .main-form {
              margin-top: 20px;
@@ -505,7 +501,6 @@
          .team-section-details-container input:focus{
             font-size: 22px;
          }
-
          /***buttons**/
          .button-container {
             margin-top: 10px;
@@ -540,12 +535,9 @@
          .button-container img :hover{
             filter: none!important;
          }
-
          .button-container button :hover{
              cursor: pointer;
          }
-
-
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
                 .mobile-nav-dashboard {
@@ -1050,7 +1042,6 @@
                 $(".right-nav").click(function(){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !false;//turn true
-
                         if(dropDownisShow1 === true){
                         $(".dropDownMenu1").toggleClass("showDropDownMenu1");
                         dropDownisShow1 = !true;//turn false
@@ -1076,7 +1067,6 @@
                 $(".dashboard-btn").click(function(){
                         $(".dropDownMenu1").toggleClass("showDropDownMenu1");
                         dropDownisShow1 = !false;//turn true
-
                         if(dropDownisShow === true){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !true;//turn false
@@ -1105,7 +1095,6 @@
                 $(".analytics-btn").click(function(){
                         $(".dropDownMenu2").toggleClass("showDropDownMenu1");
                         dropDownisShow2 = !false;//turn true
-
                         if(dropDownisShow === true){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !true;//turn false
@@ -1130,7 +1119,6 @@
                 $(".platform-btn").click(function(){
                         $(".dropDownMenu3").toggleClass("showDropDownMenu");
                         dropDownisShow3 = !false;//turn true
-
                         if(dropDownisShow === true){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !true;//turn false
@@ -1155,7 +1143,6 @@
                 $(".startups-btn").click(function(){
                         $(".dropDownMenu4").toggleClass("showDropDownMenu");
                         dropDownisShow4 = !false;//turn true
-
                         if(dropDownisShow === true){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !true;//turn false
@@ -1181,7 +1168,6 @@
                 $(".investors-btn").click(function(){
                         $(".dropDownMenu5").toggleClass("showDropDownMenu");
                         dropDownisShow5 = !false;//turn true
-
                         if(dropDownisShow === true){
                         $(".dropDownMenu").toggleClass("showDropDownMenu");
                         dropDownisShow = !true;//turn false
@@ -1289,7 +1275,6 @@
                         dropDownisShow5 = !dropDownisShow5;//turn false
                     }
                 });
-
                 //form onclick reveal and hide
                 var fundamental = document.getElementById('fundamental-btn');
                 var financial = document.getElementById('financial-btn');
@@ -1307,20 +1292,17 @@
                     document.getElementById("financial-img").style.filter = "";
                     document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
                 
-
                     transaction.style.backgroundColor = "#fff";
                     transaction.style.transition ="1s";
                     document.getElementById("transaction-img").style.filter = "";
                     document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
                     
-
                  // show form body content
                  $('.fundamentals-form').show();   
                  // hide form body content for financials and transaction
                  $('.financials-form').hide();     
                  $('.transaction-form').hide(); 
                 }
-
                 financial.onclick = function (){
                     //change indicator properties
                     financial.style.backgroundColor = "#0173AE";
@@ -1333,19 +1315,16 @@
                     document.getElementById("fundamental-img").style.filter = "";
                     document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
                 
-
                     transaction.style.backgroundColor = "#fff";
                     transaction.style.transition ="1s";
                     document.getElementById("transaction-img").style.filter = "";
                     document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
-
                 // show form body content
                  $('.financials-form').show();     
                 // hide form body content for fundamentals and transaction
                  $('.fundamentals-form').hide();   
                  $('.transaction-form').hide(); 
                 }
-
                 transaction.onclick = function (){
                     //change indicator properties
                     transaction.style.backgroundColor = "#0173AE";
@@ -1358,22 +1337,17 @@
                     document.getElementById("fundamental-img").style.filter = "";
                     document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
                 
-
                     financial.style.backgroundColor = "#fff";
                     financial.style.transition ="1s";
                     document.getElementById("financial-img").style.filter = "";
                     document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
                 
-
                   // show form body content
                  $('.transaction-form').show();   
                  // hide form body content for financials and transaction
                  $('.financials-form').hide();     
                  $('.fundamentals-form').hide(); 
                 }
-
-
-
                 //application request buttons
                 //fundamental
                 //request hover function
@@ -1399,7 +1373,6 @@
                     $("#request_text").css({'display':''});
                     $("#fundamentals-request-btn").css({'background-color':'#fff'});
                 });
-
                 //approve hover function
                 $("#fundamentals-approve-btn").hover(function(){
                     $("#approve_img").css({'filter':`   
@@ -1423,9 +1396,6 @@
                     $("#approve_text").css({'display':''});
                     $("#fundamentals-approve-btn").css({'background-color':'#fff'});
                 });
-
-
-
                  //Financials
                 //request hover function
                 $("#financial-request-btn").hover(function(){
@@ -1450,7 +1420,6 @@
                     $("#fin-request_text").css({'display':''});
                     $("#financial-request-btn").css({'background-color':'#fff'});
                 });
-
                 //approve hover function
                 $("#financial-approve-btn").hover(function(){
                     $("#fin-approve_img").css({'filter':`   
@@ -1474,9 +1443,6 @@
                     $("#fin-approve_text").css({'display':''});
                     $("#financial-approve-btn").css({'background-color':'#fff'});
                 });
-
-
-
                  //Transaction
                 //request hover function
                 $("#transaction-request-btn").hover(function(){
@@ -1501,8 +1467,6 @@
                     $("#trac-request_text").css({'display':''});
                     $("#transaction-request-btn").css({'background-color':'#fff'});
                 });
-
-
                 //approve hover function
                 $("#transaction-approve-btn").hover(function(){
                     $("#trac-approve_img").css({'filter':`   
@@ -1527,8 +1491,6 @@
                     $("#transaction-approve-btn").css({'background-color':'#fff'});
                    
                 });
-
-
                 //reject hover function
                 $("#transaction-reject-btn").hover(function(){
                     $("#trac-reject_img").css({'filter':`   
@@ -1543,7 +1505,6 @@
                     $("#trac-reject_text").css({'display':'none'});
                     $("#transaction-reject-btn").css({'background-color':'#0173AE'});
                 });
-
                 // reject mouseleave
                 $("#transaction-reject-btn").mouseleave(function(){
                     $("#trac-reject_img").css({'filter':`   
@@ -1553,10 +1514,7 @@
                     $("#trac-reject_text").css({'display':''});
                     $("#transaction-reject-btn").css({'background-color':'#fff'});
                 });
-
-
 });
-
             
           
     </script>
