@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Email Verification</title>
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+
     <style>
          @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
            
@@ -112,22 +114,73 @@
                 font-weight: 400;
                 font-size: 20px;
             }
+            .bg-image{
+                z-index: -30000;
+                text-align: center;
+                opacity: 0.1;
+            }
             .body-message {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                margin-top: 10%;
+                margin-top: -200px;
+               
+                background-repeat: no-repeat;
             }
            .body-message h1{
-                color: rgb(91, 95, 112);
+                color: rgb(10, 10, 12);
                 font-family: 'IBM Plex Sans', sans-serif;
                 text-align: center;
-                font-weight: 300;
+                font-weight: 600;
                 font-size: 30px;
+                letter-spacing: 1px;
            }
            .body-message h1 span{
                 font-weight: 700;
            }
+           .button-container {
+                text-align: center;
+                z-index: 50000000;
+           }
+           .button-container button{
+                margin:40px 10px;
+                width: 200px;
+                height: 50px;
+                background-color: #0073AE;
+                border: none;
+                border-radius: 6px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                color: white;
+                font-weight: 400;
+                cursor: pointer;
+           }
+           .button-container button div{
+               display: flex;
+               justify-items: center;
+               justify-content: center;
+               align-content: center;
+               align-items: center;
+               font-size: 20px;
+           }
+           .button-container button div h1{
+                font-size: 20px;
+                color: #fff;
+                transition:1s;
+           }
+           /* .go_back .back_arrow {
+               display: none;
+           }
+           .report .report_icon {
+              display: none;
+           } */
+           .go_back .back_arrow {
+               margin-right: 10px;
+           }
+           .report .report_icon {
+               margin-right: 10px;
+               transition: .8s;
+           }
+          
            footer {
                width: 100%;
                display: flex;
@@ -192,20 +245,27 @@
              </div>
     </div>
 
+    <div class="bg-image"> <img src="asset/png/crash.jpg"></div>
+
     <div class="body-message">
-        <h1><span>Congratulations!</span> You're now registered on <span>InstaVal</span></h1>
-        <h1>An email has been sent to you. Please check your inbox and confirm your email ID to start your journey.</span></h1>
 
+        <h1>Oops ! There's an outage somewhere in the application. </h1>
+        <h1>We are working on it. Apologies for the inconvenience.</h1>
+
+        <div class="button-container">
+            <button type="button" class="go_back"><div><i class="ri-arrow-left-line back_arrow"></i><h1 class="back_text">Go Back</h1></div>
+            </button>
+            <button type="button" class="report"><div><i class="ri-contacts-line report_icon"></i><h1 class="report_text">Report Error</h1></div>
+            </button>      
+        </div>
     </div>
-
-
 
     <footer>
         <p>©2019 Instaval</p>
         <p>Made with Science & Passion</p>
 
         <div class="social_Links">
-                <a href="https://www.linkedin.com/company/instaval/">Linkedin </a>
+                <a href="https://www.linkedin.com/company/instaval/">Linkedin</a>
                 <span>|</span>
                 <a href="https://twitter.com/InstaValuation">Twitter</a>
                 <span>|</span>
@@ -213,5 +273,42 @@
         </div>
 
 </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+// on button crash button hover
+    $('.go_back').hover(function(){
+        $('.go_back').css({'transition':'.4s'})
+        $('.go_back').css({'width':'250px'})
+        $('.back_arrow').css({'margin-left':'-20px'})
+        $('.back_text').css({'margin-left':'20px'})
+         })
+
+     $('.go_back').mouseleave(function(){
+        $('.go_back').css({'transition':'.4s'})
+        $('.go_back').css({'width':'200px'})
+        $('.back_arrow').css({'margin-left':''})
+        $('.back_text').css({'margin-left':''})
+        $('.back_text').css({'transition':'.4s'})
+        
+    })
+    $('.report').hover(function(){
+        $('.report').css({'transition':'.4s'})
+        $('.report').css({'width':'250px'})
+        $('.report_icon').css({'margin-left':'-20px'})
+        $('.report_text').css({'margin-left':'20px'})
+         })
+
+     $('.report').mouseleave(function(){
+        $('.report').css({'transition':'.4s'})
+        $('.report').css({'width':'200px'})
+        $('.report_icon').css({'margin-left':''})
+        $('.report_text').css({'margin-left':''})
+        $('.report_text').css({'transition':'.4s'})
+        
+    })
+
+</script>
 </body>
 </html>
