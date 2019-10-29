@@ -251,8 +251,8 @@
             }
             /** form style***/
         .form-container {
-            margin: 40px 230px!important;
-            transition: .7;
+            margin: 40px 230px;
+            transition: .7s;
         }
         .title-header {
             font-family: 'IBM Plex Sans', sans-serif;
@@ -540,6 +540,26 @@
          }
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
+                .form-container {
+                    margin: 40px 40px;
+                    transition: .7s;
+                }
+                .form-header {
+                    transition: .7s;
+                    width: 42.5px;
+                }
+                .team-section-details-container input {
+                    width: 165px;
+                }
+                .market-structure input {
+                    width: 110px!important;
+                }
+                .input-holder input, textarea {
+                    width: 376px;
+                }
+                .currency-selection-tag {
+                    width: 254px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -547,18 +567,14 @@
                     margin-right: 0;
                     margin-left: -24px;
                  }
-                 canvas {
-                     width: 452px!important;
-                     height: auto!important;
-                 }
+                
             }
             @media only screen and (min-width: 1440px){
                 .mobile-nav-dashboard {
                     display: none;
                  }
-                 canvas {
-                     width: 433px!important;
-                     height: auto!important;
+                 .form-container {
+                     margin:30px 0px;
                  }
             }
             @media only screen and (min-width:1920px){
@@ -571,15 +587,120 @@
                  }
             }
             @media only screen and (min-width: 2560px){
+                .form-container {
+                    margin: 40px 230px!important;
+                    transition: .7s;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
-                 canvas {
-                     width: 680px!important;
-                     height: auto!important;
+                 .form-header {
+                     width: 235px;
                  }
+                 .Team-section {
+                    margin-left: 120px;
+                    margin-right: 120px;
+                }
+                .horizontal-wrapper .input-holder {
+                    margin-top: 20px;
+                    transform: scale(1.2);
+                }
+                .currency-selection-tag {
+                    margin-bottom: 24px;
+                }
+                .input-holder h1 {
+                    margin-bottom: 30px;
+                }
+                .input-holder {
+                    margin-bottom: 70px;
+                }
+                .button-container {
+                    width: 1920px;
+                    margin-left: 90px;
+                }
             }
+            @media only screen and (min-width: 2880px){
+                .form-container {
+                    margin: 40px 230px!important;
+                    transition: .7s;
+                }
+                .fundamentals-form {
+                    margin:0 60px;
+                }
+                .form-header {
+                     width: 289px;
+                 }
+                 .input-holder h1 {
+                     font-size: 27px;
+                 }
+                 .input-holder input, textarea {
+                     width: 800px;
+                 }
+                 .currency-selection-tag {
+                     width: 680px;
+                }
+                .market-structure input {
+                    width: 460px!important;
+                }
+                .Team-section {
+                    margin-left: 70px;
+                    margin-right: 70px;
+                }
+                .button-container {
+                    width: 2222px;
+                    margin-left: 36px;
+                }
+                .financial-horizontal-wrapper {
+                    margin-right: -600px;
+                }
+                .f-h1-text {
+                    font-size: 23px!important;
+                    font-weight: 400!important;
+                    padding-right: 70px!important;
+                }
+                .f-h1-text2 {
+                    font-size: 23px!important;
+                    font-weight: 400!important;
+                    padding-right: 100px!important;
+                }
+                .f-h1-text3 {
+                    font-size: 23px!important;
+                    font-weight: 400!important;
+                    padding-right: 50px!important;
+                }
+                .financial-button-container {
+                    width: 1808px;
+                    margin-left: 300px;
+                }
+        }
             @media only screen and (max-width: 991px){
+                .form-container {
+                    margin: 40px 40px;
+                    transition: .7s;
+                }
+                .form-header {
+                    transition: .7s;
+                    width: 52px
+                }
+                .team-section-details-container input {
+                    width: 110px;
+                }
+                .market-structure input {
+                    width: 110px!important;
+                }
+                .input-holder input, textarea {
+                    width: 283px;
+                }
+                .form-header a div img {
+                    height: 20px;
+                }
+                .form-header a h1 {
+                    padding-left: 20px;
+                    font-size: 16px;
+                    }
+                .currency-selection-tag {
+                    width: 254px;
+                }
                 .middle-nav {
                     display: none;
                 }
@@ -593,25 +714,71 @@
                     color: rgb(91, 95, 112);
                     display: flex;
                     align-items: center;
-                 }
-                 .mobile-nav-dashboard h1{
+                }
+                .mobile-nav-dashboard h1{
                     font-weight: 500;
                     letter-spacing: 0.05rem;
                     margin-left: 20px;
-                  }
-                  .mobile-nav-dashboard a{
+                }
+                .mobile-nav-dashboard a{
                     text-decoration: none; color: rgb(91, 95, 112);
-                  }
-                  canvas {
-                     width: 324px!important;
-                     height: auto!important;
-                 }
+                }
+    
             }
             @media only screen and (max-width: 425px){
                 .mobile-nav-dashboard a{
                     display: none;
                 }
-             }
+                .form-container {
+                      margin: 40px 5px;
+                }
+                .form-header {
+                    transition: .7s;
+                    width: 5.9px!important;
+                }
+                .input-holder input, textarea {
+                    width: 360px!important;
+                }
+                .team-section-details-container input {
+                    width: 360px!important;
+                }
+                .button-container button div {
+                    padding: 5px!important;
+                    font-size: 18px!important;
+                }
+                .button-container img {
+                     height: 15px!important;
+                }
+                .button-container button {
+                    width: 100%;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .team-section-details-container {
+                    display: flex;
+                    padding-bottom: 30px;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+                .main-container {
+                    flex-direction: column!important;
+                }
+                .Team-section {
+                    margin-left: 14px;
+                }
+                .input-holder {
+                    margin-left: 14px!important;
+                }
+                .market-structure input {
+                    width: 248px!important;
+                }
+                .currency-selection-tag {
+                    width: 387px;
+                }
+                .title-header h1 {
+                    font-size: 17px;
+                }
+        }       
         </Style>
 <body class="body-main">
     <!-- navigation -->
@@ -769,7 +936,7 @@
          <!-- form body content for financials-->
          <form class="financials-form" style="display: none;">
                  <div class="main-container">
-                      <div class="horizontal-wrapper">
+                      <div class="horizontal-wrapper financial-horizontal-wrapper">
                           <div class="input-holder">
                               <h1>Currency</h1>
                               <!-- <input type="text" placeholder=" e.g Sole Proprietorship"> -->
@@ -940,7 +1107,7 @@
                  </div>
   
                   <!--financials Buttons -->
-                 <div class="button-container">
+                 <div class="button-container financial-button-container">
                       <button id="financial-request-btn"  type="button"><div><img id="fin-request_img" src="Icons v3/Request.svg"><span id="fin-request_text">Request</span></div></button>
                       <button id="financial-approve-btn"  type="button"><div><img id="fin-approve_img" src="Icons v3/Approve.svg"><span id="fin-approve_text">Approve</span></div></button>
                  </div>
