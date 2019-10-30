@@ -23,6 +23,12 @@
             body{
                 background-color: rgba(224, 239, 248, 0.158);
             }
+            .sticky {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+                z-index: 3000000000;
+            }
             .nav-container {
                 width: 100%;
                 display: flex;
@@ -497,7 +503,7 @@
         </Style>
 <body class="body-main">
     <!-- navigation -->
-    <div class="nav-container anim">
+    <div class="nav-container sticky">
             <div class="navbar anim">
                     <!-- instaval logo-->
                     <div class="instaval-logo left-nav anim">
