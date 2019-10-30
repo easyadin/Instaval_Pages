@@ -543,6 +543,36 @@
          .button-container button :hover{
              cursor: pointer;
          }
+
+         /**Comments section***/
+         .comment-section {
+             margin-left: 30px;
+             margin-bottom: 50px;
+             margin-right: 50px;
+         }
+         .comment-section textarea {
+             display: block;
+             width: 100%;
+             height: 100px;
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .comment-section h1 {
+            margin-bottom: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: #0173AE;
+         }
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
                 .form-container {
@@ -622,6 +652,10 @@
                 .button-container {
                     width: 1920px;
                     margin-left: 90px;
+                }
+                 .comment-section {
+                    margin-left: 120px;
+                    margin-right: 150px;
                 }
             }
             @media only screen and (min-width: 2880px){
@@ -930,7 +964,15 @@
                  </div>
              </div>
 
+             <!-- Comment Section -->
+             <div class="comment-section">
+                <h1>Comment</h1>
+                <div class="comment-section-container">
+                    <textarea placeholder="Your comment goes here..."></textarea>
+               </div>
+           </div>
 
+           
              <!-- Fundamental Buttons -->
             <div class="button-container">
                  <button id="fundamentals-request-btn"  type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
@@ -1110,7 +1152,15 @@
                               </div>                        
                       </div>
                  </div>
-  
+
+                  <!-- Comment Section -->
+             <div class="comment-section">
+                <h1>Comment</h1>
+                <div class="comment-section-container">
+                    <textarea placeholder="Your comment goes here"></textarea>
+               </div>
+           </div>
+
                   <!--financials Buttons -->
                  <div class="button-container financial-button-container">
                       <button id="financial-request-btn"  type="button"><div><img id="fin-request_img" src="Icons v3/Request.svg"><span id="fin-request_text">Request</span></div></button>
@@ -1184,6 +1234,16 @@
                               </div>                        
                       </div>
                  </div>
+
+                  <!-- Comment Section -->
+             <div class="comment-section">
+                <h1>Comment</h1>
+                <div class="comment-section-container">
+                    <textarea placeholder="Your comment goes here"></textarea>
+               </div>
+           </div>
+
+
                   <!--transaction Buttons -->
                  <div class="button-container">
                       <button id="transaction-request-btn"  type="button"><div><img id="trac-request_img" src="Icons v3/Request.svg"><span id="trac-request_text">Request</span></div></button>
