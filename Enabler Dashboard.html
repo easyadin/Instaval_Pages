@@ -25,6 +25,10 @@
             font-family: 'IBM Plex Sans', sans-serif;
             box-sizing: border-box;
         }
+        .navigation-bar {
+            z-index: 200000;
+            width: 100%;
+        }
         .fullcontainer {
             width: 100%;
             height: 70vh;
@@ -885,8 +889,8 @@
 </head>
 <body style="background-color: #F3F6F9;">
     <div class="fullcontainer">
-        <div>
-            <nav class="navbar">
+        <div class="sticky navigation-bar">
+            <nav class="navbar sticky">
                 <div class="logo">
                     <a href="#"><img src="../Template/asset/Instaval_logo.png"></a>
                 </div>
@@ -1316,10 +1320,7 @@
 
 
 
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js" integrity="sha256-36hEPcG8mKookfvUVvEqRkpdYV1unP6wvxIqbgdeVhk=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         //change dropdown icon for large screen
                 
@@ -2048,8 +2049,19 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
             "scrollX": true
             });
             $('.dataTables_length').addClass('bs-select');
-
  });
+
+  //on page scroll navbar remains fixed
+  $(window).scroll(function(e){ 
+                var $el = $('.navigation-bar');
+                var isPositionFixed = ($el.css('position') == 'fixed');
+                if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+                    $el.css({'position': 'fixed', 'top': '0px'}); 
+                }
+                if ($(this).scrollTop() < 200 && isPositionFixed){
+                  $el.css({'position': 'static', 'top': '0px'}); 
+                 } 
+            });
     </script>
 </body>
 </html>
