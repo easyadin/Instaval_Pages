@@ -282,8 +282,8 @@
             font-family: 'IBM Plex Sans', sans-serif;
             display: flex;
             margin-top: 10px;
-            transition: .7;
-            width: 126px;
+            transition: .7s;
+            width: 129px!important;
             margin-left: 1.5px;
          }
          .form-header a {
@@ -335,10 +335,10 @@
          .filter-img {
             filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
          }
-         /** form body content****/
+         /** form body content **/
          .main-form {
              margin-top: 20px;
-             background-color: rgba(1, 116, 174, .02);
+             background-color:  rgba(246, 246, 246, 0.027);
              box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
              padding-top: 20px;
              margin-left: 1.5px;
@@ -573,6 +573,10 @@
             font-size: 30px;
             color: #0173AE;
          }
+
+          .mobile-nav-dashboard {
+                    display: none;
+        }
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
                 .form-container {
@@ -613,9 +617,7 @@
                  }
             }
             @media only screen and (min-width:1920px){
-                .mobile-nav-dashboard {
-                    display: none;
-                 }
+               
                  .form-container {
                     margin: 40px 230px!important;
                     transition: .7s;
@@ -867,7 +869,7 @@
  <div class="required-indicator"></div>
  <!--main form area-->
  <div class="form-container">
-     <div class="title-header"><h1>Business Valuation Vetting & Analysis </h1></div>
+     <div class="title-header"><h1>APPLICATION VETTING & ANALYSIS</h1></div>
      <div class="form-header" id="form-selection-container">
          <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamental-img" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);" src="Icons v3/Fundamentals (2).svg"><h1 class="fundamental-text" style="color: #fff!important;">Fundamentals</h1></div></a>
          <a id="financial-btn" href="#"><div class="title" id="financial-div"><img id="financial-img" src="Icons v3/Financials (2).svg"><h1 class="financial-text">Financials</h1></div></a>
@@ -968,7 +970,7 @@
              <div class="comment-section">
                 <h1>Comment</h1>
                 <div class="comment-section-container">
-                    <textarea placeholder="Your comment goes here..."></textarea>
+                    <textarea placeholder="Your comment goes hereoes here..."></textarea>
                </div>
            </div>
 
@@ -1157,7 +1159,7 @@
              <div class="comment-section">
                 <h1>Comment</h1>
                 <div class="comment-section-container">
-                    <textarea placeholder="Your comment goes here"></textarea>
+                    <textarea placeholder="Your comment goes here..."></textarea>
                </div>
            </div>
 
@@ -1239,7 +1241,7 @@
              <div class="comment-section">
                 <h1>Comment</h1>
                 <div class="comment-section-container">
-                    <textarea placeholder="Your comment goes here"></textarea>
+                    <textarea placeholder="Your comment goes here..."></textarea>
                </div>
            </div>
 
