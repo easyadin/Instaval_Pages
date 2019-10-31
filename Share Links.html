@@ -987,6 +987,16 @@
                 $('form input').change(function () {
                 $('form p').text(this.files.length + " file(s) selected");
                 });
+
+                // remove dropdown arrow-right for larger screens
+                    $(document).ready(function(){  
+                       if(window.screen.width > 991){
+                            $("i.fa-chevron-right").removeClass("fa-chevron-right");
+                            $("i.fas").addClass("fa-chevron-down");
+                       }
+                    });
+
+
  });
 
 //post modal trigger
