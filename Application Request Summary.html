@@ -283,7 +283,6 @@
             display: flex;
             margin-top: 10px;
             transition: .7s;
-            width: 129px!important;
             margin-left: 1.5px;
          }
          .form-header a {
@@ -590,15 +589,20 @@
                 .team-section-details-container input {
                     width: 165px;
                 }
-                .market-structure input {
-                    width: 110px!important;
-                }
                 .input-holder input, textarea {
-                    width: 376px;
+                    width: 384px;
+                }
+                .market-structure input {
+                    width: 214px;
                 }
                 .currency-selection-tag {
-                    width: 254px;
+                    width: 403px;
                 }
+                .f-m-s input{
+                    width: 260px;
+                }
+
+
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -614,6 +618,15 @@
                  }
                  .form-container {
                      margin:30px 0px;
+                 }
+                 .form-header {
+                     width: 125px;
+                 }
+                 .f-m-s input {
+                    width: 510px;
+                 }
+                 .currency-selection-tag {
+                    width: 653px;
                  }
             }
             @media only screen and (min-width:1920px){
@@ -644,6 +657,7 @@
                 }
                 .currency-selection-tag {
                     margin-bottom: 24px;
+                    width: 668px;
                 }
                 .input-holder h1 {
                     margin-bottom: 30px;
@@ -658,6 +672,19 @@
                  .comment-section {
                     margin-left: 120px;
                     margin-right: 150px;
+                }
+                /*div that holds the sub textinputs for financials, fundamentals, transaction*/
+                .f-m-s input{
+                    width: 528px;
+                }
+                .fund-m-s input {
+                    width: 483px;
+                }
+                .trans-m-s input{
+                    width: 520px;
+                }
+                .trans-m-s1 input {
+                    width: 650px;
                 }
             }
             @media only screen and (min-width: 2880px){
@@ -678,21 +705,23 @@
                      width: 800px;
                  }
                  .currency-selection-tag {
-                     width: 680px;
+                     width: 800px;
                 }
                 .market-structure input {
-                    width: 460px!important;
+                    width: 580px!important;
                 }
                 .Team-section {
-                    margin-left: 70px;
-                    margin-right: 70px;
+                    margin-left: 78px;
+                    margin-right: 88px;
                 }
-                .button-container {
-                    width: 2222px;
-                    margin-left: 36px;
+                .fundamental-button-container {
+                    width: 2201px;
+                    margin-left: 44px;
                 }
-                .financial-horizontal-wrapper {
-                    margin-right: -600px;
+                .fundamentals-comment-section {
+                    margin-left: 74px;
+                    margin-right: 222px;
+                    width: 92%;
                 }
                 .f-h1-text {
                     font-size: 23px!important;
@@ -710,9 +739,21 @@
                     padding-right: 50px!important;
                 }
                 .financial-button-container {
-                    width: 1808px;
-                    margin-left: 300px;
+                    width: 92.5%;
+                    /* margin-left: 300px; */
+                    margin-right: 1px;
                 }
+                .transaction-horizontal-wrapper1{
+                    margin-left: 45px;
+                }
+                .transaction-horizontal-wrapper2{
+                    margin-right: 45px;
+                }
+                .transaction-button-container {
+                    width: 92.5%;
+                    margin-left: 90px;
+                }
+              
         }
             @media only screen and (max-width: 991px){
                 .form-container {
@@ -932,9 +973,9 @@
                          <div class="input-holder">
                              <h1>Market Stucture</h1>
                              <div>
-                                 <div class="market-structure"><h1 class="h1-text">Market Size in Volume</h1> <input type="text"></div>
-                                 <div class="market-structure"><h1 class="h1-text2">Market Size in Value</h1> <input type="text"></div>
-                                 <div class="market-structure"><h1 class="h1-text3">Competitors website</h1> <input type="text"></div>
+                                 <div class="market-structure fund-m-s"><h1 class="h1-text">Market Size in Volume</h1> <input type="text"></div>
+                                 <div class="market-structure fund-m-s"><h1 class="h1-text2">Market Size in Value</h1> <input type="text"></div>
+                                 <div class="market-structure fund-m-s"><h1 class="h1-text3">Competitors website</h1> <input type="text"></div>
                              </div>
                          </div>                        
                      </div>
@@ -967,7 +1008,7 @@
              </div>
 
              <!-- Comment Section -->
-             <div class="comment-section">
+             <div class="comment-section fundamentals-comment-section">
                 <h1>Comment</h1>
                 <div class="comment-section-container">
                     <textarea placeholder="Your comment goes hereoes here..."></textarea>
@@ -976,7 +1017,7 @@
 
            
              <!-- Fundamental Buttons -->
-            <div class="button-container">
+            <div class="button-container fundamental-button-container">
                  <button id="fundamentals-request-btn"  type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
                  <button id="fundamentals-approve-btn"  type="button"><div><img id="approve_img" src="Icons v3/Approve.svg"><span id="approve_text">Approve</span></div></button>
             </div>
@@ -1120,17 +1161,17 @@
                           <div class="input-holder"> 
                                  <h1>Revenue</h1>
                                  <div>
-                                     <div class="market-structure"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
                                  </div>
                          </div>      
                          <div class="input-holder">
                                  <h1>Growth</h1>
                                  <div>
-                                     <div class="market-structure"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
                                  </div>
                          </div>                         
                       </div>
@@ -1139,17 +1180,17 @@
                               <div class="input-holder">
                                   <h1>Costs</h1>
                                   <div>
-                                     <div class="market-structure"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
                                  </div>
                               </div>   
                               <div class="input-holder">
                                   <h1>Liquidity</h1>
                                   <div>
-                                     <div class="market-structure"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
+                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
                                  </div>
                               </div>                        
                       </div>
@@ -1177,7 +1218,7 @@
          <!-- form body content for transaction-->
          <form class="transaction-form" style="display: none;">
                  <div class="main-container">
-                      <div class="horizontal-wrapper">
+                      <div class="horizontal-wrapper transaction-horizontal-wrapper1">
                          <div class="input-holder">
                              <h1>Valuation Purpose</h1>
                              <input type="text">
@@ -1201,14 +1242,14 @@
                          <div class="input-holder">
                              <h1>Use of Funds</h1>
                              <div>
-                                 <div class="market-structure"><h1 class="t-h1-text">Product</h1> <input type="text"></div>
-                                 <div class="market-structure"><h1 class="t-h1-text2">Marketing</h1> <input type="text"></div>
-                                 <div class="market-structure"><h1 class="t-h1-text3">Staffing</h1> <input type="text"></div>
-                                 <div class="market-structure"><h1 class="t-h1-text4">Working Capital</h1> <input type="text"></div>
+                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text">Product</h1> <input type="text"></div>
+                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text2">Marketing</h1> <input type="text"></div>
+                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text3">Staffing</h1> <input type="text"></div>
+                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text4">Working Capital</h1> <input type="text"></div>
                              </div>
                          </div>                   
                       </div>
-                      <div class="horizontal-wrapper">
+                      <div class="horizontal-wrapper transaction-horizontal-wrapper2">
                          <div class="input-holder">
                              <h1>Funding History</h1>
                              <input type="text">
@@ -1229,9 +1270,9 @@
                               <div class="input-holder">
                                   <h1>Cap table</h1>
                                   <div>
-                                     <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
-                                     <div class="market-structure"><h1 class=""></h1> <input type="text"></div>
+                                     <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
+                                     <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
+                                     <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
                                  </div>
                               </div>                        
                       </div>
@@ -1247,7 +1288,7 @@
 
 
                   <!--transaction Buttons -->
-                 <div class="button-container">
+                 <div class="button-container transaction-button-container">
                       <button id="transaction-request-btn"  type="button"><div><img id="trac-request_img" src="Icons v3/Request.svg"><span id="trac-request_text">Request</span></div></button>
                       <button id="transaction-approve-btn"  type="button"><div><img id="trac-approve_img" src="Icons v3/Approve.svg"><span id="trac-approve_text">Approve</span></div></button>
                       <button id="transaction-reject-btn"  type="button"><div><img id="trac-reject_img" src="Icons v3/Reject 2.svg"><span id="trac-reject_text">Reject</span></div></button>
