@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PDF</title>
+	<link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+
+		*{
+			margin: 0;
+			padding: 0;
+        	color: rgb(91, 95, 112);
+			font-family: 'IBM Plex Sans', sans-serif;
+		}
+		.top-banner {
+			background-color: #F3F7F8;
+			padding: 20px 100px;
+		}
+		.top-banner-top-elements {
+			display: flex;
+			align-items: center;
+		}
+		.top-banner .logo {
+			height: 60px;
+		}
+		.investment-opp-text {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		.investment-opp-text h1{
+			font-family: 'IBM Plex Sans', sans-serif;
+			color: #fff;
+			background-color: #1477C2;
+			border-radius:6px;
+			padding: 12px;
+			font-size: 20px;
+			font-weight: 400;
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+
+		/*banner bottom elements*/
+		.banner-elements {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between; 
+			margin-top: 30px;
+		}
+		.banner-elements .banner-elements-group{
+			display: flex;
+			flex-direction: column;
+		}
+		.banner-elements .banner-elements-group span{
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		.banner-elements-group span img {
+			height: 25px;
+			width: auto;
+		}
+		.banner-elements-group span i {
+			font-size: 25px;
+		}
+		.banner-elements-group span h1 {
+			font-family: 'IBM Plex Sans', sans-serif;
+			font-weight: 400;
+			margin-left: 15px;
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
+
+		/*section 2 transaction pitch*/
+		.transaction-pitch {
+			margin: 40px 100px;
+			border-radius: 6px;
+			text-align: center;
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		.transaction-pitch .transation-pitch-span{
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			display: flex;
+			align-items: left;
+			justify-content: left;
+			font-family: 'IBM Plex Sans', sans-serif;
+			background-color: #1477C2;
+			padding: 20px;
+			font-size: 20px;
+			font-weight: 400;
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		.transaction-pitch span .grouped-updown-icons i{
+			color: rgb(255, 255, 255);
+			font-size: 25px;
+		}
+		.transaction-pitch span .grouped-updown-icons i:nth-child(2) {
+			margin-left: -9px;/*grouped logo up & down arrow*/
+		}
+		.transaction-pitch span h1 {
+			color: rgb(255, 255, 255);
+			font-size: 25px;
+			margin-left: 20px;
+			font-weight: 600;
+			letter-spacing: 1px;
+		}
+		.transaction-pitch p {
+			font-family: 'IBM Plex Sans', sans-serif;
+			font-weight: 400;
+			font-size: 20px;
+			letter-spacing: 1px;
+			word-spacing: 5px;
+			color: rgb(91, 95, 112);
+			padding: 30px;
+		}
+		.transaction-pitch p span {
+			font-weight: 700;
+			color: rgb(91, 95, 112);
+		}
+
+		/** section 3 value proposition & Target Market**/
+		.section-group {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin: 0 100px;
+		}
+		.section-group .value-proposition {
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+			border-radius: 6px;
+			width: 1520px;
+		}
+		.section-group .value-proposition h1{
+			color: rgb(255, 255, 255);
+			font-size: 25px;
+			background-color: #1477C2;
+			text-align: left;
+			padding: 20px;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			letter-spacing: 1px;
+			font-weight: 500;
+		}
+		.section-group .value-proposition p{
+			padding: 20px;
+			height: auto;
+			font-size: 20px;
+			word-spacing: 6px;
+			text-align: justify;
+		}
+
+		/** Target Market  Structure **/
+		.target-market-structure-section {
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+			width: 774px;
+		}
+		.target-market-structure-section h2 {
+			color: rgb(255, 255, 255);
+			font-size: 25px;
+			background-color: #1477C2;
+			text-align: left;
+			padding: 20px;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			letter-spacing: 1px;
+			font-weight: 500;
+			/* text-transform: uppercase; */
+		}
+		.target-market-structure-group {
+			display: flex;
+			padding: 20px;
+		}
+		.target-market-structure-group h1{
+			 font-size: 25px;
+			 font-weight: 400;
+			 line-height: 20px;
+			 text-transform: uppercase;
+		}
+		.target-market-structure-group h1:nth-child(2){
+			 font-weight: 800;
+		}
+		.t1h1 {
+			margin-left: 450px;
+		} 
+		.t2h1 {
+			margin-left: 383px;
+		}
+		.t3h1 {
+			margin-left: 145px;
+		}
+		.t4h1 {
+			margin-left: 168px;
+		}
+		.team {
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+			border-radius: 6px;
+			margin-top: 40px;
+			width: 1520px;
+		}
+		.team h2 {
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			background-color: #1477C2;
+			padding: 20px;
+			color:#fff;
+		}
+		.team .team-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px;
+		}
+		.team .team-container span h1 {
+			font-size: 25px;
+		}
+		.team .team-container span h1:nth-child(2) {
+			font-weight: 400;
+			font-size: 25px;
+			margin-top: 20px;
+		}
+
+		/**  Competition **/
+		.competition {
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+			border-radius: 6px;
+			margin-top: 40px;
+			width:774px;
+		}
+		.competition h2{
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			background-color: #1477C2;
+			padding: 20px;
+			color:#fff;
+		}
+		.competition-intensity {
+			 text-transform: uppercase;
+			 line-height: 20px;
+			 display: flex;
+		     padding: 20px;
+		}
+		.competition-intensity h1 {
+			 font-weight: 400;
+			 font-size: 25px;
+			 letter-spacing: 1px;
+		}
+		.competition-intensity h1:nth-child(2) {
+			 font-weight: 800;
+			 font-size: 25px;
+			 margin-left: 219px;
+			 letter-spacing: 1.5px;
+		}
+		.competitors-website {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.competitors-website h1 {
+			text-transform: uppercase;
+			font-size: 25px;
+			padding: 20px;
+			font-weight: 400;
+		}
+		.competitors-website span h1 {
+			font-weight: 800;
+			margin-left: 219px;
+			line-height: 5px;
+			font-size: 20px;
+			text-transform: none;
+		}
+
+
+		/* Fair Market**/
+		.fair-market {
+			margin-top: 40px;
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		.fair-market h1 {
+			font-size: 20px;
+			padding: 20px;
+			letter-spacing: 1px;
+			word-spacing: 5px;
+			font-weight: 400;
+		}
+		.fair-market h1 span {
+			font-weight: 700;
+		}
+		.disclaimer {
+			margin: 40px 100px;
+		}
+		.disclaimer p {
+			word-wrap: break-word;
+			text-align: justify;
+			word-spacing: 1px;
+		}
+		.disclaimer span {
+			font-weight: 700;
+		}
+		.disclaimer a {
+			display: flex;
+			align-items: center;	
+			text-decoration: none;
+			justify-content: right;
+			float: right;
+			margin-bottom: 20px;
+		}
+		.disclaimer a img {
+			height: 40px;
+			margin-left: 20px;
+		}
+	</style>
+
+
+
+</head>
+<body>
+	
+	<div class="pdf-wrapper">
+		<!-- section 1 / top section -->
+		<div class="top-banner">
+			<!-- banner logo and title-->
+			<div class="top-banner-top-elements">
+				<img class="logo" src="asset/logo_90kb.png">
+				<div class="investment-opp-text">
+				<h1> Investment Opportunity</h1>
+				</div>
+			</div>
+			<!-- banner elements -->
+			<div class="banner-elements">
+				<div class="banner-elements-group">
+					<span><i class="ri-building-2-line"></i> <h1>Company:</h1><h1>Test Society</h1></span>
+					<span><i class="ri-building-3-line"></i> <h1>Headcount:</h1><h1>1-10</h1></span>
+				</div>
+				<div class="banner-elements-group">
+					<span><i class="fas fa-hand-holding"></i> <h1>Industry:</h1><h1>AgriBusiness</h1></span>
+					<span><img src="asset/svg/businessModel.svg"> <h1>Incorporated:</h1><h1>Morocco</h1></span>
+				</div>
+				<div class="banner-elements-group">
+					<span><img src="asset/svg/headcount.svg"> <h1>Founded:</h1><h1>2017</h1></span>
+					<span><img src="asset/png/incorporated.png"><h1>Development Stage:</h1><h1>Traction</h1></span>
+				</div>
+				<div class="banner-elements-group">
+					<span><i class="ri-code-s-slash-line"></i><h1> Business Model:</h1><h1>B2B</h1></span>
+					<span><i class="ri-global-line"></i><h1>Website:</h1><h1>www.testsociety.com</h1></span>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- section 2 -->
+		<div class="transaction-pitch">
+				<span class="transation-pitch-span"> 
+					<div class="grouped-updown-icons">
+						<i class="fas fa-arrow-down"></i>
+						<i class="fas fa-arrow-up"></i>
+					</div>
+					<h1>Transaction Pitch</h1>
+				</span>
+				<p>Raising USD <span>200,000</span> for <span>12% </span>in <span>Equity</span> to fund <span>Product</span> <span>Marketing</span> <span>Staffing</span> and <span>False</span></p>
+		</div>
+
+		<!-- section 3 --> <!-- Group both value proposition & Target Market structure -->
+		<!-- value Proposition-->
+		<div class="section-group">
+			<div class="value-proposition">
+				<h1>Value Proposition</h1>
+				<p>
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena
+						travailler avec du texte lisible et contena du sens est source de distractions,
+						et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem 
+						 sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède
+						  une distribution de lettres plus ou moins normale, et en tout cas comparable 
+						   celle du français 
+				</p>
+				<p>
+					et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem 
+					sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède
+				</p>
+			</div>
+
+			<!-- Target Market Structure-->
+			<div class="target-market-structure-section">
+				<h2>Target Market Structure</h2>
+				<span class="target-market-structure-group">
+					<h1>Volume</h1>
+					<h1 class="t1h1">2,000</h1>
+				</span>
+				<span class="target-market-structure-group">
+					<h1>Value in USD</h1>
+					<h1 class="t2h1">10,000,000</h1>
+				</span>
+				<span class="target-market-structure-group">
+					<h1>Target Market Share (Volume)</h1>
+					<h1 class="t3h1"> 35% </h1>
+				</span>
+				<span class="target-market-structure-group">
+					<h1>Target Market Share (Value)</h1>
+					<h1 class="t4h1"> 10% </h1>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- section 4 --> <!-- Team and Competition -->
+		<div class="section-group">
+			 <div class="team">
+				 <h2> Team</h2>
+				 <div class="team-container">
+					<span>
+						<h1>Name</h1>
+						<h1>Akram EL Youss</h1>
+					</span>
+					<span>
+						<h1>Position</h1>
+						<h1>CEO </h1>
+					</span>
+					<span>
+						<h1>Experience</h1>
+						<h1>Business</h1>
+					</span>
+					<span>
+						<h1>Background</h1>
+						<h1>16+</h1>
+					</span>
+				 </div>
+			 </div>
+
+			 <div class="competition">
+				<h2>Competition</h2>
+				<div class="competition-container">
+						<span class="competition-intensity">
+							<h1>Competition Intensity</h1>
+							<h1>Fair</h1>
+						</span>
+						 <div class="competitors-website">
+							 <h1>Competitors Website</h1>
+						 	 <span>
+								 <h1>www.abc.com</h1>
+							 	 <h1>www.123.co</h1>
+							 	 <h1>www.zer.it</h1>
+							 </span>
+						 </div>
+				     </div>
+				</div>
+			 </div>
+		</div>
+
+		<!-- Financial and Ananlysis -->
+		<!-- section 5 -->
+		<div class="section-group">
+			<div class="table-container">
+				<!-- financials table -->
+				<h1>Financials</h1>
+				<table>
+					<tr>
+						<th>In USD</th>
+						<th>2,019</th>
+						<th>2020</th>
+						<th>2021</th>
+						<th>CAGR</th>
+					</tr>
+					<tr>
+						<td>Revenue</td>
+						<td>400,000</td>
+						<td>500,000</td>
+						<td>600,000</td>
+						<td>22%</td>
+					</tr>
+					<tr>
+						<td>EBIT</td>
+						<td>(200,000)</td>
+						<td>(100,000)</td>
+						<td>Re</td>
+						<td>(39%)</td>
+					</tr>
+					<tr>
+						<td>Margin %</td>
+						<td>(50%)</td>
+						<td>(20%)</td>
+						<td>(13%)</td>
+						<td>(50%)</td>
+					</tr>
+					<tr>
+						<td>Users</td>
+						<td>120</td>
+						<td>135</td>
+						<td>200</td>
+						<td>29%</td>
+					</tr>
+					<tr>
+						<td>ARPU</td>
+						<td>3,333</td>
+						<td>3,704</td>
+						<td>3,000</td>
+						<td>(5%)</td>
+					</tr>
+				</table>
+			</div>
+			<!-- analysis -->
+			<div class="analysis">
+				<!-- analysis chart -->
+				<canvas id="analysis-line-chart"></canvas>
+
+			</div>
+		</div>
+
+
+		<!-- section 6 --> <!-- Valuation and Transaction -->
+		<div class="section-group">
+			<div class="valuation">
+				<!-- bar chart --> 
+				<canvas id="valuation-bar-chart"></canvas>
+			</div>
+			
+			<!-- transaction chart -->
+			<div class="transation-chart-group">
+				<div class="use-of-fund">
+					<!-- use of fund char -->
+					<canvas id="use-of-fund-donut-chart"></canvas>
+				</div>
+				
+				<div class="cap-table">
+					<div>
+						<!-- Pre money-->
+						<canvas id="pre-money-donut-chart"></canvas>
+					</div>
+					<div>
+						<!-- Post money-->
+						<canvas id="post-money-donut-chart"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- section 7 --> <!-- fair market test society -->
+		<div class="section-group fair-market">
+			<h1> The Fair Market Value of <span> Test Society </span> is USD <span>600,000</span></h1>
+		</div>
+
+		<!-- section 8 --> <!-- Finally Disclaimer-->
+		<div class="disclaimer">
+			<p><span>Disclaimer</span>  : Instaval does not represent or endorse the accuracy or reliability of any advice, opinion, statement or any other information displayed or distributed through this report or its website. The estimates and the data contained herein are made using the information provided by the user, publicly available information and data for different industries. Instaval has not audited or attempted to conﬁrm this information for accuracy or completeness. This Valuation Report is the intellectual property of Instaval and its purpose is to help founders and investors identify a potential fair market valuation for the target business, and are not to be used or considered as an oﬀer or a solicitation to sell or buy or subscribe for securities or other ﬁnancial instruments or any advice or recommendation with respect to such securities or other financial instruments. The use of the InstaVal Valuation Report and the information provided herein is subject to Instaval online Terms of Use and Privacy Policy.</p>
+			<a href="#">Powered by <img src="asset/logo_90kb.png"></a>
+		</div>
+
+	</div>
+
+
+	<script>
+		// analysis line chart
+		var analysis_line_chart = document.getElementById('analysis-line-chart')
+		
+		var myChart1 = new Chart(analysis_line_chart, {
+			type: 'line',
+			data: {
+				labels: ['Revenue', 'EBIT', 'Valuation'],
+				datasets: [{
+					label: 'Analysis',
+					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					backgroundColor: [
+						'rgba(20, 119, 194, 0.1)',
+					],
+					borderColor: [
+						'rgba(20, 119, 194, 1)',
+					],
+					borderWidth: 3
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+		
+
+		// Valuation bar chart
+		var valuation_bar_chart = document.getElementById('valuation-bar-chart')
+		
+		var myChart2 = new Chart(valuation_bar_chart, {
+			type: 'bar',
+			data: {
+				labels: ['Revenue', 'EBIT', 'Valuation'],
+				datasets: [{
+					label: 'Analysis',
+					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					backgroundColor: [
+						'rgba(20, 119, 194, 0.1)',
+					],
+					borderColor: [
+						'rgba(20, 119, 194, 1)',
+					],
+					borderWidth: 3
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+
+
+		// Use of Fund donut chart
+		var use_of_fund_donut_chart = document.getElementById('use-of-fund-donut-chart')
+		
+		var myChart3 = new Chart(use_of_fund_donut_chart, {
+			type: 'doughnut',
+			data: {
+				labels: ['Revenue', 'EBIT', 'Valuation'],
+				datasets: [{
+					label: 'Analysis',
+					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					backgroundColor: [
+						'rgba(20, 119, 194, 0.1)',
+					],
+					borderColor: [
+						'rgba(20, 119, 194, 1)',
+					],
+					borderWidth: 3
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+
+
+		// pre money
+		var pre_money_chart = document.getElementById('pre-money-donut-chart')
+		
+		var myChart4 = new Chart(pre_money_chart, {
+			type: 'doughnut',
+			data: {
+				labels: ['Revenue', 'EBIT', 'Valuation'],
+				datasets: [{
+					label: 'Analysis',
+					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					backgroundColor: [
+						'rgba(20, 119, 194, 0.1)',
+					],
+					borderColor: [
+						'rgba(20, 119, 194, 1)',
+					],
+					borderWidth: 3
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+
+// post money
+var post_money_chart = document.getElementById('post-money-donut-chart')
+		
+		var myChart5 = new Chart(post_money_chart, {
+			type: 'doughnut',
+			data: {
+				labels: ['Revenue', 'EBIT', 'Valuation'],
+				datasets: [{
+					label: 'Analysis',
+					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					backgroundColor: [
+						'rgba(20, 119, 194, 0.1)',
+					],
+					borderColor: [
+						'rgba(20, 119, 194, 1)',
+					],
+					borderWidth: 3
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

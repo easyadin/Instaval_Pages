@@ -1,0 +1,171 @@
+﻿/*********************************css PDF**********************************************************************/
+
+
+
+#div2 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.invpic {
+    margin-top: 20px;
+    margin-left: 39%;
+}
+
+.transactionEngage {
+    margin-top: 20px;
+    margin-left: 34%;
+}
+
+.logpic {
+    margin-top: 20px;
+    margin-left: 3%;
+}
+
+.valueProposition {
+    margin-top: 20px;
+    margin-left: 3%;
+}
+
+
+#div1 {
+    width: 100%;
+    background-color: #F3F7F8;
+    margin-top: 10px;
+    border: 1px solid #F3F7F8;
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+.tab1 {
+    width: 100%;
+    margin-left: 3%;
+}
+
+.div21 {
+    margin-top: -10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 30px;
+}
+
+.parag1 {
+    width: 85%;
+    margin-top: 10px;
+    margin-left: 5px;
+    word-wrap: break-word;
+}
+
+span {
+    color: gray;
+}
+
+.valueProp {
+    line-height: 25px;
+    margin-top: 5px;
+    width: 600px;
+    word-wrap: break-word;
+    margin-left: 3%;
+    float: left;
+}
+
+
+
+.transaction {
+    margin-top: 10px;
+    width: 35%;
+    margin-left: 51.2%;
+}
+
+.footer {
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #F3F7F8;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+
+.ligne {
+    margin-left: 3%;
+    margin-right: 3%;
+    clear: both;
+}
+
+.div3 {
+    margin-top: 1px;
+}
+
+.div4 {
+    margin-top: 0.2px;
+}
+
+.marketStruct {
+    margin-left: 40.49%;
+}
+
+.team {
+    margin-left: 3%;
+}
+
+.financials {
+    margin-top: 0px;
+    margin-left: 3%;
+}
+
+.analyse {
+    margin-top: 0px;
+    margin-left: 30%;
+}
+
+
+.marketStructure {
+    width: 40%;
+    word-wrap: break-word;
+    margin-left: 51.5%;
+    margin-top: 10px;
+}
+
+.teamtext {
+    width: 45%;
+    float: left;
+    margin-left: 3%;
+    margin-top: 10px;
+}
+
+.tdhead {
+    background-color: #005fa3;
+    color: aliceblue;
+    text-align: center;
+    border: 0.5px solid #005fa3;
+}
+
+.financeTab {
+    /*float:left;*/
+    margin-top: 13px;
+    border-spacing: 0px;
+    width: 640px;
+    /* margin-left:3%;*/
+}
+
+.tdheadcorp {
+    border: 0.5px solid #000000;
+    text-align: center;
+    border-color: grey;
+}
+
+.lignegrie {
+    background-color: #f2f2f2;
+}
+
+
+.cltest {
+    float: left;
+    margin-left: 15px;
+}
+
+.revchif {
+    margin-right: 0px;
+}
+
+/*********************************css PDF**********************************************************************/
