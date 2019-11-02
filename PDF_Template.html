@@ -317,6 +317,88 @@
 			height: 40px;
 			margin-left: 20px;
 		}
+
+		/* Financials  Table */
+		.table-container {
+			overflow: auto;
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+			border-radius: 6px;
+			margin: 40px 0 40px 0;
+			width: 900px;
+		}
+		.table-container h1 {
+			font-weight: 900;
+			padding: 20px;
+		}
+		table {
+			width: 100%;
+			height: 88%;
+		}
+		table tr th {
+			background-color: #1477C2;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-weight: 600;
+			font-size: 20px;
+		}
+		table tr td:nth-child(1) {
+			font-weight: 700;
+		}
+		table tr td {
+			padding: 20px;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		/** Analysis **/
+		.analysis {
+			margin: 40px 0 40px 0;
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		.analysis h1 {
+			padding: 20px;
+			font-weight: 900;
+			background-color: rgba(51, 157, 250, 0.007);
+		}
+		.analysis canvas {
+			height: 700px;
+			width: auto;
+		}
+
+		/** Valuation and Transaction Section 6 **/
+		.valuation {
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		.valuation h1 {
+			padding: 20px;
+			font-weight: 900;
+			background-color: rgba(51, 157, 250, 0.007);
+		}
+		.valuation canvas {
+			width: 700px;
+		}
+		.transation-chart-group {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 1600px;
+		}
+		.transation-chart-group h1 {
+			padding: 20px;
+			font-weight: 900;
+			background-color: rgba(51, 157, 250, 0.007);
+		}
+		.transation-chart-group canvas {
+			width: 508px;
+		}
+		.use-of-fund ,.pre-money,.post-money{
+			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+		}
+		
+	
+		
 	</style>
 
 
@@ -514,6 +596,7 @@
 			<!-- analysis -->
 			<div class="analysis">
 				<!-- analysis chart -->
+				<h1>Analysis</h1>
 				<canvas id="analysis-line-chart"></canvas>
 
 			</div>
@@ -521,8 +604,9 @@
 
 
 		<!-- section 6 --> <!-- Valuation and Transaction -->
-		<div class="section-group">
+		<div class="section-group ">
 			<div class="valuation">
+				<h1> Valuation</h1>
 				<!-- bar chart --> 
 				<canvas id="valuation-bar-chart"></canvas>
 			</div>
@@ -530,22 +614,26 @@
 			<!-- transaction chart -->
 			<div class="transation-chart-group">
 				<div class="use-of-fund">
+					<h1>Use of Funds</h1>
 					<!-- use of fund char -->
 					<canvas id="use-of-fund-donut-chart"></canvas>
 				</div>
 				
-				<div class="cap-table">
-					<div>
-						<!-- Pre money-->
-						<canvas id="pre-money-donut-chart"></canvas>
-					</div>
-					<div>
-						<!-- Post money-->
-						<canvas id="post-money-donut-chart"></canvas>
-					</div>
+				<!-- Cap Table -->
+				<div class="pre-money">
+					<h1>Pre Money</h1>
+					<!-- Pre money-->
+					<canvas id="pre-money-donut-chart"></canvas>
+				</div>
+
+				<div class="post-money">
+					<h1>Post Money</h1>
+					<!-- Post money-->
+					<canvas id="post-money-donut-chart"></canvas>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
 		<!-- section 7 --> <!-- fair market test society -->
@@ -631,27 +719,32 @@
 		var myChart3 = new Chart(use_of_fund_donut_chart, {
 			type: 'doughnut',
 			data: {
-				labels: ['Revenue', 'EBIT', 'Valuation'],
+				labels: ['Product', 'Staffing', 'Marketing','Working Capital'],
 				datasets: [{
-					label: 'Analysis',
-					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					data: [2000000, 1000000, 700000, 400000],
 					backgroundColor: [
-						'rgba(20, 119, 194, 0.1)',
+						'rgba(20, 119, 194, 1)',
+						'rgba(20, 119, 194, .8)',
+						'rgba(20, 119, 194, .6)',
+						'rgba(20, 119, 194, .4)',
+						'rgba(20, 119, 194, .2)',
 					],
 					borderColor: [
 						'rgba(20, 119, 194, 1)',
 					],
-					borderWidth: 3
+					borderWidth: 2
 				}]
 			},
 			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
+				legend:{
+					display:true,
+					position:'bottom',
+					labels: {
+						fontSize:20,
+						padding:30
+					}
 				}
+				
 			}
 		});
 
@@ -662,27 +755,29 @@
 		var myChart4 = new Chart(pre_money_chart, {
 			type: 'doughnut',
 			data: {
-				labels: ['Revenue', 'EBIT', 'Valuation'],
+				labels: ['Upside Digital'],
 				datasets: [{
 					label: 'Analysis',
-					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					data: [6000000],
 					backgroundColor: [
-						'rgba(20, 119, 194, 0.1)',
+						'rgba(20, 119, 194, .7)',
 					],
 					borderColor: [
-						'rgba(20, 119, 194, 1)',
+						'rgba(255, 255, 254, 1)',
 					],
-					borderWidth: 3
+					borderWidth: 1
 				}]
 			},
 			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
+				legend:{
+					display:true,
+					position:'bottom',
+					labels: {
+						fontSize:20,
+						padding:30
+					}
 				}
+				
 			}
 		});
 
@@ -692,27 +787,29 @@ var post_money_chart = document.getElementById('post-money-donut-chart')
 		var myChart5 = new Chart(post_money_chart, {
 			type: 'doughnut',
 			data: {
-				labels: ['Revenue', 'EBIT', 'Valuation'],
+				labels: ['Upside Digital','Investor'],
 				datasets: [{
-					label: 'Analysis',
-					data: [-2000000, 0, 2000000, 4000000, 6000000],
+					data: [80000,30000],
 					backgroundColor: [
-						'rgba(20, 119, 194, 0.1)',
+						'rgba(20, 119, 194, 1)',
+						'rgba(20, 119, 194, .6)'
 					],
 					borderColor: [
-						'rgba(20, 119, 194, 1)',
+						'rgba(255, 255, 254, 1)',
 					],
-					borderWidth: 3
+					borderWidth: 1
 				}]
 			},
 			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
+				legend:{
+					display:true,
+					position:'bottom',
+					labels: {
+						fontSize:20,
+						padding:30
+					}
 				}
+				
 			}
 		});
 
