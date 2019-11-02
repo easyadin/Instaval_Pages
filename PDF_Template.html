@@ -177,27 +177,19 @@
 		.target-market-structure-group {
 			display: flex;
 			padding: 20px;
+			justify-content: space-between;
+
 		}
-		.target-market-structure-group h1{
-			 font-size: 25px;
+		.target-market-structure-group span h1{
+			 font-size: 20px;
 			 font-weight: 400;
-			 line-height: 20px;
+			 line-height: 50px;
 			 text-transform: uppercase;
 		}
-		.target-market-structure-group h1:nth-child(2){
-			 font-weight: 800;
-		}
-		.t1h1 {
-			margin-left: 450px;
-		} 
-		.t2h1 {
-			margin-left: 383px;
-		}
-		.t3h1 {
-			margin-left: 145px;
-		}
-		.t4h1 {
-			margin-left: 168px;
+		.target-market-structure-group span:nth-child(2) h1{
+			font-weight: 700;
+			text-align: right;
+
 		}
 		.team {
 			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
@@ -233,7 +225,6 @@
 			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
 			border-radius: 6px;
 			margin-top: 40px;
-			width:774px;
 		}
 		.competition h2{
 			border-top-left-radius: 6px;
@@ -242,42 +233,28 @@
 			padding: 20px;
 			color:#fff;
 		}
-		.competition-intensity {
-			 text-transform: uppercase;
-			 line-height: 20px;
-			 display: flex;
-		     padding: 20px;
-		}
-		.competition-intensity h1 {
-			 font-weight: 400;
-			 font-size: 25px;
-			 letter-spacing: 1px;
-		}
-		.competition-intensity h1:nth-child(2) {
-			 font-weight: 800;
-			 font-size: 25px;
-			 margin-left: 219px;
-			 letter-spacing: 1.5px;
-		}
-		.competitors-website {
+		.competition-container {
 			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
+			justify-content: space-between;
 		}
-		.competitors-website h1 {
-			text-transform: uppercase;
-			font-size: 25px;
+		.competition-container div, .competition-container .competition-label {
 			padding: 20px;
-			font-weight: 400;
 		}
-		.competitors-website span h1 {
-			font-weight: 800;
-			margin-left: 219px;
-			line-height: 5px;
-			font-size: 20px;
+		.competition-container h1{
+	  		 font-size: 20px;
+			 font-weight: 400;
+			 text-transform: uppercase;
+			 line-height: 50px;
+		}
+		.competition-container div h1 {
+			font-weight: 700;
+		}
+		.competition-container div span h1 {
 			text-transform: none;
+			line-height: 30px;
+			font-weight: 500;
 		}
-
+		
 
 		/* Fair Market**/
 		.fair-market {
@@ -363,7 +340,6 @@
 		}
 		.analysis canvas {
 			height: 700px;
-			width: auto;
 		}
 
 		/** Valuation and Transaction Section 6 **/
@@ -397,7 +373,172 @@
 			box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
 		}
 		
+	/*Responsiveness*/
+	@media only screen and (min-width: 2880px){
+		.section-group .value-proposition {
+   			 width: 1730px!important;
+		}
+		.target-market-structure-section {
+			width: 900px!important;
+		}
+		.section-group .value-proposition p {
+			font-size: 27px!important;
+		}
+		.team  {
+			width: 1730px!important;
+		}
+		.competition {
+			width: 900px!important;
+		}
+		.table-container {
+			width:1030px!important;
+		}
+		.analysis canvas {
+			width: 1599px!important;
+		}
+		.valuation canvas {
+			width: 1030px!important;
+			height: auto;
+		}
+		.transation-chart-group div canvas{
+			margin-top:120px!important;
+		}
+		.analysis {
+			margin: 40px 0 40px 0!important;
+		}
+	}	
 	
+	@media only screen and (min-width: 2560px) and (max-width: 2565px) {
+		.section-group .value-proposition {
+			width: 1550px!important;
+		}
+		.target-market-structure-section {
+			width: 770px!important;
+		}
+		.team {
+			width: 1550px!important;
+		}
+		.competition {
+			width: 770px!important;
+		}
+		.analysis canvas {
+			width: 1315px!important;
+		}
+		.table-container {
+			width: 1000px!important;
+		}
+		.analysis {
+			margin: 40px 0 40px 0!important;
+		}
+		.transation-chart-group {
+			width: 1418px!important;
+		}
+		.transation-chart-group canvas {
+			width: 300px!important;
+		}
+		.valuation canvas {
+			width: 900px!important;
+		}
+		.transation-chart-group {
+			width: 1620px;
+		}
+		.transation-chart-group canvas{
+			width: 451px!important;
+			margin-top: 100px;
+		}
+
+	}
+
+	@media only screen and (min-width: 1920px){
+			.section-group .value-proposition {
+				width: 1520px;
+			}
+			.target-market-structure-section {
+				width: 774px;
+			}
+	}
+
+	@media only screen and (max-width: 1440px){
+			.section-group .value-proposition {
+				width:540px;
+			}
+			.target-market-structure-section {
+				width:660px;
+			}
+			.target-market-structure-group h1 {
+				font-size:19px;
+			}
+			.team {
+				width: 750px;
+			}
+			.table-container {
+				width: 1400px;
+				overflow: hidden;
+				padding-bottom: 40px;
+			}
+			.analysis {
+    			margin: 0px 0 40px 0;
+			}
+			.analysis canvas {
+				width: 1244px;
+			}
+			.valuation canvas {
+				width: 1240px;
+			}
+			.banner-elements-group span i{
+				font-size: 15px;
+			}
+			.banner-elements-group span img {
+				height: 15px;
+			}
+			.banner-elements-group span h1 {
+				font-size: 15px;
+			}
+			.transaction-pitch span .grouped-updown-icons i {
+				font-size: 20px;
+			}
+			.transaction-pitch span h1{
+				font-size: 20px;
+			}
+			.transaction-pitch .transation-pitch-span {
+				padding: 10px;
+			}	
+			.section-group .value-proposition h1 {
+				font-size: 20px;
+				padding: 10px;
+			}
+			.target-market-structure-section h2 ,.team h2,.competition h2,.table-container h1 {
+				font-size: 20px;
+				padding: 10px;
+			}
+			.transation-chart-group {
+				margin-top: 40px;
+			}
+			.transation-chart-group h1 {
+				font-size: 20px;
+				font-weight: 700;
+			}
+			.transation-chart-group canvas {
+				width: 400px;
+				margin-bottom: 40px;
+			}
+	}
+
+	@media only screen and (max-width: 1024px){
+		.section-group .value-proposition,.team,.competition {
+			width: 100%;
+		}
+		.target-market-structure-section {
+			width: 100%;
+			margin-top: 40px;
+		}
+		.analysis canvas ,.valuation canvas{
+			width: 822px;
+		}
+		.post-money{
+			margin-top: 40px;
+		}
+	}
 		
 	</style>
 
@@ -456,44 +597,33 @@
 			<div class="value-proposition">
 				<h1>Value Proposition</h1>
 				<p>
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena
-						travailler avec du texte lisible et contena du sens est source de distractions,
 						et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem 
 						 sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède
 						  une distribution de lettres plus ou moins normale, et en tout cas comparable 
 						   celle du français 
-				</p>
-				<p>
-					et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem 
-					sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède
 				</p>
 			</div>
 
 			<!-- Target Market Structure-->
 			<div class="target-market-structure-section">
 				<h2>Target Market Structure</h2>
-				<span class="target-market-structure-group">
-					<h1>Volume</h1>
-					<h1 class="t1h1">2,000</h1>
-				</span>
-				<span class="target-market-structure-group">
-					<h1>Value in USD</h1>
-					<h1 class="t2h1">10,000,000</h1>
-				</span>
-				<span class="target-market-structure-group">
-					<h1>Target Market Share (Volume)</h1>
-					<h1 class="t3h1"> 35% </h1>
-				</span>
-				<span class="target-market-structure-group">
-					<h1>Target Market Share (Value)</h1>
-					<h1 class="t4h1"> 10% </h1>
-				</span>
+				
+				<div class="target-market-structure-group">
+					<!-- labels-->
+					<span>
+						<h1>Volume</h1>
+						<h1>Value in USD</h1>
+						<h1>Target Market Share (Volume)</h1>
+						<h1>Target Market Share (Value)</h1>
+					</span>
+					<!-- values goes here -->
+					<span>
+						<h1 class="">2,000</h1>
+						<h1 class="">10,000,000</h1>
+						<h1 class=""> 35% </h1>
+						<h1 class=""> 10% </h1>
+					</span>
+				</div>
 			</div>
 		</div>
 
@@ -503,6 +633,7 @@
 			 <div class="team">
 				 <h2> Team</h2>
 				 <div class="team-container">
+					 <!-- Labels -->
 					<span>
 						<h1>Name</h1>
 						<h1>Akram EL Youss</h1>
@@ -525,12 +656,15 @@
 			 <div class="competition">
 				<h2>Competition</h2>
 				<div class="competition-container">
-						<span class="competition-intensity">
+					<!-- Labels -->
+						<span class="competition-label">
 							<h1>Competition Intensity</h1>
-							<h1>Fair</h1>
+							<h1>Competitors Website</h1>
 						</span>
-						 <div class="competitors-website">
-							 <h1>Competitors Website</h1>
+
+						<!-- Values goes here -->
+						 <div>
+							 <h1>Fair</h1>
 						 	 <span>
 								 <h1>www.abc.com</h1>
 							 	 <h1>www.123.co</h1>
@@ -659,7 +793,6 @@
 			data: {
 				labels: ['Revenue', 'EBIT', 'Valuation'],
 				datasets: [{
-					label: 'Analysis',
 					data: [-2000000, 0, 2000000, 4000000, 6000000],
 					backgroundColor: [
 						'rgba(20, 119, 194, 0.1)',
@@ -667,16 +800,17 @@
 					borderColor: [
 						'rgba(20, 119, 194, 1)',
 					],
-					borderWidth: 3
+					borderWidth: 5
 				}]
 			},
 			options: {
+				legend: {
+					display:false
+				},
 				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
+					pointLabels: {
+						fontSize:20
+					}
 				}
 			}
 		});
@@ -690,25 +824,23 @@
 			data: {
 				labels: ['Revenue', 'EBIT', 'Valuation'],
 				datasets: [{
-					label: 'Analysis',
+					label: 'In USD',
 					data: [-2000000, 0, 2000000, 4000000, 6000000],
 					backgroundColor: [
-						'rgba(20, 119, 194, 0.1)',
+						'rgba(20, 119, 194, 0.3)',
+						'rgba(20, 119, 194, .7)',
+						'rgba(20, 119, 194, 0.9)'
 					],
 					borderColor: [
 						'rgba(20, 119, 194, 1)',
+						'rgba(20, 119, 194, 1)',
+						'rgba(20, 119, 194, 1)'
 					],
 					borderWidth: 3
 				}]
 			},
 			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
+			
 			}
 		});
 
@@ -741,8 +873,11 @@
 					position:'bottom',
 					labels: {
 						fontSize:20,
-						padding:30
-					}
+						padding:20,
+					},
+				},
+				layout: {
+					
 				}
 				
 			}
