@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Investor Dashboard</title>
+    <title>Investor Dashboard Dashboard</title>
     <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.css" integrity="sha256-jrNAqq4Gy0Gg2b6G6l0n57dPr6N1twCn+JMqY8x3l88=" crossorigin="anonymous" />
 
 </head>
 
@@ -34,9 +34,12 @@
                 display: flex;
                 flex-direction: row;
                 height: 60px;
+                background-color: #f3f6f9;
+                /* box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.2), 0 0px 1px 0 rgba(255, 255, 255, 0.19); */
             }
             .nav-container {
-                border-bottom: 1px solid rgba(214, 210, 210, 0.239);
+                border-bottom: 1px solid rgba(214, 210, 210, 0.199);
+                padding-bottom: 2px;
                 border-top:none;
             }
             .navbar {
@@ -45,22 +48,21 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 height: 60px;
-                background-color: rgb(255, 255, 255);
+                background-color: #f3f6f9;
             }
-            
             .left-nav {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-left: 20px;
+                margin-left: 40px;
             }
             .left-nav {
                 border-right-style:solid;
-                border-right-color: rgb(214, 210, 210);
+                border-right-color: rgba(214, 210, 210, 0.342);
                 border-right-width: 1px;
             }
             .left-nav a {
-                margin-right: 100px;
+                margin-right: 40px;
             }
             .middle-nav {
                 display: flex;
@@ -77,19 +79,25 @@
                 font-family: 'IBM Plex Sans', sans-serif;
                 color: rgb(91, 95, 112);
                 text-decoration: none;
-                padding-top: 15px;
-                padding-bottom: 15px;
+                padding: 20px;
                 transition: 1s;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            .middle-nav a i {
+                font-size: 18px;
             }
             .middle-nav a h1{
                font-family: 'IBM Plex Sans', sans-serif;
-               font-weight: 400 !important;
+               font-weight: 500!important;
+               font-size: 18px;
             }
             .middle-nav a:hover {
                 background-color: rgba(187, 187, 187, 0.459);
                 font-weight: 900;
-                padding-left: 10px;
-                padding-right: 10px;
+              
             }
             .middle-nav h1:nth-child(1) {
                 font-family: 'IBM Plex Sans', sans-serif;
@@ -128,38 +136,38 @@
             .dropDownMenu {
                 position: absolute;
                 right: 0;
-                margin-right: 55px;
+                margin-right: 63px;
                 margin-top: 65px;
+                background-color: #f3f6f9;
             }
             .dropDownMenu1 {
                 position: absolute;
                 left: 0;
-                margin-left: 299px;
+                margin-left: 324px;
                 margin-top: 65px;
             }
             .dropDownMenu2 {
                 position: absolute;
                 left: 0;
-                margin-left: 440px;
+                margin-left: 513px;
                 margin-top: 65px;
             }
             .dropDownMenu3 {
                 position: absolute;
                 left: 0;
-                margin-left: 565px;
+                margin-left: 697px;
                 margin-top: 65px;
             }
             .dropDownMenu4 {
                 position: absolute;
-                left: 0;
-                margin-left: 365px;
+                right: 0;
+                margin-right: 835px;
                 margin-top: 65px;
-                margin-left: 695px;
             }
             .dropDownMenu5 {
                 position: absolute;
-                left: 0;
-                margin-left: 820px;
+                right: 0;
+                margin-right: 655px;
                 margin-top: 65px;
             }
             .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
@@ -172,7 +180,7 @@
                 height: 140px;
                 width: 190px;
                 border-radius: 5px;
-                background-color: rgba(214, 210, 210, 0.239);
+                background-color:  #f3f6f9;
                 border-color: rgb(104, 88, 88);
                 z-index: 10000;
             }
@@ -186,21 +194,23 @@
                 height: 100px;
                 width: 190px;
                 border-radius: 5px;
-                background-color: rgba(214, 210, 210, 0.239);
-                border-color: rgb(104, 88, 88);
+                background-color: #f3f6f9;
+                border-color:#f3f6f9;
                 z-index: 10000;
+
             }
             a{
                 text-decoration: none;
+                transition: 0.1s;
             }
-            a:hover{
-                background-color: rgba(214, 210, 210, 81.239);
-                border-color: rgb(104, 88, 88);
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border-radius: 5px;
-                font-size: 10px;
-                transition: 0.3s;
+            .dropDownMenu a,   .dropDownMenu1 a,  .dropDownMenu2 a ,  .dropDownMenu3 a,  .dropDownMenu4 a,  .dropDownMenu5 a {
+                background-color:#f9f5f3;
+            }
+
+            .dropDownMenu a:hover,   .dropDownMenu1 a:hover,  .dropDownMenu2 a:hover ,  .dropDownMenu3 a:hover,  .dropDownMenu4 a:hover,  .dropDownMenu5 a:hover     {
+                transform:scale(1.05)!important;
+                box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+                background-color: #f3f6f9;
             }
             .instaval-logo a:hover{
                 background-color: transparent!important;
@@ -209,6 +219,12 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                padding:8px 0;
+                background-color: #f3f6f9;
+            }
+            .dropdown-content i {
+                color: rgb(66, 139, 202);
+                filter: invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%);
             }
             .format-text{
                 font-size: 16px!important;
@@ -235,7 +251,7 @@
                 height: 140px;
                 width: 190px;
                 border-radius: 5px;
-                background-color: rgb(255, 255, 255);
+                background-color:#f3f6f9;
                 border-color: rgb(104, 88, 88);
                 box-shadow: 10px 10px 5px #aaaaaa7a;
                 transition: 1s;
@@ -251,11 +267,12 @@
                 height: 100px;
                 width: 190px;
                 border-radius: 5px;
-                background-color: rgb(255, 255, 255);
+                background-color:#f3f6f9;
                 border-color: rgb(104, 88, 88);
                 box-shadow: 10px 10px 5px #aaaaaa7a;
                 transition: 1s;
             }
+            
             /* counters css*/
              /*Dashboard element design*/
              .countersParent{
@@ -312,7 +329,7 @@
                     font-size: 20px;
                     position: relative;
                     margin-left: 30px;
-                    color: #F5365C;
+                    color: #D00D28;
                     padding-top: 100px;
                     letter-spacing: 0.1rem;
                     font-family: 'IBM Plex Sans', sans-serif;
@@ -346,49 +363,72 @@
                 text-align: center;
                 width: 100%;
             }
+            .table-content {
+                border-bottom: 25px solid darkgrey;
+            }
             th {
                 white-space: nowrap;
                 padding: 10px 10px!important;
                 text-align: center;
                 color: #fff;
+            }
+            .th-Attributes {
+                width: 260px;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            tr td {
+                font-weight: 500;
+                font-family: 'IBM Plex Sans', sans-serif;
             } 
+            tr:hover{
+                background-color: rgba(100, 148, 237, 0.103);
+                
+            }
             td {
                 white-space: nowrap;
                 padding: 10px 10px!important;
                 text-align: center;
             }
+          
+            td a:hover{
+                padding: 12px!important;
+            }
             td a:nth-child(1) {
                 background-color: #2CABE3;
                 color: #fff;
                 padding: 10px;
-                padding-top: 12px;
                 cursor: pointer;
+                
+
             }
             td a:nth-child(2) {
                 background-color: #2CD07E;
                 color: #fff;
                 padding: 10px;
-                padding-top: 12px;
+            
                 cursor: pointer;
             }
             td a:nth-child(3) {
                 background-color: #707CD2;
                 color: #fff;
                 padding: 10px;
-                padding-top: 12px;
                 cursor: pointer;
+            }
+            tfoot {
+                background-color: darkgray;
             }
                                 /* charts css**/
                                 .DemoGraphics{
                                     font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 50px;
-                                    font-weight: 900;
+                                    font-size: 25px;
+                                    font-weight: 700;
                                     text-align: center;
                                 }
                                 .Financials{
                                     font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 50px;
-                                    font-weight: 900;
+                                    font-size: 25px;
+                                    font-weight: 700;
                                     text-align: center;
                                 }
                                 .chartParent {
@@ -397,7 +437,7 @@
                                     justify-content: center;
                                     text-align: center;
                                     color: #4F4F4F;
-                                    margin-top: 30px;
+                                    margin-top: 10px;
                                     width: 100%;
                                     justify-content: space-evenly;
                                 }
@@ -410,8 +450,9 @@
                                 }
                                 .chartParent h2{
                                     font-family: 'IBM Plex Sans', sans-serif;
-                                    font-size: 20px;
+                                    font-size: 15px;
                                     font-weight: 500;
+                                    padding: 20px;
                                 }
 
                                 /*Chart bg*/
@@ -454,7 +495,7 @@
                     display: none;
                  }
                  canvas {
-                     width: 587px!important;
+                     width: 435px!important;
                      height: auto!important;
                  }
             }
@@ -507,8 +548,9 @@
             <div class="navbar anim">
                     <!-- instaval logo-->
                     <div class="instaval-logo left-nav anim">
-                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 20px;"></a>
+                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 27px;"></a>
                     </div>
+                    <!-- mobile navigation -->
                     <div class="mobile-nav-dashboard anim">
                          <a href="#"><h1>Dashboard</h1></a>
                          <a href="#"><h1>Analytics</h1></a>
@@ -516,12 +558,13 @@
                          <a href="#"><h1>Startups</h1></a>
                          <a href="#"><h1>Investors</h1></a>
                     </div>
+                    <!-- navigation -->
                     <div class="middle-nav anim">
-                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1></a>
-                            <a href="#" class="analytics-btn"><h1>Analytics</h1></a>
-                            <a href="#"class="platform-btn"><h1 >Platform</h1></a>
-                            <a href="#" class="startups-btn"><h1>Startups</h1></a>
-                            <a href="#" class="investors-btn"><h1>Investors</h1></a>
+                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#"class="platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
                     </div>
                     <div class="right-nav anim">
                         <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
@@ -566,7 +609,7 @@
  <!-- custom dashboard counter-->
  <div class="countersParent">
         <div class="counterGroupElements">
-            <div class="counterIcon" style="background-color:#F5365C!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
+            <div class="counterIcon" style="background-color:#4E9BF0!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
             </div>
             <div class="counterBG">
                 <h1>20</h1>
@@ -613,9 +656,9 @@
         <!-- custom dashboard counter end here-->
 
         <!-- Table -->
-     <div class="table-container">
+     <div class="table-container table1">
             <div class="table-title">
-                <h1>DealFlow Data Analysis</h1>
+                <h1 id="respondToHorizontalScroll">DealFlow Data Analysis</h1>
             </div>
            <div class="table-content">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -631,22 +674,23 @@
                                         <th>Headcount</th>
                                         <th>Company Age (in years)</th>
                                         <th>Revenue 2019E (in '000)</th>
-                                        <th>Ebit Margin %</th>
                                         <th>Valuation (in '000)</th>
                                         <th>Target Funding (in '000)</th>
                                         <th>Funding Round</th>
                                         <th>Equity</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th>View | Download | Select</th>
                                 </tr> 
                         </thead>
                         <tbody>
                                 <tr>
                                         <td>Instaval</td>
-                                        <td>United Arab Emirates</td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
                                         <td>Enabler 1</td>
                                         <td>Industry 1</td>
-                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -658,7 +702,7 @@
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td id="data-status">Rejected</td>
-                                        <td>
+                                        <td class="table-actions">
                                             <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                             <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
                                             <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
@@ -666,10 +710,12 @@
                                 </tr>
                                 <tr>
                                         <td>Instaval</td>
-                                        <td>United Arab Emirates</td>
+                                        <td>
+                                                <span class="flag-icon flag-icon-ma"></span>
+                                                MOROCCO
+                                        </td>
                                         <td>Enabler 1</td>
                                         <td>Industry 1</td>
-                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -692,7 +738,6 @@
                                         <td>United Arab Emirates</td>
                                         <td>Enabler 1</td>
                                         <td>Industry 1</td>
-                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -726,8 +771,7 @@
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
-                                        <td>Dummy Data</td>
-                                        <td id="data-status">Pipeline</td>
+                                        <td id="data-status">new</td>
                                         <td>
                                                 <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
@@ -754,7 +798,7 @@
                             <thead>
                                     <tr>
                                             <tr>
-                                                    <th>Benchmarking & Analytics</th>
+                                                    <th class="th-Attributes">Attributes</th>
                                                     <th>Average</th>
                                                     <th >Median</th>
                                                     <th>Highest</th>
@@ -904,270 +948,132 @@
         // onclick /hover show dropDown menu 
             $(document).ready(function(){
                 
-                var dropDownisShow = false;
-                var dropDownisShow1 = false;
-                var dropDownisShow2 = false;
-                var dropDownisShow3 = false;
-                var dropDownisShow4 = false;
-                var dropDownisShow5 = false;
-                $(".right-nav").click(function(){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !false;//turn true
-
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                      
-                });
-                $(".dashboard-btn").click(function(){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !false;//turn true
-
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".analytics-btn").click(function(){
-                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                        dropDownisShow2 = !false;//turn true
-
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".platform-btn").click(function(){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !false;//turn true
-
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".startups-btn").click(function(){
-                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                        dropDownisShow4 = !false;//turn true
-
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
+                $(".right-nav").hover(function(){
+                        $(".dropDownMenu").addClass("showDropDownMenu");
+                        $(".dropDownMenu").show();
                         
+                        //others
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+                 
                 });
-                $(".investors-btn").click(function(){
-                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                        dropDownisShow5 = !false;//turn true
+                $(".dashboard-btn").hover(function(){
+                        $(".dropDownMenu1").addClass("showDropDownMenu1");
+                        $(".dropDownMenu1").show();
 
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !dropDownisShow3;//turn false
-                        }
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+                });
+                $(".analytics-btn").hover(function(){
+                        $(".dropDownMenu2").addClass("showDropDownMenu1");
+                        $(".dropDownMenu2").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+
+                });
+                $(".platform-btn").hover(function(){
+                        $(".dropDownMenu3").addClass("showDropDownMenu");
+                        $(".dropDownMenu3").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+
+                });
+                $(".startups-btn").hover(function(){
+                        $(".dropDownMenu4").addClass("showDropDownMenu");
+                        $(".dropDownMenu4").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu5").hide()
+
+                    
+                });
+                $(".investors-btn").hover(function(){
+                        $(".dropDownMenu5").addClass("showDropDownMenu");
+                        $(".dropDownMenu5").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+
+
                 });
                 //hide on mouseleave and  outside clicks
                 $('.dropDownMenu').mouseleave(function(){
-                    $(".dropDownMenu").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu").hide();
                 });
                 $('.dropDownMenu1').mouseleave(function(){
-                    $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu1").hide();
                 });
                 $('.dropDownMenu2').mouseleave(function(){
-                    $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu2").hide();
                 });
                 $('.dropDownMenu3').mouseleave(function(){
-                    $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu3").hide();
                 });
                 $('.dropDownMenu4').mouseleave(function(){
-                    $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu4").hide();
                 });
                 $('.dropDownMenu5').mouseleave(function(){
-                    $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
+                    $(".dropDownMenu5").hide();
                 });
               //click outside to toggle opened dropdown menu
                 $('.main-body-content-area').click(function(){
-                    if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                    }
-                    if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !dropDownisShow1;//turn false
-                    }
-                    if(dropDownisShow2 === true){
-                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                        dropDownisShow2 = !dropDownisShow2;//turn false
-                    }
-                    if(dropDownisShow3 === true){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !dropDownisShow3;//turn false
-                    }
-                    if(dropDownisShow3 === true){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !dropDownisShow3;//turn false
-                    }
-                    if(dropDownisShow4 === true){
-                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                        dropDownisShow4 = !dropDownisShow4;//turn false
-                    }
-                    if(dropDownisShow5 === true){
-                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                        dropDownisShow5 = !dropDownisShow5;//turn false
-                    }
+                        $(".dropDownMenu").hide();
+                        $(".dropDownMenu1").hide();
+                        $(".dropDownMenu2").hide();
+                        $(".dropDownMenu3").hide();
+                        $(".dropDownMenu4").hide();
+                        $(".dropDownMenu5").hide();
                 });
 
             //change the indicator of table data base 
             //on innerHTML content status
             var dataStatus = document.getElementsByTagName('td');
             for(let i=0; i<dataStatus.length;i++){
+               
                     if(dataStatus[i].innerText.toLowerCase() === "rejected"){
                         dataStatus[i].style.color ="white";
                         dataStatus[i].style.backgroundColor="#E31209";
+                        dataStatus[i].innerText =  dataStatus[i].innerText.toUpperCase();
                     }
                     if(dataStatus[i].innerText.toLowerCase() === "selected"){
                         dataStatus[i].style.color ="white";
                         dataStatus[i].style.backgroundColor="#2AC940";
+                        dataStatus[i].innerText =  dataStatus[i].innerText.toUpperCase();
                     }
-                    if(dataStatus[i].innerText.toLowerCase() === "pipeline"){
+                    if(dataStatus[i].innerText.toLowerCase() === "new"){
                         dataStatus[i].style.color ="white";
-                        dataStatus[i].style.backgroundColor="#FA9917";
+                        dataStatus[i].style.backgroundColor="#FB6340";
+                        dataStatus[i].innerText =  dataStatus[i].innerText.toUpperCase();
+                    }
+                    if(dataStatus[i].innerText.toLowerCase() === "pending"){
+                        dataStatus[i].style.color ="white";
+                        dataStatus[i].style.backgroundColor="#11CDEF";
+                        dataStatus[i].innerText =  dataStatus[i].innerText.toUpperCase();
                     }
             }
 
@@ -1786,7 +1692,32 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                                     }
                                 }
                     }); 
- });
+ 
+ 
+                    // detect horizontal scroll
+                  // element to detect scroll direction of
+                    var el = $('.table1')
+                    // initialize last scroll position
+                    lastX = el.scrollLeft();
+                    el.on('scroll', function() {
+                    // get current scroll position
+                    var currX = el.scrollLeft()
+                        // determine current scroll direction
+                        x = (currX > lastX) ? 'right' : ((currX === lastX) ? 'none' : 'left');
+                        //change title margin
+                          if(x === 'right'){
+                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "430px";
+                              document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
+                          }else{
+                            document.getElementById('respondToHorizontalScroll').style.marginLeft = "";
+                            document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
+                          }
+
+                    // update last scroll position to current position
+                    lastX = currX;
+                    });
+                    
+});
 
 
             

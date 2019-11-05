@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enabler Dashboard</title>
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+
+    <Style>
+        /* Navigation bar*/
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+            box-sizing: border-box;
+        }
+        .navigation-bar {
+            z-index: 200000;
+            width: 100%;
+        }
+        .fullcontainer {
+            width: 100%;
+            height: 70vh;
+            background-color: #F3F6F9;
+        }
+        .container {
+            width: 100%;
+        }
+        .navbar {
+            background-color: #f3f6f9 ;
+            height: 80px;
+            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
+        }
+        .navbar .logo{
+            margin-left: 10%;
+        }
+        .logo {
+            float: left;
+            margin-right: 50px;
+            width: 50px;
+        }
+        .logo a{
+            display: block;
+            padding: 25px 0;
+        }
+        .logo a img{
+            width: 155px;
+            height: 25px;
+            margin-top: 5px;
+        }
+        ul.left {
+            float: left;
+            margin-left: 20%;
+        }
+        ul.right {
+            float: right;
+        }
+        ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+        ul li {
+            display: inline-block;
+        }
+        ul li a {
+            display: block;
+            color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: .5s all ease;
+            font-weight: 500;
+        }
+        ul li a:hover {
+            color: rgb(0, 0, 0);
+        }
+        ul li a i {
+            font-size: small;
+            padding-left: 3px;
+        }
+        .message a i{
+            font-size: small;
+            padding-left: 5px;
+        }
+        .dropdownmenu {
+            letter-spacing: 1.5px;
+            z-index: 600;
+        }
+        .dropdownmenu ul{
+            width: 300px;
+            background: #fff;
+            position: absolute;
+            top: 4rem;
+            left: 28rem;
+            padding: 0;
+            border-radius: 5px;
+        }
+        .dropdownmenu ul::before {
+            content: '';
+            position: absolute;
+            top: -1.1rem;
+            left: 14rem;
+            border: 10px solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        .dropdownmenu ul li {
+            display: block;
+            padding: 14px;
+            transition: .2s all ease;
+            border-radius: 5px;
+            border-top:3px solid rgba(10, 100, 211, 0.089); /*use gray like color*/
+        }
+        .dropdownmenu>ul>li>a {
+            display: block;
+            color: #000;
+            margin-left: 80px;
+        }
+        /*Dashboard*/
+        .dropable1 li:nth-child(1) {
+            background: #f3f6f9 url(../Template/asset/png/TotalDealflow.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable1 li:nth-child(2) {
+            background: #f3f6f9 url(../Template/asset/png/bar-chart-grouped-fill.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+       
+        /*Analytics*/
+        .dropable2 li:nth-child(1) {
+            background: #f3f6f9 url(../Template/asset/png/analytics.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable2 li:nth-child(2) {
+            background: #f3f6f9 url(../Template/asset/png/cloud-computing.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable2 li:nth-child(3) {
+            background: #f3f6f9 url(../Template/asset/png/team.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        /*Platform*/
+        .dropable3 li:nth-child(1) {
+            background: #f3f6f9 url(../Template/asset/png/market-fluctuation_valuation.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable3 li:nth-child(2) {
+            background: #f3f6f9 url(../Template/asset/png/tools.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable3 li:nth-child(3) {
+            background: #f3f6f9 url(../Template/asset/png/team.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+
+        /*enterprise*/
+        .dropable4 li:nth-child(1) {
+            background: #f3f6f9 url(../Template/asset/png/settings-5-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable4 li:nth-child(2) {
+            background: #f3f6f9 url(../Template/asset/png/user-settings-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable4 li:nth-child(3) {
+            background: #f3f6f9 url(../Template/asset/png/exit_logout.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        /*Investors*/
+        .dropable5 li:nth-child(1) {
+            background: #f3f6f9 url(../Template/asset/png/share-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+        .dropable5 li:nth-child(2) {
+            background: #f3f6f9 url(../Template/asset/png/user-add-line.png) no-repeat;
+            background-position: center left 40px;
+            background-size: 35px;
+        }
+       
+        /* Dashboard */
+         .dropdownmenu ul:nth-child(1) {
+            /* left:35rem; */
+            left: 29.9%;
+        }
+        /* analytics*/
+        .dropdownmenu ul:nth-child(2) {
+            left:42.5rem;
+        }
+        /*Platform*/
+        .dropdownmenu ul:nth-child(3) {
+            left:50rem;
+        }
+        /*Enterprise name or logo*/
+        .dropdownmenu ul:nth-child(4) {
+            left:80rem;
+        }
+         /*Investors*/
+         .dropdownmenu ul:nth-child(5) {
+            left:80rem;
+        }    
+        .dropdownmenu ul li:hover {
+            background-color: #fff;
+            transform:scale(1.05);
+            box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+        }
+        .openMenu {
+             display: none;
+        }
+        .closeMenu {
+             display: none;
+        }
+            /*Responsiveness*/
+            /*Phones*/
+            @media only screen and (max-width: 425px){
+                /*nav bg*/
+                ul.left {
+                    margin-top: 18px;
+                    background-color: transparent!important;
+                    color: #fff!important;
+                    -webkit-animation: slide 0.3s forwards;
+                    -webkit-animation-delay: .2s;
+                    animation: slide 0.1s forwards;
+                    animation-delay: .2s;
+                }
+                @-webkit-keyframes slide {
+                    100% { 
+                         background-color: #f3f6f9 ;
+                         color: #fff!important;
+                         }
+                     70% { 
+                         background-color: #4C9BEE ;
+                         color: #fff!important;
+                         }
+                }
+                @keyframes slide {
+                    70% {
+                        background-color: #4C9BEE;
+                    }
+                }
+                @keyframes slide {
+                    100% {
+                        background-color: #f3f6f9 ;
+                        color: #fff!important;
+                    }
+                }
+                .dropdownmenu>ul>li>a {
+                    margin-left: 30px!important;
+                    padding-right: 20px;
+                }
+                ul li a {
+                    font-size: 15px!important;
+                }
+                .openMenu img {
+                    margin-top: 7%!important;
+                }
+                .closeMenu img {
+                    margin-top: 7%!important;
+                }
+                .dropdownmenu ul::before {
+                    border: 0px solid !important;
+                    z-index: 900!important;
+                }
+                .dropdownmenu ul {
+                    width: 211px!important;
+                    z-index: 100000!important;
+                }
+                .dropable1 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable1 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable1 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable1 li:nth-child(4) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable2 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable2 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable3 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable3 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable3 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable4 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable4 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable4 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable5 li:nth-child(1) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable5 li:nth-child(2) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+                .dropable5 li:nth-child(3) {
+                    background-position: center left 20px;
+                    background-size: 20px;
+                    z-index: 900!important;
+                }
+            }
+            @media only screen and (max-width: 768px){
+                .dropdownmenu ul::before {
+                    border: 0px solid;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 50.9%!important;
+                }
+                .dropdownmenu ul:nth-child(5) {
+                    left: 50.9%!important;
+                }
+                /*nav bg*/
+               ul.left {
+                    margin-top: 18px;
+                    background-color: transparent!important;
+                    color: #fff!important;
+                    -webkit-animation: slide 0.3s forwards;
+                    -webkit-animation-delay: .2s;
+                    animation: slide 0.1s forwards;
+                    animation-delay: .2s;
+                }
+                @-webkit-keyframes slide {
+                    100% { 
+                         background-color: #f3f6f9 ;
+                         color: #fff!important;
+                         }
+                     70% { 
+                         background-color: #4C9BEE ;
+                         color: #fff!important;
+                         }
+                }
+
+                @keyframes slide {
+                    70% {
+                        background-color: #4C9BEE;
+                    }
+                }
+                @keyframes slide {
+                    100% {
+                        background-color: #f3f6f9 ;
+                        color: #fff!important;
+                    }
+                }
+
+            }
+            @media only screen and (max-width: 991px){
+                /* Fix menu for mobile*/
+                .openMenu {
+                    display:contents;
+                    cursor: pointer;
+                }
+                .openMenu img{
+                    position: absolute;
+                    right: 0;
+                    margin-right: 10%;
+                    margin-top: 4%;
+                    cursor: pointer;
+                }
+                .closeMenu img{
+                    position: absolute;
+                    right: 0;
+                    margin-right: 10%;
+                    margin-top: 4%;
+                    cursor: pointer;
+                }
+                ul.left {
+                     display: none;
+                     position: absolute;
+                     top: 70px;
+                     z-index: 80000!important;
+                 }
+                ul li a {
+                    font-size: 10px;
+                }
+                ul.left li{
+                    display: flex;
+                    flex-direction: column;
+                 }
+                  /*Drop down menu*/
+                .dropdownmenu ul {
+                    width:300px;
+                    z-index: 400;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%;
+                }
+                .dropdownmenu ul:nth-child(5) {
+                    /* left: 35rem; */
+                    top: 80px;
+                    left: 50%!important;
+                }
+                .dropdownmenu ul::before {
+                    content: '';
+                    position: absolute;
+                    top: 1.1rem;
+                    left: 14rem;
+                }
+            }
+            /*smaller screens*/
+            /*Ask mr Khakan why this width doest respond*/
+            @media only screen and (max-width: 425px){
+                .openMenu img {
+                    margin-bottom: 8%;
+                }
+            }
+            /*laptop */
+            @media only screen and (max-width: 1024px) {
+                .navbar .logo {
+                    margin-left: 3%;
+                }
+                ul{
+                    padding-top: 25px;
+                }
+                ul.left {
+                
+                    margin-left: 0%; 
+                    padding-left: 8%;
+                }
+                ul li a {
+                    font-size: 16px;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 15.9%;
+                    top: 79px;
+                    z-index: 900!important;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 28rem;
+                    top: 79px;
+                    z-index: 900!important;
+                }
+                
+                .dropdownmenu ul:nth-child(3) {
+                    left: 38.5rem;
+                    top: 79px;
+                    z-index: 900!important;
+                }
+                
+                .dropdownmenu ul:nth-child(4) {
+                    left: 71.5rem;
+                    top: 79px;
+                    z-index: 900!important;
+                }
+                
+                .dropdownmenu ul:nth-child(5) {
+                    left:60rem;
+                    top: 79px;
+                    z-index: 900!important;
+                }
+                /* table css */
+                .table {
+                    width: 100%!important;
+                }
+
+               
+                /* DealFlow-data-analytics-table*/
+                .DealFlow-data-analytics-table {
+                    height: 100%!important;
+                    width: 100%!important;
+                }
+                /* Benchmarking and analytics table**/
+                .benchmarking-analytics-table{
+                    margin-top: 80px;
+                }
+                /*chart canvas css*/
+                canvas {
+                    width: 450px!important;
+                }
+               
+
+                
+            }
+          /*larger  screens */
+            @media only screen and (min-width: 1440px){
+                .navbar .logo {
+                        margin-left: 10%;
+                    }
+                ul.left {
+                    float: left;
+                    margin-left: 13%;
+                }
+                ul li {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .dropdownmenu ul:nth-child(1) {
+                    left: 27.9%;  top: 79px;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left:54.5rem;  top: 79px;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 68rem;  top: 79px;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 112.5rem;  top: 79px;
+                }
+                .dropdownmenu ul:nth-child(5) {
+                    left: 95.5rem;  top: 79px;
+                }
+                canvas {
+                    width: 660px!important;
+                }
+            }
+             /*Extremely large screens*/
+            @media only screen and (min-width:1920px){
+                .dropdownmenu ul:nth-child(1) {
+                    left: 26.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 65rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 79.5rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left:134.5rem;
+                }
+                .dropdownmenu ul:nth-child(5) {
+                    left:106.5rem;
+                }
+                canvas {
+                    width: 891px!important;
+                }
+            }
+             /*Extremely large screens*/
+             @media only screen and (min-width: 2560px){
+                .dropdownmenu ul:nth-child(1) {
+                    left:25.9%;
+                }
+                .dropdownmenu ul:nth-child(2) {
+                    left: 80rem;
+                }
+                .dropdownmenu ul:nth-child(3) {
+                    left: 94rem;
+                }
+                .dropdownmenu ul:nth-child(4) {
+                    left: 149.5rem;
+                }
+                .dropdownmenu ul:nth-child(5) {
+                    left:120.5rem;
+                }
+            }
+            @media only screen and (min-width: 2560px){
+                canvas {
+                    width: 915px!important;
+                }
+                .panel-table .panel-body .table-bordered > thead > tr:first-of-type > th{
+                    font-size: 18px!important;
+                    padding: 0px -10px;
+                }
+                .panel-table .panel-body .table-bordered > tbody > tr > td{
+                    font-size: 16px!important;
+                }
+                .table {
+                    width: 100%!important;
+                    height: auto!important;
+                }
+            }
+
+                /*Dashboard element design*/
+                .countersParent{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+                  width: 100%;
+                }
+                .counterGroupElements{
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important
+
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 18px!important;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 300px;
+                    height: 150px;
+                    border-radius: 6px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                    
+                }
+               .countersParent .counterIcon{
+                    width: 74px;
+                    height:71px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -30px;
+                    left: 25px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+
+                }
+                .counterIcon img {
+                    width: 41px;
+                    height: 41px;
+                   
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1){
+                    font-size: 70px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2){
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 30px;
+                    color: #F5365C;
+                    padding-top: 100px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 400;
+                }
+
+                .DealFlow-subText h1 {
+                    color: rgba(36, 38, 41, 0.952);
+                    text-align: center;
+                    margin-top: 70px;
+                    margin-bottom: 20px;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 600;
+                    letter-spacing: .4rem;
+                    font-size: 35px;
+                }
+                .benchmarking-table h1{
+                    color: rgba(36, 38, 41, 0.952);
+                    text-align: center;
+                    margin-top: 70px;
+                    margin-bottom: 20px;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 600;
+                    letter-spacing: .4rem;
+                    font-size: 35px;
+                }
+
+
+                /*Table CSS*/
+              
+                .panel-table .panel-body{
+                        padding:0;
+                        }
+                        .panel-table .panel-body .table-bordered{
+                        border-style: none;
+                        margin:0;
+                        }
+                        .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
+                            text-align:center;
+                            width: 100px;
+                        }
+                        .panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
+                        .panel-table .panel-body .table-bordered > tbody > tr > td:last-of-type {
+                        border-right: 0px;
+                        }
+                        .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type,
+                        .panel-table .panel-body .table-bordered > tbody > tr > td:first-of-type {
+                        border-left: 0px;
+                        }
+                        .panel-table .panel-body .table-bordered > tbody > tr:first-of-type > td{
+                        border-bottom: 0px;
+                        }
+                        .panel-table .panel-body .table-bordered > thead > tr:first-of-type > th{
+                       
+                        font-size: 10px;
+                        text-align: center;
+                        background-color: rgb(66, 139, 202);
+                        color: #fff;
+                        border-radius: 2px;
+                        }
+                        .panel-table .panel-footer .pagination{
+                        margin:0; 
+                        }
+                        .table-striped>tbody>tr:nth-child(odd) {
+                          background-color: #fff;
+                        }
+                        .panel-table .panel-footer .col{
+                        line-height: 34px;
+                        height: 34px;
+                        }
+                        .panel-table .panel-heading .col h3{
+                        line-height: 30px;
+                        height: 30px;
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: 900;
+                        color: rgba(51, 51, 51, 0.87);
+                        }
+                        .panel-table .panel-body .table-bordered > tbody > tr > td {
+                        line-height: 16px;
+                        font-size: 10px;
+                        text-align: center;
+                        }
+                        .panel-table .panel-body .table-bordered > tbody > tr > td .bh{
+                        line-height: 16px;
+                        font-size: 10px;
+                        text-align: center;
+                        width: 100%;
+                        }
+                        .btn{
+                            padding: 4px 8px!important;
+                            font-size: 13px;
+                        }
+                        .row {
+                            box-shadow: 0 0 5rem 0 rgba(136,152,170,.15)!important;
+                        }
+                        .row {
+                            background-color:#fff;
+                        }
+                        .panel-default>.panel-heading {
+                            background-color: #fff;
+                        }
+                        
+                        .panel-default {
+                            border-color: #fff;
+                            box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
+
+                        }
+                        .panel-footer {
+                            background-color: #fff;
+                        }
+
+                        ::-webkit-input-placeholder { /* Edge */
+                                color:#428BCA;
+                                }
+
+                                :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                                color:#428BCA;
+                                }
+
+                                ::placeholder {
+                                color: #428BCA;
+                                }
+
+                                /* style the first col in bench marking table*/
+                               
+                               
+                                .btable>thead>tr>th{
+                                    width: 100px;
+                                }
+
+                                /* charts css**/
+                                .DemoGraphics{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .Financials{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    text-align: center;
+                                }
+                                .chartParent {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    text-align: center;
+                                    color: #4F4F4F;
+                                    margin-top: 30px;
+                                    width: 100%;
+                                    justify-content: space-evenly;
+                                }
+                                .chartContainer {
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    padding-left: 40px;
+                                    padding-right: 40px;
+                                }
+                                .chartParent h2{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                }
+
+                                /*Chart bg*/
+                                .chartBG {
+                                    background-color: #FFFFFF;
+                                    height: auto;
+                                    border-radius: 6px;
+                                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important;
+                                    margin: 20px 10px;
+                                }
+                                .chart-card-size {
+                                    height: auto;
+                                }
+
+            
+    </Style>
+</head>
+<body style="background-color: #F3F6F9;">
+    <div class="fullcontainer">
+        <div class="sticky navigation-bar">
+            <nav class="navbar sticky">
+                <div class="logo">
+                    <a href="#"><img src="../Template/asset/Instaval_logo.png"></a>
+                </div>
+                <!-- burger menu-->
+                <div class="openMenu">
+                    <img class="open" src="../Template/asset/png/menu-fill.png">
+                </div>
+                <div class="closeMenu">
+                    <img class="close" src="../Template/asset/png/close-circle-fill.png">
+                </div>
+                <ul class="left">
+                    <!-- Dashboard-->
+                    <li><a href="#" class="dropmenu1">Dashboard<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Analytics-->
+                    <li><a href="#" class="dropmenu2">Analytics<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Platform-->
+                    <li><a href="#" class="dropmenu3">Platform<i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Startups-->
+                    <li><a href="#">Startups</a></li>
+                    <!-- Investors-->
+                    <li><a href="#" class="dropmenu5">Investors <i class="fas fa-chevron-right"></i></a></li>
+                    <!-- Enterprise Name or Logo-->
+                    <li><a href="#" class="dropmenu4">{Enterprise Name or Logo}<i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+               
+                <!-- dropdown menu-->
+                <div class="dropdownmenu" >
+                    <!-- Dashboard-->
+                    <ul class="dropable1"style="display:none; z-index:3000;">
+                        <li> <a href="#">Dealflow Data</a> </li> 
+                        <li><a href="#">Benchmarking</a></li> 
+                    </ul>
+                    <!-- Analytics Droppable-->
+                    <ul class="dropable2"  style="display: none;  z-index:3000;">
+                            <li><a href="#">Visuals</a></li> 
+                            <li><a href="#">Download Data</a></li> 
+                    </ul>
+                     <!--  Platform-->
+                     <ul class="dropable3"  style="display: none;  z-index:3000;">
+                            <li><a href="#">Valuation</a></li> 
+                            <li><a href="#">Tools</a></li> 
+                            <li><a href="#">Services</a></li> 
+                    </ul>
+                     <!--  Enterprise name or logo-->
+                     <ul class="dropable4"  style="display: none;  z-index:3000;">
+                            <li><a href="#">Settings</a></li> 
+                            <li><a href="#">Administration</a></li> 
+                            <!-- add a button here-->
+                            <li><a href="#">Logout</a></li> 
+                    </ul>
+                    <!--  Investors-->
+                    <ul class="dropable5"  style="display: none;  z-index:3000;">
+                            <li><a href="#">Invite</a></li> 
+                            <li><a href="#">Share</a></li> 
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- custom dashboard counter-->
+        <div class="countersParent">
+                <div class="counterGroupElements">
+                    <div class="counterIcon" style="background-color:#F5365C!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
+                    </div>
+                    <div class="counterBG">
+                        <h1>20</h1>
+                        <h1  style="color:rgb(218, 81, 109)!important;">TOTAL DEALFLOW</h1>
+                    </div>
+                </div>
+
+
+                <div class="counterGroupElements">
+                        <div class="counterIcon" style="background-color:#FB6340!important;"><img src="../Template/Icons v3/Projects_white_bg.png">
+                        </div>
+                        <div class="counterBG">
+                            <h1>20</h1>
+                            <h1  style="color:#FB6340!important;">NEW PROJECTS</h1>
+                        </div>
+                    </div>
+
+
+                    <div class="counterGroupElements">
+                            <div class="counterIcon"  style="background-color:#11CDEF!important;"><img src="../Template/Icons v3/Request_white_bg.png">
+                            </div>
+                            <div class="counterBG">
+                                <h1>15</h1>
+                                <h1 style="color:#11CDEF!important;" >PENDING REQUEST </h1>
+                                <!-- <h1>PENDING REQUEST</h1> -->
+                            </div>
+                        </div>
+
+                    
+                        <div class="counterGroupElements">
+                                <div class="counterIcon" style="background-color:#2AC940!important;"><img src="../Template/Icons v3/Approve_white.png">
+                                </div>
+                                <div class="counterBG">
+                                    <h1>5</h1>
+                                    <h1 style="color:#2AC940!important;">ACCEPTED</h1>
+                                </div>
+                            </div>
+                            
+                    <div class="counterGroupElements">
+                            <div class="counterIcon" style="background-color:#E31209!important;"><img src="../Template/Icons v3/Reject-2_white.png">
+                            </div>
+                            <div class="counterBG">
+                                <h1>8</h1>
+                                <h1 style="color:#E31209!important;">REJECTED</h1>
+                            </div>
+                        </div>
+        </div>
+                <!-- custom dashboard counter end here-->
+
+                <!-- <div class="DealFlow-subText"><h1>DealFlow Data Analysis</h1></div> -->
+
+             <!-- Table Data display-->    
+     
+     <div class="container table-container DealFlow-data-analytics-table"
+             style="margin-top: 5%; overflow: auto; height: 60%;
+             padding-right: 60px; padding-left: 60px;
+             ">
+        <div class="row">
+            <div>
+                <div class="panel panel-default panel-table">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col col-xs-6">
+                        <h3 class="panel-title">DealFlow Data Analysis</h3>
+                      </div>
+                      <div class="col col-xs-6 text-right">
+                        <input type="text" id="myInput" placeholder="Search" title="Type in to search"
+                         style="width: 30%;
+                         padding: 5px 20px;
+                         border: 1 solid #428BCA;
+                         border-radius: 5px;
+                         border-color: #428BCA;
+                         color: #428BCA;">
+                        <button type="button" class="btn btn-sm btn-primary btn-create" style="margin-left: 4%;">Refresh Table <i class="ri-refresh-line"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table id="dtHorizontalExample" class=" table-striped table-bordered table" style="color: rgb(124, 115, 115);">
+                      <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Country</th>
+                            <th>Enabler</th>
+                            <th>Revenue Stage</th>
+                            <th>Industry</th>
+                            <th>Business Model</th>
+                            <th>Lifecycle Stage</th>
+                            <th>Headcount</th>
+                            <th>Company Age (in years)</th>
+                            <th>Revenue 2019E (in '000)</th>
+                            <th>Ebit Margin %</th>
+                            <th>Valuation (in '000)</th>
+                            <th>Target Funding (in '000)</th>
+                            <th>Funding Round</th>
+                            <th>Equity</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr> 
+                      </thead>
+                      <tbody id="tableRef">
+                              <tr>
+                                <td>Instaval</td>
+                                <td>United Arab Emirates</td>
+                                <td>Enabler 1</td>
+                                <td>Industry 1</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td align="center">
+                                    <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                    <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Review Report"><i class="ri-checkbox-multiple-line"></i></a>
+                                    <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Startup 1</td>
+                                <td>United States of America</td>
+                                <td>Enabler 1</td>
+                                <td>Industry 1</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td align="center">
+                                    <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                    <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Review Report"><i class="ri-checkbox-multiple-line"></i></a>
+                                    <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Startup 1</td>
+                                <td>United States of America</td>
+                                <td>Enabler 1</td>
+                                <td>Industry 1</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td>Dummy Data</td>
+                                <td align="center">
+                                    <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                    <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Review Report"><i class="ri-checkbox-multiple-line"></i></a>
+                                    <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                </td>
+                              </tr>
+                            </tbody>
+                    </table>
+                
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col col-xs-4">Page 1 of 5
+                      </div>
+                      <div class="col col-xs-8">
+                        <ul class="pagination hidden-xs pull-right">
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                        </ul>
+                        <ul class="pagination visible-xs pull-right">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </div></div></div>
+                <!-- Benchmarking-->
+                <div class=" table-container benchmarking-analytics-table" 
+                        style="overflow:auto; width: 100%; padding-right: 60px; padding-left: 60px;">
+                        <div class="row">
+                            <div>
+                                <div class="panel panel-default panel-table">
+                                  <div class="panel-heading">
+                                    <div class="row">
+                                      <div class="col col-xs-6">
+                                        <h3 class="panel-title">Benchmarking & Analytics</h3>
+                                      </div>
+                                      <div class="col col-xs-6 text-right">
+                                        <button type="button" class="btn btn-sm btn-primary btn-create" style="margin-left: 4%;">Refresh Table <i class="ri-refresh-line"></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                <div class="benchmarking-table">
+                    <!-- <h1>Benchmarking & Analytics</h1> -->
+                    <div class="panel-body">
+                            <table  id="dtHorizontalExample" class="table table-striped table-bordered table-sm btable">
+                              <thead>
+                                <tr style="width: 100%;">
+                                    <th class="bh">Benchmarking & Analytics</th>
+                                    <th class="ba">Average</th>
+                                    <th class="ba">Median</th>
+                                    <th>Highest</th>
+                                    <th>Lowest</th>
+                                    <th>Top</th>
+                                    <th >Last</th>
+                                </tr> 
+                              </thead>
+                              <tbody>
+                                      <tr>
+                                        <td>Company Age (in yesrs)</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>Startup 1</td>
+                                        <td> Startup 10</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Revenue 2019E (in '000)</td>
+                                        <td>$<span>434</span></td>
+                                        <td>$<span>654</span></td>
+                                        <td>$<span>122</span></td>
+                                        <td>$<span>44</span></td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Valuation (in '000)</td>
+                                        <td>$<span>434</span></td>
+                                        <td>$<span>654</span></td>
+                                        <td>$<span>122</span></td>
+                                        <td>$<span>44</span></td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                      </tr>
+                                      <tr>
+                                            <td> Target Funding (in '000)</td>
+                                            <td>$<span>434</span></td>
+                                            <td>$<span>654</span></td>
+                                            <td>$<span>122</span></td>
+                                            <td>$<span>44</span></td>
+                                            <td>Dummy Data</td>
+                                            <td>Dummy Data</td>
+                                          </tr>
+                                          <tr>
+                                                <td> Equity</td>
+                                                <td>$<span>434</span></td>
+                                                <td>$<span>654</span></td>
+                                                <td>$<span>122</span></td>
+                                                <td>$<span>44</span></td>
+                                                <td>Dummy Data</td>
+                                                <td>Dummy Data</td>
+                                              </tr>
+                                              <tr>
+                                                    <td>  Ebit Margin %</td>
+                                                    <td>$<span>434</span></td>
+                                                    <td>$<span>654</span></td>
+                                                    <td>$<span>122</span></td>
+                                                    <td>$<span>44</span></td>
+                                                    <td>Dummy Data</td>
+                                                    <td>Dummy Data</td>
+                                                  </tr>
+                                    </tbody>
+                            </table>
+                          </div>
+               
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <!-- Chart canvas-->
+                <h1 class="DemoGraphics">Demographics</h1>
+                <div class="chartParent">
+                        <div class="chartContainer">
+                            <div class="chartBG">
+                                <h2>Revenue</h2>
+                                    <canvas id="RevenueStageChart"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Industry</h2>
+                                    <canvas id="Industry"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Business Model</h2>
+                                    <canvas id="BusinessModel"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Life Cycle</h2>
+                                    <canvas id="LifeCycle"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Company Age</h2>
+                                    <canvas id="CompanyAge"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Country</h2>
+                                    <canvas id="Country"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                    <h2>Funding Round</h2>
+                                    <canvas id="Fundinground"></canvas>
+                            </div>
+                            <div class="chartBG">
+                                <h2>Headcount</h2>
+                                    <canvas id="Headcount"></canvas>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- Financials Chart -->
+                <h2 class="Financials">Financials</h2>
+
+                <div class="chartParent">
+                        <div class=  "chartContainer chart-container-constrain">
+                            <div class="chartBG chart-card-size">
+                                <h2>Revenue in '000 $</h2>
+                                    <canvas id="revenueBar"></canvas>
+                            </div>
+                            <div class="chartBG chart-card-size">
+                                <h2>Valuation in '000 $</h2>
+                                    <canvas id="valuationBar"></canvas>
+                            </div>
+                            <div class="chartBG chart-card-size">
+                                <h2>Funding in '000 $</h2>
+                                    <canvas id="fundingBar"></canvas>
+                            </div>
+                            <div class="chartBG chart-card-size">
+                                <h2>Equity</h2>
+                                    <canvas id="equityBar"></canvas>
+                            </div>
+                            <div class="chartBG chart-card-size">
+                                <h2>Ebit Margin %</h2>
+                                    <canvas id="ebitBar"></canvas>
+                            </div>
+                        </div>
+                </div>
+
+    </div>
+  
+
+    
+
+
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js" integrity="sha256-36hEPcG8mKookfvUVvEqRkpdYV1unP6wvxIqbgdeVhk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        //change dropdown icon for large screen
+                
+          
+
+            //Revenue chart
+                    var RevenueStageChart = document.getElementById('RevenueStageChart').getContext('2d');
+                    var chart = new Chart(RevenueStageChart, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Pre Revenue', 'Pos Revenue'],
+                                    datasets: [{
+                                        data: [12, 19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.5)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+
+                     //Industry chart
+                    var Industry = document.getElementById('Industry').getContext('2d');
+                    var chart = new Chart(Industry, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['FinTech'],
+                                    datasets: [{
+                                        data: [19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+                     //BusinessModel chart
+                     var BusinessModel = document.getElementById('BusinessModel').getContext('2d');
+                     var chart = new Chart(BusinessModel, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Marketplace', 'B2C','Subcription','Fremium','B2B','B2B2C'],
+                                    datasets: [{
+                                        data: [12, 19,34,23,2,4], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+
+
+// Note : if the data pass points passed to the data :[] array the color intensity
+// or opacity increases accordingly
+ //LifeCycle chart
+ var LifeCycle = document.getElementById('LifeCycle').getContext('2d');
+                     var chart = new Chart(LifeCycle, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Traction','Launch','Growth','MVP','Idea'],
+                                    datasets: [{
+                                        data: [902,239,90,53,42], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+                   
+                   
+                   
+                   // remove dropdown arrow-right for larger screens
+                    $(document).ready(function(){  
+                       if(window.screen.width > 991){
+                            $("i.fa-chevron-right").removeClass("fa-chevron-right");
+                            $("i.fas").addClass("fa-chevron-down");
+                       }
+                    });
+
+
+
+
+                    //CompanyAge chart
+                    var CompanyAge = document.getElementById('CompanyAge').getContext('2d');
+                     var chart = new Chart(CompanyAge, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['1', '3','5','6'],
+                                    datasets: [{
+                                        data: [12, 19,1,3], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.5)',
+                                            'rgba(54, 162, 235,.3)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    });
+                    //Country chart
+                    var Country = document.getElementById('Country').getContext('2d');
+                     var chart = new Chart(Country, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['United Arab Emirate', 'Morocco','Nigeria','Singapore','Ghana'],
+                                    datasets: [{
+                                        data: [12, 19,18,11,10], //TODO : pass data to array
+                                        backgroundColor: [
+                                        'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235,.8)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+  //Fundinground chart
+  var Fundinground = document.getElementById('Fundinground').getContext('2d');
+                     var chart = new Chart(Fundinground, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Seed', 'Series A', 'Pre-seed'],
+                                    datasets: [{
+                                        data: [12, 19,11], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+
+
+  //Headcount chart
+  var Headcount = document.getElementById('Headcount').getContext('2d');
+                     var chart = new Chart(Headcount, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+                            data: {
+                                labels: ['1-10', '11-50'],
+                                    datasets: [{
+                                        data: [12, 19], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.2)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom'
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    }
+                                }
+                    }); 
+
+                    
+
+                        //Financials Chart
+//Headcount chart
+var revenueBar= document.getElementById('revenueBar').getContext('2d');
+                     var chart = new Chart(revenueBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+//valuationBar chart
+var valuationBar= document.getElementById('valuationBar').getContext('2d');
+                     var chart = new Chart(valuationBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+
+//fundingBar chart
+var fundingBar= document.getElementById('fundingBar').getContext('2d');
+                     var chart = new Chart(fundingBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+//equityBar chart
+var equityBar= document.getElementById('equityBar').getContext('2d');
+                     var chart = new Chart(equityBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+
+
+
+                    //ebitBar chart
+var ebitBar= document.getElementById('ebitBar').getContext('2d');
+                     var chart = new Chart(ebitBar, {
+                            // The type of chart we want to create
+                            type: 'bar',
+                            data: {
+                                labels: ['Average', 'Median',' Startup 9', 'Startup 4','startup 20'],
+                                    datasets: [{
+                                        data: [12, 19,20,24,40], //TODO : pass data to array
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235,.2)',
+                                            'rgba(54, 162, 235,.4)',
+                                            'rgba(54, 162, 235,.7)',
+                                            'rgba(54, 162, 235,.9)',
+                                            'rgba(54, 162, 235)',
+                                        ],
+                                    }]
+                                },
+                                options: {
+                                    responsive:true,
+                                    legend:{
+                                        position:'bottom',
+                                        display:false
+                                    },
+                                    animation:{
+                                        animateScale:true,
+                                        animateRotate:true,
+                                    },
+                                    tooltips: {
+                                        callbacks: {
+                                            label: function(tooltipItem, data) {
+                                               var dataset = data.datasets[tooltipItem.datasetIndex];
+                                               var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                                    return previousValue + currentValue;
+                                                });
+                                                var currentValue = dataset.data[tooltipItem.index];
+                                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+                                                return precentage + "%";
+                                            }
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            gridLines: {
+                                                offsetGridLines: true
+                                            }
+                                        }]
+                                    }
+                                }
+                    }); 
+         $(document).ready(function(){
+         
+            //search function
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tableRef tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+              // on hover navigation
+              $('.dropmenu1').hover(function(){
+                 $('ul.dropable1').show();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu2').hover(function(){
+                 $('ul.dropable2').show();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu3').hover(function(){
+                 $('ul.dropable3').show();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu4').hover(function(){
+                 $('ul.dropable4').show();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable1').hide();
+                 $('ul.dropable5').hide();
+             });
+              $('.dropmenu5').hover(function(){
+                 $('ul.dropable5').show();
+                 $('ul.dropable4').hide();
+                 $('ul.dropable3').hide();
+                 $('ul.dropable2').hide();
+                 $('ul.dropable1').hide();
+             });
+             // also check onmouseleave on dropables
+             $('ul.dropable1').mouseleave(function(){
+                 $('ul.dropable1').hide();
+             });
+             $('ul.dropable2').mouseleave(function(){
+                 $('ul.dropable2').hide();
+             });
+             $('ul.dropable3').mouseleave(function(){
+                 $('ul.dropable3').hide();
+             });
+             $('ul.dropable4').mouseleave(function(){
+                 $('ul.dropable4').hide();
+             });
+             $('ul.dropable5').mouseleave(function(){
+                 $('ul.dropable5').hide();
+             });
+             // outside click 
+             $(document).click(function(){
+                 $('ul.dropable1').hide();
+             });
+             $(document).click(function(){
+                 $(document).hide();
+             });
+             $(document).click(function(){
+                 $('ul.dropable3').hide();
+             });
+             $(document).click(function(){
+                 $('ul.dropable4').hide();
+             });
+             $(document).click(function(){
+                 $('ul.dropable5').hide();
+             });
+
+
+              // menu open on mobile
+                if(window.screen.width < 991){
+                    //show close button onclick of open
+                    $('.open').click(function(){
+                        $('.open').hide();
+                        $('.closeMenu').show();
+                        $('.close').show();
+
+                        //display the menu items
+                        $('ul.left').show();
+                    });
+                }
+                //show open button onclick of close
+                $('.close').click(function(){
+                    $('.close').hide();
+                    $('.open').show();
+                    $('.openMenu').show();
+                    $('ul.left').hide();
+                    $('ul.dropable5').hide();
+                    $('ul.dropable4').hide();
+                    $('ul.dropable3').hide();
+                    $('ul.dropable2').hide();
+                    $('ul.dropable1').hide();
+                });
+
+                    //tool tip
+          $('[data-toggle="tooltip"]').tooltip();   
+           $('#dtHorizontalExample').DataTable({
+            "scrollX": true
+            });
+            $('.dataTables_length').addClass('bs-select');
+ });
+
+  //on page scroll navbar remains fixed
+  $(window).scroll(function(e){ 
+                var $el = $('.navigation-bar');
+                var isPositionFixed = ($el.css('position') == 'fixed');
+                if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+                    $el.css({'position': 'fixed', 'top': '0px'}); 
+                }
+                if ($(this).scrollTop() < 200 && isPositionFixed){
+                  $el.css({'position': 'static', 'top': '0px'}); 
+                 } 
+            });
+    </script>
+</body>
+</html>
