@@ -25,8 +25,13 @@
             a{
                 text-decoration: none;
             }
-           
-           
+           .formWrapper {
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: auto;
+            z-index: 90909090909090;
+           }
            .wrapper {
                margin: auto;
                width: 1000px;
@@ -324,15 +329,6 @@
              cursor: pointer;
          }
 
-          .fundamentals_next_btn{
-            
-         }
-       /*  .financial_next_btn {
-             margin-left: 30px;
-         }
-         .transaction_next_btn {
-             margin-left: 30px;
-         } */
         .button-container button:hover {
             background-color: #fff;
             border: 1px solid #4c9bee;
@@ -389,9 +385,14 @@
 <body class="body-main">
     <!-- navigation -->
 <div style="text-align: center; margin: 30px;">
-        <button style="height: 50px; width: 100px;"> Open Form </button>
+    <h1> CLick button to reveal form</h1>
+        <button class="openForm" style="height: 50px; width: 100px; cursor: pointer;"> Open Form </button>
 </div>
-<div class="wrapper">
+
+
+
+<!-- Form starts here -->
+<div class="wrapper formWrapper" style="display: none;">
         <!-- form --> 
  <!--main form area-->
  <div class="form-container">
@@ -1156,7 +1157,18 @@
                 $('#transaction_next_btn').click(function(){
                    // last button
                 })
-});
+
+
+
+
+
+
+               //reveal on button click     
+                $('.openForm').click(function(){
+                    $('.formWrapper').toggle();
+                });     
+
+     });
             
           
 
