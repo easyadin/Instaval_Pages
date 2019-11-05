@@ -22,189 +22,15 @@
             body{
                 background-color: rgba(224, 239, 248, 0.158);
             }
-            .sticky {
-                position: sticky;
-                top: 0;
-                z-index: 20000000;
-            }
-            .nav-container {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                height: 60px;
-            }
-            .nav-container {
-                border-bottom: 1px solid rgba(214, 210, 210, 0.239);
-                border-top:none;
-            }
-            .navbar {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                height: 60px;
-                background-color: rgb(255, 255, 255);
-            }
-            
-            .left-nav {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-left: 20px;
-            }
-            .left-nav {
-                border-right-style:solid;
-                border-right-color: rgb(214, 210, 210);
-                border-right-width: 1px;
-            }
-            .left-nav a {
-                margin-right: 100px;
-            }
-            .middle-nav {
-                display: flex;
-                flex-direction: row;
-                font-size: 10px;
-                font-weight: 100;
-                justify-content: center;
-                align-items: center;
-                color: #5b5f70;
-                margin-left: 3%;
-            }
-            .middle-nav a {
-                margin-left: 50px;
-                font-family: 'IBM Plex Sans', sans-serif;
-                color: rgb(91, 95, 112);
-                text-decoration: none;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                transition: 1s;
-            }
-            .middle-nav a h1{
-               font-family: 'IBM Plex Sans', sans-serif;
-               font-weight: 400 !important;
-            }
-            .middle-nav a:hover {
-                background-color: rgba(187, 187, 187, 0.459);
-                font-weight: 900;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            .middle-nav h1:nth-child(1) {
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-weight: 700;
-            }
-            .right-nav {
-                position: absolute;
-                right: 0;
-                margin-right: 10px;
-                height: 60px;
-            }
-            .right-nav {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 10px;
-                color: rgb(91, 95, 112);
-                padding-left:12px;
-                padding-right:12px;
-            }
-            .right-nav:hover {
-                background-color:rgba(187, 187, 187, 0.459);
-                cursor: pointer;
-                transition: 0.6s;
-            }
-            .right-nav h1 {
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-weight: 500;
-                margin-left: 10px;
-            }
-            .right-nav i {
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-weight: 400;
-                font-size: 20px;
-            }
-            .dropDownMenu {
-                position: absolute;
-                right: 0;
-                margin-right: 55px;
-                margin-top: 65px;
-            }
-            .dropDownMenu2 {
-                position: absolute;
-                left: 0;
-                margin-left: 440px;
-                margin-top: 65px;
-            }
-            .dropDownMenu3 {
-                position: absolute;
-                left: 0;
-                margin-left: 565px;
-                margin-top: 65px;
-            }
-            .dropDownMenu, .dropDownMenu3 {
-                display: none;
-                flex-direction: column;
-                justify-content: center;
-                justify-content: space-around;
-                list-style: none;
-                font-family: 'IBM Plex Sans', sans-serif;
-                height: 140px;
-                width: 190px;
-                border-radius: 5px;
-                background-color: rgba(214, 210, 210, 0.239);
-                border-color: rgb(104, 88, 88);
-                z-index: 10000;
-            }
-            .dropDownMenu1,.dropDownMenu2 {
-                display: none;
-                flex-direction: column;
-                justify-content: center;
-                justify-content: space-around;
-                list-style: none;
-                font-family: 'IBM Plex Sans', sans-serif;
-                height: 100px;
-                width: 190px;
-                border-radius: 5px;
-                background-color: rgba(214, 210, 210, 0.239);
-                border-color: rgb(104, 88, 88);
-                z-index: 10000;
-            }
             a{
                 text-decoration: none;
             }
-            .nav-container .middle-nav a:hover{
-                background-color: rgba(214, 210, 210, 81.239);
-                border-color: rgb(104, 88, 88);
-                /* padding-top: 10px;
-                padding-bottom: 10px; */
-                border-radius: 5px;
-                font-size: 10px;
-                transition: 0.3s;
-            }
-            .instaval-logo a:hover{
-                background-color: transparent!important;
-            }
-            .dropdown-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                /* padding-top: 20px;
-                padding-bottom: 20px; */
-                transition: .2s;
-                height: auto!important;
-            }
-            .dropDownMenu a div,.dropDownMenu2 a div,.dropDownMenu3 a div {
-                padding-top: 14px;
-                padding-bottom: 14px;
-            }
-            /**drop down effect for menu items**/
-            .dropDownMenu a div:hover, .dropDownMenu2 a div:hover, .dropDownMenu3 a div:hover {
-                transform:scale(1.05)!important;
-                box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
-                background-color: #fff;
-            }
-         
-          
+           
+           
+           .wrapper {
+               margin: auto;
+               width: 1000px;
+           }
             .format-text{
                 font-size: 16px!important;
                 color: rgb(91, 95, 112)!important;
@@ -222,42 +48,10 @@
             .f-h1{
                 margin-left: 20px!important;
             }
-            .showDropDownMenu {
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                justify-content: space-around;
-                list-style: none;
-                font-family: 'IBM Plex Sans', sans-serif;
-                height: 140px;
-                width: 190px;
-                border-radius: 5px;
-                background-color: rgb(255, 255, 255);
-                border-color: rgb(104, 88, 88);
-                box-shadow: 6px 6px 29px #aaaaaa7a;
-                transition: 1s;
-            }
-            .showDropDownMenu1 {
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                justify-content: space-around;
-                list-style: none;
-                font-family: 'IBM Plex Sans', sans-serif;
-                height: 100px;
-                width: 190px;
-                border-radius: 5px;
-                background-color: rgb(255, 255, 255);
-                border-color: rgb(104, 88, 88);
-                box-shadow: 6px 6px 29px #aaaaaa7a;
-                transition: 1s;
-            }
             /** form style***/
         .form-container {
-            margin: 40px 230px;
             transition: .7s;
+            box-shadow: 0 1px 15px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
         }
         .title-header {
             font-family: 'IBM Plex Sans', sans-serif;
@@ -265,30 +59,31 @@
             color: #fff;
             background-color: #0173AE;
             text-align: center;
-            border: solid;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
-            transition: .7;
+            transition: .7s;
+            width: 100%;
         }
         .title-header h1 {
-            padding: 20px 0;
+            padding: 13px 0;
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 25px;
-            letter-spacing: 1px;
+            font-size: 20px;
             transition: .7;
+        }
+        .form-header {
+            width: 100%;
         }
          .form-header {
             font-family: 'IBM Plex Sans', sans-serif;
             display: flex;
-            margin-top: 10px;
             transition: .7s;
-            margin-left: 1.5px;
          }
          .form-header a {
             border: 2px solid #0173AE;
-            padding: 10px 100%;
-            transition: .7;
+            padding: 8px 5px;
+            transition: .7s;
+            width: 100%;
          }
          .form-header a:nth-child(1){
             border-right-width: 0px;
@@ -300,10 +95,11 @@
          .form-header a div {
             display: flex;
             align-items: center;
+            justify-content: center;
             transition: .7;
          }
          .form-header a div img {
-             height: 30px;
+             height: 25px;
              filter: invert(22%) sepia(98%) saturate(2017%) hue-rotate(182deg) brightness(100%) contrast(99%);
              transition: .7;   
          }
@@ -312,7 +108,8 @@
             font-weight: 300;
             padding-left: 30px;
             color:#0173AE;
-            transition: .7;
+            transition: .7s;
+            font-size: 20px;
          }
          .form-header a:nth-child(1){ /*fundamentals*/
             background-color: #0173AE;
@@ -338,7 +135,6 @@
          .main-form {
              margin-top: 20px;
              background-color:  rgba(246, 246, 246, 0.027);
-             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
              padding-top: 20px;
              margin-left: 1.5px;
              margin-right: 1.5px;
@@ -346,11 +142,11 @@
          .main-container {
              display: flex;
              justify-content:center;
-             justify-content: space-around;
+             justify-content: space-evenly;
              align-content: center;
          }
          .input-holder {
-             margin-bottom: 30px;
+             margin-bottom: 10px;
          }
          .input-holder h1{
             margin-bottom: 10px;
@@ -361,7 +157,7 @@
          }
          .input-holder input, textarea{
              display: block;
-             width: 650px;
+             width: 378px;
              height: calc(1.75rem + 3px);
              padding: .625rem .75rem;
              color: #8898aa;
@@ -375,43 +171,80 @@
              transition: box-shadow .15s ease;
              transition: .4s;
          }
-         .input-holder textarea{
+         .input-holder textarea {
              height: 175px;
          }
          .input-holder input:focus{
-            font-size: 22px;
+            font-size: 12px;
          }
-         .market-structure{
+         .sub-input-holder {
              display: flex;
-             justify-content: left;
-             justify-items: left;
-             align-content: left;
-             align-items: center;
+             flex-direction: row;
+             justify-content: space-between;
          }
-         .market-structure input{
-            width: 460px;
-            padding-left: 10px;
-            margin-bottom: 20px;
+         .sub-input-holder span h1 {
+             font-weight: 500;
+             font-size: 14px;
          }
-         .h1-text {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 34px!important;
+         .sub-input-holder span h1:nth-child(1) {
+             margin-top: 25px;
          }
-         .h1-text2 {
-            font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 45px!important;
+         .sub-input-holder span h1:nth-child(2) {
+             margin-top: 40px;
          }
-         .h1-text3 {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 40px!important;
+         .sub-input-holder span h1:nth-child(3) {
+             margin-top: 42px;
+         }
+         .sub-input-holder span input{
+             display: block;
+             width: 140px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+             margin-top: 10px;
+         }
+         /** Financial section **/
+         .sub-holder {
+             display: flex;
+             flex-direction: row;
+             flex-wrap: nowrap;
+         }
+         .sub-holder div input {
+             width: 237px!important;
+             margin-left: 50px;
+         }  
+         .sub-holder div input:nth-child(2) {
+             margin-top: 10px;
+         }  
+         .sub-holder div input:nth-child(3) {
+             margin-top: 10px;
+         } 
+         .sub-holder div h1 {
+             font-weight: 500;
+             font-size: 14px;
+         }
+         .sub-holder div h1:nth-child(1){
+             margin-top: 17px;
+         }
+         .sub-holder div h1:nth-child(2){
+             margin-top: 40px;
+         }
+         .sub-holder div h1:nth-child(3){
+             margin-top: 42px;
          }
          /* currency dropdown list */
          .currency-selection-tag {
              display: block;
-             width: 603px;
+             width: 400px;
              height: calc(2.95rem + 3px);
              padding: .625rem .75rem;
              color: #8898aa;
@@ -425,69 +258,32 @@
              transition: box-shadow .15s ease;
              transition: .4s;
          }
-         .f-h1-text {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 44px!important;
-         }
-         .f-h1-text2 {
-            font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 60px!important;
-         }
-         .f-h1-text3 {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 30px!important;
-         }
-         .t-h1-text {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 81px!important;
-         }
-         .t-h1-text2 {
-            font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 68px!important;
-         }
-         .t-h1-text3 {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 81px!important;
-         }
-         .t-h1-text4 {
-             font-size: 14px!important;
-             font-weight: 400!important;
-             padding-right: 30px!important;
-         }
+         
         
         /** Team ***/
          .Team-section {
             font-family: 'IBM Plex Sans', sans-serif;
-            margin-left: 30px;
-            margin-right: 30px;
          }
-         .Team-section h1 {
+         .team-text {
             font-family: 'IBM Plex Sans', sans-serif;
-            font-weight: 700;
-            font-size: 30px;
+            font-weight: 600;
+            font-size: 25px;
             color: #0173AE;
-            margin-top: 10px;
+            margin: 10px 65px;
          }
          .team-section-details-container{
              display: flex;
-             justify-content: space-between;
-             padding-bottom: 30px;
+             justify-content: space-evenly;
          }
          .team-section-details-container h1{
             font-family: 'IBM Plex Sans', sans-serif;
-            font-weight: 700;
+            font-weight: 500;
             font-size: 16px;
             color: #0173AE;
             margin-bottom: 10px;
          }
          .team-section-details-container input{
-             width: 290px;
+             width: 145px;
              display: block;
              height: calc(1.75rem + 3px);
              padding: .625rem .75rem;
@@ -503,56 +299,73 @@
              transition: .4s;
          }
          .team-section-details-container input:focus{
-            font-size: 22px;
+            font-size: 15px;
+         }
+         .transaction-sub-input-holder span input{
+            width: 280px;
          }
          /***buttons**/
          .button-container {
-            margin-top: 10px;
-            display: flex;
-            text-align: center;
-            width: 100%;
-         }
-         .button-container button{
-             width: 100%;
-             margin-left: 30px;
-             margin-right:30px;
-             margin-bottom: 30px;
-             border: 1.5px solid #0173AE;
-             background-color: #fff;
-             border-radius: 7px;
-             transition: 0.3s;
-         }
-         .button-container button div{
+             margin: 30px auto;
              display: flex;
-             align-items: center;
-             justify-content: center;
-             padding:10px;
-             color: #0173AE;
-             font-size: 20px;
+             justify-content: space-evenly;
+             padding-bottom: 30px;
+             /* width: 869px; */
          }
-         .button-container img{
-            height: 40px;
-            width: auto;
-            filter: invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%);
-            margin-right: 20px;
-         }
-         .button-container img :hover{
-            filter: none!important;
-         }
-         .button-container button :hover{
+         .button-container button {
+             text-decoration: none;
+             border-radius: 6px;
+             text-transform: uppercase;
+             transition: all 0.3s;
+             height: 45px;
+             width: 145px;
+             background-color: #4c9bee;
+             border: none;
              cursor: pointer;
          }
 
+          .fundamentals_next_btn{
+            
+         }
+       /*  .financial_next_btn {
+             margin-left: 30px;
+         }
+         .transaction_next_btn {
+             margin-left: 30px;
+         } */
+        .button-container button:hover {
+            background-color: #fff;
+            border: 1px solid #4c9bee;
+            color: #4c9bee;
+         }
+         .button-container button div {
+             display: flex;
+             flex-direction: row;
+             align-content: center;
+             align-items: center;
+             justify-content: center;
+             justify-content: space-evenly;
+         }
+         .button-container button div img {
+             height: 20px;
+             filter: invert(255%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(1000%);
+             /* filter: invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%); */
+         }
+         .button-container button div span {
+             color: #fff;
+         }
+
+       
+
          /**Comments section***/
          .comment-section {
-             margin-left: 30px;
-             margin-bottom: 50px;
-             margin-right: 50px;
+            margin: auto;
          }
          .comment-section textarea {
              display: block;
-             width: 100%;
+             width: 845px;
              height: 100px;
+             margin: auto;
              padding: .625rem .75rem;
              color: #8898aa;
              background-color: #fff;
@@ -566,348 +379,20 @@
              transition: .4s;
          }
          .comment-section h1 {
-            margin-bottom: 10px;
             font-family: 'IBM Plex Sans', sans-serif;
-            font-weight: 700;
-            font-size: 30px;
+            font-weight: 600;
+            font-size: 25px;
             color: #0173AE;
+            margin: 10px 63px;
          }
-
-          .mobile-nav-dashboard {
-                    display: none;
-        }
-            /*Responsive navigation*/
-            @media only screen and (max-width: 1024px){
-                .form-container {
-                    margin: 40px 40px;
-                    transition: .7s;
-                }
-                .form-header {
-                    transition: .7s;
-                    width: 42.5px;
-                }
-                .team-section-details-container input {
-                    width: 165px;
-                }
-                .input-holder input, textarea {
-                    width: 384px;
-                }
-                .market-structure input {
-                    width: 214px;
-                }
-                .currency-selection-tag {
-                    width: 403px;
-                }
-                .f-m-s input{
-                    width: 260px;
-                }
-
-
-                .mobile-nav-dashboard {
-                    display: none;
-                 }
-                 .middle-nav {
-                    margin-right: 0;
-                    margin-left: -24px;
-                 }
-                
-            }
-            @media only screen and (min-width: 1440px){
-                .mobile-nav-dashboard {
-                    display: none;
-                 }
-                 .form-container {
-                     margin:30px 0px;
-                 }
-                 .form-header {
-                     width: 125px;
-                 }
-                 .f-m-s input {
-                    width: 510px;
-                 }
-                 .currency-selection-tag {
-                    width: 653px;
-                 }
-            }
-            @media only screen and (min-width:1920px){
-               
-                 .form-container {
-                    margin: 40px 230px!important;
-                    transition: .7s;
-                }
-            }
-            @media only screen and (min-width: 2560px){
-                .form-container {
-                    margin: 40px 230px!important;
-                    transition: .7s;
-                }
-                .mobile-nav-dashboard {
-                    display: none;
-                 }
-                 .form-header {
-                     width: 235px;
-                 }
-                 .Team-section {
-                    margin-left: 120px;
-                    margin-right: 120px;
-                }
-                .horizontal-wrapper .input-holder {
-                    margin-top: 20px;
-                    transform: scale(1.2);
-                }
-                .currency-selection-tag {
-                    margin-bottom: 24px;
-                    width: 668px;
-                }
-                .input-holder h1 {
-                    margin-bottom: 30px;
-                }
-                .input-holder {
-                    margin-bottom: 70px;
-                }
-                .button-container {
-                    width: 1920px;
-                    margin-left: 90px;
-                }
-                 .comment-section {
-                    margin-left: 120px;
-                    margin-right: 150px;
-                }
-                /*div that holds the sub textinputs for financials, fundamentals, transaction*/
-                .f-m-s input{
-                    width: 528px;
-                }
-                .fund-m-s input {
-                    width: 483px;
-                }
-                .trans-m-s input{
-                    width: 520px;
-                }
-                .trans-m-s1 input {
-                    width: 650px;
-                }
-            }
-            @media only screen and (min-width: 2880px){
-                .form-container {
-                    margin: 40px 230px!important;
-                    transition: .7s;
-                }
-                .fundamentals-form {
-                    margin:0 60px;
-                }
-                .form-header {
-                     width: 289px;
-                 }
-                 .input-holder h1 {
-                     font-size: 27px;
-                 }
-                 .input-holder input, textarea {
-                     width: 800px;
-                 }
-                 .currency-selection-tag {
-                     width: 800px;
-                }
-                .market-structure input {
-                    width: 580px!important;
-                }
-                .Team-section {
-                    margin-left: 78px;
-                    margin-right: 88px;
-                }
-                .fundamental-button-container {
-                    width: 2201px;
-                    margin-left: 44px;
-                }
-                .fundamentals-comment-section {
-                    margin-left: 74px;
-                    margin-right: 222px;
-                    width: 92%;
-                }
-                .f-h1-text {
-                    font-size: 23px!important;
-                    font-weight: 400!important;
-                    padding-right: 70px!important;
-                }
-                .f-h1-text2 {
-                    font-size: 23px!important;
-                    font-weight: 400!important;
-                    padding-right: 100px!important;
-                }
-                .f-h1-text3 {
-                    font-size: 23px!important;
-                    font-weight: 400!important;
-                    padding-right: 50px!important;
-                }
-                .financial-button-container {
-                    width: 92.5%;
-                    /* margin-left: 300px; */
-                    margin-right: 1px;
-                }
-                .transaction-horizontal-wrapper1{
-                    margin-left: 45px;
-                }
-                .transaction-horizontal-wrapper2{
-                    margin-right: 45px;
-                }
-                .transaction-button-container {
-                    width: 92.5%;
-                    margin-left: 90px;
-                }
-              
-        }
-            @media only screen and (max-width: 991px){
-                .form-container {
-                    margin: 40px 40px;
-                    transition: .7s;
-                }
-                .form-header {
-                    transition: .7s;
-                    width: 52px
-                }
-                .team-section-details-container input {
-                    width: 110px;
-                }
-                .market-structure input {
-                    width: 110px!important;
-                }
-                .input-holder input, textarea {
-                    width: 283px;
-                }
-                .form-header a div img {
-                    height: 20px;
-                }
-                .form-header a h1 {
-                    padding-left: 20px;
-                    font-size: 16px;
-                    }
-                .currency-selection-tag {
-                    width: 254px;
-                }
-                .middle-nav {
-                    display: none;
-                }
-                .left-nav a {
-                    margin-right: 20px;
-                }
-                .mobile-nav-dashboard {
-                    display: contents;
-                    font-family: 'IBM Plex Sans', sans-serif;
-                    font-size: 8px;
-                    color: rgb(91, 95, 112);
-                    display: flex;
-                    align-items: center;
-                }
-                .mobile-nav-dashboard h1{
-                    font-weight: 500;
-                    letter-spacing: 0.05rem;
-                    margin-left: 20px;
-                }
-                .mobile-nav-dashboard a{
-                    text-decoration: none; color: rgb(91, 95, 112);
-                }
-    
-            }
-            @media only screen and (max-width: 425px){
-                .mobile-nav-dashboard a{
-                    display: none;
-                }
-                .form-container {
-                      margin: 40px 5px;
-                }
-                .form-header {
-                    transition: .7s;
-                    width: 5.9px!important;
-                }
-                .input-holder input, textarea {
-                    width: 360px!important;
-                }
-                .team-section-details-container input {
-                    width: 360px!important;
-                }
-                .button-container button div {
-                    padding: 5px!important;
-                    font-size: 18px!important;
-                }
-                .button-container img {
-                     height: 15px!important;
-                }
-                .button-container button {
-                    width: 100%;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-                .team-section-details-container {
-                    display: flex;
-                    padding-bottom: 30px;
-                    flex-wrap: wrap;
-                    flex-direction: column;
-                }
-                .main-container {
-                    flex-direction: column!important;
-                }
-                .Team-section {
-                    margin-left: 14px;
-                }
-                .input-holder {
-                    margin-left: 14px!important;
-                }
-                .market-structure input {
-                    width: 248px!important;
-                }
-                .currency-selection-tag {
-                    width: 387px;
-                }
-                .title-header h1 {
-                    font-size: 17px;
-                }
-        }       
-        </Style>
+     </Style>
 <body class="body-main">
     <!-- navigation -->
-    <div class="nav-container sticky">
-            <div class="navbar">
-                    <!-- instaval logo-->
-                    <div class="instaval-logo left-nav ">
-                        <a href="#"><img src="asset/Instaval_logo.png" style="height: 20px;"></a>
-                    </div>
-                    <div class="mobile-nav-dashboard anim">
-                         <a href="#"><h1>Dashboard</h1></a>
-                         <a href="#"><h1>Analytics</h1></a>
-                         <a href="#"><h1>Platform</h1></a>
-                    </div>
-                    <div class="middle-nav anim">
-                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1></a>
-                            <a href="#" class="analytics-btn"><h1>Analytics</h1></a>
-                            <a href="#"class="platform-btn"><h1>Platform</h1></a>
-                    </div>
-                    <div class="right-nav anim">
-                        <img class="dropper" src="asset/DIFC_logo.png" style="height: 22px;"></a>
-                        <h1 class="dropper">DIFC FinTech Hive</h1>
-                        <i class="ri-arrow-down-s-line dropper"></i>
-                    </div>
-                    <!-- Dropdown menu company logo / name -->
-                    <div class="dropDownMenu">
-                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
-                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
-                                <a href="#" class="dropMenu-btn-a"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
-                    </div>
-                    <div class="dropDownMenu2">
-                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img class="convert-to-black" src="asset/png/TotalDealflow.png"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
-                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visual Analytics</h1></div></a>
-                    </div>
-                    <div class="dropDownMenu3">
-                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
-                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
-                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
-                    </div>
-                  
-             </div>
-    </div>
-
-
+<div style="text-align: center; margin: 30px;">
+        <button style="height: 50px; width: 100px;"> Open Form </button>
+</div>
 <div class="wrapper">
         <!-- form --> 
- <div class="required-indicator"></div>
  <!--main form area-->
  <div class="form-container">
      <div class="title-header"><h1>APPLICATION VETTING & ANALYSIS</h1></div>
@@ -972,10 +457,18 @@
                          </div>
                          <div class="input-holder">
                              <h1>Market Stucture</h1>
-                             <div>
-                                 <div class="market-structure fund-m-s"><h1 class="h1-text">Market Size in Volume</h1> <input type="text"></div>
-                                 <div class="market-structure fund-m-s"><h1 class="h1-text2">Market Size in Value</h1> <input type="text"></div>
-                                 <div class="market-structure fund-m-s"><h1 class="h1-text3">Competitors website</h1> <input type="text"></div>
+                             <div class="sub-input-holder">
+                                 <!-- Labels-->
+                                 <span><h1 class="h1-text">Market Size in Volume</h1> 
+                                    <h1 class="h1-text2">Market Size in Value</h1> 
+                                    <h1 class="h1-text3">Competitors website</h1>
+                                </span>
+                                 <!-- Input fields here -->
+                                 <span>
+                                     <input type="text">
+                                     <input type="text">
+                                     <input type="text">
+                                </span>
                              </div>
                          </div>                        
                      </div>
@@ -986,40 +479,41 @@
 
              <!-- Team -->
               <div class="Team-section">
-                  <h1>Team</h1>
-                 <div class="team-section-details-container">
-                             <div>
+                  <h1 class="team-text">Team</h1>
+                  <div class="team-section-details-container">
+                            <div>
                                  <h1>Full Name</h1>
                                  <input type="text" placeholder="John Doe">
                             </div>
-                              <div>
+                            <div>
                                  <h1>Role in the company</h1>
                                  <input type="text" placeholder="CEO">
                             </div>
-                              <div>
+                            <div>
                                  <h1>Relevant Background</h1>
                                  <input type="text">
                             </div>
-                              <div>
+                            <div>
                                  <h1>Year of Experience</h1>
                                  <input type="text" placeholder="16">
                             </div>
-                 </div>
+                  </div>
              </div>
 
              <!-- Comment Section -->
              <div class="comment-section fundamentals-comment-section">
                 <h1>Comment</h1>
                 <div class="comment-section-container">
-                    <textarea placeholder="Your comment goes hereoes here..."></textarea>
+                    <textarea placeholder="Your comment goes here..."></textarea>
                </div>
            </div>
 
            
              <!-- Fundamental Buttons -->
-            <div class="button-container fundamental-button-container">
-                 <button id="fundamentals-request-btn"  type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
-                 <button id="fundamentals-approve-btn"  type="button"><div><img id="approve_img" src="Icons v3/Approve.svg"><span id="approve_text">Approve</span></div></button>
+            <div class="button-container">
+                 <button id="fundamental_request_btn" type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
+                 <button id="fundamental_approve_btn" type="button"><div><img id="approve_img" src="Icons v3/Approve.svg"><span id="approve_text">Approve</span></div></button>
+                 <button id="fundamentals_next_btn" type="button"><div><span id="next_text">Next</span><img id="next_img" src="asset/svg/right-arrow.svg"></div></button>
             </div>
          </form>
 
@@ -1160,37 +654,73 @@
                           </div>
                           <div class="input-holder"> 
                                  <h1>Revenue</h1>
-                                 <div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                 <div class="sub-holder">
+                                     <!-- Labels -->
+                                     <div>
+                                         <h1>Current Year</h1>
+                                         <h1>Next Year</h1>
+                                         <h1>Within 2 Years</h1>
+                                     </div>
+                                     <!-- Input Fields-->
+                                     <div>
+                                        <input type="text">
+                                        <input type="text">
+                                        <input type="text">
+                                    </div>
                                  </div>
                          </div>      
                          <div class="input-holder">
                                  <h1>Growth</h1>
-                                 <div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                 <div class="sub-holder">
+                                     <!-- Labels -->
+                                     <div>
+                                         <h1>Current Year</h1>
+                                         <h1>Next Year</h1>
+                                         <h1>Within 2 Years</h1>
+                                     </div>
+                                     <!-- Input Fields-->
+                                     <div>
+                                        <input type="text">
+                                        <input type="text">
+                                        <input type="text">
+                                    </div>
                                  </div>
                          </div>                         
                       </div>
   
                       <div class="horizontal-wrapper">
                               <div class="input-holder">
-                                  <h1>Costs</h1>
-                                  <div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                 <h1>Costs</h1>
+                                 <div class="sub-holder">
+                                     <!-- Labels -->
+                                     <div>
+                                         <h1>Current Year</h1>
+                                         <h1>Next Year</h1>
+                                         <h1>Within 2 Years</h1>
+                                     </div>
+                                     <!-- Input Fields-->
+                                     <div>
+                                        <input type="text">
+                                        <input type="text">
+                                        <input type="text">
+                                    </div>
                                  </div>
                               </div>   
                               <div class="input-holder">
-                                  <h1>Liquidity</h1>
-                                  <div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text">Current Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text2">Next Year</h1> <input type="text"></div>
-                                     <div class="market-structure f-m-s"><h1 class="f-h1-text3">Within 2 Years</h1> <input type="text"></div>
+                                 <h1>Liquidity</h1>
+                                 <div class="sub-holder">
+                                     <!-- Labels -->
+                                     <div>
+                                         <h1>Current Year</h1>
+                                         <h1>Next Year</h1>
+                                         <h1>Within 2 Years</h1>
+                                     </div>
+                                     <!-- Input Fields-->
+                                     <div>
+                                        <input type="text">
+                                        <input type="text">
+                                        <input type="text">
+                                    </div>
                                  </div>
                               </div>                        
                       </div>
@@ -1205,9 +735,20 @@
            </div>
 
                   <!--financials Buttons -->
-                 <div class="button-container financial-button-container">
-                      <button id="financial-request-btn"  type="button"><div><img id="fin-request_img" src="Icons v3/Request.svg"><span id="fin-request_text">Request</span></div></button>
-                      <button id="financial-approve-btn"  type="button"><div><img id="fin-approve_img" src="Icons v3/Approve.svg"><span id="fin-approve_text">Approve</span></div></button>
+                 <div class="button-container">
+                      <button id="financial_request_btn"  type="button"><div><img id="fin_request_img" src="Icons v3/Request.svg"><span id="fin_request_text">Request</span></div></button>
+                      <button id="financial_approve_btn"  type="button"><div><img id="fin_approve_img" src="Icons v3/Approve.svg"><span id="fin_approve_text">Approve</span></div></button>
+                      <button id="financial_back_btn"  type="button"><div>
+                          <img id="fin_back_img" src="asset/svg/back.svg">
+                          <span id="fin_back_text">Back</span>
+                        </div>
+                      </button>
+                      <button id="financial_next_btn"  type="button">
+                          <div>
+                          <span id="fin_next_text">Next</span>
+                          <img id="fin_next_img" src="asset/svg/right-arrow.svg">
+                        </div>
+                    </button>
                  </div>
          </form>
 
@@ -1241,12 +782,19 @@
                          </div> 
                          <div class="input-holder">
                              <h1>Use of Funds</h1>
-                             <div>
-                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text">Product</h1> <input type="text"></div>
-                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text2">Marketing</h1> <input type="text"></div>
-                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text3">Staffing</h1> <input type="text"></div>
-                                 <div class="market-structure trans-m-s"><h1 class="t-h1-text4">Working Capital</h1> <input type="text"></div>
-                             </div>
+                             <div class="sub-input-holder transaction-sub-input-holder">
+                                    <!-- Labels-->
+                                    <span><h1 class="h1-text">Product</h1> 
+                                       <h1 class="h1-text2">Marketing</h1> 
+                                       <h1 class="h1-text3">Staffing</h1>
+                                   </span>
+                                    <!-- Input fields here -->
+                                    <span>
+                                        <input type="text">
+                                        <input type="text">
+                                        <input type="text">
+                                   </span>
+                                </div>
                          </div>                   
                       </div>
                       <div class="horizontal-wrapper transaction-horizontal-wrapper2">
@@ -1288,17 +836,16 @@
 
 
                   <!--transaction Buttons -->
-                 <div class="button-container transaction-button-container">
-                      <button id="transaction-request-btn"  type="button"><div><img id="trac-request_img" src="Icons v3/Request.svg"><span id="trac-request_text">Request</span></div></button>
-                      <button id="transaction-approve-btn"  type="button"><div><img id="trac-approve_img" src="Icons v3/Approve.svg"><span id="trac-approve_text">Approve</span></div></button>
-                      <button id="transaction-reject-btn"  type="button"><div><img id="trac-reject_img" src="Icons v3/Reject 2.svg"><span id="trac-reject_text">Reject</span></div></button>
-                 </div>
+                 <div class="button-container">
+                      <button id="transaction_request_btn"  type="button"><div><img id="trac_request_img" src="Icons v3/Request.svg"><span id="trac_request_text">Request</span></div></button>
+                      <button id="transaction_approve_btn"  type="button"><div><img id="trac_approve_img" src="Icons v3/Approve.svg"><span id="trac_approve_text">Approve</span></div></button>
+                      <button id="transaction_reject_btn"  type="button"><div><img id="trac_reject_img" src="Icons v3/Reject 2.svg"><span id="trac_reject_text">Reject</span></div></button>
+                      <button id="transaction_back_btn"  type="button"><div><img id="trac_back_img" src="asset/svg/back.svg"><span id="trac_back_text">back</span></div></button>
+                      <button id="transaction_next_btn"  type="button"><div><img id="trac_next_img" src="asset/svg/send.svg"><span id="trac_next_text">Submit</span></div></button>
+                </div>
               </form>
      </div>
- </div>   
-
-
-
+ </div>  
 </div>
 
 
@@ -1307,249 +854,6 @@
     <script>
         // onclick /hover show dropDown menu 
             $(document).ready(function(){
-                
-                var dropDownisShow = false;
-                var dropDownisShow1 = false;
-                var dropDownisShow2 = false;
-                var dropDownisShow3 = false;
-                var dropDownisShow4 = false;
-                var dropDownisShow5 = false;
-                $(".right-nav").click(function(){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !false;//turn true
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                      
-                });
-                $(".dashboard-btn").click(function(){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !false;//turn true
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".analytics-btn").click(function(){
-                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                        dropDownisShow2 = !false;//turn true
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".platform-btn").click(function(){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !false;//turn true
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                });
-                $(".startups-btn").click(function(){
-                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                        dropDownisShow4 = !false;//turn true
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !true;//turn false
-                        }
-                        if(dropDownisShow5 === true){
-                            $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                            dropDownisShow5 = !true;//turn false
-                        }
-                        
-                });
-                $(".investors-btn").click(function(){
-                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                        dropDownisShow5 = !false;//turn true
-                        if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                        }
-                        if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !true;//turn false
-                        }
-                        if(dropDownisShow2 === true){
-                            $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                            dropDownisShow2 = !true;//turn false
-                        }
-                        if(dropDownisShow4 === true){
-                            $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                            dropDownisShow4 = !true;//turn false
-                        }
-                        if(dropDownisShow3 === true){
-                            $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                            dropDownisShow3 = !dropDownisShow3;//turn false
-                        }
-                });
-                //hide on mouseleave and  outside clicks
-                $('.dropDownMenu').mouseleave(function(){
-                    $(".dropDownMenu").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-                $('.dropDownMenu1').mouseleave(function(){
-                    $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-                $('.dropDownMenu2').mouseleave(function(){
-                    $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-                $('.dropDownMenu3').mouseleave(function(){
-                    $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-                $('.dropDownMenu4').mouseleave(function(){
-                    $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-                $('.dropDownMenu5').mouseleave(function(){
-                    $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                    dropDownisShow = false
-                    dropDownisShow1 = false
-                    dropDownisShow2 = false
-                    dropDownisShow3 = false
-                    dropDownisShow4 = false
-                    dropDownisShow5 = false
-                });
-              //click outside to toggle opened dropdown menu
-                $('.wrapper').click(function(){
-                    if(dropDownisShow === true){
-                        $(".dropDownMenu").toggleClass("showDropDownMenu");
-                        dropDownisShow = !true;//turn false
-                    }
-                    if(dropDownisShow1 === true){
-                        $(".dropDownMenu1").toggleClass("showDropDownMenu1");
-                        dropDownisShow1 = !dropDownisShow1;//turn false
-                    }
-                    if(dropDownisShow2 === true){
-                        $(".dropDownMenu2").toggleClass("showDropDownMenu1");
-                        dropDownisShow2 = !dropDownisShow2;//turn false
-                    }
-                    if(dropDownisShow3 === true){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !dropDownisShow3;//turn false
-                    }
-                    if(dropDownisShow3 === true){
-                        $(".dropDownMenu3").toggleClass("showDropDownMenu");
-                        dropDownisShow3 = !dropDownisShow3;//turn false
-                    }
-                    if(dropDownisShow4 === true){
-                        $(".dropDownMenu4").toggleClass("showDropDownMenu");
-                        dropDownisShow4 = !dropDownisShow4;//turn false
-                    }
-                    if(dropDownisShow5 === true){
-                        $(".dropDownMenu5").toggleClass("showDropDownMenu");
-                        dropDownisShow5 = !dropDownisShow5;//turn false
-                    }
-                });
                 //form onclick reveal and hide
                 var fundamental = document.getElementById('fundamental-btn');
                 var financial = document.getElementById('financial-btn');
@@ -1623,175 +927,239 @@
                  $('.financials-form').hide();     
                  $('.fundamentals-form').hide(); 
                 }
-                //application request buttons
-                //fundamental
-                //request hover function
-                $("#fundamentals-request-btn").hover(function(){
-                    $("#request_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#request_text").css({'color':'#fff'});
-                    $("#request_text").css({'display':'none'});
-                    $("#fundamentals-request-btn").css({'background-color':'#0173AE'});
-                });
-                //request mouseleave
-                $("#fundamentals-request-btn").mouseleave(function(){
-                    $("#request_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#request_text").css({'color':'#0173AE'});
-                    $("#request_text").css({'display':''});
-                    $("#fundamentals-request-btn").css({'background-color':'#fff'});
-                });
-                //approve hover function
-                $("#fundamentals-approve-btn").hover(function(){
-                    $("#approve_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#approve_text").css({'color':'#fff'});
-                    $("#approve_text").css({'display':'none'});
-                    $("#fundamentals-approve-btn").css({'background-color':'#0173AE'});
-                });
-                //mouseleave
-                $("#fundamentals-approve-btn").mouseleave(function(){
-                    $("#approve_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#approve_text").css({'color':'#0173AE'});
-                    $("#approve_text").css({'display':''});
-                    $("#fundamentals-approve-btn").css({'background-color':'#fff'});
-                });
-                 //Financials
-                //request hover function
-                $("#financial-request-btn").hover(function(){
-                    $("#fin-request_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#fin-request_text").css({'color':'#fff'});
-                    $("#fin-request_text").css({'display':'none'});
-                    $("#financial-request-btn").css({'background-color':'#0173AE'});
-                });
-                //request mouseleave
-                $("#financial-request-btn").mouseleave(function(){
-                    $("#fin-request_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#fin-request_text").css({'color':'#0173AE'});
-                    $("#fin-request_text").css({'display':''});
-                    $("#financial-request-btn").css({'background-color':'#fff'});
-                });
-                //approve hover function
-                $("#financial-approve-btn").hover(function(){
-                    $("#fin-approve_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#fin-approve_text").css({'color':'#fff'});
-                    $("#fin-approve_text").css({'display':'none'});
-                    $("#financial-approve-btn").css({'background-color':'#0173AE'});
-                });
-                //mouseleave
-                $("#financial-approve-btn").mouseleave(function(){
-                    $("#fin-approve_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#fin-approve_text").css({'color':'#0173AE'});
-                    $("#fin-approve_text").css({'display':''});
-                    $("#financial-approve-btn").css({'background-color':'#fff'});
-                });
-                 //Transaction
-                //request hover function
-                $("#transaction-request-btn").hover(function(){
-                    $("#trac-request_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#trac-request_text").css({'color':'#fff'});
-                    $("#trac-request_text").css({'display':'none'});
-                    $("#transaction-request-btn").css({'background-color':'#0173AE'});
-                });
-                //request mouseleave
-                $("#transaction-request-btn").mouseleave(function(){
-                    $("#trac-request_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#trac-request_text").css({'color':'#0173AE'});
-                    $("#trac-request_text").css({'display':''});
-                    $("#transaction-request-btn").css({'background-color':'#fff'});
-                });
-                //approve hover function
-                $("#transaction-approve-btn").hover(function(){
-                    $("#trac-approve_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#trac-approve_text").css({'color':'#fff'});
-                    $("#trac-approve_text").css({'display':'none'});
-                    $("#transaction-approve-btn").css({'background-color':'#0173AE'});
-                });
-                // approve mouseleave
-                $("#transaction-approve-btn").mouseleave(function(){
-                    $("#trac-approve_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#trac-approve_text").css({'color':'#0173AE'});
-                    $("#trac-approve_text").css({'display':''});
-                    $("#transaction-approve-btn").css({'background-color':'#fff'});
-                   
-                });
-                //reject hover function
-                $("#transaction-reject-btn").hover(function(){
-                    $("#trac-reject_img").css({'filter':`   
-                                            invert(100%) 
-                                            sepia(100%) 
-                                            saturate(16%)
-                                            hue-rotate(226deg) 
-                                            brightness(103%) 
-                                            contrast(106%)`
-                                            });
-                    $("#trac-reject_text").css({'color':'#fff'});
-                    $("#trac-reject_text").css({'display':'none'});
-                    $("#transaction-reject-btn").css({'background-color':'#0173AE'});
-                });
-                // reject mouseleave
-                $("#transaction-reject-btn").mouseleave(function(){
-                    $("#trac-reject_img").css({'filter':`   
-                                           invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%)`
-                                            });
-                    $("#trac-reject_text").css({'color':'#0173AE'});
-                    $("#trac-reject_text").css({'display':''});
-                    $("#transaction-reject-btn").css({'background-color':'#fff'});
-                });
+
+
+                //---------------Action Buttons-----------------
+                // FUNDAMENTALS BUTTONS
+               var fundamental_request_btn = document.getElementById('fundamental_request_btn');
+               var fundamental_approve_btn = document.getElementById('fundamental_approve_btn');
+               var fundamentals_next_btn = document.getElementById('fundamentals_next_btn');
+                // request
+                $('#fundamental_request_btn').hover(function(){
+                    document.getElementById("request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("request_text").style.color ="#4c9bee";
+                })
+                $('#fundamental_request_btn').mouseleave(function(){
+                    document.getElementById("request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#fundamental_approve_btn').hover(function(){
+                    document.getElementById("approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("approve_text").style.color ="#4c9bee";
+                })
+                $('#fundamental_approve_btn').mouseleave(function(){
+                    document.getElementById("approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("approve_text").style.color ="#ffff";
+                })
+                //next 
+                $('#fundamentals_next_btn').hover(function(){
+                    document.getElementById("next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("next_text").style.color ="#4c9bee";
+                })
+                $('#fundamentals_next_btn').mouseleave(function(){
+                    document.getElementById("next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("next_text").style.color ="#ffff";
+                })
+                //fundamentals next click ----> goto financials
+                $('#fundamentals_next_btn').click(function(){
+                     //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                // show form body content
+                 $('.financials-form').show();     
+                // hide form body content for fundamentals and transaction
+                 $('.fundamentals-form').hide();   
+                 $('.transaction-form').hide();
+                })
+
+                // FINANCIALS BUTTONS
+                var financial_request_btn = document.getElementById('financial_request_btn');
+                var financial_approve_btn = document.getElementById('financial_approve_btn');
+                var financial_back_btn = document.getElementById('financial_back_btn');
+                var financial_next_btn = document.getElementById('financial_next_btn');
+                //request
+                $('#financial_request_btn').hover(function(){
+                    document.getElementById("fin_request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_request_text").style.color ="#4c9bee";
+                })
+                $('#financial_request_btn').mouseleave(function(){
+                    document.getElementById("fin_request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#financial_approve_btn').hover(function(){
+                    document.getElementById("fin_approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_approve_text").style.color ="#4c9bee";
+                })
+                $('#financial_approve_btn').mouseleave(function(){
+                    document.getElementById("fin_approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_approve_text").style.color ="#ffff";
+                })
+                 //back 
+                 $('#financial_back_btn').hover(function(){
+                    document.getElementById("fin_back_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_back_text").style.color ="#4c9bee";
+                })
+                $('#financial_back_btn').mouseleave(function(){
+                    document.getElementById("fin_back_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_back_text").style.color ="#ffff";
+                })
+                //next 
+                $('#financial_next_btn').hover(function(){
+                    document.getElementById("fin_next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_next_text").style.color ="#4c9bee";
+                })
+                $('#financial_next_btn').mouseleave(function(){
+                    document.getElementById("fin_next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_next_text").style.color ="#ffff";
+                })
+
+                 //financials back click ----> goto fundamental
+                 $('#financial_back_btn').click(function(){
+                    //change indicator properties
+                    fundamental.style.backgroundColor = "#0173AE";
+                    fundamental.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#fff";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                    
+                 // show form body content
+                 $('.fundamentals-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.transaction-form').hide(); 
+                })
+
+                //financials next click ----> goto transaction
+                $('#financial_next_btn').click(function(){
+                    transaction.style.backgroundColor = "#0173AE";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                  // show form body content
+                 $('.transaction-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.fundamentals-form').hide(); 
+                })
+                  
+                  // TRANSACTION BUTTONS
+                var transaction_request_btn = document.getElementById('transaction_request_btn');
+                var transaction_approve_btn = document.getElementById('transaction_approve_btn');
+                var transaction_reject_btn = document.getElementById('transaction_reject_btn');
+                var transaction_back_btn = document.getElementById('transaction_back_btn');
+                var transaction_next_btn = document.getElementById('transaction_next_btn');
+                //request
+                $('#transaction_request_btn').hover(function(){
+                    document.getElementById("trac_request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_request_text").style.color ="#4c9bee";
+                })
+                $('#transaction_request_btn').mouseleave(function(){
+                    document.getElementById("trac_request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#transaction_approve_btn').hover(function(){
+                    document.getElementById("trac_approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_approve_text").style.color ="#4c9bee";
+                })
+                $('#transaction_approve_btn').mouseleave(function(){
+                    document.getElementById("trac_approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_approve_text").style.color ="#ffff";
+                })
+                 //reject 
+                 $('#transaction_reject_btn').hover(function(){
+                    document.getElementById("trac_reject_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_reject_text").style.color ="#4c9bee";
+                })
+                $('#transaction_reject_btn').mouseleave(function(){
+                    document.getElementById("trac_reject_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_reject_text").style.color ="#ffff";
+                })
+                 //back 
+                 $('#transaction_back_btn').hover(function(){
+                    document.getElementById("trac_back_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_back_text").style.color ="#4c9bee";
+                })
+                $('#transaction_back_btn').mouseleave(function(){
+                    document.getElementById("trac_back_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_back_text").style.color ="#ffff";
+                })
+                //next 
+                $('#transaction_next_btn').hover(function(){
+                    document.getElementById("trac_next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_next_text").style.color ="#4c9bee";
+                })
+                $('#transaction_next_btn').mouseleave(function(){
+                    document.getElementById("trac_next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_next_text").style.color ="#ffff";
+                })
+
+                 //financials back click ----> goto financials
+                 $('#transaction_back_btn').click(function(){
+                    //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                // show form body content
+                 $('.financials-form').show();     
+                // hide form body content for fundamentals and transaction
+                 $('.fundamentals-form').hide();   
+                 $('.transaction-form').hide(); 
+                })
+
+                //financials next click ----> goto transaction
+                $('#transaction_next_btn').click(function(){
+                   // last button
+                })
 });
             
           
+
     </script>
 </body>
 </html>

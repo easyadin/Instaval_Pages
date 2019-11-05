@@ -14,7 +14,7 @@
 
 .transactionEngage {
     margin-top: 20px;
-    margin-left: 34%;
+    margin-left: 35.5%;
 }
 
 .logpic {
@@ -101,7 +101,7 @@ span {
 }
 
 .marketStruct {
-    margin-left: 40.49%;
+    margin-left: 40.3%
 }
 
 .team {
@@ -166,6 +166,14 @@ span {
 
 .revchif {
     margin-right: 0px;
+}
+
+.competitors_Links {
+    display: flex;
+    flex-direction: column;
+}
+.competitiion_Table  {
+
 }
 
 /*********************************css PDF**********************************************************************/
