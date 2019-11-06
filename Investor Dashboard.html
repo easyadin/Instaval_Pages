@@ -607,12 +607,13 @@
 
 <div class="main-body-content-area">
  <!-- custom dashboard counter-->
+ 
  <div class="countersParent">
         <div class="counterGroupElements">
             <div class="counterIcon" style="background-color:#4E9BF0!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
             </div>
             <div class="counterBG">
-                <h1>20</h1>
+                <h1 class="dealFlow_counter_value">260</h1>
                 <h1  style="color:rgb(218, 81, 109)!important;">TOTAL DEALFLOW</h1>
             </div>
         </div>
@@ -620,7 +621,7 @@
                 <div class="counterIcon" style="background-color:#FB6340!important;"><img src="../Template/Icons v3/Projects_white_bg.png">
                 </div>
                 <div class="counterBG">
-                    <h1>20</h1>
+                    <h1 class="new_project_counter_value">42</h1>
                     <h1  style="color:#FB6340!important;">NEW PROJECTS</h1>
                 </div>
             </div>
@@ -628,7 +629,7 @@
                     <div class="counterIcon"  style="background-color:#11CDEF!important;"><img src="../Template/Icons v3/Request_white_bg.png">
                     </div>
                     <div class="counterBG">
-                        <h1>15</h1>
+                        <h1 class="pending_request_counter_value">25</h1>
                         <h1 style="color:#11CDEF!important;" >PENDING REQUEST </h1>
                         <!-- <h1>PENDING REQUEST</h1> -->
                     </div>
@@ -639,7 +640,7 @@
                         <div class="counterIcon" style="background-color:#2AC940!important;"><img src="../Template/Icons v3/Approve_white.png">
                         </div>
                         <div class="counterBG">
-                            <h1>5</h1>
+                            <h1 class="accepted_counter_value">57</h1>
                             <h1 style="color:#2AC940!important;">ACCEPTED</h1>
                         </div>
                     </div>
@@ -648,7 +649,7 @@
                     <div class="counterIcon" style="background-color:#E31209!important;"><img src="../Template/Icons v3/Reject-2_white.png">
                     </div>
                     <div class="counterBG">
-                        <h1>8</h1>
+                        <h1 class="rejected_counter_value">65</h1>
                         <h1 style="color:#E31209!important;">REJECTED</h1>
                     </div>
                 </div>
@@ -1716,6 +1717,61 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                     // update last scroll position to current position
                     lastX = currX;
                     });
+
+
+
+
+                         // counter countup animation
+                         $({ Counter: 0 }).animate({
+                        Counter: $('.dealFlow_counter_value').text()
+                        }, {
+                            duration: 1000,
+                            easing: 'swing',
+                            step: function() {
+                                $('.dealFlow_counter_value').text(Math.ceil(this.Counter));
+                            }
+                        });
+
+                    $({ Counter1: 0 }).animate({
+                        Counter1: $('.new_project_counter_value').text()
+                        }, {
+                            duration: 900,
+                            easing: 'swing',
+                            step: function() {
+                                $('.new_project_counter_value').text(Math.ceil(this.Counter1));
+                            }
+                        });    
+                        
+                        
+                        $({ Counter2: 0 }).animate({
+                        Counter2: $('.pending_request_counter_value').text()
+                        }, {
+                            duration: 800,
+                            easing: 'swing',
+                            step: function() {
+                                $('.pending_request_counter_value').text(Math.ceil(this.Counter2));
+                            }
+                        });  
+                        
+                        $({ Counter3: 0 }).animate({
+                        Counter3: $('.accepted_counter_value').text()
+                        }, {
+                            duration: 700,
+                            easing: 'swing',
+                            step: function() {
+                                $('.accepted_counter_value').text(Math.ceil(this.Counter3));
+                            }
+                        });  
+
+                        $({ Counter4: 0 }).animate({
+                        Counter4: $('.rejected_counter_value').text()
+                        }, {
+                            duration: 600,
+                            easing: 'swing',
+                            step: function() {
+                                $('.rejected_counter_value').text(Math.ceil(this.Counter4));
+                            }
+                        }); 
                     
 });
 
