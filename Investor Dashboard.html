@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Investor Dashboard Dashboard</title>
+    <title>Investor Dashboard</title>
     <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
@@ -155,7 +155,7 @@
             .dropDownMenu3 {
                 position: absolute;
                 left: 0;
-                margin-left:668px;
+                margin-left: 668px;
                 margin-top: 65px;
             }
             .dropDownMenu4 {
@@ -344,7 +344,10 @@
                     margin: 20px 40px;
                     color: rgba(36, 38, 41, 0.952)!important;
                     height: 100%;
-                    overflow: auto;
+                    overflow: hidden;
+            }
+            .table-container:hover {
+                 overflow: auto;
             }
             .table-title {
                 padding: 20px 10px;
@@ -541,6 +544,407 @@
                     display: none;
                 }
              }
+
+
+             /**FORM CSS ***/
+             .form_background {
+                /* background-color: rgba(248, 241, 241, 0.568)!important; */
+                
+            }
+             .formWrapper {
+                margin: auto;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                z-index: 500000000000;
+                padding-top: 70px;
+            }
+           .wrapper {
+               width: 1000px;
+           }
+            .format-text{
+                font-size: 16px!important;
+                color: rgb(91, 95, 112)!important;
+            }
+            .format-icon{
+                margin-left: 20px!important;
+            }
+            i img {
+                height: 20px;
+                width: auto;
+            }
+            .convert-to-black {
+                filter:grayscale(100%);
+            }
+            .f-h1{
+                margin-left: 20px!important;
+            }
+            /** form style***/
+        .form-container {
+            background-color: #fff;
+            border-radius: 20px ;
+            transition: .7s;
+            box-shadow: 0 1px 15px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+        }
+        .title-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            background-color: #0173AE;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: .7s;
+            width: 100%;
+         
+        }
+        .title-header h1 {
+            padding: 13px 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 20px;
+            transition: .7;
+         
+        }
+        .form-header {
+            width: 100%;
+         
+        }
+         .form-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            display: flex;
+            transition: .7s;
+         
+         }
+         .form-header a {
+            border: 2px solid #0173AE;
+            padding: 8px 5px;
+            transition: .7s;
+            width: 100%;
+         }
+         .form-header a:nth-child(1){
+            border-right-width: 0px;
+            transition: .7;
+         
+         }
+         .form-header a:nth-child(2){
+            border-right-width: 0px;
+         
+         }
+         .form-header a div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .7;
+         
+         }
+         .form-header a div img {
+             height: 25px;
+             filter: invert(22%) sepia(98%) saturate(2017%) hue-rotate(182deg) brightness(100%) contrast(99%);
+             transition: .7;  
+           
+         }
+         .form-header a h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 300;
+            padding-left: 30px;
+            color:#0173AE;
+            transition: .7s;
+            font-size: 20px;
+         
+         }
+         .form-header a:nth-child(1){ /*fundamentals*/
+            background-color: #0173AE;
+            transition: .7;
+         }
+         /**onclick form section titles**/
+         .form-header a:hover {
+            background-color: rgba(1, 116, 174, 0.424);
+         
+         }
+         .white-color {
+             color: #fff;
+          
+         }
+         .bg-color {
+            background-color: #0173AE;
+         
+         }
+         .transition {
+            transition: 0.7;
+         
+         }
+         .filter-img {
+            filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
+         
+         }
+         /** form body content **/
+         .main-form {
+             margin-top: 20px;
+             background-color:  rgba(246, 246, 246, 0.027);
+             padding-top: 20px;
+             margin-left: 1.5px;
+             margin-right: 1.5px;
+          
+         }
+         .main-container {
+             display: flex;
+             justify-content:center;
+             justify-content: space-evenly;
+             align-content: center;
+          
+         }
+         .input-holder {
+             margin-bottom: 10px;
+          
+         }
+         .input-holder h1{
+            margin-bottom: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0173AE;
+         
+         }
+         .input-holder input, textarea{
+             display: block;
+             width: 378px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+          
+         }
+         .input-holder textarea {
+             height: 175px;
+          
+         }
+         .input-holder input:focus{
+            font-size: 12px;
+         }
+         .sub-input-holder {
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+         }
+         .sub-input-holder span h1 {
+             font-weight: 500;
+             font-size: 14px;
+         }
+         .sub-input-holder span h1:nth-child(1) {
+             margin-top: 25px;
+         }
+         .sub-input-holder span h1:nth-child(2) {
+             margin-top: 40px;
+         }
+         .sub-input-holder span h1:nth-child(3) {
+             margin-top: 42px;
+         }
+         .sub-input-holder span input{
+             display: block;
+             width: 140px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+             margin-top: 10px;
+         }
+         /** Financial section **/
+         .sub-holder {
+             display: flex;
+             flex-direction: row;
+             flex-wrap: nowrap;
+         }
+         .sub-holder div input {
+             width: 237px!important;
+             margin-left: 50px;
+         }  
+         .sub-holder div input:nth-child(2) {
+             margin-top: 10px;
+         }  
+         .sub-holder div input:nth-child(3) {
+             margin-top: 10px;
+         } 
+         .sub-holder div h1 {
+             font-weight: 500;
+             font-size: 14px;
+         }
+         .sub-holder div h1:nth-child(1){
+             margin-top: 17px;
+         }
+         .sub-holder div h1:nth-child(2){
+             margin-top: 40px;
+         }
+         .sub-holder div h1:nth-child(3){
+             margin-top: 42px;
+         }
+         /* currency dropdown list */
+         .currency-selection-tag {
+             display: block;
+             width: 400px;
+             height: calc(2.95rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         
+        
+        /** Team ***/
+         .Team-section {
+            font-family: 'IBM Plex Sans', sans-serif;
+         }
+         .team-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: #0173AE;
+            margin: 10px 65px;
+         }
+         .team-section-details-container{
+             display: flex;
+             justify-content: space-evenly;
+         }
+         .team-section-details-container h1{
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #0173AE;
+            margin-bottom: 10px;
+         }
+         .team-section-details-container input{
+             width: 145px;
+             display: block;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .team-section-details-container input:focus{
+            font-size: 15px;
+         }
+         .transaction-sub-input-holder span input{
+            width: 280px;
+         }
+         /***buttons**/
+         .button-container {
+             margin: 30px auto;
+             display: flex;
+             justify-content: space-evenly;
+             padding-bottom: 30px;
+             /* width: 869px; */
+         }
+         .button-container button {
+             text-decoration: none;
+             border-radius: 6px;
+             text-transform: uppercase;
+             transition: all 0.3s;
+             height: 45px;
+             width: 145px;
+             background-color: #4c9bee;
+             border: none;
+             cursor: pointer;
+         }
+
+        .button-container button:hover {
+            background-color: #fff;
+            border: 1px solid #4c9bee;
+            color: #4c9bee;
+         }
+         .button-container button div {
+             display: flex;
+             flex-direction: row;
+             align-content: center;
+             align-items: center;
+             justify-content: center;
+             justify-content: space-evenly;
+         }
+         .button-container button div img {
+             height: 20px;
+             filter: invert(255%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(1000%);
+             /* filter: invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%); */
+         }
+         .button-container button div span {
+             color: #fff;
+         }
+
+       
+
+         /**Comments section***/
+         .comment-section {
+            margin: auto;
+         }
+         .comment-section textarea {
+             display: block;
+             width: 845px;
+             height: 100px;
+             margin: auto;
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .comment-section h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: #0173AE;
+            margin: 10px 63px;
+         }
+
+         .main_content_overlay {
+             background-color: white;
+             opacity: .5;
+             position: absolute;
+             top: 0;
+             margin: auto;
+             width: 100%;
+             height: 100%;
+           
+         }
+
         </Style>
 <body class="body-main">
     <!-- navigation -->
@@ -607,7 +1011,6 @@
 
 <div class="main-body-content-area">
  <!-- custom dashboard counter-->
- 
  <div class="countersParent">
         <div class="counterGroupElements">
             <div class="counterIcon" style="background-color:#4E9BF0!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
@@ -659,7 +1062,7 @@
         <!-- Table -->
      <div class="table-container table1">
             <div class="table-title">
-                <h1 id="respondToHorizontalScroll">DealFlow Data Analysis</h1>
+                <h1 id="respondToHorizontalScroll">DealFlow Data</h1>
             </div>
            <div class="table-content">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -690,8 +1093,8 @@
                                             <span class="flag-icon flag-icon-ae"></span>
                                             UAE
                                         </td>
-                                        <td>Enabler 1</td>
                                         <td>Industry 1</td>
+                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -704,9 +1107,9 @@
                                         <td>Dummy Data</td>
                                         <td id="data-status">Rejected</td>
                                         <td class="table-actions">
-                                            <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-primary " data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                             <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                            <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                            <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                         </td>
                                 </tr>
                                 <tr>
@@ -715,8 +1118,8 @@
                                                 <span class="flag-icon flag-icon-ma"></span>
                                                 MOROCCO
                                         </td>
-                                        <td>Enabler 1</td>
                                         <td>Industry 1</td>
+                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -731,14 +1134,14 @@
                                         <td>
                                                 <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
                                 <tr>
                                         <td>Instaval</td>
                                         <td>United Arab Emirates</td>
-                                        <td>Enabler 1</td>
                                         <td>Industry 1</td>
+                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -753,15 +1156,15 @@
                                         <td>
                                                 <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
 
                                 <tr>
                                         <td>Instaval</td>
                                         <td>United Arab Emirates</td>
-                                        <td>Enabler 1</td>
                                         <td>Industry 1</td>
+                                        <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
                                         <td>Dummy Data</td>
@@ -776,7 +1179,7 @@
                                         <td>
                                                 <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
                         </tbody>
@@ -943,7 +1346,470 @@
  </div>
 
 
-</div>   
+</div>  
+
+<div class="main_content_overlay" style="display: none;"></div>
+
+
+
+<!-- Form starts here -->
+        <div class="wrapper formWrapper" style="display: none;" >
+                <!-- form --> 
+         <!--main form area-->
+         <div class="form-container">
+             <div class="title-header"><h1>APPLICATION VETTING & ANALYSIS</h1></div>
+             <div class="form-header" id="form-selection-container">
+                 <a id="fundamental-btn" href="#"><div class="title" id="fundamentals-div"><img id="fundamental-img" style="filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);" src="Icons v3/Fundamentals (2).svg"><h1 class="fundamental-text" style="color: #fff!important;">Fundamentals</h1></div></a>
+                 <a id="financial-btn" href="#"><div class="title" id="financial-div"><img id="financial-img" src="Icons v3/Financials (2).svg"><h1 class="financial-text">Financials</h1></div></a>
+                 <a id="transaction-btn" href="#"><div class="title" id="transaction-div"><img id="transaction-img" src="Icons v3/Transaction.svg"><h1 class="transaction-text">Transaction</h1></div></a>
+             </div>
+        
+           
+             <div class="main-form">
+                   <!-- form body content for fundamentals-->
+                 <form class="fundamentals-form">
+                    <div class="main-container">
+                         <div class="horizontal-wrapper">
+                             <div class="input-holder">
+                                 <h1>Business Type</h1>
+                                 <input type="text" placeholder=" e.g Sole Proprietorship">
+                             </div>
+                             <div class="input-holder">
+                                     <h1>Country</h1>
+                                     <input type="text" placeholder="United Arab Emirate">
+                             </div>
+                             <div class="input-holder">
+                                     <h1> Lifecycle</h1>
+                                     <input type="text">
+                             </div>   
+                             <div class="input-holder">
+                                 <h1>Start Year</h1>
+                                 <input type="text">
+                             </div>
+                             <div class="input-holder">
+                                     <h1>Business Model</h1>
+                                     <input type="text">
+                             </div>
+                             <div class="input-holder">
+                                     <h1>Value Proposition</h1>
+                                     <textarea placeholder=""></textarea>
+                             </div>                        
+                         </div>
+        
+                         <div class="horizontal-wrapper">
+                                 <div class="input-holder">
+                                     <h1>Revenue Status</h1>
+                                     <input type="text" placeholder=" e.g Sole Proprietorship">
+                                 </div>
+                                 <div class="input-holder">
+                                     <h1>Industry</h1>
+                                     <input type="text" placeholder="United Arab Emirate">
+                                 </div>
+                                 <div class="input-holder">
+                                     <h1> Tags</h1>
+                                     <input type="text">
+                                 </div>   
+                                 <div class="input-holder">
+                                     <h1>Headcount</h1>
+                                     <input type="text">
+                                 </div>
+                                 <div class="input-holder">
+                                     <h1>Competition</h1>
+                                     <input type="text">
+                                 </div>
+                                 <div class="input-holder">
+                                     <h1>Market Stucture</h1>
+                                     <div class="sub-input-holder">
+                                         <!-- Labels-->
+                                         <span><h1 class="h1-text">Market Size in Volume</h1> 
+                                            <h1 class="h1-text2">Market Size in Value</h1> 
+                                            <h1 class="h1-text3">Competitors website</h1>
+                                        </span>
+                                         <!-- Input fields here -->
+                                         <span>
+                                             <input type="text">
+                                             <input type="text">
+                                             <input type="text">
+                                        </span>
+                                     </div>
+                                 </div>                        
+                             </div>
+                    </div>
+        
+        
+        
+        
+                     <!-- Team -->
+                      <div class="Team-section">
+                          <h1 class="team-text">Team</h1>
+                          <div class="team-section-details-container">
+                                    <div>
+                                         <h1>Full Name</h1>
+                                         <input type="text" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                         <h1>Role in the company</h1>
+                                         <input type="text" placeholder="CEO">
+                                    </div>
+                                    <div>
+                                         <h1>Relevant Background</h1>
+                                         <input type="text">
+                                    </div>
+                                    <div>
+                                         <h1>Year of Experience</h1>
+                                         <input type="text" placeholder="16">
+                                    </div>
+                          </div>
+                     </div>
+        
+                     <!-- Comment Section -->
+                     <div class="comment-section fundamentals-comment-section">
+                        <h1>Comment</h1>
+                        <div class="comment-section-container">
+                            <textarea placeholder="Your comment goes here..."></textarea>
+                       </div>
+                   </div>
+        
+                   
+                     <!-- Fundamental Buttons -->
+                    <div class="button-container">
+                         <button id="fundamental_request_btn" type="button"><div><img id="request_img" src="Icons v3/Request.svg"><span id="request_text">Request</span></div></button>
+                         <button id="fundamental_approve_btn" type="button"><div><img id="approve_img" src="Icons v3/Approve.svg"><span id="approve_text">Approve</span></div></button>
+                         <button id="fundamentals_next_btn" type="button"><div><span id="next_text">Next</span><img id="next_img" src="asset/svg/right-arrow.svg"></div></button>
+                    </div>
+                 </form>
+        
+                 <!-- form body content for financials-->
+                 <form class="financials-form" style="display: none;">
+                         <div class="main-container">
+                              <div class="horizontal-wrapper financial-horizontal-wrapper">
+                                  <div class="input-holder">
+                                      <h1>Currency</h1>
+                                      <!-- <input type="text" placeholder=" e.g Sole Proprietorship"> -->
+                                      <select name="currencies" class="currency-selection-tag">
+                                             <option selected value="">Select currency</option>
+                                             <option value="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+                                             <option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+                                             <option value="Albania Leke - ALL">Albania Leke – ALL</option>
+                                             <option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+                                             <option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+                                             <option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+                                             <option value="Austria Schillings - ATS">Austria Schillings – ATS</OPTION>
+                                              
+                                             <option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+                                             <option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+                                             <option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+                                             <option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+                                             <option value="Belgium Francs - BEF">Belgium Francs – BEF</OPTION>
+                                             <option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+                                              
+                                             <option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+                                             <option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+                                             <option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+                                             <option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+                                             <option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+                                             <option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+                                              
+                                             <option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+                                             <option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+                                             <option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+                                             <option value="CFP Francs - XPF">CFP Francs – XPF</option>
+                                             <option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+                                             <option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+                                              
+                                             <option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+                                             <option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+                                             <option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+                                             <option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</OPTION>
+                                             <option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+                                             <option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</OPTION>
+                                              
+                                             <option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+                                             <option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+                                             <option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+                                             <option value="Euro - EUR">Euro – EUR</option>
+                                             <option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+                                             <option value="Finland Markkaa - FIM">Finland Markkaa – FIM</OPTION>
+                                              
+                                             <option value="France Francs - FRF*">France Francs – FRF*</OPTION>
+                                             <option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</OPTION>
+                                             <option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+                                             <option value="Greece Drachmae - GRD">Greece Drachmae – GRD</OPTION>
+                                             <option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</OPTION>
+                                             <option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</OPTION>
+                                             <option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+                                              
+                                             <option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+                                             <option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+                                             <option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+                                             <option value="India Rupees - INR">India Rupees – INR</option>
+                                             <option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+                                             <option value="Iran Rials - IRR">Iran Rials – IRR</option>
+                                              
+                                             <option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+                                             <option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</OPTION>
+                                             <option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+                                             <option value="Italy Lire - ITL*">Italy Lire – ITL*</OPTION>
+                                             <option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+                                             <option value="Japan Yen - JPY">Japan Yen – JPY</option>
+                                              
+                                             <option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+                                             <option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+                                             <option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+                                             <option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+                                             <option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+                                             <option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</OPTION>
+                                              
+                                             <option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+                                             <option value="Malta Liri - MTL">Malta Liri – MTL</option>
+                                             <option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+                                             <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                                             <option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+                                             <option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG</OPTION>
+                                              
+                                             <option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+                                             <option value="Naira - NGN">Nigeria Naira – NGN</option>
+                                             <option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+                                             <option value="Oman Rials - OMR">Oman Rials – OMR</option>
+                                             <option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+                                             <option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+                                             <option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+                                              
+                                             <option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+                                             <option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+                                             <option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+                                             <option value="Portugal Escudos - PTE">Portugal Escudos – PTE</OPTION>
+                                             <option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+                                             <option value="Romania New Lei - RON">Romania New Lei – RON</option>
+                                              
+                                             <option value="Romania Lei - ROL">Romania Lei – ROL</option>
+                                             <option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+                                             <option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+                                             <option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+                                             <option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+                                             <option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+                                              
+                                             <option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+                                             <option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+                                             <option value="South Korea Won - KRW">South Korea Won – KRW</option>
+                                             <option value="Spain Pesetas - ESP">Spain Pesetas – ESP</OPTION>
+                                             <option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+                                             <option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+                                              
+                                             <option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+                                             <option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+                                             <option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+                                             <option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+                                             <option value="Thailand Baht - THB">Thailand Baht – THB</option>
+                                             <option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+                                              
+                                             <option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+                                             <option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+                                             <option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+                                             <option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+                                             <option value="United States Dollars - USD">United States Dollars – USD</option>
+                                             <option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+                                              
+                                             <option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+                                             <option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+                                      </select>
+                                  </div>
+                                  <div class="input-holder"> 
+                                         <h1>Revenue</h1>
+                                         <div class="sub-holder">
+                                             <!-- Labels -->
+                                             <div>
+                                                 <h1>Current Year</h1>
+                                                 <h1>Next Year</h1>
+                                                 <h1>Within 2 Years</h1>
+                                             </div>
+                                             <!-- Input Fields-->
+                                             <div>
+                                                <input type="text">
+                                                <input type="text">
+                                                <input type="text">
+                                            </div>
+                                         </div>
+                                 </div>      
+                                 <div class="input-holder">
+                                         <h1>Growth</h1>
+                                         <div class="sub-holder">
+                                             <!-- Labels -->
+                                             <div>
+                                                 <h1>Current Year</h1>
+                                                 <h1>Next Year</h1>
+                                                 <h1>Within 2 Years</h1>
+                                             </div>
+                                             <!-- Input Fields-->
+                                             <div>
+                                                <input type="text">
+                                                <input type="text">
+                                                <input type="text">
+                                            </div>
+                                         </div>
+                                 </div>                         
+                              </div>
+          
+                              <div class="horizontal-wrapper">
+                                      <div class="input-holder">
+                                         <h1>Costs</h1>
+                                         <div class="sub-holder">
+                                             <!-- Labels -->
+                                             <div>
+                                                 <h1>Current Year</h1>
+                                                 <h1>Next Year</h1>
+                                                 <h1>Within 2 Years</h1>
+                                             </div>
+                                             <!-- Input Fields-->
+                                             <div>
+                                                <input type="text">
+                                                <input type="text">
+                                                <input type="text">
+                                            </div>
+                                         </div>
+                                      </div>   
+                                      <div class="input-holder">
+                                         <h1>Liquidity</h1>
+                                         <div class="sub-holder">
+                                             <!-- Labels -->
+                                             <div>
+                                                 <h1>Current Year</h1>
+                                                 <h1>Next Year</h1>
+                                                 <h1>Within 2 Years</h1>
+                                             </div>
+                                             <!-- Input Fields-->
+                                             <div>
+                                                <input type="text">
+                                                <input type="text">
+                                                <input type="text">
+                                            </div>
+                                         </div>
+                                      </div>                        
+                              </div>
+                         </div>
+        
+                          <!-- Comment Section -->
+                     <div class="comment-section">
+                        <h1>Comment</h1>
+                        <div class="comment-section-container">
+                            <textarea placeholder="Your comment goes here..."></textarea>
+                       </div>
+                   </div>
+        
+                          <!--financials Buttons -->
+                         <div class="button-container">
+                              <button id="financial_request_btn"  type="button"><div><img id="fin_request_img" src="Icons v3/Request.svg"><span id="fin_request_text">Request</span></div></button>
+                              <button id="financial_approve_btn"  type="button"><div><img id="fin_approve_img" src="Icons v3/Approve.svg"><span id="fin_approve_text">Approve</span></div></button>
+                              <button id="financial_back_btn"  type="button"><div>
+                                  <img id="fin_back_img" src="asset/svg/back.svg">
+                                  <span id="fin_back_text">Back</span>
+                                </div>
+                              </button>
+                              <button id="financial_next_btn"  type="button">
+                                  <div>
+                                  <span id="fin_next_text">Next</span>
+                                  <img id="fin_next_img" src="asset/svg/right-arrow.svg">
+                                </div>
+                            </button>
+                         </div>
+                 </form>
+        
+        
+        
+        
+        
+                 <!-- form body content for transaction-->
+                 <form class="transaction-form" style="display: none;">
+                         <div class="main-container">
+                              <div class="horizontal-wrapper transaction-horizontal-wrapper1">
+                                 <div class="input-holder">
+                                     <h1>Valuation Purpose</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Equity Control</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Funding Structure</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Invested Capital</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Funding</h1>
+                                     <input type="text">
+                                 </div> 
+                                 <div class="input-holder">
+                                     <h1>Use of Funds</h1>
+                                     <div class="sub-input-holder transaction-sub-input-holder">
+                                            <!-- Labels-->
+                                            <span><h1 class="h1-text">Product</h1> 
+                                               <h1 class="h1-text2">Marketing</h1> 
+                                               <h1 class="h1-text3">Staffing</h1>
+                                           </span>
+                                            <!-- Input fields here -->
+                                            <span>
+                                                <input type="text">
+                                                <input type="text">
+                                                <input type="text">
+                                           </span>
+                                        </div>
+                                 </div>                   
+                              </div>
+                              <div class="horizontal-wrapper transaction-horizontal-wrapper2">
+                                 <div class="input-holder">
+                                     <h1>Funding History</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Last Funding Round</h1>
+                                     <input type="text">
+                                 </div> 
+                                 <div class="input-holder">
+                                     <h1>Last Funding Year</h1>
+                                     <input type="text">
+                                 </div> 
+                                  <div class="input-holder">
+                                     <h1>Last Funding Amount</h1>
+                                     <input type="text">
+                                 </div> 
+                                 
+                                      <div class="input-holder">
+                                          <h1>Cap table</h1>
+                                          <div>
+                                             <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
+                                             <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
+                                             <div class="market-structure trans-m-s1"><h1 class=""></h1> <input type="text"></div>
+                                         </div>
+                                      </div>                        
+                              </div>
+                         </div>
+        
+                          <!-- Comment Section -->
+                     <div class="comment-section">
+                        <h1>Comment</h1>
+                        <div class="comment-section-container">
+                            <textarea placeholder="Your comment goes here..."></textarea>
+                       </div>
+                   </div>
+        
+        
+                          <!--transaction Buttons -->
+                         <div class="button-container">
+                              <button id="transaction_request_btn"  type="button"><div><img id="trac_request_img" src="Icons v3/Request.svg"><span id="trac_request_text">Request</span></div></button>
+                              <button id="transaction_approve_btn"  type="button"><div><img id="trac_approve_img" src="Icons v3/Approve.svg"><span id="trac_approve_text">Approve</span></div></button>
+                              <button id="transaction_reject_btn"  type="button"><div><img id="trac_reject_img" src="Icons v3/Reject 2.svg"><span id="trac_reject_text">Reject</span></div></button>
+                              <button id="transaction_back_btn"  type="button"><div><img id="trac_back_img" src="asset/svg/back.svg"><span id="trac_back_text">back</span></div></button>
+                              <button id="transaction_next_btn"  type="button"><div><img id="trac_next_img" src="asset/svg/send.svg"><span id="trac_next_text">Submit</span></div></button>
+                        </div>
+                      </form>
+             </div>
+         </div>  
+        </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         // onclick /hover show dropDown menu 
@@ -1695,7 +2561,7 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                     }); 
  
  
-                    // detect horizontal scroll
+                 // detect horizontal scroll
                   // element to detect scroll direction of
                     var el = $('.table1')
                     // initialize last scroll position
@@ -1707,7 +2573,7 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                         x = (currX > lastX) ? 'right' : ((currX === lastX) ? 'none' : 'left');
                         //change title margin
                           if(x === 'right'){
-                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "430px";
+                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "334px";
                               document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
                           }else{
                             document.getElementById('respondToHorizontalScroll').style.marginLeft = "";
@@ -1715,14 +2581,13 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                           }
 
                     // update last scroll position to current position
-                    lastX = currX;
+                        lastX = currX;
                     });
+                 
+                    
 
-
-
-
-                         // counter countup animation
-                         $({ Counter: 0 }).animate({
+                    // counter countup animation
+                    $({ Counter: 0 }).animate({
                         Counter: $('.dealFlow_counter_value').text()
                         }, {
                             duration: 1000,
@@ -1772,12 +2637,333 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                                 $('.rejected_counter_value').text(Math.ceil(this.Counter4));
                             }
                         }); 
+
+
+ // onclick /hover show dropDown menu 
+                //form onclick reveal and hide
+                var fundamental = document.getElementById('fundamental-btn');
+                var financial = document.getElementById('financial-btn');
+                var transaction = document.getElementById('transaction-btn');
+                //find selected form
+                fundamental.onclick = function (){
+                   //change indicator properties
+                    fundamental.style.backgroundColor = "#0173AE";
+                    fundamental.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#fff";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
                     
+                 // show form body content
+                 $('.fundamentals-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.transaction-form').hide(); 
+                }
+                financial.onclick = function (){
+                    //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                // show form body content
+                 $('.financials-form').show();     
+                // hide form body content for fundamentals and transaction
+                 $('.fundamentals-form').hide();   
+                 $('.transaction-form').hide(); 
+                }
+                transaction.onclick = function (){
+                    //change indicator properties
+                    transaction.style.backgroundColor = "#0173AE";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                  // show form body content
+                 $('.transaction-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.fundamentals-form').hide(); 
+                }
+
+
+                //---------------Action Buttons-----------------
+                // FUNDAMENTALS BUTTONS
+               var fundamental_request_btn = document.getElementById('fundamental_request_btn');
+               var fundamental_approve_btn = document.getElementById('fundamental_approve_btn');
+               var fundamentals_next_btn = document.getElementById('fundamentals_next_btn');
+                // request
+                $('#fundamental_request_btn').hover(function(){
+                    document.getElementById("request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("request_text").style.color ="#4c9bee";
+                })
+                $('#fundamental_request_btn').mouseleave(function(){
+                    document.getElementById("request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#fundamental_approve_btn').hover(function(){
+                    document.getElementById("approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("approve_text").style.color ="#4c9bee";
+                })
+                $('#fundamental_approve_btn').mouseleave(function(){
+                    document.getElementById("approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("approve_text").style.color ="#ffff";
+                })
+                //next 
+                $('#fundamentals_next_btn').hover(function(){
+                    document.getElementById("next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("next_text").style.color ="#4c9bee";
+                })
+                $('#fundamentals_next_btn').mouseleave(function(){
+                    document.getElementById("next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("next_text").style.color ="#ffff";
+                })
+                //fundamentals next click ----> goto financials
+                $('#fundamentals_next_btn').click(function(){
+                     //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                // show form body content
+                 $('.financials-form').show();     
+                // hide form body content for fundamentals and transaction
+                 $('.fundamentals-form').hide();   
+                 $('.transaction-form').hide();
+                })
+
+                // FINANCIALS BUTTONS
+                var financial_request_btn = document.getElementById('financial_request_btn');
+                var financial_approve_btn = document.getElementById('financial_approve_btn');
+                var financial_back_btn = document.getElementById('financial_back_btn');
+                var financial_next_btn = document.getElementById('financial_next_btn');
+                //request
+                $('#financial_request_btn').hover(function(){
+                    document.getElementById("fin_request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_request_text").style.color ="#4c9bee";
+                })
+                $('#financial_request_btn').mouseleave(function(){
+                    document.getElementById("fin_request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#financial_approve_btn').hover(function(){
+                    document.getElementById("fin_approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_approve_text").style.color ="#4c9bee";
+                })
+                $('#financial_approve_btn').mouseleave(function(){
+                    document.getElementById("fin_approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_approve_text").style.color ="#ffff";
+                })
+                 //back 
+                 $('#financial_back_btn').hover(function(){
+                    document.getElementById("fin_back_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_back_text").style.color ="#4c9bee";
+                })
+                $('#financial_back_btn').mouseleave(function(){
+                    document.getElementById("fin_back_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_back_text").style.color ="#ffff";
+                })
+                //next 
+                $('#financial_next_btn').hover(function(){
+                    document.getElementById("fin_next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("fin_next_text").style.color ="#4c9bee";
+                })
+                $('#financial_next_btn').mouseleave(function(){
+                    document.getElementById("fin_next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("fin_next_text").style.color ="#ffff";
+                })
+
+                 //financials back click ----> goto fundamental
+                 $('#financial_back_btn').click(function(){
+                    //change indicator properties
+                    fundamental.style.backgroundColor = "#0173AE";
+                    fundamental.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#fff";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                    
+                 // show form body content
+                 $('.fundamentals-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.transaction-form').hide(); 
+                })
+
+                //financials next click ----> goto transaction
+                $('#financial_next_btn').click(function(){
+                    transaction.style.backgroundColor = "#0173AE";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    financial.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#0173AE";
+                
+                  // show form body content
+                 $('.transaction-form').show();   
+                 // hide form body content for financials and transaction
+                 $('.financials-form').hide();     
+                 $('.fundamentals-form').hide(); 
+                })
+                  
+                  // TRANSACTION BUTTONS
+                var transaction_request_btn = document.getElementById('transaction_request_btn');
+                var transaction_approve_btn = document.getElementById('transaction_approve_btn');
+                var transaction_reject_btn = document.getElementById('transaction_reject_btn');
+                var transaction_back_btn = document.getElementById('transaction_back_btn');
+                var transaction_next_btn = document.getElementById('transaction_next_btn');
+                //request
+                $('#transaction_request_btn').hover(function(){
+                    document.getElementById("trac_request_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_request_text").style.color ="#4c9bee";
+                })
+                $('#transaction_request_btn').mouseleave(function(){
+                    document.getElementById("trac_request_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_request_text").style.color ="#ffff";
+                })
+                //approve
+                $('#transaction_approve_btn').hover(function(){
+                    document.getElementById("trac_approve_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_approve_text").style.color ="#4c9bee";
+                })
+                $('#transaction_approve_btn').mouseleave(function(){
+                    document.getElementById("trac_approve_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_approve_text").style.color ="#ffff";
+                })
+                 //reject 
+                 $('#transaction_reject_btn').hover(function(){
+                    document.getElementById("trac_reject_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_reject_text").style.color ="#4c9bee";
+                })
+                $('#transaction_reject_btn').mouseleave(function(){
+                    document.getElementById("trac_reject_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_reject_text").style.color ="#ffff";
+                })
+                 //back 
+                 $('#transaction_back_btn').hover(function(){
+                    document.getElementById("trac_back_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_back_text").style.color ="#4c9bee";
+                })
+                $('#transaction_back_btn').mouseleave(function(){
+                    document.getElementById("trac_back_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_back_text").style.color ="#ffff";
+                })
+                //next 
+                $('#transaction_next_btn').hover(function(){
+                    document.getElementById("trac_next_img").style.filter ="invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%)";
+                    document.getElementById("trac_next_text").style.color ="#4c9bee";
+                })
+                $('#transaction_next_btn').mouseleave(function(){
+                    document.getElementById("trac_next_img").style.filter ="invert(100%) sepia(0%) saturate(7486%) hue-rotate(144deg) brightness(109%) contrast(98%)";
+                    document.getElementById("trac_next_text").style.color ="#ffff";
+                })
+
+                 //financials back click ----> goto financials
+                 $('#transaction_back_btn').click(function(){
+                    //change indicator properties
+                    financial.style.backgroundColor = "#0173AE";
+                    financial.style.transition ="1s";
+                    document.getElementById("financial-img").style.filter = "invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%)";
+                    document.getElementsByClassName("financial-text")[0].style.color ="#fff";
+                
+                    fundamental.style.backgroundColor = "#fff";
+                    financial.style.transition ="1s";
+                    document.getElementById("fundamental-img").style.filter = "";
+                    document.getElementsByClassName("fundamental-text")[0].style.color ="#0173AE";
+                
+                    transaction.style.backgroundColor = "#fff";
+                    transaction.style.transition ="1s";
+                    document.getElementById("transaction-img").style.filter = "";
+                    document.getElementsByClassName("transaction-text")[0].style.color ="#0173AE";
+                // show form body content
+                 $('.financials-form').show();     
+                // hide form body content for fundamentals and transaction
+                 $('.fundamentals-form').hide();   
+                 $('.transaction-form').hide(); 
+                })
+
+                //financials next click ----> goto transaction
+                $('#transaction_next_btn').click(function(){
+                   // last button
+                })
+
+                    //reveal form on button click     
+                    $('.select_').click(function(){
+                            $('.formWrapper').toggle();
+                            //blur bg
+                            $('.main_content_overlay').toggle()
+                    });  
+                    //CLOSE FORM
+                        $('.main_content_overlay').click(function(){
+                                $('.formWrapper').toggle();
+                                $('.main_content_overlay').toggle()
+                        })
+                
+                  
+
 });
 
-
-            
           
+
+
+
+                    
     </script>
 </body>
 </html>
