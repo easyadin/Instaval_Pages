@@ -4,199 +4,942 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Share Links</title>
+    <title>Investor Dashboard</title>
+    <link href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.css" integrity="sha256-jrNAqq4Gy0Gg2b6G6l0n57dPr6N1twCn+JMqY8x3l88=" crossorigin="anonymous" />
 
-    <Style>
-        /* Navigation bar*/
-        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: 'IBM Plex Sans', sans-serif;
-            box-sizing: border-box;
-        }
-        .fullcontainer {
-            width: 100%;
-            height: 70vh;
-           
-        }
-        .container {
-            width: 100%;
-        }
-        .navbar {
-            background-color: #f3f6f9 ;
-            height: 80px;
-            width: 100%;
-            box-shadow: 0 4px 8px 0 rgba(239, 245, 248, 0.2), 0 6px 8px 0 rgba(114, 142, 155, 0.19);
-        }
-        .navbar .logo{
-            margin-left: 10%;
-        }
-        .logo {
-            float: left;
-            margin-right: 50px;
-            width: 50px;
-        }
-        .logo a{
-            display: block;
-            padding: 25px 0;
-        }
-        .logo a img{
-            height: 25px;
-            margin-top: 5px;
-        }
-        ul.left {
-            float: left;
-            margin-left: 20%;
-        }
-        ul.right {
-            float: right;
-        }
-        ul {
-            list-style: none;
-            padding: 20px 0;
-        }
-        ul li {
-            display: inline-block;
-        }
-        ul li a {
-            display: block;
-            color: rgba(0, 0, 0, 0.7);
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: .5s all ease;
-            font-weight: 500;
-        }
-        ul li a:hover {
-            color: rgb(0, 0, 0);
-        }
-        ul li a i {
-            font-size: small;
-            padding-left: 3px;
-        }
-        .message a i{
-            font-size: small;
-            padding-left: 5px;
-        }
-        .dropdownmenu {
-            letter-spacing: 1.5px;
-        }
-        .dropdownmenu ul{
-            width: 300px;
-            background: #fff;
-            position: absolute;
-            top: 4rem;
-            left: 28rem;
-            padding: 0;
-            border-radius: 5px;
-        }
-        .dropdownmenu ul::before {
-            content: '';
-            position: absolute;
-            top: -1.1rem;
-            left: 14rem;
-            border: 10px solid;
-            border-color: transparent transparent #fff transparent;
-        }
-        .dropdownmenu ul li {
-            display: block;
-            padding: 14px;
-            transition: .2s all ease;
-            border-radius: 5px;
-            border-top:3px solid rgba(10, 100, 211, 0.089); /*use gray like color*/
-        }
-        .dropdownmenu>ul>li>a {
-            display: block;
-            color: #000;
-            margin-left: 80px;
-        }
-        /*Dashboard*/
-        .dropable1 li:nth-child(1) {
-            background: #f3f6f9 url(/Template/asset/png/TotalDealflow.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable1 li:nth-child(2) {
-            background: #f3f6f9 url(/Template/asset/png/bar-chart-grouped-fill.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-       
-        /*Analytics*/
-        .dropable2 li:nth-child(1) {
-            background: #f3f6f9 url(/Template/asset/png/analytics.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable2 li:nth-child(2) {
-            background: #f3f6f9 url(/Template/asset/png/cloud-computing.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable2 li:nth-child(3) {
-            background: #f3f6f9 url(/Template/asset/png/team.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        /*Platform*/
-        .dropable3 li:nth-child(1) {
-            background: #f3f6f9 url(/Template/asset/png/market-fluctuation_valuation.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable3 li:nth-child(2) {
-            background: #f3f6f9 url(/Template/asset/png/tools.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable3 li:nth-child(3) {
-            background: #f3f6f9 url(/Template/asset/png/team.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
+</head>
 
-        /*enterprise*/
-        .dropable4 li:nth-child(1) {
-            background: #f3f6f9 url(/Template/asset/png/settings-5-line.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable4 li:nth-child(2) {
-            background: #f3f6f9 url(/Template/asset/png/user-settings-line.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-        .dropable4 li:nth-child(3) {
-            background: #f3f6f9 url(/Template/asset/png/exit_logout.png) no-repeat;
-            background-position: center left 40px;
-            background-size: 35px;
-        }
-       
-        /* Dashboard */
-         .dropdownmenu ul:nth-child(1) {
-            /* left:35rem; */
-            left: 29.9%;
-        }
-        /* analytics*/
-        .dropdownmenu ul:nth-child(2) {
-            left:42.5rem;
-        }
-        /*Platform*/
-        .dropdownmenu ul:nth-child(3) {
-            left:50rem;
-        }
-        /*Enterprise name or logo*/
-        .dropdownmenu ul:nth-child(4) {
-            left:80rem;
-        }   
-        .dropdownmenu ul li:hover {
+        <Style>
+            @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-color: rgba(224, 239, 248, 0.158);
+            }
+            .sticky {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+                z-index: 3000000000;
+            }
+            .nav-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                height: 60px;
+                background-color: #f3f6f9;
+                /* box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.2), 0 0px 1px 0 rgba(255, 255, 255, 0.19); */
+            }
+            .nav-container {
+                border-bottom: 1px solid rgba(214, 210, 210, 0.199);
+                padding-bottom: 2px;
+                border-top:none;
+            }
+            .navbar {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 60px;
+                background-color: #f3f6f9;
+            }
+            .left-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 40px;
+            }
+            .left-nav {
+                border-right-style:solid;
+                border-right-color: rgba(214, 210, 210, 0.342);
+                border-right-width: 1px;
+            }
+            .left-nav a {
+                margin-right: 40px;
+            }
+            .middle-nav {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                font-weight: 100;
+                justify-content: center;
+                align-items: center;
+                color: #5b5f70;
+                margin-left: 3%;
+            }
+            .middle-nav a {
+                margin-left: 50px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                color: rgb(91, 95, 112);
+                text-decoration: none;
+                padding: 20px;
+                transition: 1s;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            .middle-nav a i {
+                font-size: 18px;
+            }
+            .middle-nav a h1{
+               font-family: 'IBM Plex Sans', sans-serif;
+               font-weight: 500!important;
+               font-size: 18px;
+            }
+            .middle-nav a:hover {
+                background-color: rgba(187, 187, 187, 0.459);
+                font-weight: 900;
+              
+            }
+            .middle-nav h1:nth-child(1) {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 700;
+            }
+            .right-nav {
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
+                height: 60px;
+            }
+            .right-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10px;
+                color: rgb(91, 95, 112);
+                padding-left:12px;
+                padding-right:12px;
+            }
+            .right-nav:hover {
+                background-color:rgba(187, 187, 187, 0.459);
+                cursor: pointer;
+                transition: 0.6s;
+            }
+            .right-nav h1 {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+            .right-nav i {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+            }
+            .dropDownMenu {
+                position: absolute;
+                right: 0;
+                margin-right: 63px;
+                margin-top: 65px;
+                background-color: #f3f6f9;
+            }
+            .dropDownMenu1 {
+                position: absolute;
+                left: 0;
+                margin-left: 293px;
+                margin-top: 65px;
+            }
+            .dropDownMenu2 {
+                position: absolute;
+                left: 0;
+                margin-left: 485px;
+                margin-top: 65px;
+            }
+            .dropDownMenu3 {
+                position: absolute;
+                left: 0;
+                margin-left: 668px;
+                margin-top: 65px;
+            }
+            .dropDownMenu4 {
+                position: absolute;
+                right: 0;
+                margin-right:  884px;
+                margin-top: 65px;
+            }
+            .dropDownMenu5 {
+                position: absolute;
+                right: 0;
+                margin-right: 698px;
+                margin-top: 65px;
+            }
+            .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color:  #f3f6f9;
+                border-color: rgb(104, 88, 88);
+                z-index: 10000;
+            }
+            .dropDownMenu1,.dropDownMenu2 {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color: #f3f6f9;
+                border-color:#f3f6f9;
+                z-index: 10000;
+
+            }
+            a{
+                text-decoration: none;
+                transition: 0.1s;
+            }
+            .dropDownMenu a,   .dropDownMenu1 a,  .dropDownMenu2 a ,  .dropDownMenu3 a,  .dropDownMenu4 a,  .dropDownMenu5 a {
+                background-color:#f9f5f3;
+            }
+
+            .dropDownMenu a:hover,   .dropDownMenu1 a:hover,  .dropDownMenu2 a:hover ,  .dropDownMenu3 a:hover,  .dropDownMenu4 a:hover,  .dropDownMenu5 a:hover     {
+                transform:scale(1.05)!important;
+                box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+                background-color: #f3f6f9;
+            }
+            .instaval-logo a:hover{
+                background-color: transparent!important;
+            }
+            .dropdown-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding:8px 0;
+                background-color: #f3f6f9;
+            }
+            .dropdown-content i {
+                color: rgb(66, 139, 202);
+                filter: invert(56%) sepia(44%) saturate(2576%) hue-rotate(188deg) brightness(100%) contrast(88%);
+            }
+            .format-text{
+                font-size: 16px!important;
+                color: rgb(91, 95, 112)!important;
+            }
+            .format-icon{
+                margin-left: 20px!important;
+            }
+            i img {
+                height: 20px;
+                width: auto;
+            }
+            .f-h1{
+                margin-left: 20px!important;
+            }
+            .showDropDownMenu {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 140px;
+                width: 190px;
+                border-radius: 5px;
+                background-color:#f3f6f9;
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+            .showDropDownMenu1 {
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                height: 100px;
+                width: 190px;
+                border-radius: 5px;
+                background-color:#f3f6f9;
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+            
+            /* counters css*/
+             /*Dashboard element design*/
+             .countersParent{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+                  width: 100%;
+                }
+                .counterGroupElements{
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 18px!important;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 300px;
+                    height: 150px;
+                    border-radius: 6px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                    
+                }
+               .countersParent .counterIcon{
+                    width: 74px;
+                    height:71px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -30px;
+                    left: 25px;
+                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important
+                }
+                .counterIcon img {
+                    width: 41px;
+                    height: 41px;
+                   
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1){
+                    font-size: 70px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2){
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 30px;
+                    color: #D00D28;
+                    padding-top: 100px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 400;
+                }
+
+            /* Table*/ 
+            .table-container {
+                    background-color: #fff;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                    border-radius: 6px!important;
+                    margin: 20px 40px;
+                    color: rgba(36, 38, 41, 0.952)!important;
+                    height: 100%;
+                    overflow: hidden;
+            }
+            .table-container:hover {
+                 overflow: auto;
+            }
+            .table-title {
+                padding: 20px 10px;
+                border-bottom-color:  tomato;
+            }
+            .table-container h1{
+                font-size: 20px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 900;
+            }  
+            .table-container thead{
+                background-color: #0374AF;
+                font-size: 15px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+            }
+            .table-content {
+                border-bottom: 25px solid darkgrey;
+            }
+            th {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+                color: #fff;
+            }
+            .th-Attributes {
+                width: 260px;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            tr td {
+                font-weight: 500;
+                font-family: 'IBM Plex Sans', sans-serif;
+            } 
+            tr:hover{
+                background-color: rgba(100, 148, 237, 0.103);
+                
+            }
+            td {
+                white-space: nowrap;
+                padding: 10px 10px!important;
+                text-align: center;
+            }
+          
+            td a:hover{
+                padding: 12px!important;
+            }
+            td a:nth-child(1) {
+                background-color: #2CABE3;
+                color: #fff;
+                padding: 10px;
+                cursor: pointer;
+                
+
+            }
+            td a:nth-child(2) {
+                background-color: #2CD07E;
+                color: #fff;
+                padding: 10px;
+            
+                cursor: pointer;
+            }
+            td a:nth-child(3) {
+                background-color: #707CD2;
+                color: #fff;
+                padding: 10px;
+                cursor: pointer;
+            }
+            tfoot {
+                background-color: darkgray;
+            }
+                                /* charts css**/
+                                .DemoGraphics{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                    text-align: center;
+                                }
+                                .Financials{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                    text-align: center;
+                                }
+                                .chartParent {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    text-align: center;
+                                    color: #4F4F4F;
+                                    margin-top: 10px;
+                                    width: 100%;
+                                    justify-content: space-evenly;
+                                }
+                                .chartContainer {
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    padding-left: 40px;
+                                    padding-right: 40px;
+                                }
+                                .chartParent h2{
+                                    font-family: 'IBM Plex Sans', sans-serif;
+                                    font-size: 15px;
+                                    font-weight: 500;
+                                    padding: 20px;
+                                }
+
+                                /*Chart bg*/
+                                .chartBG {
+                                    background-color: #FFFFFF;
+                                    height: auto;
+                                    border-radius: 6px;
+                                    box-shadow:0 0 2rem 0 rgba(136,152,170,.15)!important;
+                                    margin: 20px 10px;
+                                }
+                                .chart-card-size {
+                                    height: auto;
+                                }
+            
+            /*Responsive navigation*/
+            @media only screen and (max-width: 1024px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 .middle-nav {
+                    margin-right: 0;
+                    margin-left: -24px;
+                 }
+                 canvas {
+                     width: 452px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 1440px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 433px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width:1920px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 435px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (min-width: 2560px){
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 680px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 991px){
+                .middle-nav {
+                    display: none;
+                }
+                .left-nav a {
+                    margin-right: 20px;
+                }
+                .mobile-nav-dashboard {
+                    display: contents;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 8px;
+                    color: rgb(91, 95, 112);
+                    display: flex;
+                    align-items: center;
+                 }
+                 .mobile-nav-dashboard h1{
+                    font-weight: 500;
+                    letter-spacing: 0.05rem;
+                    margin-left: 20px;
+                  }
+                  .mobile-nav-dashboard a{
+                    text-decoration: none; color: rgb(91, 95, 112);
+                  }
+                  canvas {
+                     width: 324px!important;
+                     height: auto!important;
+                 }
+            }
+            @media only screen and (max-width: 425px){
+                .mobile-nav-dashboard a{
+                    display: none;
+                }
+             }
+
+
+             /**FORM CSS ***/
+             .form_background {
+                /* background-color: rgba(248, 241, 241, 0.568)!important; */
+                
+            }
+             .formWrapper {
+                margin: auto;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                z-index: 500000000000;
+                padding-top: 70px;
+            }
+           .wrapper {
+               width: 1000px;
+           }
+            .format-text{
+                font-size: 16px!important;
+                color: rgb(91, 95, 112)!important;
+            }
+            .format-icon{
+                margin-left: 20px!important;
+            }
+            i img {
+                height: 20px;
+                width: auto;
+            }
+            .convert-to-black {
+                filter:grayscale(100%);
+            }
+            .f-h1{
+                margin-left: 20px!important;
+            }
+            /** form style***/
+        .form-container {
             background-color: #fff;
-            transform:scale(1.05);
-            box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
+            border-radius: 20px ;
+            transition: .7s;
+            box-shadow: 0 1px 15px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
         }
-        .container .message {
+        .title-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            background-color: #0173AE;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: .7s;
+            width: 100%;
+         
+        }
+        .title-header h1 {
+            padding: 13px 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 20px;
+            transition: .7;
+         
+        }
+        .form-header {
+            width: 100%;
+         
+        }
+         .form-header {
+            font-family: 'IBM Plex Sans', sans-serif;
+            display: flex;
+            transition: .7s;
+         
+         }
+         .form-header a {
+            border: 2px solid #0173AE;
+            padding: 8px 5px;
+            transition: .7s;
+            width: 100%;
+         }
+         .form-header a:nth-child(1){
+            border-right-width: 0px;
+            transition: .7;
+         
+         }
+         .form-header a:nth-child(2){
+            border-right-width: 0px;
+         
+         }
+         .form-header a div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .7;
+         
+         }
+         .form-header a div img {
+             height: 25px;
+             filter: invert(22%) sepia(98%) saturate(2017%) hue-rotate(182deg) brightness(100%) contrast(99%);
+             transition: .7;  
+           
+         }
+         .form-header a h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 300;
+            padding-left: 30px;
+            color:#0173AE;
+            transition: .7s;
+            font-size: 20px;
+         
+         }
+         .form-header a:nth-child(1){ /*fundamentals*/
+            background-color: #0173AE;
+            transition: .7;
+         }
+         /**onclick form section titles**/
+         .form-header a:hover {
+            background-color: rgba(1, 116, 174, 0.424);
+         
+         }
+         .white-color {
+             color: #fff;
+          
+         }
+         .bg-color {
+            background-color: #0173AE;
+         
+         }
+         .transition {
+            transition: 0.7;
+         
+         }
+         .filter-img {
+            filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(70deg) brightness(99%) contrast(107%);
+         
+         }
+         /** form body content **/
+         .main-form {
+             margin-top: 20px;
+             background-color:  rgba(246, 246, 246, 0.027);
+             padding-top: 20px;
+             margin-left: 1.5px;
+             margin-right: 1.5px;
+          
+         }
+         .main-container {
+             display: flex;
+             justify-content:center;
+             justify-content: space-evenly;
+             align-content: center;
+          
+         }
+         .input-holder {
+             margin-bottom: 10px;
+          
+         }
+         .input-holder h1{
+            margin-bottom: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0173AE;
+         
+         }
+         .input-holder input, textarea{
+             display: block;
+             width: 378px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+          
+         }
+         .input-holder textarea {
+             height: 175px;
+          
+         }
+         .input-holder input:focus{
+            font-size: 12px;
+         }
+         .sub-input-holder {
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+         }
+         .sub-input-holder span h1 {
+             font-weight: 500;
+             font-size: 14px;
+         }
+         .sub-input-holder span h1:nth-child(1) {
+             margin-top: 25px;
+         }
+         .sub-input-holder span h1:nth-child(2) {
+             margin-top: 40px;
+         }
+         .sub-input-holder span h1:nth-child(3) {
+             margin-top: 42px;
+         }
+         .sub-input-holder span input{
+             display: block;
+             width: 140px;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+             margin-top: 10px;
+         }
+         /** Financial section **/
+         .sub-holder {
+             display: flex;
+             flex-direction: row;
+             flex-wrap: nowrap;
+         }
+         .sub-holder div input {
+             width: 237px!important;
+             margin-left: 50px;
+         }  
+         .sub-holder div input:nth-child(2) {
+             margin-top: 10px;
+         }  
+         .sub-holder div input:nth-child(3) {
+             margin-top: 10px;
+         } 
+         .sub-holder div h1 {
+             font-weight: 500;
+             font-size: 14px;
+         }
+         .sub-holder div h1:nth-child(1){
+             margin-top: 17px;
+         }
+         .sub-holder div h1:nth-child(2){
+             margin-top: 40px;
+         }
+         .sub-holder div h1:nth-child(3){
+             margin-top: 42px;
+         }
+         /* currency dropdown list */
+         .currency-selection-tag {
+             display: block;
+             width: 400px;
+             height: calc(2.95rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         
+        
+        /** Team ***/
+         .Team-section {
+            font-family: 'IBM Plex Sans', sans-serif;
+         }
+         .team-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: #0173AE;
+            margin: 10px 65px;
+         }
+         .team-section-details-container{
+             display: flex;
+             justify-content: space-evenly;
+         }
+         .team-section-details-container h1{
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #0173AE;
+            margin-bottom: 10px;
+         }
+         .team-section-details-container input{
+             width: 145px;
+             display: block;
+             height: calc(1.75rem + 3px);
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .team-section-details-container input:focus{
+            font-size: 15px;
+         }
+         .transaction-sub-input-holder span input{
+            width: 280px;
+         }
+         /***buttons**/
+         .button-container {
+             margin: 30px auto;
+             display: flex;
+             justify-content: space-evenly;
+             padding-bottom: 30px;
+             /* width: 869px; */
+         }
+         .button-container button {
+             text-decoration: none;
+             border-radius: 6px;
+             text-transform: uppercase;
+             transition: all 0.3s;
+             height: 45px;
+             width: 145px;
+             background-color: #4c9bee;
+             border: none;
+             cursor: pointer;
+         }
+
+        .button-container button:hover {
+            background-color: #fff;
+            border: 1px solid #4c9bee;
+            color: #4c9bee;
+         }
+         .button-container button div {
+             display: flex;
+             flex-direction: row;
+             align-content: center;
+             align-items: center;
+             justify-content: center;
+             justify-content: space-evenly;
+         }
+         .button-container button div img {
+             height: 20px;
+             filter: invert(255%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(1000%);
+             /* filter: invert(25%) sepia(74%) saturate(2268%) hue-rotate(180deg) brightness(96%) contrast(99%); */
+         }
+         .button-container button div span {
+             color: #fff;
+         }
+
+       
+
+         /**Comments section***/
+         .comment-section {
+            margin: auto;
+         }
+         .comment-section textarea {
+             display: block;
+             width: 845px;
+             height: 100px;
+             margin: auto;
+             padding: .625rem .75rem;
+             color: #8898aa;
+             background-color: #fff;
+             background-clip: padding-box;
+             border-radius: .375rem;
+             overflow: visible;
+             line-height: 1.5;
+             box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+             border: 0;
+             transition: box-shadow .15s ease;
+             transition: .4s;
+         }
+         .comment-section h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: #0173AE;
+            margin: 10px 63px;
+         }
+
+         .main_content_overlay {
+            
+           
+         }
+
+         .container .message {
             clear: both;
             padding-top: 15rem;
         }
@@ -204,6 +947,7 @@
             font-size: 35px;
             color: rgb(39, 36, 36);
             font-weight: bold;
+            font-family: 'IBM Plex Sans', sans-serif;
         }
         .container .message h2:nth-child(2) {
             font-size: 30px;
@@ -221,11 +965,12 @@
             padding: 10px 15px;
             margin-top: 1.5rem;
             margin-right: 1rem;
+            font-family: 'IBM Plex Sans', sans-serif;
         }
         .container .message a:hover {
             background-color:#4C9BEE;
             color:#fff;
-            
+           
         }
         .modal .modal-content a{
             width: 100%;
@@ -237,7 +982,7 @@
             border: 1px solid #4C9BEE;
             border-radius: 5px;
             transition: 1s;
-            padding: 10px 15px;
+            padding: 10px 0;
             margin-top: 1;
             margin-right: 1rem;
         }
@@ -255,7 +1000,7 @@
             border: 1px solid #fff;
             border-radius: 5px;
             transition: 1s;
-            padding: 10px 13px;
+            padding: 10px 0;
             margin-top: 15px;
             margin-right: 1rem;
         }
@@ -317,12 +1062,16 @@
 
         /*footer*/ 
         footer {
-                margin-top: 150px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
                 text-align: center;
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 300;
                 font-size: 15px;
                 letter-spacing: 0.05em;
+                margin: auto;
+                width: 100%;
             }
             footer .social_Links {
                 display: flex;
@@ -438,177 +1187,8 @@
                             visibility: visible;
                             transform: scale(1.0);
                             transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-                        }                            
-            /*Responsiveness*/
-            /*Phones*/
-            @media only screen and (max-width: 425px){
-                /*nav bg*/
-                ul.left {
-                    margin-top: 18px;
-                    background-color: transparent!important;
-                    color: #fff!important;
-                    -webkit-animation: slide 0.3s forwards;
-                    -webkit-animation-delay: .2s;
-                    animation: slide 0.1s forwards;
-                    animation-delay: .2s;
-                }
-                @-webkit-keyframes slide {
-                    100% { 
-                         background-color: #f3f6f9 ;
-                         color: #fff!important;
-                         }
-                     70% { 
-                         background-color: #4C9BEE ;
-                         color: #fff!important;
-                         }
-                }
-                @keyframes slide {
-                    70% {
-                        background-color: #4C9BEE;
-                    }
-                }
-                @keyframes slide {
-                    100% {
-                        background-color: #f3f6f9 ;
-                        color: #fff!important;
-                    }
-                }
-                .dropdownmenu>ul>li>a {
-                    margin-left: 30px!important;
-                    padding-right: 20px;
-                }
-                ul li a {
-                    font-size: 15px!important;
-                }
-                .openMenu img {
-                    margin-top: 7%!important;
-                }
-                .closeMenu img {
-                    margin-top: 7%!important;
-                }
-                .dropdownmenu ul::before {
-                    border: 0px solid !important;
-                }
-                .dropdownmenu ul {
-                    width: 211px!important;
-                }
-                .dropable1 li:nth-child(1) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable1 li:nth-child(2) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable1 li:nth-child(3) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable1 li:nth-child(4) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-
-                .dropable2 li:nth-child(1) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable2 li:nth-child(2) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable3 li:nth-child(1) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable3 li:nth-child(2) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable3 li:nth-child(3) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable4 li:nth-child(1) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable4 li:nth-child(2) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-                .dropable4 li:nth-child(3) {
-                    background-position: center left 20px;
-                    background-size: 20px;
-                }
-
-                /*body text*/
-                .container .message {
-                    padding-top: 15rem!important;
-                }
-                .container .message h2:nth-child(1) {
-                    margin-top: -80px!important;
-                    font-size: 20px!important;
-                }
-                .container .message h2:nth-child(2) {
-                    margin-top: 2!important;
-                    font-size: 20px!important;
-                }
-                .container .message a {
-                    padding:10px 10px 10px 10px!important;
-                }
-            }
-            @media only screen and (max-width: 768px){
-                .dropdownmenu ul::before {
-                    border: 0px solid;
-                }
-                .dropdownmenu ul:nth-child(1) {
-                    left: 50.9%!important;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    left: 50.9%!important;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    left: 50.9%!important;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    left: 50.9%!important;
-                }
-  /*nav bg*/
-  ul.left {
-                    margin-top: 18px;
-                    background-color: transparent!important;
-                    color: #fff!important;
-                    -webkit-animation: slide 0.3s forwards;
-                    -webkit-animation-delay: .2s;
-                    animation: slide 0.1s forwards;
-                    animation-delay: .2s;
-                }
-                @-webkit-keyframes slide {
-                    100% { 
-                         background-color: #f3f6f9 ;
-                         color: #fff!important;
-                         }
-                     70% { 
-                         background-color: #4C9BEE ;
-                         color: #fff!important;
-                         }
-                }
-
-                @keyframes slide {
-                    70% {
-                        background-color: #4C9BEE;
-                    }
-                }
-                @keyframes slide {
-                    100% {
-                        background-color: #f3f6f9 ;
-                        color: #fff!important;
-                    }
-                }
-
-            }
-            @media only screen and (max-width: 991px){
+                        }   
+         @media only screen and (max-width: 991px){
                 /* Fix menu for mobile*/
                 .openMenu {
                     display:contents;
@@ -626,48 +1206,6 @@
                     margin-right: 10%;
                     margin-top: 4%;
                     cursor: pointer;
-                }
-                ul.left {
-                     display: none;
-                     position: absolute;
-                     top: 70px;
-                 }
-                ul li a {
-                    font-size: 10px;
-                }
-                ul.left li{
-                    display: flex;
-                    flex-direction: column;
-                 }
-                  /*Drop down menu*/
-                .dropdownmenu ul {
-                    width:300px;
-                }
-                .dropdownmenu ul:nth-child(1) {
-                    /* left: 35rem; */
-                    top: 80px;
-                    left: 50%;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    /* left: 35rem; */
-                    top: 80px;
-                    left: 50%;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    /* left: 35rem; */
-                    top: 80px;
-                    left: 50%;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    /* left: 35rem; */
-                    top: 80px;
-                    left: 50%;
-                }
-                .dropdownmenu ul::before {
-                    content: '';
-                    position: absolute;
-                    top: 1.1rem;
-                    left: 14rem;
                 }
                  .container .message {
                      margin-left:0;
@@ -693,308 +1231,261 @@
                 margin-top: 20%;
                 }
             }
-            /*smaller screens*/
-            /*Ask mr Khakan why this width doest respond*/
             @media only screen and (max-width: 425px){
                 .openMenu img {
-                    margin-bottom: 8%;
+                    margin-top: 7%!important;
+                }
+                .closeMenu img {
+                    margin-top: 7%!important;
+                }
+                /*body text*/
+                .container .message {
+                    padding-top: 15rem!important;
+                }
+                .container .message h2:nth-child(1) {
+                    margin-top: -80px!important;
+                    font-size: 20px!important;
+                }
+                .container .message h2:nth-child(2) {
+                    margin-top: 2!important;
+                    font-size: 20px!important;
+                }
+                .container .message a {
+                    padding:10px 10px 10px 10px!important;
+                    font-family: 'IBM Plex Sans', sans-serif;
                 }
             }
-            /*laptop */
-            @media only screen and (max-width: 1024px) {
-                .navbar .logo {
-                    margin-left: 3%;
-                }
-                ul{
-                    padding-top: 25px;
-                }
-                ul.left {
-                
-                    margin-left: 0%; 
-                    padding-left: 8%;
-                }
-                ul li a {
-                    font-size: 16px;
-                }
-                .dropdownmenu ul:nth-child(1) {
-                    left: 7.9%;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    left: 12rem;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    left: 19rem;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    left: 46.5rem;
-                }
-                
-            }
-          /*larger  screens */
-            @media only screen and (min-width: 1440px){
-                .navbar .logo {
-                        margin-left: 10%;
-                    }
-                ul.left {
-                    float: left;
-                    margin-left: 13%;
-                }
-                ul li {
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-                .dropdownmenu ul:nth-child(1) {
-                    left: 22.9%;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    left: 29rem;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    left: 37rem;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    left: 71.5rem;
-                }
-            }
-             /*Extremely large screens*/
-            @media only screen and (min-width:1920px){
-                .dropdownmenu ul:nth-child(1) {
-                    left: 22.9%;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    left: 36rem;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    left: 44.5rem;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    left:78.5rem;
-                }
-            }
-             /*Extremely large screens*/
-             @media only screen and (min-width: 2560px){
-                .dropdownmenu ul:nth-child(1) {
-                    left: 22.9%;
-                }
-                .dropdownmenu ul:nth-child(2) {
-                    left: 45rem;
-                }
-                .dropdownmenu ul:nth-child(3) {
-                    left: 54rem;
-                }
-                .dropdownmenu ul:nth-child(4) {
-                    left: 87.5rem;
-                }
-            }
-    </Style>
-</head>
-<body>
-    <div class="fullcontainer">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="#"><img src="/Template/asset/Instaval_logo.png"></a>
-                </div>
-                <!-- burger menu-->
-                <div class="openMenu">
-                    <img class="open" src="/Template/asset/png/menu-fill.png">
-                </div>
-                <div class="closeMenu">
-                    <img class="close" src="/Template/asset/png/close-circle-fill.png">
-                </div>
-                <ul class="left">
-                    <!-- Dashboard-->
-                    <li><a href="#" class="dropmenu1">Dashboard<i class="fas fa-chevron-right"></i></a></li>
-                    <!-- Analytics-->
-                    <li><a href="#" class="dropmenu2">Analytics<i class="fas fa-chevron-right"></i></a></li>
-                    <!-- Platform-->
-                    <li><a href="#" class="dropmenu3">Platform<i class="fas fa-chevron-right"></i></a></li>
-                    <!-- Startups-->
-                    <li><a href="#">Startups</a></li>
-                    <!-- Investors-->
-                    <li><a href="#">Investors</a></li>
-                    <!-- Enterprise Name or Logo-->
-                    <li><a href="#" class="dropmenu4">{Enterprise Name or Logo}<i class="fas fa-chevron-right"></i></a></li>
-                </ul>
-               
-                <!-- dropdown menu-->
-                <div class="dropdownmenu">
-                    <!-- Dashboard-->
-                    <ul class="dropable1"style="display:none;">
-                        <li> <a href="#">Dealflow Data</a> </li> 
-                        <li><a href="#">Benchmarking</a></li> 
-                    </ul>
-                    <!-- Analytics Droppable-->
-                    <ul class="dropable2"  style="display: none;">
-                            <li><a href="#">Visuals</a></li> 
-                            <li><a href="#">Download Data</a></li> 
-                    </ul>
-                     <!--  Platform-->
-                     <ul class="dropable3"  style="display: none;">
-                            <li><a href="#">Valuation</a></li> 
-                            <li><a href="#">Tools</a></li> 
-                            <li><a href="#">Services</a></li> 
-                    </ul>
-                     <!--  Enterprise name or logo-->
-                     <ul class="dropable4"  style="display: none;">
-                            <li><a href="#">Settings</a></li> 
-                            <li><a href="#">Administration</a></li> 
-                            <!-- add a button here-->
-                            <li><a href="#">Logout</a></li> 
-                    </ul>
-                </div>
-            </nav>
-            <!-- body message-->
-            <div class="message" style="text-align: center;">
-                <h2> You're one click away to get your pipeline on-board!</h2>
-                <h2> Please choose how you'd want to have them over.</h2>
-                 <a href="#">Copy Link <i class="far fa-clone"></i></a>
-                 <a href="#" class="PostTrigger">Post Link<i class="fas fa-paper-plane"></i> </a>
-                 <a href="#" class="shareTrigger">Invite <i class="fas fa-share-alt"></i></a>
+         
+        </Style>
+<body class="body-main">
+    <!-- navigation -->
+    <div class="nav-container sticky">
+            <div class="navbar anim">
+                    <!-- instaval logo-->
+                    <div class="instaval-logo left-nav anim">
+                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 22px;"></a>
+                    </div>
+                    <!-- mobile navigation -->
+                    <div class="mobile-nav-dashboard anim">
+                         <a href="#"><h1>Dashboard</h1></a>
+                         <a href="#"><h1>Analytics</h1></a>
+                         <a href="#"><h1>Platform</h1></a>
+                         <a href="#"><h1>Startups</h1></a>
+                         <a href="#"><h1>Investors</h1></a>
+                    </div>
+                    <!-- navigation -->
+                    <div class="middle-nav anim">
+                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#"class="platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                            <a href="#" class="investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
+                    </div>
+                    <div class="right-nav anim">
+                        <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
+                        <h1 class="dropper">DIFC FinTech Hive</h1>
+                        <i class="ri-arrow-down-s-line dropper"></i>
+                    </div>
+                    <!-- Dropdown menu company logo / name -->
+                    <div class="dropDownMenu">
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-user-settings-line format-icon"></i></i><h1 class="format-text f-h1">Administration</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="ri-logout-circle-line format-icon"></i><h1 class="format-text f-h1">Logout</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu1">
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/Icons v3/Total Dealflow.svg"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/asset/svg/benchmarking.svg"></i><h1 class="format-text f-h1">Benchmarking</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu2">
+                                <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img src="../Template/asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visuals</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/download.svg"></i><h1 class="format-text f-h1">Download Data</h1></div></a>
+                    </div>
+                    <div class="dropDownMenu3">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
+
+                    </div>
+                    <div class="dropDownMenu4">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
+
+                    </div>
+                    <div class="dropDownMenu5">
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                    </div>
+             </div>
+    </div>
+
+    <div class="main-body-content-area">
+            <div class="fullcontainer">
+                    <div class="container">
+                        <!-- body message-->
+                        <div class="message" style="text-align: center;">
+                            <h2> You're one click away to get your pipeline on-board!</h2>
+                            <h2> Please choose how you'd want to have them over.</h2>
+                             <a href="#">Copy Link <i class="far fa-clone"></i></a>
+                             <a href="#" class="PostTrigger">Post Link<i class="fas fa-paper-plane"></i> </a>
+                             <a href="#" class="shareTrigger">Invite <i class="fas fa-share-alt"></i></a>
+                        </div>
+                    </div>
             </div>
+    </div>  
+
+ <!-- modal for post link-->
+ <div class="modal">
+        <div class="modal-content">
+            <div class="close-button">X</div>
+            <label for="postInput">Insert Link</label>
+             <input type="text" id="postInput" name="postInput">
+             <a href="#">SEND</a>
         </div>
+</div>
+
+
+<!-- modal for invite | Upload CSV -->
+<div class="InviteModal">
+    <div class="Invite-Modal-content" >
+        <form action="#" method="#">
+            <input type="file" multiple>
+            <p>Drag your files here or click in this area.</p>
+            <a href="#">UPLOAD</a>
+        </form>
     </div>
-    <!-- modal for post link-->
-    <div class="modal">
-            <div class="modal-content">
-                <div class="close-button">X</div>
-                <label for="postInput">Insert Link</label>
-                 <input type="text" id="postInput" name="postInput">
-                 <a href="#">SEND</a>
-            </div>
+</div>
+<!-- footer-->
+
+<footer>
+    <p>©2019 Instaval</p>
+    <p>Made with Science & Passion</p>
+
+    <div class="social_Links">
+            <a href="https://www.linkedin.com/company/instaval/"><p>Linkedin </p> </a>
+            <span>|</span>
+            <a href="https://twitter.com/InstaValuation"><p>Twitter </p> </a>
+            <span>|</span>
+            <a href="https://www.facebook.com/instavaluation"><p>Facebook </p> </a>
     </div>
-
-
-    <!-- modal for invite | Upload CSV -->
-    <div class="InviteModal">
-        <div class="Invite-Modal-content" >
-            <form action="#" method="#">
-                <input type="file" multiple>
-                <p>Drag your files here or click in this area.</p>
-                <a href="#">UPLOAD</a>
-            </form>
-        </div>
-    </div>
-    <!-- footer-->
-
-    <footer>
-        <p>©2019 Instaval</p>
-        <p>Made with Science & Passion</p>
-
-        <div class="social_Links">
-                <a href="https://www.linkedin.com/company/instaval/"><p>Linkedin </p> </a>
-                <span>|</span>
-                <a href="https://twitter.com/InstaValuation"><p>Twitter </p> </a>
-                <span>|</span>
-                <a href="https://www.facebook.com/instavaluation"><p>Facebook </p> </a>
-        </div>
-
 </footer>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-         $(document).ready(function(){
-
-              // on hover navigation
-              $('.dropmenu1').hover(function(){
-                 $('ul.dropable1').show();
-                 $('ul.dropable2').hide();
-                 $('ul.dropable3').hide();
-                 $('ul.dropable4').hide();
-                 $('ul.dropable5').hide();
-             });
-              $('.dropmenu2').hover(function(){
-                 $('ul.dropable2').show();
-                 $('ul.dropable1').hide();
-                 $('ul.dropable3').hide();
-                 $('ul.dropable4').hide();
-                 $('ul.dropable5').hide();
-             });
-              $('.dropmenu3').hover(function(){
-                 $('ul.dropable3').show();
-                 $('ul.dropable4').hide();
-                 $('ul.dropable1').hide();
-                 $('ul.dropable2').hide();
-                 $('ul.dropable5').hide();
-             });
-              $('.dropmenu4').hover(function(){
-                 $('ul.dropable4').show();
-                 $('ul.dropable3').hide();
-                 $('ul.dropable2').hide();
-                 $('ul.dropable1').hide();
-                 $('ul.dropable5').hide();
-             });
-              $('.dropmenu5').hover(function(){
-                 $('ul.dropable5').show();
-                 $('ul.dropable4').hide();
-                 $('ul.dropable3').hide();
-                 $('ul.dropable2').hide();
-                 $('ul.dropable1').hide();
-             });
-             // also check onmouseleave on dropables
-             $('ul.dropable1').mouseleave(function(){
-                 $('ul.dropable1').hide();
-             });
-             $('ul.dropable2').mouseleave(function(){
-                 $('ul.dropable2').hide();
-             });
-             $('ul.dropable3').mouseleave(function(){
-                 $('ul.dropable3').hide();
-             });
-             $('ul.dropable4').mouseleave(function(){
-                 $('ul.dropable4').hide();
-             });
-             $('ul.dropable5').mouseleave(function(){
-                 $('ul.dropable5').hide();
-             });
 
 
-
-              // menu open on mobile
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // onclick /hover show dropDown menu 
+            $(document).ready(function(){
                 
-                if(window.screen.width < 991){
-                    //show close button onclick of open
-                    $('.open').click(function(){
-                        $('.open').hide();
-                        $('.closeMenu').show();
-                        $('.close').show();
+                $(".right-nav").hover(function(){
+                        $(".dropDownMenu").addClass("showDropDownMenu");
+                        $(".dropDownMenu").show();
+                        
+                        //others
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+                 
+                });
+                $(".dashboard-btn").hover(function(){
+                        $(".dropDownMenu1").addClass("showDropDownMenu1");
+                        $(".dropDownMenu1").show();
 
-                        //display the menu items
-                        $('ul.left').show();
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+                });
+                $(".analytics-btn").hover(function(){
+                        $(".dropDownMenu2").addClass("showDropDownMenu1");
+                        $(".dropDownMenu2").show();
 
-                    });
-                }
-                //show open button onclick of close
-                $('.close').click(function(){
-                    $('.close').hide();
-                    $('.open').show();
-                    $('.openMenu').show();
-                    $('ul.left').hide();
-                    $('ul.dropable4').hide();
-                    $('ul.dropable3').hide();
-                    $('ul.dropable2').hide();
-                    $('ul.dropable1').hide();
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+
+                });
+                $(".platform-btn").hover(function(){
+                        $(".dropDownMenu3").addClass("showDropDownMenu");
+                        $(".dropDownMenu3").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu4").hide()
+                        $(".dropDownMenu5").hide()
+
+                });
+                $(".startups-btn").hover(function(){
+                        $(".dropDownMenu4").addClass("showDropDownMenu");
+                        $(".dropDownMenu4").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu5").hide()
+
+                    
+                });
+                $(".investors-btn").hover(function(){
+                        $(".dropDownMenu5").addClass("showDropDownMenu");
+                        $(".dropDownMenu5").show();
+
+                        //others
+                        $(".dropDownMenu").hide()
+                        $(".dropDownMenu1").hide()
+                        $(".dropDownMenu2").hide()
+                        $(".dropDownMenu3").hide()
+                        $(".dropDownMenu4").hide()
+
+
+                });
+                //hide on mouseleave and  outside clicks
+                $('.dropDownMenu').mouseleave(function(){
+                    $(".dropDownMenu").hide();
+                });
+                $('.dropDownMenu1').mouseleave(function(){
+                    $(".dropDownMenu1").hide();
+                });
+                $('.dropDownMenu2').mouseleave(function(){
+                    $(".dropDownMenu2").hide();
+                });
+                $('.dropDownMenu3').mouseleave(function(){
+                    $(".dropDownMenu3").hide();
+                });
+                $('.dropDownMenu4').mouseleave(function(){
+                    $(".dropDownMenu4").hide();
+                });
+                $('.dropDownMenu5').mouseleave(function(){
+                    $(".dropDownMenu5").hide();
+                });
+              //click outside to toggle opened dropdown menu
+                $('.main-body-content-area').click(function(){
+                        $(".dropDownMenu").hide();
+                        $(".dropDownMenu1").hide();
+                        $(".dropDownMenu2").hide();
+                        $(".dropDownMenu3").hide();
+                        $(".dropDownMenu4").hide();
+                        $(".dropDownMenu5").hide();
                 });
 
-                //upload file
-                $('form input').change(function () {
+            //upload file
+            $('form input').change(function () {
                 $('form p').text(this.files.length + " file(s) selected");
-                });
+            });
 
-                // remove dropdown arrow-right for larger screens
-                    $(document).ready(function(){  
-                       if(window.screen.width > 991){
-                            $("i.fa-chevron-right").removeClass("fa-chevron-right");
-                            $("i.fas").addClass("fa-chevron-down");
-                       }
-                    });
-
-
- });
-
+              
+       
 //post modal trigger
 var modal = document.querySelector(".modal");
 var trigger = document.querySelector(".PostTrigger");
@@ -1016,7 +1507,6 @@ function windowOnClick(event) {
     if (event.target === Invitemodal) {
         toggleInviteModal();
     }
-
 }
 
         trigger.addEventListener("click", toggleModal);
@@ -1032,8 +1522,15 @@ function windowOnClick(event) {
             Invitemodal.classList.toggle("show-InviteModal");
         }    
         shareModalTrigger.addEventListener("click", toggleInviteModal);
-        closeShareButton.addEventListener("click", toggleInviteModal);
+        closeShareButton.addEventListener("click", toggleInviteModal);           
 
+});
+
+          
+
+
+
+                    
     </script>
 </body>
 </html>

@@ -143,7 +143,7 @@
             .dropDownMenu1 {
                 position: absolute;
                 left: 0;
-                margin-left: 293px;
+                margin-left: 300px;
                 margin-top: 65px;
             }
             .dropDownMenu2 {
@@ -160,14 +160,14 @@
             }
             .dropDownMenu4 {
                 position: absolute;
-                right: 0;
-                margin-right:867px;
+                left: 0;
+                margin-left:845px;
                 margin-top: 65px;
             }
             .dropDownMenu5 {
                 position: absolute;
-                right: 0;
-                margin-right: 683px;
+                left: 0;
+                margin-left: 1029px;
                 margin-top: 65px;
             }
             .dropDownMenu, .dropDownMenu3, .dropDownMenu4, .dropDownMenu5 {
@@ -357,7 +357,31 @@
                 font-size: 20px;
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 900;
+            }
+            .table-title {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
             }  
+            .search_input {
+                
+            }
+            .search_input input{
+                display: block;
+              
+                width: 378px;
+                padding: .625rem .75rem;
+                color: #8898aa;
+                background-color: #fff;
+                background-clip: padding-box;
+                border-radius: .375rem;
+                overflow: visible;
+                line-height: 1.5;
+                border: 1;
+                border-color: rgb(154, 159, 161);
+                transition: box-shadow .15s ease;
+                transition: .4s;
+            }
             .table-container thead{
                 background-color: #0374AF;
                 font-size: 15px;
@@ -483,15 +507,247 @@
                      width: 452px!important;
                      height: auto!important;
                  }
+                 .countersParent {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    width: 944px;
+                    margin: 0 40px;
+                }
+
+                .counterGroupElements {
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .countersParent .counterIcon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -13px;
+                    left: 25px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .counterIcon img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 175px;
+                    height: 70px;
+                    border-radius: 6px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
+                    font-size: 20px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                    padding-top: 5px;
+                }
+
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 25px;
+                    color: #D00D28;
+                    padding-top: 40px;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    /* margin-top: -8px; */
+                    font-weight: 400;
+                }
+
+                .counterBG h1:nth-child(2) {
+                    font-size: 11px!important;
+                }
+
+                .middle-nav {
+                    margin-left: 0px;
+                    /* margin: auto; */
+                }
+
+                .middle-nav {
+                    display: flex;
+                    flex-direction: row;
+                    /* font-size: 8px; */
+                    font-weight: 100;
+                    justify-content: center;
+                    align-items: center;
+                    color: #5b5f70;
+                    margin-left: 3%;
+                }
+                .middle-nav a {
+                    margin-left: 0px;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    color: rgb(91, 95, 112);
+                    text-decoration: none;
+                    padding: 20px;
+                    transition: 1s;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                }
+
+                .middle-nav a h1 {
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: 500!important;
+                    font-size: 14px;
+                }
+                .right-nav h1 {
+                    font-size: 15px;
+                }
+                #instaval_logo_id {
+                    height: 15px!important;
+                    width: 100px!important;
+                }
+                .dropDownMenu1 {
+                    margin-left: 180px;
+                }
+                .dropDownMenu2 {
+                    margin-left: 300px;
+                }
+                .dropDownMenu3 {
+                    margin-left: 416px;
+                }
+                .dropDownMenu4 {
+                    margin-left: 530px;
+                }
+                .dropDownMenu5 {
+                    margin-left: 646px
+                }
+                .dropDownMenu {
+                    margin-right: 20px;
+                }
+                .search_input input {
+                    display: block;
+                    width: 378px;
+                    padding: 3px;
+                    color: #8898aa;
+                    background-color: #fff;
+                    /* background-clip: padding-box; */
+                    border-radius: 3.375rem;
+                    overflow: visible;
+                    /* line-height: 1.5; */
+                    /* border: 1px; */
+                    border-color: rgb(154, 159, 161);
+                    transition: box-shadow .15s ease;
+                    transition: .4s;
+                }
+                .table-container h1 {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
             }
             @media only screen and (min-width: 1440px){
                 .mobile-nav-dashboard {
                     display: none;
                  }
                  canvas {
-                     width: 433px!important;
+                     width: 320px!important;
                      height: auto!important;
                  }
+                 .dropDownMenu1 {
+                     margin-left: 281px;
+                 }
+                 .dropDownMenu2 {
+                     margin-left: 473px;
+                 }
+                 .dropDownMenu3 {
+                     margin-left: 654px;
+                 }
+                 .dropDownMenu4 {
+                     margin-left: 834px;
+                 }
+                 .dropDownMenu5 {
+                     margin-left: 1018px;
+                 }
+
+
+                 .countersParent {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+
+                .counterGroupElements {
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .countersParent .counterIcon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -14px;
+                    left: 25px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .counterIcon img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 238px;
+                    height: 90px;
+                    border-radius: 6px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
+                    font-size: 35px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                    padding-top: 5px;
+                }
+
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 25px;
+                    color: #D00D28;
+                    padding-top: 58px;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    /* margin-top: -8px; */
+                    font-weight: 400;
+                }
+
+                .counterBG h1:nth-child(2) {
+                    font-size: 13px!important;
+                }
             }
             @media only screen and (min-width:1920px){
                 .mobile-nav-dashboard {
@@ -501,19 +757,61 @@
                      width: 435px!important;
                      height: auto!important;
                  }
+                 .countersParent .counterGroupElements .counterBG {
+                     width: 333px;
+                 }
+                 .dropDownMenu1 {
+                     margin-left: 300px;
+                 }
+                 .dropDownMenu2 {
+                     margin-left: 490px;
+                 }
+                 .dropDownMenu3 {
+                     margin-left: 670px;
+                 }
+                 .dropDownMenu4 {
+                     left: 0;
+                     margin-left: 850px;
+                 }
+                 .dropDownMenu5 {
+                     left: 0;
+                     margin-left: 1035px;
+                 }
             }
             @media only screen and (min-width: 2560px){
                 .mobile-nav-dashboard {
                     display: none;
                  }
                  canvas {
-                     width: 680px!important;
+                     width: 600px!important;
                      height: auto!important;
                  }
+                 .dropDownMenu1 {
+                     margin-left: 311px;
+                 }
+                 .dropDownMenu2 {
+                     margin-left: 500px;
+                 }
+                 .dropDownMenu3 {
+                     margin-left: 684px;
+                 }
+                 .dropDownMenu4 {
+                     margin-right: 1509px;
+                 }
+                 .dropDownMenu5 {
+                     margin-right: 1326px;
+                 }
+                 .countersParent .counterGroupElements .counterBG {
+                     width: 463px;
+                 }
+
             }
             @media only screen and (max-width: 991px){
-                .middle-nav {
-                    display: none;
+                .middle-nav a {
+                    padding:20px 7px;
+                }
+                .middle-nav a h1 {
+                    font-size: 10px;
                 }
                 .left-nav a {
                     margin-right: 20px;
@@ -525,6 +823,9 @@
                     color: rgb(91, 95, 112);
                     display: flex;
                     align-items: center;
+                 }
+                 .mobile-nav-dashboard {
+                     display: none;
                  }
                  .mobile-nav-dashboard h1{
                     font-weight: 500;
@@ -538,12 +839,41 @@
                      width: 324px!important;
                      height: auto!important;
                  }
+                 .countersParent .counterGroupElements .counterBG {
+                     width: 100%;
+                 }
+                 .countersParent {
+                     width: 688px;
+                 }
+                 .countersParent .counterGroupElements .counterBG {
+                     width: 334px;
+                 }
             }
+
             @media only screen and (max-width: 425px){
                 .mobile-nav-dashboard a{
                     display: none;
                 }
+                .middle-nav {
+                    display: none;
+                }
+                .countersParent {
+                    width: 100%;
+                }
+                .search_input input {
+                    width: 90px;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    width: 346px;
+                }
+
              }
+             @media only screen and (max-width: 375px){
+                .countersParent .counterGroupElements .counterBG {
+                    width: 296px;
+                }
+             }
+
 
 
              /**FORM CSS ***/
@@ -951,8 +1281,8 @@
     <div class="nav-container sticky">
             <div class="navbar anim">
                     <!-- instaval logo-->
-                    <div class="instaval-logo left-nav anim">
-                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 22px;"></a>
+                    <div class="instaval-logo left-nav">
+                        <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 22px; width: 135px;" id="instaval_logo_id"></a>
                     </div>
                     <!-- mobile navigation -->
                     <div class="mobile-nav-dashboard anim">
@@ -1063,9 +1393,12 @@
      <div class="table-container table1">
             <div class="table-title">
                 <h1 id="respondToHorizontalScroll">DealFlow Data</h1>
+                <div class="search_input">
+                    <input type="text"  placeholder="Type to search" id="search_input_field">
+                </div>
             </div>
            <div class="table-content">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <table id="dealflow_table" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                                 <tr>
                                         <th>Company</th>
@@ -1105,9 +1438,9 @@
                                         <td>Dummy Data</td>
                                         <td id="data-status">Rejected</td>
                                         <td class="table-actions">
-                                            <a class="btn btn-primary " data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                             <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                            <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                         </td>
                                 </tr>
                                 <tr>
@@ -1129,9 +1462,9 @@
                                         <td>Dummy Data</td>
                                         <td id="data-status">Accepted</td>
                                         <td>
-                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
                                 <tr>
@@ -1150,9 +1483,9 @@
                                         <td>Dummy Data</td>
                                         <td id="data-status">Accepted</td>
                                         <td>
-                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
 
@@ -1172,9 +1505,9 @@
                                         <td>Dummy Data</td>
                                         <td id="data-status">new</td>
                                         <td>
-                                                <a class="btn btn-primary" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                                <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
                                                 <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
-                                                <a class="btn btn-success select_"  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                                <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
                                             </td>
                                 </tr>
                         </tbody>
@@ -1807,6 +2140,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+
+
+//find the position of element
+       var logo_position=  $("#instaval_logo_id").position();
+       console.log("top: " + logo_position.top);
+       console.log("bottom: " + logo_position.bottom);
+       console.log("Left: " + logo_position.left);
+       console.log("right: " + logo_position.right);
+
+
         // onclick /hover show dropDown menu 
             $(document).ready(function(){
                 
@@ -2071,7 +2414,6 @@
                     });
 
 
-// Note : if the data pass points passed to the data :[] array the color intensity
 // or opacity increases accordingly
  //LifeCycle chart
  var LifeCycle = document.getElementById('LifeCycle').getContext('2d');
@@ -2121,7 +2463,7 @@
                    
                    // remove dropdown arrow-right for larger screens
                     $(document).ready(function(){  
-                       if(window.screen.width > 991){
+                       if(window.screen.width > 425){
                             $("i.fa-chevron-right").removeClass("fa-chevron-right");
                             $("i.fas").addClass("fa-chevron-down");
                        }
@@ -2568,17 +2910,29 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                         x = (currX > lastX) ? 'right' : ((currX === lastX) ? 'none' : 'left');
                         //change title margin
                           if(x === 'right'){
-                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "334px";
+                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "453px";
                               document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
+                              document.getElementById('search_input_field').style.marginRight ="-604px";
                           }else{
                             document.getElementById('respondToHorizontalScroll').style.marginLeft = "";
                             document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
+                            document.getElementById('search_input_field').style.marginRight ="";
                           }
 
                     // update last scroll position to current position
                         lastX = currX;
                     });
                  
+                    //table search function
+                    var $rows = $('#dealflow_table tr');
+                        $('#search_input_field').keyup(function() {
+                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+                            
+                            $rows.show().filter(function() {
+                                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                                return !~text.indexOf(val);
+                            }).hide();
+                        });
                     
 
                     // counter countup animation
