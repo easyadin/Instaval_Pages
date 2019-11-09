@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registration</title>
+    <title>Notification email - Startup</title>
 
     <Style>
          @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
@@ -241,8 +241,8 @@
         <!-- Address bar -->
             <div class="heading">
                 <p>Hello From InstaVal</p>
-                <p>Invitation to Submit your Business Valuation</p>
-                <p>To : <span id="userEmailID">{userEmailID}</span></p>
+                <p><span>{Company Name}</span> has signed up. Congratulations!</p>
+                <p>To : <span id="userEmailID">{user EmailID}</span></p>
             </div>
         <!-- Address bar end here -->
 
@@ -255,25 +255,21 @@
 
         <!-- greetings -->
             <div class="salutation">
-                <p>Hey <span>{UserFirstName}!</span></p>
+                <p>Dear <span>{User FirstName}</span></p>
             </div>
 
         <!-- Register Button -->
             <div class="register_btn">
-                <button id="reg_btn">REGISTER</button>
+                <button id="reg_btn">LOGIN</button>
             </div>
 
 
         <!-- Message body -->
             <div class="message_body"> 
-                <p>In order for your application to be properly considered and
-                    processed by <span id="getPartnerName">{Partner Name}</span>, We're pleased to invite you to 
-                    register and submit your business valuation on InstaVal.</p>
-                <p>Please click <a id="ref_link" href="#">here</a> or on the blue button above to start the 
-                    registration process. </p>
+                <p>Congratuations <span>{Company Name}</span> has signed up on InstaVal and is now part of your early stage ecosystem management platform.</p>
+                <p>Please click <a id="ref_link" href="#">here</a> on the blue button above to find out how they're engaging with your portfolio of startup and scaleups.</p>
                 <p>Looking forward to engaging with you soon.</p>
             </div>
-
         <!-- Message Final Tag-->
         <div class="instaval_tagline">
             <p>InstaVal <span>|</span> Intelligent Investment Technology</p>

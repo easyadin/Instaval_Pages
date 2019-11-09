@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Request Email - Startup</title>
+    <title>Invitation Email</title>
 
     <Style>
          @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
@@ -178,41 +178,6 @@
                 color: #FF3366;
             }
 
-            /*** Comment boxes ***/
-            .comment-boxes {
-                display: flex;
-                justify-content: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                margin-top: 30px;
-                margin-bottom: 30px;
-            }
-            .comment-holder h1 {
-                font-size: 20px;
-                color:rgba(77, 73, 80, 0.794);
-                font-family: 'IBM Plex Sans', sans-serif;
-            }
-           textarea{
-                display: block;
-                width: 300px;
-                height: calc(1.75rem + 3px);
-                padding: .625rem .75rem;
-                color: #8898aa;
-                background-color: #fff;
-                background-clip: padding-box;
-                border-radius: .375rem;
-                overflow: visible;
-                line-height: 1.5;
-                box-shadow: 0 1px 3px rgba(49, 49, 129, 0.691), 0 1px 0 rgba(0, 0, 0, 0.52);
-                border: 0;
-                transition: box-shadow .15s ease;
-                transition: .4s;
-            }
-            textarea{
-                margin-top: 10px;
-                height: 60px;
-            }
-
             /*Responsiveness*/
             @media only screen and (max-width: 991px){
                     .wrapper {
@@ -276,7 +241,7 @@
         <!-- Address bar -->
             <div class="heading">
                 <p>Hello From InstaVal</p>
-                <p><span>{Partner Name}</span> | Additional Infomation Request </p>
+                <p>Invitation to Submit your Business Valuation</p>
                 <p>To : <span id="userEmailID">{userEmailID}</span></p>
             </div>
         <!-- Address bar end here -->
@@ -290,39 +255,23 @@
 
         <!-- greetings -->
             <div class="salutation">
-                <p>Dear <span>{User FirstName}</span></p>
+                <p>Hey <span>{User FirstName}!</span></p>
             </div>
 
         <!-- Register Button -->
             <div class="register_btn">
-                <button id="reg_btn">GO TO DASHBOARD</button>
+                <button id="reg_btn">REGISTER</button>
             </div>
 
 
         <!-- Message body -->
-            <div class="message_body">
-                <p>Many thanks again for applying to our Program. Your application is now under review and we invite you to consider the below comments and reply accordingly in order to keep the ball rolling.</p>
-                
-                <!-- Comments boxes-->
-                <div class="comment-boxes">
-                    <div class="comment-holder">
-                        <h1>Fundamentals</h1>
-                        <textarea></textarea>
-                    </div>
-
-                    <div class="comment-holder">
-                        <h1>Financials</h1>
-                        <textarea type="text"></textarea>
-                    </div>
-
-                    <div class="comment-holder">
-                        <h1>Transaction</h1>
-                        <textarea type="text"></textarea>
-                    </div>
-                </div>
-
-                <p>Please reply to this email or click <span>here</span> or on the blue button above to engage with the organisation on your dashboard. </p>
-                <p>Good luck and looking forward to seeing you on the Platform.</p>
+            <div class="message_body"> 
+                <p>Congratulations! You've made the cut! In order for your application to be properly considered and processed by 
+                     <span id="getPartnerName">{Partner Name}</span>, we're pleased to invite you to register and 
+                     submit your business valuation on InstaVal.</p>
+                <p>Please click <a id="ref_link" href="#">here</a> or on the blue button above to start the 
+                    registration process. </p>
+                <p>Looking forward to engaging with you soon.</p>
             </div>
 
         <!-- Message Final Tag-->
