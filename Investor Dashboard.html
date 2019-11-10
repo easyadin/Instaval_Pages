@@ -109,11 +109,25 @@
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 700;
             }
-            .right-nav {
+            .right-section {
                 position: absolute;
                 right: 0;
                 margin-right: 10px;
                 height: 60px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                /* font-size: 10px; */
+                color: rgb(91, 95, 112);
+            }
+            .right-section .notification-icon {
+                cursor: pointer;
+                font-size: 20px;
+                color: rgb(91, 95, 112);
+                padding:17px 12px;
+                margin-right: 10px;
+                margin-top: 3px;
             }
             .right-nav {
                 display: flex;
@@ -121,8 +135,8 @@
                 align-items: center;
                 font-size: 10px;
                 color: rgb(91, 95, 112);
-                padding-left:12px;
-                padding-right:12px;
+                padding:17px 12px
+
             }
             .right-nav:hover {
                 background-color:rgba(187, 187, 187, 0.459);
@@ -218,6 +232,34 @@
                 box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
                 background-color: #f3f6f9;
             }
+            .notification_panel {
+                /* display: none; */
+            }
+            .notification_panel {
+                position: absolute;
+                right: 0;
+                margin-top: 65px;
+                background-color: #f3f6f9;
+                width: 300px;
+
+
+
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 10px;
+                font-weight: 200;
+                border-radius: 5px;
+                background-color:#f3f6f9;
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+
             .instaval-logo a:hover{
                 background-color: transparent!important;
             }
@@ -1340,18 +1382,25 @@
                          <a href="#"><h1>Investors</h1></a>
                     </div>
                     <!-- navigation -->
-                    <div class="middle-nav anim">
+                    <div class="middle-nav">
                             <a href="#" class="dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
                             <a href="#" class="analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
                             <a href="#"class="platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
                             <a href="#" class="startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
                             <a href="#" class="investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
                     </div>
-                    <div class="right-nav anim">
-                        <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
-                        <h1 class="dropper">DIFC FinTech Hive</h1>
-                        <i class="ri-arrow-down-s-line dropper"></i>
+                    <div class="right-section">
+                        <div class="notification-icon">
+                            <!-- notification bar-->
+                            <i class="ri-notification-3-fill "></i>
+                        </div>
+                        <div class="right-nav">
+                            <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
+                            <h1 class="dropper">DIFC FinTech Hive</h1>
+                            <i class="ri-arrow-down-s-line dropper"></i>
+                        </div>
                     </div>
+                    
                     <!-- Dropdown menu company logo / name -->
                     <div class="dropDownMenu">
                                 <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
@@ -1383,6 +1432,13 @@
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
                     </div>
+                    <!--- notification panel-->
+                    <div class="notification_panel">
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1"> new project added</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1"> new eco-request</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Clear notificated</h1></div></a>
+                        </div>
              </div>
     </div>
 
