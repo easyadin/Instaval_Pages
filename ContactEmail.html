@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Request Email - Startup</title>
+
+    <Style>
+         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,500,600,700,400,800,900&display=swap');
+            *{
+                margin:0;
+                padding: 0;
+                border: none;
+                outline: none;
+                vertical-align: baseline;
+                font-size: 100%;
+            }
+            body {
+                width: 100%;
+               
+            }
+            .wrapper {
+                width: 80%;
+                margin: 0 10% 0 auto;
+            }
+            .heading {
+                font-family: 'IBM Plex Sans', sans-serif;
+                color:rgba(77, 73, 80, 0.794);
+                margin-top: 5%;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .header_logo {
+                height: 70px;
+                width: auto;
+                margin: 100px 70px 0 70px;
+            }
+            .header_logo img{
+                height: 20px;
+            }
+            .header_logo img:nth-child(2){
+                float: right;
+            }
+            .salutation{
+                margin: 0 70px 0 70px;
+            }
+            .salutation p{
+                color:rgba(77, 73, 80, 0.794);
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: bold;
+            }
+            .register_btn {
+                text-align: center;
+            }
+            .register_btn button {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                background-color:#0973AD;
+                border-radius: 2px;
+                color: white;
+                font-size: 16px;
+                margin: 50px 0 50px 0;
+                padding:  10px 30px;
+                cursor: pointer;
+            }
+            .register_btn button:hover {
+                background-color:rgba(9, 116, 173, 0.822);
+            }
+
+            .message_body {
+                width: auto;
+                margin: 0px 70px 0 70px;
+                margin-bottom: 50px;
+            }
+            .message_body p{
+                font-family: 'IBM Plex Sans', sans-serif;
+                color:rgba(77, 73, 80, 0.794);
+                letter-spacing: 0.03em;
+                font-size: 14px;
+                font-weight: 600;
+                word-spacing: .05em;
+                line-height: 16px;
+            }
+            .message_body p:nth-child(2){
+               margin-top: 10px;
+            }
+            .message_body p:nth-child(2) span{
+              color:#FF3366;
+              font-weight: bold;
+              cursor: pointer;
+            }
+            .message_body p:nth-child(3){
+               margin-top: 10px;
+            }
+            .instaval_tagline {
+                text-align: center;
+                font-weight: 900;
+                color:rgba(77, 73, 80, 0.794);
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 14px;
+            }
+            .instaval_tagline span {
+               font-size: 17px;
+            }
+
+            /* contact section*/
+
+            section {
+                margin-top: 60px;
+                padding: 15px 0 ;
+                width: 100%;
+                text-align: center;
+                background-color: #0973AD;
+                color: white;
+                height: 100px;
+            }
+            section div {
+                display: flex;
+                justify-content: center;
+            }
+            section svg {
+               margin: 0 10px 0 10px;
+            }
+            section p{
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 500;
+                font-size: 22px;   
+                padding-top: 0px;           
+            }
+        
+            a{
+                text-decoration: none;
+                color: white;
+                
+            }
+            .contact_icon {
+                display: flex;
+                flex-direction: row; 
+                justify-content: center;
+                margin: 0 10px 0 10px;
+                       
+            }
+            .section_contacts {
+                margin-top: 30px;
+            }
+            .section_contacts div p{
+                font-size: 16px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 400;
+            }
+            footer {
+                margin-top: 30px;
+                text-align: center;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 0.05em;
+            }
+            footer .social_Links {
+                display: flex;
+                justify-content: center;
+            }
+            footer .social_Links a{
+               text-decoration: underline;
+               margin: 1px;
+               margin-top: 13px;
+               margin-bottom: 20px;
+               color: #333;
+            }
+            footer .social_Links span{
+               text-decoration: underline;
+               margin: 1px;
+               margin-top: 13px;
+               margin-bottom: 20px;
+            }
+            #ref_link{
+                color: #FF3366;
+            }
+
+            /*** Comment boxes ***/
+            .comment-boxes {
+                display: flex;
+                justify-content: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .comment-holder h1 {
+                font-size: 20px;
+                color:rgba(77, 73, 80, 0.794);
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+           textarea{
+                display: block;
+                width: 300px;
+                height: calc(1.75rem + 3px);
+                padding: .625rem .75rem;
+                color: #8898aa;
+                background-color: #fff;
+                background-clip: padding-box;
+                border-radius: .375rem;
+                overflow: visible;
+                line-height: 1.5;
+                box-shadow: 0 1px 3px rgba(49, 49, 129, 0.691), 0 1px 0 rgba(0, 0, 0, 0.52);
+                border: 0;
+                transition: box-shadow .15s ease;
+                transition: .4s;
+            }
+            textarea{
+                margin-top: 10px;
+                height: 60px;
+            }
+
+            /*Responsiveness*/
+            @media only screen and (max-width: 991px){
+                    .wrapper {
+                        width: 90%;
+                        margin-left:16px;
+                    }
+                    .heading {
+                        font-size: 12px;
+                    }
+                    .header_logo{
+                        margin: 40px 5px 0 5px;
+                    }
+                    .salutation{
+                        margin: 0px 5px 0 5px;
+                        font-size: 13px;
+                    }
+                    .message_body p{
+                        font-size: 12px;
+                    }
+                    .register_btn button {
+                        border-radius: 2px;
+                        color: white;
+                        font-size: 12px;
+                        margin: 50px 0 50px 0;
+                        padding:  10px 30px;
+                        cursor: pointer;
+                     }
+                    .message_body{
+                        margin: 0px 5px 0 5px;
+                    }
+                    .instaval_tagline {
+                        margin-top:20px;
+                        font-size: 12px;
+                    }
+                    .instaval_tagline p{
+                       font-weight: 900;
+                    }
+                    .instaval_tagline span{
+                        font-size: 12px;
+                    }
+                    section {
+                        margin-bottom: 0px;
+                        margin-top: 30px;
+                    }
+                    section p{
+                        font-size: 15px;   
+                        margin-left: 5px;
+                        margin-right: 5px;           
+                     }
+                    .section_contacts div p {
+                        font-size: 12px; 
+                    }
+                   
+            }
+    </Style>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Address bar -->
+            <div class="heading">
+                <p>Hello From InstaVal</p>
+                <p><span>{Partner Name}</span> | Additional Infomation Request </p>
+                <p>To : <span id="userEmailID">{userEmailID}</span></p>
+            </div>
+        <!-- Address bar end here -->
+
+        <!-- logo header -->
+            <div class="header_logo">
+                <img src="./asset/Instaval_logo.png">
+                <img src="./asset/enterprise_placeholder.png">
+            </div>
+        <!-- logo header end here -->
+
+        <!-- greetings -->
+            <div class="salutation">
+                <p>Dear <span>{User FirstName}</span></p>
+            </div>
+
+        <!-- Register Button -->
+            <div class="register_btn">
+                <button id="reg_btn">GO TO DASHBOARD</button>
+            </div>
+
+
+        <!-- Message body -->
+            <div class="message_body">
+                <p>Many thanks again for applying to our Program. Your application is now under review and we invite you to consider the below comments and reply accordingly in order to keep the ball rolling.</p>
+                
+                <!-- Comments boxes-->
+                <div class="comment-boxes">
+                    <div class="comment-holder">
+                        <h1>Fundamentals</h1>
+                        <textarea></textarea>
+                    </div>
+
+                    <div class="comment-holder">
+                        <h1>Financials</h1>
+                        <textarea type="text"></textarea>
+                    </div>
+
+                    <div class="comment-holder">
+                        <h1>Transaction</h1>
+                        <textarea type="text"></textarea>
+                    </div>
+                </div>
+
+                <p>Please reply to this email or click <span>here</span> or on the blue button above to engage with the organisation on your dashboard. </p>
+                <p>Good luck and looking forward to seeing you on the Platform.</p>
+            </div>
+
+        <!-- Message Final Tag-->
+        <div class="instaval_tagline">
+            <p>InstaVal <span>|</span> Intelligent Investment Technology</p>
+        </div>
+    </div>
+
+
+    <!-- Page Footer -->
+<section>
+    <p class="gotQuestions">
+             Got questions ? We're always happy to help.
+             Please give us a call or send us an email.
+    </p>
+    
+    <!-- contacts-->
+    <div class="section_contacts"> 
+        <div class="contact_icon"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="rgba(255,255,255,1)"/></svg>
+            <p> +971 56 138 7505 </p>
+        </div>
+
+        <div>
+            <a class="contact_icon" href="mailto:hello@instaval.co">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M22 13h-2V7.238l-7.928 7.1L4 7.216V19h10v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9zM4.511 5l7.55 6.662L19.502 5H4.511zM21 18h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3z" fill="rgba(255,255,255,1)"/></svg>
+                        <p> hello@instaval.co</p>
+            </a>
+        </div>
+    </div>    
+</section>
+
+<footer>
+        <p>©2019 Instaval</p>
+        <p>Made with Science & Passion</p>
+
+        <div class="social_Links">
+                <a href="https://www.linkedin.com/company/instaval/"><p>Linkedin </p> </a>
+                <span>|</span>
+                <a href="https://twitter.com/InstaValuation"><p>Twitter </p> </a>
+                <span>|</span>
+                <a href="https://www.facebook.com/instavaluation"><p>Facebook </p> </a>
+        </div>
+
+</footer>
+</body>
+</html>

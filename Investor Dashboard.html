@@ -233,17 +233,14 @@
                 background-color: #f3f6f9;
             }
             .notification_panel {
-                /* display: none; */
+                display: none;
             }
-            .notification_panel {
+            .notification_panel_active {
                 position: absolute;
                 right: 0;
                 margin-top: 65px;
                 background-color: #f3f6f9;
                 width: 300px;
-
-
-
                 z-index: 1000;
                 display: flex;
                 flex-direction: column;
@@ -585,6 +582,14 @@
             
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
+                .right-section .notification-icon {
+                    cursor: pointer;
+                    font-size: 20px;
+                    color: rgb(91, 95, 112);
+                    padding: 17px 0px;
+                    margin-right: 0px;
+                    margin-top: 3px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -744,31 +749,29 @@
                     font-weight: 600;
                 }
             }
-            @media only screen and (min-width: 1440px){
+            @media only screen and (min-width: 1025px){
                 .mobile-nav-dashboard {
                     display: none;
                  }
                  canvas {
-                     width: 320px!important;
+                     width: 301px!important;
                      height: auto!important;
                  }
                  .dropDownMenu1 {
-                     margin-left: 281px;
+                     margin-left: 192px;
                  }
                  .dropDownMenu2 {
-                     margin-left: 473px;
+                     margin-left: 335px;
                  }
                  .dropDownMenu3 {
-                     margin-left: 654px;
+                     margin-left: 468px;
                  }
                  .dropDownMenu4 {
-                     margin-left: 834px;
+                     margin-left: 595px;
                  }
                  .dropDownMenu5 {
-                     margin-left: 1018px;
+                     margin-left: 729px;
                  }
-
-
                  .countersParent {
                     display: flex;
                     flex-direction: row;
@@ -777,13 +780,11 @@
                     flex-wrap: wrap;
                     width: 100%;
                 }
-
                 .counterGroupElements {
                     position: relative;
                     margin-top: 50px;
                     box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .countersParent .counterIcon {
                     width: 50px;
                     height: 50px;
@@ -797,12 +798,10 @@
                     left: 25px;
                     box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .counterIcon img {
                     width: 30px;
                     height: 30px;
                 }
-
                 .countersParent .counterGroupElements .counterBG {
                     background-color: #FFFFFF;
                     width: 238px;
@@ -810,7 +809,6 @@
                     border-radius: 6px;
                     box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
                     font-size: 35px;
                     float: right;
@@ -820,7 +818,6 @@
                     transition: 1s;
                     padding-top: 5px;
                 }
-
                 .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
                     font-size: 20px;
                     position: relative;
@@ -833,12 +830,124 @@
                     /* margin-top: -8px; */
                     font-weight: 400;
                 }
-
                 .counterBG h1:nth-child(2) {
                     font-size: 13px!important;
                 }
+                .middle-nav {
+                    margin-left: 0;
+                }
+                .middle-nav a {
+                    margin-left: 0;
+                }
+                .table-container {
+                        margin: 20px 30px;
+                }
+            }
+            @media only screen and (min-width: 1440px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 320px!important;
+                     height: auto!important;
+                 }
+                 .dropDownMenu1 {
+                     margin-left: 192px;
+                 }
+                 .dropDownMenu2 {
+                     margin-left: 335px;
+                 }
+                 .dropDownMenu3 {
+                     margin-left: 468px;
+                 }
+                 .dropDownMenu4 {
+                     margin-left: 595px;
+                 }
+                 .dropDownMenu5 {
+                     margin-left: 729px;
+                 }
+                 .countersParent {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+                .counterGroupElements {
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+                .countersParent .counterIcon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -14px;
+                    left: 25px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+                .counterIcon img {
+                    width: 30px;
+                    height: 30px;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 238px;
+                    height: 90px;
+                    border-radius: 6px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
+                    font-size: 35px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                    padding-top: 5px;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 25px;
+                    color: #D00D28;
+                    padding-top: 58px;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    /* margin-top: -8px; */
+                    font-weight: 400;
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 13px!important;
+                }
+                .middle-nav {
+                    margin-left: 0;
+                }
+                .middle-nav a {
+                    margin-left: 0;
+                }
+                
             }
             @media only screen and (min-width:1920px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .middle-nav {
+                    margin-left: 3%
+                }
+                .middle-nav a {
+                    margin-left: 50px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -868,6 +977,15 @@
                  }
             }
             @media only screen and (min-width: 2560px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .middle-nav {
+                    margin-left: 3%;
+                }
+                .middle-nav a {
+                    margin-left: 50px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -896,35 +1014,73 @@
 
             }
             @media only screen and (max-width: 991px){
-                .middle-nav a {
-                    padding:20px 7px;
+                .dropDownMenu {
+                    z-index: 300000000000000000;
                 }
-                .middle-nav a h1 {
-                    font-size: 10px;
+                .burger_Menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+                .burger_Menu span {
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #4E9BF0;
+                    margin:3px;
+                }
+                .middle-nav .large_Screen {
+                    display: none;
                 }
                 .left-nav a {
                     margin-right: 20px;
                 }
                 .mobile-nav-dashboard {
-                    display: contents;
+                    display: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: absolute;
                     font-family: 'IBM Plex Sans', sans-serif;
-                    font-size: 8px;
-                    color: rgb(91, 95, 112);
-                    display: flex;
-                    align-items: center;
-                 }
-                 .mobile-nav-dashboard {
-                     display: none;
+                    background-color: #f3f6f9;
+                    top: 0;
+                    margin-top: 64px;
+                    width: 100%;
+                    height: auto;
+                    z-index: 10000000000;
+                    transition: .4s;
                  }
                  .mobile-nav-dashboard h1{
-                    font-weight: 500;
+                    font-weight: 600;
+                    font-size: 15px;
                     letter-spacing: 0.05rem;
-                    margin-left: 20px;
+                    text-align: left;
                   }
                   .mobile-nav-dashboard a{
                     text-decoration: none; color: rgb(91, 95, 112);
+                    margin-left: 40px;
+                    padding:10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
                   }
-                  canvas {
+                 .mobile-dropDownMenu1 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu2 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu3 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu4 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu5 {
+                     display: none;
+                 }
+                 canvas {
                      width: 324px!important;
                      height: auto!important;
                  }
@@ -940,12 +1096,9 @@
             }
 
             @media only screen and (max-width: 425px){
-                .mobile-nav-dashboard a{
-                    display: none;
-                }
-                .middle-nav {
-                    display: none;
-                }
+               .right-nav h1 {
+                   display: none;
+               }
                 .countersParent {
                     width: 100%;
                 }
@@ -955,14 +1108,79 @@
                 .countersParent .counterGroupElements .counterBG {
                     width: 346px;
                 }
-
+                
+                .dropDownMenu {
+                    z-index: 300000000000000000;
+                }
+                .burger_Menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+                .burger_Menu span {
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #4E9BF0;
+                    margin:3px;
+                }
+                .middle-nav .large_Screen {
+                    display: none;
+                }
+                .left-nav a {
+                    margin-right: 20px;
+                }
+                .mobile-nav-dashboard {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: absolute;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    background-color: #f3f6f9;
+                    top: 0;
+                    margin-top: 64px;
+                    width: 100%;
+                    height: auto;
+                    z-index: 10000000000;
+                    transition: .4s;
+                 }
+                 .mobile-nav-dashboard h1{
+                    font-weight: 600;
+                    font-size: 15px;
+                    letter-spacing: 0.05rem;
+                    text-align: left;
+                  }
+                  .mobile-nav-dashboard a{
+                    text-decoration: none; color: rgb(91, 95, 112);
+                    margin-left: 40px;
+                    padding:10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                  }
+                 .mobile-dropDownMenu1 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu2 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu3 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu4 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu5 {
+                     display: none;
+                 }
              }
              @media only screen and (max-width: 375px){
                 .countersParent .counterGroupElements .counterBG {
                     width: 296px;
                 }
              }
-
 
 
              /**FORM CSS ***/
@@ -1374,20 +1592,56 @@
                         <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 22px; width: 135px;" id="instaval_logo_id"></a>
                     </div>
                     <!-- mobile navigation -->
-                    <div class="mobile-nav-dashboard anim">
-                         <a href="#"><h1>Dashboard</h1></a>
-                         <a href="#"><h1>Analytics</h1></a>
-                         <a href="#"><h1>Platform</h1></a>
-                         <a href="#"><h1>Startups</h1></a>
-                         <a href="#"><h1>Investors</h1></a>
+                    <div class="mobile-nav-dashboard">
+                            <a href="#" class="mob-dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                                    <!-- mobile dashboard dropdown menu-->
+                                    <div class="mobile-dropDownMenu1">
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/Icons v3/Total Dealflow.svg"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/asset/svg/benchmarking.svg"></i><h1 class="format-text f-h1">Benchmarking</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                               <!-- mobile Analytics dropdown menu-->
+                                     <div class="mobile-dropDownMenu2">
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img src="../Template/asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visuals</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/download.svg"></i><h1 class="format-text f-h1">Download Data</h1></div></a>
+                                     </div>
+                            <a href="#"class="mob-platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                                 <!-- mobile Platform dropdown menu-->
+                                    <div class="mobile-dropDownMenu3">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                                 <!-- mobile Startups dropdown menu-->
+                                    <div class="mobile-dropDownMenu4">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a> 
+                                 <!-- mobile Investors dropdown menu-->
+                                    <div class="mobile-dropDownMenu5">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                                    </div>
                     </div>
                     <!-- navigation -->
+                   
                     <div class="middle-nav">
-                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#"class="platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <!-- burger-menu -->
+                                <div class="burger_Menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- large screen navigation-->
+                                <a href="#" class="dashboard-btn large_Screen"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="analytics-btn large_Screen"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#"class="platform-btn large_Screen"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="startups-btn large_Screen"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="investors-btn large_Screen"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
                     </div>
                     <div class="right-section">
                         <div class="notification-icon">
@@ -1419,13 +1673,11 @@
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
-
                     </div>
                     <div class="dropDownMenu4">
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
-
                     </div>
                     <div class="dropDownMenu5">
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
@@ -1494,12 +1746,12 @@
         <!-- custom dashboard counter end here-->
 
         <!-- Table -->
-     <div class="table-container table1 ">
+     <div class="table-container  ">
             <div class="table-title">
                 <h1 id="respondToHorizontalScroll">DealFlow Data</h1>
             </div>
-           <div class="table-content dlflow"><!-- dealflow table starts here -->
-                <table id="dataTable" class="table table-bordered" style="width:100%">
+           <div class="table-content dlflow table1" id="id-dlflow"><!-- dealflow table starts here -->
+                <table id="dataTable" class="table table-bordered " style="width:100%">
                         <thead>
                                 <tr>
                                         <th>Company <i class="fas fa-sort"></i></th>
@@ -3152,6 +3404,47 @@
                         $(".dropDownMenu5").hide();
                 });
 
+             // hide and reveal mobile navigation dropdown menu
+                // burger menu 
+                $('.burger_Menu').click(function(){
+                    $('.mobile-nav-dashboard').toggle();
+                });
+                $('.mob-dashboard-btn').click(function(){
+                    $('.mobile-dropDownMenu1').toggle();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-analytics-btn').click(function(){
+                    $('.mobile-dropDownMenu2').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-platform-btn').click(function(){
+                    $('.mobile-dropDownMenu3').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-startups-btn').click(function(){
+                    $('.mobile-dropDownMenu4').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-investors-btn').click(function(){
+                    $('.mobile-dropDownMenu5').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                });
+
             //change the indicator of table data base 
             //on innerHTML content status
             var dataStatus = document.getElementsByTagName('td');
@@ -3311,7 +3604,6 @@
                     });
 
 
-// or opacity increases accordingly
  //LifeCycle chart
  var LifeCycle = document.getElementById('LifeCycle').getContext('2d');
                      var chart = new Chart(LifeCycle, {
@@ -3794,7 +4086,7 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                                 }
                     }); 
  
- 
+                /* use window.screen width to determine the margin of the row and pagination dynamically**/
                  // detect horizontal scroll
                   // element to detect scroll direction of
                     var el = $('.table1')
@@ -3807,13 +4099,15 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                         x = (currX > lastX) ? 'right' : ((currX === lastX) ? 'none' : 'left');
                         //change title margin
                           if(x === 'right'){
-                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "453px";
-                              document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
-                              document.getElementById('search_input_field').style.marginRight ="-604px";
+                            console.log("right")
+                              document.getElementsByClassName("row")[0].style.marginRight = "-400px";
+                              document.getElementsByClassName("pagination")[0].style.marginRight = "-400px";
+                              document.getElementsByClassName("row")[0].style.transition = ".6s";
+                            
                           }else{
-                            document.getElementById('respondToHorizontalScroll').style.marginLeft = "";
-                            document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
-                            document.getElementById('search_input_field').style.marginRight ="";
+                              document.getElementsByClassName("row")[0].style.marginRight = "";
+                              document.getElementsByClassName("pagination")[0].style.marginRight = "";
+                              document.getElementsByClassName("row")[0].style.transition = ".5s";
                           }
 
                     // update last scroll position to current position
