@@ -10,6 +10,12 @@
     <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.css" integrity="sha256-jrNAqq4Gy0Gg2b6G6l0n57dPr6N1twCn+JMqY8x3l88=" crossorigin="anonymous" />
+    <!-- Page level plugin JavaScript-->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
 
 </head>
 
@@ -103,11 +109,25 @@
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 700;
             }
-            .right-nav {
+            .right-section {
                 position: absolute;
                 right: 0;
                 margin-right: 10px;
                 height: 60px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                /* font-size: 10px; */
+                color: rgb(91, 95, 112);
+            }
+            .right-section .notification-icon {
+                cursor: pointer;
+                font-size: 20px;
+                color: rgb(91, 95, 112);
+                padding:17px 12px;
+                margin-right: 10px;
+                margin-top: 3px;
             }
             .right-nav {
                 display: flex;
@@ -115,8 +135,8 @@
                 align-items: center;
                 font-size: 10px;
                 color: rgb(91, 95, 112);
-                padding-left:12px;
-                padding-right:12px;
+                padding:17px 12px
+
             }
             .right-nav:hover {
                 background-color:rgba(187, 187, 187, 0.459);
@@ -212,6 +232,31 @@
                 box-shadow: 0 1px 12px 0 rgba(128,128,128,.25);
                 background-color: #f3f6f9;
             }
+            .notification_panel {
+                display: none;
+            }
+            .notification_panel_active {
+                position: absolute;
+                right: 0;
+                margin-top: 65px;
+                background-color: #f3f6f9;
+                width: 300px;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-around;
+                list-style: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 10px;
+                font-weight: 200;
+                border-radius: 5px;
+                background-color:#f3f6f9;
+                border-color: rgb(104, 88, 88);
+                box-shadow: 10px 10px 5px #aaaaaa7a;
+                transition: 1s;
+            }
+
             .instaval-logo a:hover{
                 background-color: transparent!important;
             }
@@ -287,6 +332,7 @@
                     position: relative;
                     margin-top: 50px;
                     box-shadow:0 0 0rem 0 rgba(136,152,170,.15)!important;
+                    cursor: pointer;
                 }
                 .counterBG h1:nth-child(2) {
                     font-size: 18px!important;
@@ -346,8 +392,17 @@
                     height: 100%;
                     overflow: hidden;
             }
+            .table-content {
+                overflow: hidden;
+            }
+            .table-content:hover {
+                overflow: auto;
+            }
             .table-container:hover {
                  overflow: auto;
+            }
+            .dlflow {
+                margin-top: -40px;
             }
             .table-title {
                 padding: 20px 10px;
@@ -358,29 +413,51 @@
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 900;
             }
-            .table-title {
-                display: flex;
-                justify-content: space-between;
-                flex-direction: row;
-            }  
-            .search_input {
-                
+            .row:first-child {
+                display: flex!important;
+                font-family: 'IBM Plex Sans', sans-serif;
+                float: right;
+                flex-direction: row-reverse;
+                font-weight: 500;
+               
             }
-            .search_input input{
-                display: block;
-              
-                width: 378px;
-                padding: .625rem .75rem;
-                color: #8898aa;
+           
+            .row:first-child .col-sm-12:nth-child(1){
+                color: #000000;
                 background-color: #fff;
                 background-clip: padding-box;
-                border-radius: .375rem;
+                border-radius: 5px;
                 overflow: visible;
                 line-height: 1.5;
                 border: 1;
                 border-color: rgb(154, 159, 161);
                 transition: box-shadow .15s ease;
                 transition: .4s;
+                margin: 0 20px;
+            }
+        
+            .row:nth-child(2) {
+            }
+            .pagination {
+                display: flex;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 500;
+                list-style: none;
+                float: right;
+                margin-right: 20px;
+            }
+            .pagination li{
+                padding:2.6px 10px;
+                background-color: #0374AF;
+                margin: 0 5px;
+            }
+            .page-link {
+                /* padding: 5px; */
+                color: #fff;
+            }
+            .table-container {
+                display: flex;
+                flex-direction: column;
             }
             .table-container thead{
                 background-color: #0374AF;
@@ -404,18 +481,27 @@
                 padding-right: 10px;
                 padding-left: 10px;
             }
+            tr th i {
+                cursor: pointer;
+            }
+            .sorting_asc {
+                color: #fff!important;
+            }
             tr td {
                 font-weight: 500;
                 font-family: 'IBM Plex Sans', sans-serif;
             } 
             tr:hover{
                 background-color: rgba(100, 148, 237, 0.103);
-                
             }
             td {
                 white-space: nowrap;
                 padding: 10px 10px!important;
                 text-align: center;
+            }
+            td img {
+                height: 20px;
+                width: auto;
             }
           
             td a:hover{
@@ -496,6 +582,14 @@
             
             /*Responsive navigation*/
             @media only screen and (max-width: 1024px){
+                .right-section .notification-icon {
+                    cursor: pointer;
+                    font-size: 20px;
+                    color: rgb(91, 95, 112);
+                    padding: 17px 0px;
+                    margin-right: 0px;
+                    margin-top: 3px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -655,31 +749,29 @@
                     font-weight: 600;
                 }
             }
-            @media only screen and (min-width: 1440px){
+            @media only screen and (min-width: 1025px){
                 .mobile-nav-dashboard {
                     display: none;
                  }
                  canvas {
-                     width: 320px!important;
+                     width: 301px!important;
                      height: auto!important;
                  }
                  .dropDownMenu1 {
-                     margin-left: 281px;
+                     margin-left: 192px;
                  }
                  .dropDownMenu2 {
-                     margin-left: 473px;
+                     margin-left: 335px;
                  }
                  .dropDownMenu3 {
-                     margin-left: 654px;
+                     margin-left: 468px;
                  }
                  .dropDownMenu4 {
-                     margin-left: 834px;
+                     margin-left: 595px;
                  }
                  .dropDownMenu5 {
-                     margin-left: 1018px;
+                     margin-left: 729px;
                  }
-
-
                  .countersParent {
                     display: flex;
                     flex-direction: row;
@@ -688,13 +780,11 @@
                     flex-wrap: wrap;
                     width: 100%;
                 }
-
                 .counterGroupElements {
                     position: relative;
                     margin-top: 50px;
                     box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .countersParent .counterIcon {
                     width: 50px;
                     height: 50px;
@@ -708,12 +798,10 @@
                     left: 25px;
                     box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .counterIcon img {
                     width: 30px;
                     height: 30px;
                 }
-
                 .countersParent .counterGroupElements .counterBG {
                     background-color: #FFFFFF;
                     width: 238px;
@@ -721,7 +809,6 @@
                     border-radius: 6px;
                     box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
                 }
-
                 .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
                     font-size: 35px;
                     float: right;
@@ -731,7 +818,6 @@
                     transition: 1s;
                     padding-top: 5px;
                 }
-
                 .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
                     font-size: 20px;
                     position: relative;
@@ -744,12 +830,124 @@
                     /* margin-top: -8px; */
                     font-weight: 400;
                 }
-
                 .counterBG h1:nth-child(2) {
                     font-size: 13px!important;
                 }
+                .middle-nav {
+                    margin-left: 0;
+                }
+                .middle-nav a {
+                    margin-left: 0;
+                }
+                .table-container {
+                        margin: 20px 30px;
+                }
+            }
+            @media only screen and (min-width: 1440px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .mobile-nav-dashboard {
+                    display: none;
+                 }
+                 canvas {
+                     width: 320px!important;
+                     height: auto!important;
+                 }
+                 .dropDownMenu1 {
+                     margin-left: 192px;
+                 }
+                 .dropDownMenu2 {
+                     margin-left: 335px;
+                 }
+                 .dropDownMenu3 {
+                     margin-left: 468px;
+                 }
+                 .dropDownMenu4 {
+                     margin-left: 595px;
+                 }
+                 .dropDownMenu5 {
+                     margin-left: 729px;
+                 }
+                 .countersParent {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+                .counterGroupElements {
+                    position: relative;
+                    margin-top: 50px;
+                    box-shadow: 0 0 0rem 0 rgba(136,152,170,.15)!important;
+                }
+                .countersParent .counterIcon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -14px;
+                    left: 25px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+                .counterIcon img {
+                    width: 30px;
+                    height: 30px;
+                }
+                .countersParent .counterGroupElements .counterBG {
+                    background-color: #FFFFFF;
+                    width: 238px;
+                    height: 90px;
+                    border-radius: 6px;
+                    box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(1) {
+                    font-size: 35px;
+                    float: right;
+                    left: 280px;
+                    color: rgba(36, 38, 41, 0.952);
+                    margin-right: 25px;
+                    transition: 1s;
+                    padding-top: 5px;
+                }
+                .countersParent .counterGroupElements .counterBG h1:nth-child(2) {
+                    font-size: 20px;
+                    position: relative;
+                    margin-left: 25px;
+                    color: #D00D28;
+                    padding-top: 58px;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.1rem;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    /* margin-top: -8px; */
+                    font-weight: 400;
+                }
+                .counterBG h1:nth-child(2) {
+                    font-size: 13px!important;
+                }
+                .middle-nav {
+                    margin-left: 0;
+                }
+                .middle-nav a {
+                    margin-left: 0;
+                }
+                
             }
             @media only screen and (min-width:1920px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .middle-nav {
+                    margin-left: 3%
+                }
+                .middle-nav a {
+                    margin-left: 50px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -779,6 +977,15 @@
                  }
             }
             @media only screen and (min-width: 2560px){
+                .table-container {
+                        margin: 20px 30px;
+                }
+                .middle-nav {
+                    margin-left: 3%;
+                }
+                .middle-nav a {
+                    margin-left: 50px;
+                }
                 .mobile-nav-dashboard {
                     display: none;
                  }
@@ -807,35 +1014,73 @@
 
             }
             @media only screen and (max-width: 991px){
-                .middle-nav a {
-                    padding:20px 7px;
+                .dropDownMenu {
+                    z-index: 300000000000000000;
                 }
-                .middle-nav a h1 {
-                    font-size: 10px;
+                .burger_Menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+                .burger_Menu span {
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #4E9BF0;
+                    margin:3px;
+                }
+                .middle-nav .large_Screen {
+                    display: none;
                 }
                 .left-nav a {
                     margin-right: 20px;
                 }
                 .mobile-nav-dashboard {
-                    display: contents;
+                    display: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: absolute;
                     font-family: 'IBM Plex Sans', sans-serif;
-                    font-size: 8px;
-                    color: rgb(91, 95, 112);
-                    display: flex;
-                    align-items: center;
-                 }
-                 .mobile-nav-dashboard {
-                     display: none;
+                    background-color: #f3f6f9;
+                    top: 0;
+                    margin-top: 64px;
+                    width: 100%;
+                    height: auto;
+                    z-index: 10000000000;
+                    transition: .4s;
                  }
                  .mobile-nav-dashboard h1{
-                    font-weight: 500;
+                    font-weight: 600;
+                    font-size: 15px;
                     letter-spacing: 0.05rem;
-                    margin-left: 20px;
+                    text-align: left;
                   }
                   .mobile-nav-dashboard a{
                     text-decoration: none; color: rgb(91, 95, 112);
+                    margin-left: 40px;
+                    padding:10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
                   }
-                  canvas {
+                 .mobile-dropDownMenu1 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu2 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu3 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu4 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu5 {
+                     display: none;
+                 }
+                 canvas {
                      width: 324px!important;
                      height: auto!important;
                  }
@@ -851,12 +1096,9 @@
             }
 
             @media only screen and (max-width: 425px){
-                .mobile-nav-dashboard a{
-                    display: none;
-                }
-                .middle-nav {
-                    display: none;
-                }
+               .right-nav h1 {
+                   display: none;
+               }
                 .countersParent {
                     width: 100%;
                 }
@@ -866,14 +1108,79 @@
                 .countersParent .counterGroupElements .counterBG {
                     width: 346px;
                 }
-
+                
+                .dropDownMenu {
+                    z-index: 300000000000000000;
+                }
+                .burger_Menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+                .burger_Menu span {
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #4E9BF0;
+                    margin:3px;
+                }
+                .middle-nav .large_Screen {
+                    display: none;
+                }
+                .left-nav a {
+                    margin-right: 20px;
+                }
+                .mobile-nav-dashboard {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: absolute;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    background-color: #f3f6f9;
+                    top: 0;
+                    margin-top: 64px;
+                    width: 100%;
+                    height: auto;
+                    z-index: 10000000000;
+                    transition: .4s;
+                 }
+                 .mobile-nav-dashboard h1{
+                    font-weight: 600;
+                    font-size: 15px;
+                    letter-spacing: 0.05rem;
+                    text-align: left;
+                  }
+                  .mobile-nav-dashboard a{
+                    text-decoration: none; color: rgb(91, 95, 112);
+                    margin-left: 40px;
+                    padding:10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                  }
+                 .mobile-dropDownMenu1 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu2 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu3 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu4 {
+                     display: none;
+                 }
+                 .mobile-dropDownMenu5 {
+                     display: none;
+                 }
              }
              @media only screen and (max-width: 375px){
                 .countersParent .counterGroupElements .counterBG {
                     width: 296px;
                 }
              }
-
 
 
              /**FORM CSS ***/
@@ -1285,26 +1592,69 @@
                         <a href="#"><img src="../Template/asset/Instaval_logo.png" style="height: 22px; width: 135px;" id="instaval_logo_id"></a>
                     </div>
                     <!-- mobile navigation -->
-                    <div class="mobile-nav-dashboard anim">
-                         <a href="#"><h1>Dashboard</h1></a>
-                         <a href="#"><h1>Analytics</h1></a>
-                         <a href="#"><h1>Platform</h1></a>
-                         <a href="#"><h1>Startups</h1></a>
-                         <a href="#"><h1>Investors</h1></a>
+                    <div class="mobile-nav-dashboard">
+                            <a href="#" class="mob-dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                                    <!-- mobile dashboard dropdown menu-->
+                                    <div class="mobile-dropDownMenu1">
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/Icons v3/Total Dealflow.svg"></i><h1 class="format-text f-h1">DealFlow Data</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"> <img src="../Template/asset/svg/benchmarking.svg"></i><h1 class="format-text f-h1">Benchmarking</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                               <!-- mobile Analytics dropdown menu-->
+                                     <div class="mobile-dropDownMenu2">
+                                            <a href="#"> <div class="dropdown-content"> <i class="format-icon"><img src="../Template/asset/svg/visual-analytics.svg"></i><h1 class="format-text f-h1">Visuals</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/download.svg"></i><h1 class="format-text f-h1">Download Data</h1></div></a>
+                                     </div>
+                            <a href="#"class="mob-platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                                 <!-- mobile Platform dropdown menu-->
+                                    <div class="mobile-dropDownMenu3">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                                 <!-- mobile Startups dropdown menu-->
+                                    <div class="mobile-dropDownMenu4">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                                    </div>
+                            <a href="#" class="mob-investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a> 
+                                 <!-- mobile Investors dropdown menu-->
+                                    <div class="mobile-dropDownMenu5">
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
+                                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                                    </div>
                     </div>
                     <!-- navigation -->
-                    <div class="middle-nav anim">
-                            <a href="#" class="dashboard-btn"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="analytics-btn"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#"class="platform-btn"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="startups-btn"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
-                            <a href="#" class="investors-btn"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
+                   
+                    <div class="middle-nav">
+                                <!-- burger-menu -->
+                                <div class="burger_Menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <!-- large screen navigation-->
+                                <a href="#" class="dashboard-btn large_Screen"><h1>Dashboard</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="analytics-btn large_Screen"><h1>Analytics</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#"class="platform-btn large_Screen"><h1 >Platform</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="startups-btn large_Screen"><h1>Startups</h1><i class="ri-arrow-down-s-line"></i></a>
+                                <a href="#" class="investors-btn large_Screen"><h1>Investors</h1><i class="ri-arrow-down-s-line"></i></a>
                     </div>
-                    <div class="right-nav anim">
-                        <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
-                        <h1 class="dropper">DIFC FinTech Hive</h1>
-                        <i class="ri-arrow-down-s-line dropper"></i>
+                    <div class="right-section">
+                        <div class="notification-icon">
+                            <!-- notification bar-->
+                            <i class="ri-notification-3-fill "></i>
+                        </div>
+                        <div class="right-nav">
+                            <img class="dropper" src="../Template/asset/DIFC_logo.png" style="height: 22px;"></a>
+                            <h1 class="dropper">DIFC FinTech Hive</h1>
+                            <i class="ri-arrow-down-s-line dropper"></i>
+                        </div>
                     </div>
+                    
                     <!-- Dropdown menu company logo / name -->
                     <div class="dropDownMenu">
                                 <a href="#"> <div class="dropdown-content"> <i class="ri-settings-5-line format-icon"></i><h1 class="format-text f-h1">Settings</h1></div></a>
@@ -1323,25 +1673,31 @@
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/valuation.svg"></i><h1 class="format-text f-h1">Valuation</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/tools.svg"></i><h1 class="format-text f-h1">Tools</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/services.svg"></i><h1 class="format-text f-h1">Services</h1></div></a>
-
                     </div>
                     <div class="dropDownMenu4">
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"><i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i></i><h1 class="format-text f-h1">Discover</h1></div></a>
-
                     </div>
                     <div class="dropDownMenu5">
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1">Invite</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1">Share</h1></div></a>
                                 <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
                     </div>
+                    <!--- notification panel-->
+                    <div class="notification_panel">
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/invite.svg"></i><h1 class="format-text f-h1"> new project added</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/share.svg"></i></i><h1 class="format-text f-h1"> new eco-request</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Discover</h1></div></a>
+                            <a href="#"> <div class="dropdown-content"> <i class=" format-icon"><img src="../Template/asset/svg/discover.svg"></i><h1 class="format-text f-h1">Clear notificated</h1></div></a>
+                        </div>
              </div>
     </div>
 
 <div class="main-body-content-area">
  <!-- custom dashboard counter-->
  <div class="countersParent">
+       <!-- Total dealflow card-->
         <div class="counterGroupElements">
             <div class="counterIcon" style="background-color:#4E9BF0!important;"><img src="../Template/Icons v3/Total-Dealflow_white.png">
             </div>
@@ -1350,6 +1706,7 @@
                 <h1  style="color:rgb(218, 81, 109)!important;">TOTAL DEALFLOW</h1>
             </div>
         </div>
+        <!-- new projects card-->
         <div class="counterGroupElements">
                 <div class="counterIcon" style="background-color:#FB6340!important;"><img src="../Template/Icons v3/Projects_white_bg.png">
                 </div>
@@ -1358,17 +1715,16 @@
                     <h1  style="color:#FB6340!important;">NEW PROJECTS</h1>
                 </div>
             </div>
+        <!-- pending request card-->
             <div class="counterGroupElements">
                     <div class="counterIcon"  style="background-color:#11CDEF!important;"><img src="../Template/Icons v3/Request_white_bg.png">
                     </div>
                     <div class="counterBG">
                         <h1 class="pending_request_counter_value">25</h1>
                         <h1 style="color:#11CDEF!important;" >PENDING REQUEST </h1>
-                        <!-- <h1>PENDING REQUEST</h1> -->
                     </div>
                 </div>
-
-            
+        <!-- accepted card-->
                 <div class="counterGroupElements">
                         <div class="counterIcon" style="background-color:#2AC940!important;"><img src="../Template/Icons v3/Approve_white.png">
                         </div>
@@ -1377,7 +1733,7 @@
                             <h1 style="color:#2AC940!important;">ACCEPTED</h1>
                         </div>
                     </div>
-                    
+        <!-- rejected card -->
             <div class="counterGroupElements">
                     <div class="counterIcon" style="background-color:#E31209!important;"><img src="../Template/Icons v3/Reject-2_white.png">
                     </div>
@@ -1390,37 +1746,34 @@
         <!-- custom dashboard counter end here-->
 
         <!-- Table -->
-     <div class="table-container table1">
+     <div class="table-container  ">
             <div class="table-title">
                 <h1 id="respondToHorizontalScroll">DealFlow Data</h1>
-                <div class="search_input">
-                    <input type="text"  placeholder="Type to search" id="search_input_field">
-                </div>
             </div>
-           <div class="table-content">
-                <table id="dealflow_table" class="table table-striped table-bordered" style="width:100%">
+           <div class="table-content dlflow table1" id="id-dlflow"><!-- dealflow table starts here -->
+                <table id="dataTable" class="table table-bordered " style="width:100%">
                         <thead>
                                 <tr>
-                                        <th>Company</th>
-                                        <th>Country</th>
-                                        <th>Revenue Stage</th>
-                                        <th>Industry</th>
-                                        <th>Business Model</th>
-                                        <th>Lifecycle Stage</th>
-                                        <th>Headcount</th>
-                                        <th>Company Age (in years)</th>
-                                        <th>Revenue 2019E (in '000)</th>
-                                        <th>Valuation (in '000)</th>
-                                        <th>Target Funding (in '000)</th>
-                                        <th>Funding Round</th>
-                                        <th>Equity</th>
-                                        <th>Status</th>
+                                        <th>Company <i class="fas fa-sort"></i></th>
+                                        <th>Country <i class="fas fa-sort"></i></th>
+                                        <th>Revenue Stage <i class="fas fa-sort"></i></th>
+                                        <th>Industry <i class="fas fa-sort"></i></th>
+                                        <th>Business Model <i class="fas fa-sort"></i></th>
+                                        <th>Lifecycle Stage <i class="fas fa-sort"></i></th>
+                                        <th>Headcount <i class="fas fa-sort"></i></th>
+                                        <th>Company Age (in years) <i class="fas fa-sort"></i></th>
+                                        <th>Revenue 2019E (in '000) <i class="fas fa-sort"></i></th>
+                                        <th>Valuation (in '000) <i class="fas fa-sort"></i></th>
+                                        <th>Target Funding (in '000) <i class="fas fa-sort"></i></th>
+                                        <th>Funding Round <i class="fas fa-sort"></i></th>
+                                        <th>Equity <i class="fas fa-sort"></i></th>
+                                        <th>Status <i class="fas fa-sort"></i></th>
                                         <th>View | Download | Select</th>
                                 </tr> 
                         </thead>
                         <tbody>
                                 <tr>
-                                        <td>Instaval</td>
+                                        <td><img src="asset/Instaval_logo.png"></td>
                                         <td>
                                             <span class="flag-icon flag-icon-ae"></span>
                                             UAE
@@ -1444,7 +1797,778 @@
                                         </td>
                                 </tr>
                                 <tr>
-                                        <td>Instaval</td>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+
+                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                                                <tr>
+                                        <td><img src="asset/Instaval_logo.png"></td>
+                                        <td>
+                                            <span class="flag-icon flag-icon-ae"></span>
+                                            UAE
+                                        </td>
+                                        <td>Industry 1</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td>Dummy Data</td>
+                                        <td id="data-status">Rejected</td>
+                                        <td class="table-actions">
+                                            <a class="btn btn-primary select_" data-toggle="bottom" data-placement="top" title="View Report"><i class="ri-eye-line"></i></a>
+                                            <a class="btn btn-info"  data-toggle="bottom" data-placement="top" title="Download Report"><i class="ri-download-line"></i></a>
+                                            <a class="btn btn-success "  data-toggle="bottom" data-placement="top" title="Select Report"><i class="fas fa-hand-pointer"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><img src="asset/DIFC_logo.png"></td>
                                         <td>
                                                 <span class="flag-icon flag-icon-ma"></span>
                                                 MOROCCO
@@ -1511,9 +2635,6 @@
                                             </td>
                                 </tr>
                         </tbody>
-                        <tfoot>
-                          
-                        </tfoot>
                 </table>
            </div>
      </div>
@@ -2138,13 +3259,10 @@
          </div>  
         </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script>
 
-
-//find the position of element
-   
-        // onclick /hover show dropDown menu 
+        // onclick hover show dropDown menu 
             $(document).ready(function(){
                 
                 $(".right-nav").hover(function(){
@@ -2247,6 +3365,47 @@
                         $(".dropDownMenu3").hide();
                         $(".dropDownMenu4").hide();
                         $(".dropDownMenu5").hide();
+                });
+
+             // hide and reveal mobile navigation dropdown menu
+                // burger menu 
+                $('.burger_Menu').click(function(){
+                    $('.mobile-nav-dashboard').toggle();
+                });
+                $('.mob-dashboard-btn').click(function(){
+                    $('.mobile-dropDownMenu1').toggle();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-analytics-btn').click(function(){
+                    $('.mobile-dropDownMenu2').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-platform-btn').click(function(){
+                    $('.mobile-dropDownMenu3').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu4').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-startups-btn').click(function(){
+                    $('.mobile-dropDownMenu4').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu5').hide();
+                });
+                $('.mob-investors-btn').click(function(){
+                    $('.mobile-dropDownMenu5').toggle();
+                    $('.mobile-dropDownMenu1').hide();
+                    $('.mobile-dropDownMenu2').hide();
+                    $('.mobile-dropDownMenu3').hide();
+                    $('.mobile-dropDownMenu4').hide();
                 });
 
             //change the indicator of table data base 
@@ -2408,7 +3567,6 @@
                     });
 
 
-// or opacity increases accordingly
  //LifeCycle chart
  var LifeCycle = document.getElementById('LifeCycle').getContext('2d');
                      var chart = new Chart(LifeCycle, {
@@ -2891,7 +4049,7 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                                 }
                     }); 
  
- 
+                /* use window.screen width to determine the margin of the row and pagination dynamically**/
                  // detect horizontal scroll
                   // element to detect scroll direction of
                     var el = $('.table1')
@@ -2904,30 +4062,22 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
                         x = (currX > lastX) ? 'right' : ((currX === lastX) ? 'none' : 'left');
                         //change title margin
                           if(x === 'right'){
-                              document.getElementById('respondToHorizontalScroll').style.marginLeft = "453px";
-                              document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
-                              document.getElementById('search_input_field').style.marginRight ="-604px";
+                            console.log("right")
+                              document.getElementsByClassName("row")[0].style.marginRight = "-400px";
+                              document.getElementsByClassName("pagination")[0].style.marginRight = "-400px";
+                              document.getElementsByClassName("row")[0].style.transition = ".6s";
+                            
                           }else{
-                            document.getElementById('respondToHorizontalScroll').style.marginLeft = "";
-                            document.getElementById('respondToHorizontalScroll').style.transition = ".6s";
-                            document.getElementById('search_input_field').style.marginRight ="";
+                              document.getElementsByClassName("row")[0].style.marginRight = "";
+                              document.getElementsByClassName("pagination")[0].style.marginRight = "";
+                              document.getElementsByClassName("row")[0].style.transition = ".5s";
                           }
 
                     // update last scroll position to current position
                         lastX = currX;
                     });
                  
-                    //table search function
-                    var $rows = $('#dealflow_table tr');
-                        $('#search_input_field').keyup(function() {
-                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                            
-                            $rows.show().filter(function() {
-                                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                                return !~text.indexOf(val);
-                            }).hide();
-                        });
-                    
+                 
 
                     // counter countup animation
                     $({ Counter: 0 }).animate({
@@ -3305,7 +4455,9 @@ var ebitBar= document.getElementById('ebitBar').getContext('2d');
           
 
 
-
+$(document).ready(function() {
+ $('#dataTable').DataTable();
+});
                     
     </script>
 </body>

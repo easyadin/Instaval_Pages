@@ -149,6 +149,12 @@
                 font-family: 'IBM Plex Sans', sans-serif;
                 font-weight: 400;
             }
+            .comment-boxes label {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: justify;
+            }
             footer {
                 margin-top: 30px;
                 text-align: center;
@@ -276,7 +282,7 @@
         <!-- Address bar -->
             <div class="heading">
                 <p>Hello From InstaVal</p>
-                <p><span>{Partner Name}</span> | Additional Infomation Request </p>
+                <p><span>{Company Name}</span> | Additional Infomation Request </p>
                 <p>To : <span id="userEmailID">{userEmailID}</span></p>
             </div>
         <!-- Address bar end here -->
@@ -301,28 +307,44 @@
 
         <!-- Message body -->
             <div class="message_body">
-                <p>Your request of additional information to <span>{Company Name}</span> regarding the comments below has been successfully dispatched.</p>
+                <p>Your request of additional information to <span>{Company Name}</span>
+                     regarding the comments below has been successfully dispatched.</p>
                 
                 <!-- Comments boxes-->
                 <div class="comment-boxes">
                     <div class="comment-holder">
                         <h1>Fundamentals</h1>
-                        <textarea></textarea>
+                        <label> The inventory to working capital ratio for
+                             Liberty Medical Group is -0.06, which compared to 
+                             the baseline of -0.06 indicates this ratio is in line
+                              with company goals.
+                            </label>
                     </div>
 
                     <div class="comment-holder">
                         <h1>Financials</h1>
-                        <textarea type="text"></textarea>
+                        <label type="text"> The long-term liabilities to working capital 
+                            ratio for Liberty Medical Group is -1.67, which
+                             compared to the baseline of -1.39 indicates the
+                              value of this ratio is meeting the company's expectations.
+                            </label>
                     </div>
 
                     <div class="comment-holder">
                         <h1>Transaction</h1>
-                        <textarea type="text"></textarea>
+                        <label type="text">The sales to working capital ratio 
+                            for Liberty Medical Group is -39.98, which compared 
+                            to the baseline of -35.96 reveals that the company's
+                             level of working capital is strong. 
+                              The company may want to make an effort 
+                              to generate additional sales using the available 
+                              working capital.
+                            </label>
                     </div>
                 </div>
 
-                <p>Please reply to this email or click <span>here</span> or on the blue button above to engage with the organisation on your dashboard. </p>
-                <p>Good luck and looking forward to seeing you on the Platform.</p>
+                <p>Please click <span style="cursor:pointer; color: cornflowerblue; font-weight: bold;">here</span> on the blue button above to engage more with your dealflow pipeline on your dashboard. </p>
+                <p style="margin-top: 10px;">Looking forward to seeing you on the Platform.</p>
             </div>
 
         <!-- Message Final Tag-->
